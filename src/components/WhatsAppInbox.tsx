@@ -6,14 +6,14 @@ import {
   type FormEvent,
 } from "react";
 import {
-  ArrowLeft,
-  ArrowRight,
-  Clock3,
-  LockKeyhole,
-  MessageSquare,
-  RefreshCw,
-  Send,
-} from "lucide-react";
+  IconArrowLeft,
+  IconArrowRight,
+  IconClockHour3,
+  IconLock,
+  IconMessage,
+  IconRefresh,
+  IconSend,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { ApiError, rawRequest } from "../lib/api";
 import { dateTime } from "../lib/format";
@@ -528,12 +528,12 @@ function PrivateInbox() {
           disabled={sending}
           onClick={() => void load(cursor, previous)}
         >
-          <RefreshCw size={16} />
+          <IconRefresh size={16} />
           Refresh inbox
         </Button>
       </div>
       <div className="wa-privacy">
-        <LockKeyhole size={16} />
+        <IconLock size={16} />
         <span>
           Authorised team only · online-only view · message text available here
           for up to {page.retentionDays} days. Drafts clear when you leave,
@@ -545,7 +545,7 @@ function PrivateInbox() {
         <Skeleton />
       ) : page.items.length === 0 ? (
         <Empty
-          icon={MessageSquare}
+          icon={IconMessage}
           title={
             error
               ? "Could not open the inbox"
@@ -608,7 +608,7 @@ function PrivateInbox() {
                   )
                 }
               >
-                <ArrowLeft size={15} />
+                <IconArrowLeft size={15} />
                 Newer
               </Button>
               <Button
@@ -619,7 +619,7 @@ function PrivateInbox() {
                 }
               >
                 Older
-                <ArrowRight size={15} />
+                <IconArrowRight size={15} />
               </Button>
             </div>
           </aside>
@@ -703,7 +703,7 @@ function PrivateInbox() {
                 ))}
                 {selected.replyWindowExpiresAt && (
                   <div className="wa-window">
-                    <Clock3 size={16} />
+                    <IconClockHour3 size={16} />
                     <span>
                       24-hour service window ends{" "}
                       {dateTime(selected.replyWindowExpiresAt)} EAT. The server
@@ -747,7 +747,7 @@ function PrivateInbox() {
                         busy={sending}
                         onClick={() => void send()}
                       >
-                        <RefreshCw size={16} />
+                        <IconRefresh size={16} />
                         Check original request
                       </Button>
                     ) : (
@@ -760,7 +760,7 @@ function PrivateInbox() {
                           duplicatesAcceptedReply(selected, draft)
                         }
                       >
-                        <Send size={16} />
+                        <IconSend size={16} />
                         Send support reply
                       </Button>
                     )}

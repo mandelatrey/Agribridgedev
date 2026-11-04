@@ -1,14 +1,14 @@
 import {
-  ArrowRight,
-  CalendarDays,
-  Check,
-  ExternalLink,
-  MapPin,
-  PackageCheck,
-  Truck,
-  Warehouse,
-  Sprout,
-} from "lucide-react";
+  IconArrowRight,
+  IconBuildingWarehouse,
+  IconCalendarMonth,
+  IconCheck,
+  IconExternalLink,
+  IconMapPin,
+  IconPackages,
+  IconSeedling,
+  IconTruck,
+} from "@tabler/icons-react";
 import { Badge, Button } from "../ui";
 import type { ReactNode } from "react";
 import { label, number, ugx } from "../../lib/format";
@@ -41,7 +41,7 @@ export function BuyerCard({
     <article className={`market-buyer-card${match ? " has-match" : ""}`}>
       <header>
         <div className="market-crop-mark" aria-hidden="true">
-          <Sprout size={23} strokeWidth={1.6} />
+          <IconSeedling size={23} stroke={1.6} />
         </div>
         <div>
           <span className="market-record-label">
@@ -81,11 +81,11 @@ export function BuyerCard({
       </dl>
       <div className="market-record-meta">
         <span>
-          <MapPin size={15} />
+          <IconMapPin size={15} />
           {demand.district}
         </span>
         <span>
-          <CalendarDays size={15} />
+          <IconCalendarMonth size={15} />
           By {date(demand.deadline)}
         </span>
       </div>
@@ -99,7 +99,7 @@ export function BuyerCard({
       {match ? (
         <div className="market-match">
           <span>
-            <Check size={15} />
+            <IconCheck size={15} />
             {number(match.quantityKg)} kg may fit this request
           </span>
           <p>{match.reasons.slice(0, 2).join(" · ")}</p>
@@ -132,13 +132,13 @@ export function BuyerCard({
         >
           {pending ? (
             <>
-              <Check size={16} />
+              <IconCheck size={16} />
               Interest sent
             </>
           ) : (
             <>
               {match ? "Request introduction" : "Offer produce"}
-              <ArrowRight size={16} />
+              <IconArrowRight size={16} />
             </>
           )}
         </Button>
@@ -150,16 +150,16 @@ export function BuyerCard({
 export function ServiceCard({ quote }: { quote: MarketServiceQuote }) {
   const Icon =
     quote.category === "transport"
-      ? Truck
+      ? IconTruck
       : quote.category === "storage"
-        ? Warehouse
-        : Sprout;
+        ? IconBuildingWarehouse
+        : IconSeedling;
   const source = safeMarketSource(quote.sourceUrl);
   return (
     <article className="market-service-card">
       <div className="market-service-heading">
         <span className={`market-service-icon service-${quote.category}`}>
-          <Icon size={21} strokeWidth={1.6} />
+          <Icon size={21} stroke={1.6} />
         </span>
         <span className="market-record-label">
           {quote.category === "input" ? "Farm input" : label(quote.category)}
@@ -190,7 +190,7 @@ export function ServiceCard({ quote }: { quote: MarketServiceQuote }) {
       </p>
       <div className="market-record-meta">
         <span>
-          <MapPin size={15} />
+          <IconMapPin size={15} />
           {quote.district}
           {quote.community ? ` · ${quote.community}` : ""}
         </span>
@@ -205,7 +205,7 @@ export function ServiceCard({ quote }: { quote: MarketServiceQuote }) {
         {source ? (
           <a href={source} target="_blank" rel="noopener noreferrer">
             {quote.sourceTitle}
-            <ExternalLink size={13} />
+            <IconExternalLink size={13} />
           </a>
         ) : (
           <span>Source: {quote.sourceTitle}</span>
@@ -234,7 +234,7 @@ export function SupplyCard({
     <article className="market-supply-card">
       <div className="market-supply-top">
         <span className="market-crop-mark">
-          <PackageCheck size={23} strokeWidth={1.5} />
+          <IconPackages size={23} stroke={1.5} />
         </span>
         <div>
           <h3>
@@ -265,7 +265,7 @@ export function SupplyCard({
       </div>
       <div className="market-record-meta">
         <span>
-          <CalendarDays size={15} />
+          <IconCalendarMonth size={15} />
           {date(supply.harvestFrom)} – {date(supply.harvestUntil)}
         </span>
       </div>
@@ -313,7 +313,7 @@ export function SupplyCard({
             </Button>
           ) : (
             <span className="market-status-final">
-              <Check size={15} />
+              <IconCheck size={15} />
               Sold
             </span>
           )}

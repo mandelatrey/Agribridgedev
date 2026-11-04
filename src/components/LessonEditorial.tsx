@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  BookOpen,
-  ExternalLink,
-  FilePenLine,
-  RotateCcw,
-  ShieldCheck,
-} from "lucide-react";
+  IconBook,
+  IconExternalLink,
+  IconFilePencil,
+  IconRotate,
+  IconShieldCheck,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { request } from "../lib/api";
 import { dateTime } from "../lib/format";
@@ -147,7 +147,7 @@ export default function LessonEditorial({
             busy={loading}
             onClick={() => setReload((value) => value + 1)}
           >
-            <RotateCcw size={16} />
+            <IconRotate size={16} />
             Refresh guides
           </Button>
         </div>
@@ -185,7 +185,7 @@ export default function LessonEditorial({
                     <td>
                       <Link className="text-link" to={`/learn/${lesson.id}`}>
                         {lesson.title}
-                        <BookOpen size={14} />
+                        <IconBook size={14} />
                       </Link>
                       <small className="op-cell-secondary">
                         {lesson.crop} · {lesson.durationMinutes} min read
@@ -217,7 +217,7 @@ export default function LessonEditorial({
                         className="text-link"
                       >
                         Official source
-                        <ExternalLink size={13} />
+                        <IconExternalLink size={13} />
                       </a>
                       <small className="op-cell-secondary">
                         Version {lesson.version}
@@ -234,7 +234,7 @@ export default function LessonEditorial({
                           onClick={() => setEditor({ lesson, mode: "edit" })}
                           aria-label={`Edit ${lesson.title}`}
                         >
-                          <FilePenLine size={15} />
+                          <IconFilePencil size={15} />
                           Edit
                         </Button>
                         <Button
@@ -266,13 +266,13 @@ export default function LessonEditorial({
           </div>
         ) : !loading && !error ? (
           <Empty
-            icon={BookOpen}
+            icon={IconBook}
             title="No field guides loaded"
             body="Refresh when connected to view your organization's learning content."
           />
         ) : null}
         <div className="op-panel-note">
-          <ShieldCheck size={16} />
+          <IconShieldCheck size={16} />
           <span>
             Reviews apply to this organization. A recorded review is your team's
             attestation, not independent verification of professional
@@ -417,7 +417,7 @@ export default function LessonEditorial({
                     rel="noreferrer"
                   >
                     Open official source
-                    <ExternalLink size={14} />
+                    <IconExternalLink size={14} />
                   </a>
                 </div>
                 <Field label="Reviewer's full name">

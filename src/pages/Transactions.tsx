@@ -1,5 +1,10 @@
 import { useCallback, useMemo, useState } from "react";
-import { ArrowLeftRight, ArrowRight, Pencil, Plus } from "lucide-react";
+import {
+  IconArrowRight,
+  IconArrowsLeftRight,
+  IconPencil,
+  IconPlus,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -439,7 +444,7 @@ function TransactionDetails({
               </Button>
             )}
           <Button variant="secondary" disabled={!online} onClick={onEdit}>
-            <Pencil size={16} /> Edit
+            <IconPencil size={16} /> Edit
           </Button>
           {next && (
             <Button
@@ -447,7 +452,7 @@ function TransactionDetails({
               disabled={!online || Boolean(busy)}
               onClick={() => void setStatus(next)}
             >
-              Mark {label(next).toLowerCase()} <ArrowRight size={16} />
+              Mark {label(next).toLowerCase()} <IconArrowRight size={16} />
             </Button>
           )}
         </footer>
@@ -493,7 +498,7 @@ export default function Transactions() {
         description="Every sale and purchase, in one place."
         action={
           <Button onClick={() => setEditor("new")} disabled={!online}>
-            <Plus size={17} />
+            <IconPlus size={17} />
             Record transaction
           </Button>
         }
@@ -629,7 +634,7 @@ export default function Transactions() {
                         <span className="op-card-action-label">
                           View details
                         </span>
-                        <ArrowRight size={17} />
+                        <IconArrowRight size={17} />
                       </button>
                     </td>
                   </tr>
@@ -639,7 +644,7 @@ export default function Transactions() {
           </div>
         ) : (
           <Empty
-            icon={ArrowLeftRight}
+            icon={IconArrowsLeftRight}
             title={
               filtered ? "No matching transactions" : "No transactions yet"
             }

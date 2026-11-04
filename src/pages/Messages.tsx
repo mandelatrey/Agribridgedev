@@ -1,13 +1,13 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  ArrowRight,
-  MessageSquare,
-  RotateCcw,
-  Send,
-  ShieldCheck,
-  Smartphone,
-} from "lucide-react";
+  IconArrowRight,
+  IconDeviceMobile,
+  IconMessage,
+  IconRotate,
+  IconSend,
+  IconShieldCheck,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -145,7 +145,7 @@ function UssdPreview() {
     <section className="panel op-ussd">
       <div className="panel-header">
         <h2>
-          <Smartphone size={19} />
+          <IconDeviceMobile size={19} />
           Try the simple-phone menu
         </h2>
         <Badge>Preview</Badge>
@@ -162,7 +162,7 @@ function UssdPreview() {
             assigned code and funded provider.
           </p>
           <div className="op-preview-hint">
-            <ShieldCheck size={18} />
+            <IconShieldCheck size={18} />
             <span>Only verified prices and reviewed lessons appear here.</span>
           </div>
         </div>
@@ -176,7 +176,7 @@ function UssdPreview() {
           </div>
           {ended ? (
             <Button variant="secondary" onClick={reset}>
-              <RotateCcw size={16} />
+              <IconRotate size={16} />
               Start again
             </Button>
           ) : (
@@ -203,7 +203,7 @@ function UssdPreview() {
                 disabled={busy}
               />
               <Button type="submit" busy={busy} disabled={!choice}>
-                Next <ArrowRight size={15} />
+                Next <IconArrowRight size={15} />
               </Button>
             </form>
           )}
@@ -318,12 +318,12 @@ function OutboundMessages() {
   if (user?.role === "farmer")
     return (
       <Empty
-        icon={MessageSquare}
+        icon={IconMessage}
         title="Choose how your team reaches you"
         body="You can set your preferred channel in Connection & settings."
         action={
           <Link className="text-link" to="/settings">
-            Open connection settings <ArrowRight size={16} />
+            Open connection settings <IconArrowRight size={16} />
           </Link>
         }
       />
@@ -338,7 +338,7 @@ function OutboundMessages() {
           disabled={!online || busy}
           onClick={() => void refresh().catch(() => {})}
         >
-          <RotateCcw size={16} />
+          <IconRotate size={16} />
           Refresh status
         </Button>
       </div>
@@ -359,7 +359,7 @@ function OutboundMessages() {
         <section className="panel">
           <div className="panel-header">
             <h2>Compose a message</h2>
-            <MessageSquare size={19} />
+            <IconMessage size={19} />
           </div>
           <form className="op-compose" onSubmit={send}>
             <Field label="To">
@@ -405,7 +405,7 @@ function OutboundMessages() {
             </Field>
             {selected && (
               <div className="op-message-permission">
-                <ShieldCheck size={17} />
+                <IconShieldCheck size={17} />
                 <span>
                   {permission
                     ? `Permission for ${channelName(channel)} is recorded.`
@@ -481,7 +481,7 @@ function OutboundMessages() {
                   busy={busy}
                   disabled={!online || !permission || !body.trim()}
                 >
-                  <Send size={16} />
+                  <IconSend size={16} />
                   {demo ? "Record test message" : "Send message"}
                 </Button>
               )}
@@ -517,7 +517,7 @@ function OutboundMessages() {
               <p>Review the reason before deciding whether to send again.</p>
             </div>
             <Link className="text-link" to="/admin">
-              View channel readiness <ArrowRight size={16} />
+              View channel readiness <IconArrowRight size={16} />
             </Link>
           </div>
         </aside>
@@ -606,7 +606,7 @@ function OutboundMessages() {
           </div>
         ) : (
           <Empty
-            icon={MessageSquare}
+            icon={IconMessage}
             title={
               query || filter !== "all"
                 ? "No matching messages"
@@ -642,13 +642,13 @@ export default function Messages() {
   if (!user || user.role === "farmer")
     return (
       <Empty
-        icon={MessageSquare}
+        icon={IconMessage}
         title="Choose how your team reaches you"
         body="Set your preferred channel in Connection & settings. Only the support team can view private conversations."
         action={
           <Link className="text-link" to="/settings">
             Open connection settings
-            <ArrowRight size={16} />
+            <IconArrowRight size={16} />
           </Link>
         }
       />

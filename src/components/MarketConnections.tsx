@@ -6,13 +6,13 @@ import {
   type FormEvent,
 } from "react";
 import {
-  ArrowRight,
-  Bell,
-  Check,
-  Link2,
-  PackageCheck,
-  RefreshCw,
-} from "lucide-react";
+  IconArrowRight,
+  IconBell,
+  IconCheck,
+  IconLink,
+  IconPackages,
+  IconRefresh,
+} from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { useApp } from "../context/AppContext";
 import { request } from "../lib/api";
@@ -181,7 +181,7 @@ export function MarketConnections() {
           disabled={!online || !!busy}
           onClick={() => void run("refresh", async () => {})}
         >
-          <RefreshCw size={16} /> Refresh
+          <IconRefresh size={16} /> Refresh
         </Button>
       </div>
       {!online && (
@@ -254,7 +254,7 @@ export function MarketConnections() {
               disabled={!supplyId || !!busy || !online}
               busy={busy === "order"}
             >
-              Request order <ArrowRight size={16} />
+              Request order <IconArrowRight size={16} />
             </Button>
           </form>
         ) : (
@@ -327,7 +327,7 @@ export function MarketConnections() {
                           setPending({ order, status: "accepted" })
                         }
                       >
-                        <Check size={15} /> Accept
+                        <IconCheck size={15} /> Accept
                       </Button>
                     )}
                     {seller && order.status === "accepted" && (
@@ -338,7 +338,7 @@ export function MarketConnections() {
                           setPending({ order, status: "fulfilled" })
                         }
                       >
-                        <PackageCheck size={15} /> Mark fulfilled
+                        <IconPackages size={15} /> Mark fulfilled
                       </Button>
                     )}
                     {((seller &&
@@ -437,7 +437,7 @@ export function MarketConnections() {
               message delivery have separate statuses.
             </p>
           </div>
-          <Bell size={24} />
+          <IconBell size={24} />
         </div>
         {payments?.notifications.length ? (
           payments.notifications.map((item) => (
@@ -467,7 +467,7 @@ export function MarketConnections() {
         className="market-channel-link"
         aria-labelledby="market-link-title"
       >
-        <Link2 size={24} />
+        <IconLink size={24} />
         <div>
           <h3 id="market-link-title">Get payment updates on WhatsApp</h3>
           <p>
@@ -590,7 +590,7 @@ export function MarketConnections() {
               </p>
             </div>
             <Link className="button button-secondary" to="/messages">
-              Open staff inbox <ArrowRight size={16} />
+              Open staff inbox <IconArrowRight size={16} />
             </Link>
           </div>
           {Object.entries(intake.status.counts).some(

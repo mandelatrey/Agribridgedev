@@ -1,22 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  Check,
-  ExternalLink,
-  Leaf,
-  LoaderCircle,
-  Menu,
-  Pause,
-  Play,
-  Plus,
-  Sprout,
-  ShoppingBasket,
-  Handshake,
-  X,
-} from "lucide-react";
+  IconArrowDown,
+  IconArrowRight,
+  IconArrowUpRight,
+  IconBasket,
+  IconCheck,
+  IconExternalLink,
+  IconHeartHandshake,
+  IconLeaf,
+  IconLoader2,
+  IconMenu2,
+  IconPlayerPause,
+  IconPlayerPlay,
+  IconPlus,
+  IconSeedling,
+  IconX,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { FAO_CATALOGUE_URL } from "../lib/learning-resources";
 import {
@@ -57,7 +57,7 @@ function SeasonPreview({ stage }: { stage: number }) {
       <div className="lp-product-window">
         <div className="lp-product-brand">
           <span>
-            <Sprout size={21} /> Agribridge
+            <IconSeedling size={21} /> Agribridge
           </span>
           <small>Illustrative preview</small>
         </div>
@@ -91,10 +91,10 @@ function SeasonPreview({ stage }: { stage: number }) {
               aria-label={`${showCompleted ? "Reopen" : "Complete"} sample task: ${task.title}`}
             >
               <span className={showCompleted ? "is-complete" : ""}>
-                {showCompleted && <Check size={15} />}
+                {showCompleted && <IconCheck size={15} />}
               </span>
               <span>{task.title}</span>
-              <ArrowUpRight size={16} />
+              <IconArrowUpRight size={16} />
             </button>
           ))}
           {!visibleTasks.length && (
@@ -106,7 +106,7 @@ function SeasonPreview({ stage }: { stage: number }) {
           )}
         </div>
         <div className="lp-preview-note">
-          <Leaf size={22} />
+          <IconLeaf size={22} />
           <span>One clear next step.</span>
         </div>
         <p className="lp-preview-guidance">{landingStages[stage].note}</p>
@@ -173,15 +173,15 @@ export default function Landing() {
         onClick={() => void tryDemo("farmer")}
       >
         {busy === "farmer" ? (
-          <LoaderCircle size={18} className="spin" aria-hidden="true" />
+          <IconLoader2 size={18} className="spin" aria-hidden="true" />
         ) : null}
         {entry.label}
-        <ArrowUpRight size={18} aria-hidden="true" />
+        <IconArrowUpRight size={18} aria-hidden="true" />
       </button>
     ) : (
       <Link className={`lp-button ${className}`} to={entry.to}>
         {entry.label}
-        <ArrowUpRight size={18} aria-hidden="true" />
+        <IconArrowUpRight size={18} aria-hidden="true" />
       </Link>
     );
   }
@@ -204,7 +204,7 @@ export default function Landing() {
             to="/welcome"
             aria-label="Agribridge introduction"
           >
-            <Sprout size={34} strokeWidth={1.5} aria-hidden="true" />
+            <IconSeedling size={34} stroke={1.5} aria-hidden="true" />
             <span>Agribridge</span>
           </Link>
           <nav className="lp-desktop-nav" aria-label="About Agribridge">
@@ -222,7 +222,7 @@ export default function Landing() {
             )}
             <Link className="lp-button lp-header-cta" to={user ? "/" : "/buy"}>
               {user ? "Open workspace" : "Buy produce"}
-              <ArrowUpRight size={17} aria-hidden="true" />
+              <IconArrowUpRight size={17} aria-hidden="true" />
             </Link>
           </div>
           <button
@@ -233,7 +233,7 @@ export default function Landing() {
             aria-controls="landing-mobile-menu"
             onClick={() => setMenuOpen((value) => !value)}
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            {menuOpen ? <IconX size={22} /> : <IconMenu2 size={22} />}
             <span>Menu</span>
           </button>
         </header>
@@ -252,12 +252,12 @@ export default function Landing() {
           {navigation.map((item) => (
             <a key={item.href} href={item.href} onClick={closeMenu}>
               {item.label}
-              <ArrowRight size={17} />
+              <IconArrowRight size={17} />
             </a>
           ))}
           <Link to={user ? "/" : "/login"} onClick={closeMenu}>
             {user ? "Open workspace" : "Sign in"}
-            <ArrowRight size={17} />
+            <IconArrowRight size={17} />
           </Link>
         </nav>
         {error && (
@@ -292,20 +292,20 @@ export default function Landing() {
               </p>
               <div className="lp-hero-actions">
                 <Link className="lp-button" to="/buy">
-                  <ShoppingBasket size={20} />
-                  Buy produce <ArrowUpRight size={19} />
+                  <IconBasket size={20} />
+                  Buy produce <IconArrowUpRight size={19} />
                 </Link>
                 <Link
                   className="lp-button lp-hero-seller"
                   to="/whatsapp-demo?audience=farmer"
                 >
-                  Sell produce <ArrowUpRight size={19} />
+                  Sell produce <IconArrowUpRight size={19} />
                 </Link>
               </div>
               <p className="lp-hero-footnote">
                 For the people who grow it. And the people who need it.
                 <a href="#how-it-works" className="lp-hero-how">
-                  See how it works <ArrowRight size={15} />
+                  See how it works <IconArrowRight size={15} />
                 </a>
               </p>
               <p className="lp-entry-note">
@@ -329,7 +329,11 @@ export default function Landing() {
                 }
                 onClick={toggleMotion}
               >
-                {motionPaused ? <Play size={15} /> : <Pause size={15} />}
+                {motionPaused ? (
+                  <IconPlayerPlay size={15} />
+                ) : (
+                  <IconPlayerPause size={15} />
+                )}
                 <span>
                   {reducedByDevice
                     ? "Enable cinematic motion"
@@ -343,7 +347,7 @@ export default function Landing() {
                 href="#how-it-works"
                 aria-label="Discover how Agribridge works"
               >
-                <ArrowDown size={25} />
+                <IconArrowDown size={25} />
               </a>
             </div>
           </section>
@@ -353,17 +357,17 @@ export default function Landing() {
             <a href="#marketplace">
               <small>01</small>
               <span>Find produce. Find buyers.</span>
-              <ArrowDown size={18} />
+              <IconArrowDown size={18} />
             </a>
             <a href="#how-it-works">
               <small>02</small>
               <span>Connect on WhatsApp</span>
-              <ArrowDown size={18} />
+              <IconArrowDown size={18} />
             </a>
             <a href="#cooperatives">
               <small>03</small>
               <span>Agree. Collect. Grow.</span>
-              <ArrowDown size={18} />
+              <IconArrowDown size={18} />
             </a>
           </div>
         </div>
@@ -391,7 +395,7 @@ export default function Landing() {
           <div className="lp-marketplace-grid">
             <div className="lp-marketplace-copy">
               <div className="lp-audience-story">
-                <ShoppingBasket size={23} aria-hidden="true" />
+                <IconBasket size={23} aria-hidden="true" />
                 <div>
                   <h3>For buyers</h3>
                   <p>
@@ -400,12 +404,12 @@ export default function Landing() {
                     seller’s offer.
                   </p>
                   <Link className="lp-text-link" to="/buy">
-                    Explore the marketplace <ArrowUpRight size={17} />
+                    Explore the marketplace <IconArrowUpRight size={17} />
                   </Link>
                 </div>
               </div>
               <div className="lp-audience-story">
-                <Sprout size={23} aria-hidden="true" />
+                <IconSeedling size={23} aria-hidden="true" />
                 <div>
                   <h3>For farmers & cooperatives</h3>
                   <p>
@@ -417,13 +421,13 @@ export default function Landing() {
                     className="lp-text-link"
                     to="/whatsapp-demo?audience=farmer"
                   >
-                    Preview selling on WhatsApp <ArrowUpRight size={17} />
+                    Preview selling on WhatsApp <IconArrowUpRight size={17} />
                   </Link>
                   <Link
                     className="lp-seller-workspace"
                     to={user ? "/farms" : "/login"}
                   >
-                    Farmer workspace <ArrowRight size={15} />
+                    Farmer workspace <IconArrowRight size={15} />
                   </Link>
                 </div>
               </div>
@@ -434,7 +438,7 @@ export default function Landing() {
             >
               <div className="lp-market-browser-top">
                 <span>
-                  <Sprout size={20} /> Agribridge market
+                  <IconSeedling size={20} /> Agribridge market
                 </span>
                 <small>Sample supply</small>
               </div>
@@ -481,13 +485,13 @@ export default function Landing() {
                     </span>
                     <span className="lp-market-quantity">
                       {item.quantity}
-                      <ArrowUpRight size={16} />
+                      <IconArrowUpRight size={16} />
                     </span>
                   </Link>
                 ))}
               </div>
               <Link className="lp-button lp-button-dark" to="/buy">
-                Browse produce <ArrowRight size={17} />
+                Browse produce <IconArrowRight size={17} />
               </Link>
             </div>
           </div>
@@ -498,22 +502,22 @@ export default function Landing() {
             <span>
               <small>01</small> Find the right supply
             </span>
-            <ArrowRight size={18} aria-hidden="true" />
+            <IconArrowRight size={18} aria-hidden="true" />
             <span>
               <small>02</small> Send a purchase request
             </span>
-            <ArrowRight size={18} aria-hidden="true" />
+            <IconArrowRight size={18} aria-hidden="true" />
             <span>
               <small>03</small> Seller accepts the terms
             </span>
-            <ArrowRight size={18} aria-hidden="true" />
+            <IconArrowRight size={18} aria-hidden="true" />
             <span>
               <small>04</small> Arrange payment & collection
             </span>
           </div>
           <p className="lp-market-disclosure">
-            <Handshake size={16} aria-hidden="true" /> A request is not a
-            confirmed sale. Provider payments are planned; no checkout or
+            <IconHeartHandshake size={16} aria-hidden="true" /> A request is not
+            a confirmed sale. Provider payments are planned; no checkout or
             transfer is active.
           </p>
         </section>
@@ -600,7 +604,7 @@ export default function Landing() {
                     Practical reading, with sources and review status.
                   </small>
                 </span>
-                <ArrowUpRight size={28} />
+                <IconArrowUpRight size={28} />
               </Link>
               <a
                 href={FAO_CATALOGUE_URL}
@@ -614,7 +618,7 @@ export default function Landing() {
                     connection.
                   </small>
                 </span>
-                <ExternalLink size={24} />
+                <IconExternalLink size={24} />
               </a>
               <p className="lp-small">
                 Independent links to FAO resources. Not a partnership.
@@ -661,9 +665,9 @@ export default function Landing() {
                   onClick={() => void tryDemo("operator")}
                 >
                   {busy === "operator" && (
-                    <LoaderCircle className="spin" size={18} />
+                    <IconLoader2 className="spin" size={18} />
                   )}
-                  Try cooperative demo <ArrowUpRight size={18} />
+                  Try cooperative demo <IconArrowUpRight size={18} />
                 </button>
               ) : (
                 <Link
@@ -673,7 +677,7 @@ export default function Landing() {
                   {user?.role === "farmer"
                     ? "Open your workspace"
                     : "Explore cooperative tools"}
-                  <ArrowUpRight size={18} />
+                  <IconArrowUpRight size={18} />
                 </Link>
               )}
             </div>
@@ -727,7 +731,7 @@ export default function Landing() {
             <details>
               <summary>
                 Where do weather and prices come from?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 Weather comes from{" "}
@@ -762,7 +766,7 @@ export default function Landing() {
             <details>
               <summary>
                 What works offline?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 After you opt in on a trusted device and sync, selected farm
@@ -775,7 +779,7 @@ export default function Landing() {
             <details>
               <summary>
                 Can I buy and sell through Agribridge?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 Buyers can <Link to="/buy">browse the web marketplace</Link> or
@@ -798,7 +802,7 @@ export default function Landing() {
             <details>
               <summary>
                 Can I message Agribridge on WhatsApp now?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 The WhatsApp experience is in preview. You can{" "}
@@ -815,7 +819,7 @@ export default function Landing() {
             <details>
               <summary>
                 Can I use a voice note or speak Luganda?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 The intended experience supports farmers who prefer speaking to
@@ -828,7 +832,7 @@ export default function Landing() {
             <details>
               <summary>
                 Who buys my produce, and how would I get paid?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 Farmers and cooperatives sell to clients. Agribridge helps
@@ -842,7 +846,7 @@ export default function Landing() {
             <details>
               <summary>
                 Does the assistant replace local advice?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 No. The optional assistant depends on configured service
@@ -854,7 +858,7 @@ export default function Landing() {
             <details id="data-privacy">
               <summary>
                 How is my information handled?
-                <Plus size={21} />
+                <IconPlus size={21} />
               </summary>
               <p>
                 Farm and operational records belong to your workspace. Access
@@ -883,13 +887,13 @@ export default function Landing() {
             <div>
               <div className="lp-closing-actions">
                 <Link className="lp-button lp-button-dark" to="/buy">
-                  Buy produce <ArrowUpRight size={18} />
+                  Buy produce <IconArrowUpRight size={18} />
                 </Link>
                 <Link
                   className="lp-button lp-button-outline"
                   to="/whatsapp-demo?audience=farmer"
                 >
-                  Sell produce <ArrowUpRight size={18} />
+                  Sell produce <IconArrowUpRight size={18} />
                 </Link>
               </div>
               {!user && (
@@ -901,7 +905,7 @@ export default function Landing() {
           </div>
           <footer className="lp-footer lp-width">
             <Link to="/welcome" className="lp-wordmark">
-              <Sprout size={32} strokeWidth={1.5} />
+              <IconSeedling size={32} stroke={1.5} />
               <span>Agribridge</span>
             </Link>
             <nav aria-label="Footer">

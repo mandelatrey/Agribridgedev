@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  ArrowRight,
-  Plus,
-  Pencil,
-  Sprout,
-  Calculator,
-  PackageCheck,
-  CloudSun,
-  BookOpen,
-  X,
-} from "lucide-react";
+  IconArrowRight,
+  IconBook,
+  IconCalculator,
+  IconCloud,
+  IconPackages,
+  IconPencil,
+  IconPlus,
+  IconSeedling,
+  IconX,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -266,7 +266,7 @@ function SeasonEditor({
                   )
                 }
               >
-                <X size={15} />
+                <IconX size={15} />
                 Remove cost
               </Button>
             </div>
@@ -288,7 +288,7 @@ function SeasonEditor({
               ])
             }
           >
-            <Plus size={16} />
+            <IconPlus size={16} />
             Add a cost
           </Button>
         </section>
@@ -446,7 +446,7 @@ export default function Seasons() {
             disabled={!online || !data.farms.length}
             onClick={() => setEditor("new")}
           >
-            <Plus size={18} />
+            <IconPlus size={18} />
             Plan a season
           </Button>
         }
@@ -479,7 +479,7 @@ export default function Seasons() {
             rel="noreferrer"
           >
             Read NARO seed guidance
-            <ArrowRight size={15} />
+            <IconArrowRight size={15} />
           </a>
           <a
             className="text-link"
@@ -488,13 +488,13 @@ export default function Seasons() {
             rel="noreferrer"
           >
             MAAIF crop inspection and certification
-            <ArrowRight size={15} />
+            <IconArrowRight size={15} />
           </a>
         </div>
       </details>
       {!seasons.length ? (
         <Empty
-          icon={Sprout}
+          icon={IconSeedling}
           title="Start with your own numbers."
           body={
             data.farms.length
@@ -504,7 +504,7 @@ export default function Seasons() {
           action={
             <Link className="button button-secondary" to="/farms">
               My farms
-              <ArrowRight size={16} />
+              <IconArrowRight size={16} />
             </Link>
           }
         />
@@ -521,7 +521,7 @@ export default function Seasons() {
                 className={s.id === active?.id ? "selected" : ""}
                 onClick={() => setSelected(s.id)}
               >
-                <Sprout size={17} />
+                <IconSeedling size={17} />
                 <span>
                   {s.name}
                   <small>
@@ -551,7 +551,7 @@ export default function Seasons() {
                   disabled={!online}
                   onClick={() => setEditor(active)}
                 >
-                  <Pencil size={16} />
+                  <IconPencil size={16} />
                   Update plan & costs
                 </Button>
               </section>
@@ -583,7 +583,7 @@ export default function Seasons() {
                 <section className="panel season-analysis">
                   <div className="panel-header">
                     <h2>A reality check</h2>
-                    <Calculator size={21} />
+                    <IconCalculator size={21} />
                   </div>
                   <dl>
                     <div>
@@ -613,7 +613,7 @@ export default function Seasons() {
                   </p>
                   <Link className="text-link" to="/markets">
                     Check price sources and dates
-                    <ArrowRight size={16} />
+                    <IconArrowRight size={16} />
                   </Link>
                 </section>
                 <section className="panel season-analysis">
@@ -624,7 +624,7 @@ export default function Seasons() {
                       disabled={!online || active.sales.length >= 100}
                       onClick={() => setSale({ season: active })}
                     >
-                      <Plus size={16} />
+                      <IconPlus size={16} />
                       Record sale
                     </Button>
                   </div>
@@ -664,28 +664,28 @@ export default function Seasons() {
                   <Link
                     to={`/weather?district=${encodeURIComponent(farm?.district ?? "Nakaseke")}`}
                   >
-                    <CloudSun />
+                    <IconCloud />
                     <span>
                       Check local weather
                       <small>Forecasts with source and update time</small>
                     </span>
-                    <ArrowRight size={16} />
+                    <IconArrowRight size={16} />
                   </Link>
                   <Link to={`/learn?crop=${encodeURIComponent(active.crop)}`}>
-                    <BookOpen />
+                    <IconBook />
                     <span>
                       Build your crop knowledge
                       <small>Check whether guidance is locally reviewed</small>
                     </span>
-                    <ArrowRight size={16} />
+                    <IconArrowRight size={16} />
                   </Link>
                   <Link to={`/harvest?season=${active.id}`}>
-                    <PackageCheck />
+                    <IconPackages />
                     <span>
                       Record the harvest
                       <small>Keep lots traceable for collection</small>
                     </span>
-                    <ArrowRight size={16} />
+                    <IconArrowRight size={16} />
                   </Link>
                 </div>
               </section>
@@ -718,7 +718,7 @@ export default function Seasons() {
                         disabled={!online}
                         onClick={() => setSale({ season: active, sale: s })}
                       >
-                        <Pencil size={15} />
+                        <IconPencil size={15} />
                         Update record
                       </Button>
                     </div>

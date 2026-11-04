@@ -10,25 +10,25 @@ import {
 } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
-  ArrowLeft,
-  ArrowRight,
-  Building2,
-  Check,
-  CheckCheck,
-  ChevronRight,
-  CloudSun,
-  CreditCard,
-  Handshake,
-  Headphones,
-  Leaf,
-  MapPin,
-  MessageCircle,
-  RotateCcw,
-  Send,
-  ShieldCheck,
-  Sprout,
-  Truck,
-} from "lucide-react";
+  IconArrowLeft,
+  IconArrowRight,
+  IconBuilding,
+  IconCheck,
+  IconChecks,
+  IconChevronRight,
+  IconCloud,
+  IconCreditCard,
+  IconHeadphones,
+  IconHeartHandshake,
+  IconLeaf,
+  IconMapPin,
+  IconMessageCircle,
+  IconRotate,
+  IconSeedling,
+  IconSend,
+  IconShieldCheck,
+  IconTruck,
+} from "@tabler/icons-react";
 import {
   createDemoState,
   demoChoices,
@@ -42,13 +42,13 @@ import {
 import "../styles/whatsapp-demo.css";
 
 const scenarioIcons = {
-  signup: Building2,
-  buyers: Handshake,
-  prices: Leaf,
-  weather: CloudSun,
-  inputs: Sprout,
-  logistics: Truck,
-  payment: CreditCard,
+  signup: IconBuilding,
+  buyers: IconHeartHandshake,
+  prices: IconLeaf,
+  weather: IconCloud,
+  inputs: IconSeedling,
+  logistics: IconTruck,
+  payment: IconCreditCard,
 };
 const BuyerWhatsAppDemo = lazy(() => import("../components/BuyerWhatsAppDemo"));
 
@@ -157,7 +157,7 @@ function FarmerWhatsAppDemo({
           href={platformHref || "#"}
           aria-label="Agribridge"
         >
-          <Sprout size={29} strokeWidth={1.7} />
+          <IconSeedling size={29} stroke={1.7} />
           Agribridge
         </a>
         {audienceControl}
@@ -168,7 +168,7 @@ function FarmerWhatsAppDemo({
           </span>
           {platformHref ? (
             <a className="wd-back" href={platformHref}>
-              <ArrowLeft size={14} />
+              <IconArrowLeft size={14} />
               Back to the platform
             </a>
           ) : null}
@@ -178,7 +178,7 @@ function FarmerWhatsAppDemo({
         <div className="wd-guide">
           <section className="wd-intro">
             <span className="wd-eyebrow">
-              <MessageCircle size={15} />
+              <IconMessageCircle size={15} />
               The market, one conversation away.
             </span>
             <h1>
@@ -191,7 +191,7 @@ function FarmerWhatsAppDemo({
               opportunities and follow payment updates through WhatsApp.
             </p>
             <div className="wd-demo-disclosure">
-              <ShieldCheck size={17} />
+              <IconShieldCheck size={17} />
               <span>
                 <strong>A working, scripted demonstration.</strong> Every price,
                 buyer, forecast and payment below is fictional. No account,
@@ -216,13 +216,13 @@ function FarmerWhatsAppDemo({
                     onClick={() => choose(scenario.id)}
                   >
                     <span className="wd-scenario-icon">
-                      <Icon size={19} strokeWidth={1.7} />
+                      <Icon size={19} stroke={1.7} />
                     </span>
                     <span>
                       <strong>{lg ? scenario.lg : scenario.en}</strong>
                       <small>{scenario.description}</small>
                     </span>
-                    <ChevronRight size={16} />
+                    <IconChevronRight size={16} />
                   </button>
                 );
               })}
@@ -237,15 +237,15 @@ function FarmerWhatsAppDemo({
             </p>
             <div>
               <span>
-                <Check size={14} />
+                <IconCheck size={14} />
                 Source and date with every real quote
               </span>
               <span>
-                <Check size={14} />
+                <IconCheck size={14} />
                 Clear quality and collection terms
               </span>
               <span>
-                <Check size={14} />A person when a conversation needs help
+                <IconCheck size={14} />A person when a conversation needs help
               </span>
             </div>
             <p className="wd-language-note">
@@ -284,14 +284,14 @@ function FarmerWhatsAppDemo({
               type="button"
               onClick={() => act({ type: "reset" })}
             >
-              <RotateCcw size={14} />
+              <IconRotate size={14} />
               Reset demo
             </button>
           </div>
           <div className="wd-phone">
             <div className="wd-chat-header">
               <span className="wd-chat-avatar">
-                <Sprout size={28} strokeWidth={1.5} />
+                <IconSeedling size={28} stroke={1.5} />
               </span>
               <div>
                 <strong>
@@ -300,7 +300,7 @@ function FarmerWhatsAppDemo({
                 </strong>
                 <small>Farmer & market support · scripted preview</small>
               </div>
-              <MessageCircle size={21} strokeWidth={1.6} />
+              <IconMessageCircle size={21} stroke={1.6} />
             </div>
             <div className="wd-chat-notice">
               Sample conversation · no real WhatsApp connection
@@ -333,7 +333,7 @@ function FarmerWhatsAppDemo({
                 >
                   {message.kind === "voice" ? (
                     <span className="wd-voice-label">
-                      <Headphones size={16} />
+                      <IconHeadphones size={16} />
                       {lg
                         ? "Eddoboozi ery'okulabirako · ebiwandiiko"
                         : "Scripted voice-note transcript"}
@@ -341,7 +341,7 @@ function FarmerWhatsAppDemo({
                   ) : null}
                   {message.kind === "profile" ? (
                     <span className="wd-message-label">
-                      <Building2 size={15} />
+                      <IconBuilding size={15} />
                       {lg
                         ? "Ebikwata ku nnimiro eby'okulabirako"
                         : "Check your sample profile"}
@@ -349,7 +349,7 @@ function FarmerWhatsAppDemo({
                   ) : null}
                   {message.kind === "offer" ? (
                     <span className="wd-message-label">
-                      <Handshake size={15} />
+                      <IconHeartHandshake size={15} />
                       {lg
                         ? "Ekiweebwayo eky'okulabirako"
                         : "Sample offer · not published"}
@@ -359,7 +359,7 @@ function FarmerWhatsAppDemo({
                     <span
                       className={`wd-payment-badge ${message.paymentStatus}`}
                     >
-                      <CreditCard size={15} />
+                      <IconCreditCard size={15} />
                       {message.paymentStatus === "confirmed"
                         ? lg
                           ? "Ekakasiddwa · demo"
@@ -372,7 +372,7 @@ function FarmerWhatsAppDemo({
                   <p>{message.text}</p>
                   <span className="wd-message-foot">
                     {message.sender === "farmer" ? (
-                      <CheckCheck size={13} aria-label="Shown in this demo" />
+                      <IconChecks size={13} aria-label="Shown in this demo" />
                     ) : (
                       <span>Agribridge · demo</span>
                     )}
@@ -394,7 +394,7 @@ function FarmerWhatsAppDemo({
                     onClick={() => act(choice.action)}
                   >
                     {choice.label}
-                    <ArrowRight size={13} />
+                    <IconArrowRight size={13} />
                   </button>
                 ))}
               </div>
@@ -419,7 +419,7 @@ function FarmerWhatsAppDemo({
                   disabled={!input.trim()}
                   aria-label={lg ? "Laga eky'okuddamu" : "Send demo reply"}
                 >
-                  <Send size={19} />
+                  <IconSend size={19} />
                 </button>
               </form>
               <button
@@ -433,7 +433,7 @@ function FarmerWhatsAppDemo({
                   })
                 }
               >
-                <Headphones size={15} />
+                <IconHeadphones size={15} />
                 {lg
                   ? "Gezaako ebiwandiiko by'eddoboozi ery'okulabirako"
                   : "Try a scripted voice-note example"}
@@ -449,9 +449,9 @@ function FarmerWhatsAppDemo({
             <div>
               <span className="wd-profile-icon">
                 {state.offerCreated ? (
-                  <Handshake size={20} />
+                  <IconHeartHandshake size={20} />
                 ) : (
-                  <Building2 size={20} />
+                  <IconBuilding size={20} />
                 )}
               </span>
               <div>
@@ -470,7 +470,7 @@ function FarmerWhatsAppDemo({
               </div>
               {state.profile.confirmed ? (
                 <span className="wd-profile-status">
-                  <Check size={13} />
+                  <IconCheck size={13} />
                   Demo
                 </span>
               ) : null}
@@ -481,7 +481,7 @@ function FarmerWhatsAppDemo({
                   {state.profile.businessName ||
                     state.profile.name ||
                     "View sample details"}
-                  <ChevronRight size={14} />
+                  <IconChevronRight size={14} />
                 </summary>
                 <p>{demoProfileSummary(state.profile, state.language)}</p>
               </details>
@@ -496,7 +496,7 @@ function FarmerWhatsAppDemo({
             ) : null}
             {state.offerCreated ? (
               <p className="wd-offer-note">
-                <Check size={14} />A sample offer was created from your
+                <IconCheck size={14} />A sample offer was created from your
                 conversation. It has not been published or sent to a buyer.
               </p>
             ) : null}
@@ -505,7 +505,7 @@ function FarmerWhatsAppDemo({
       </main>
       <footer className="wd-footer">
         <span>
-          <Sprout size={15} />
+          <IconSeedling size={15} />
           Rooted in Uganda. Connected to opportunity.
         </span>
         <span>

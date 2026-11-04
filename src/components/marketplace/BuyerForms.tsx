@@ -1,11 +1,11 @@
 import { useState } from "react";
 import {
-  ArrowRight,
-  Building2,
-  CheckCheck,
-  CreditCard,
-  MapPin,
-} from "lucide-react";
+  IconArrowRight,
+  IconBuilding,
+  IconChecks,
+  IconCreditCard,
+  IconMapPin,
+} from "@tabler/icons-react";
 import { Button, Field, Form, Modal } from "../ui";
 import type { BuyerAccount, BuyerListing } from "../../../server/buyer-types";
 import type { BuyerOrder } from "../../../server/buyer-order-types";
@@ -224,7 +224,7 @@ export function BuyerOrderDialog({
       <div className="buyer-dialog">
         <div className="buyer-review-item">
           <span className="buyer-review-icon">
-            <Building2 size={24} />
+            <IconBuilding size={24} />
           </span>
           <div>
             <strong>{listing.variety || listing.crop}</strong>
@@ -337,7 +337,7 @@ export function BuyerOrderDialog({
             </p>
           </div>
           <div className="buyer-order-explainer buyer-form-full">
-            <CreditCard size={19} />
+            <IconCreditCard size={19} />
             <p>
               No payment is taken. This is an order request, subject to seller
               acceptance. Sending a request does not reserve stock.
@@ -374,7 +374,7 @@ export function BuyerConfirmation({
     >
       <div className="buyer-dialog buyer-confirmation">
         <span className="buyer-confirmation-mark">
-          <CheckCheck size={30} />
+          <IconChecks size={30} />
         </span>
         <p className="buyer-confirmation-status">
           {order.sample ? "SAMPLE REQUEST SAVED" : "ORDER REQUEST SAVED"}
@@ -406,7 +406,7 @@ export function BuyerConfirmation({
         </p>
         <Button onClick={onOrders}>
           {simulation ? "View sample requests" : "Track my request"}{" "}
-          <ArrowRight size={16} />
+          <IconArrowRight size={16} />
         </Button>
       </div>
     </Modal>
@@ -430,7 +430,7 @@ export function BuyerAccountDialog({
     >
       <div className="buyer-dialog">
         <div className="buyer-account-card">
-          <Building2 size={27} />
+          <IconBuilding size={27} />
           <div>
             <strong>{buyer.businessName || buyer.name}</strong>
             <span>{buyer.businessName ? buyer.name : "Individual buyer"}</span>
@@ -453,7 +453,7 @@ export function BuyerAccountDialog({
           <div>
             <dt>Location</dt>
             <dd>
-              <MapPin size={13} />{" "}
+              <IconMapPin size={13} />{" "}
               {[buyer.community, buyer.district].filter(Boolean).join(", ")}
             </dd>
           </div>

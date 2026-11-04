@@ -12,15 +12,15 @@ import {
 } from "react";
 import { createPortal } from "react-dom";
 import {
-  X,
-  LoaderCircle,
-  Search,
-  Inbox,
-  ArrowRight,
-  AlertCircle,
-  Check,
-  type LucideIcon,
-} from "lucide-react";
+  IconAlertCircle,
+  IconArrowRight,
+  IconCheck,
+  IconInbox,
+  IconLoader2,
+  IconSearch,
+  IconX,
+} from "@tabler/icons-react";
+import type { TablerIcon } from "@tabler/icons-react";
 
 // A dialog owns submission locks, including forms that mount inside its children.
 const ModalSubmissionContext = createContext<(() => () => void) | null>(null);
@@ -79,7 +79,7 @@ export function Button({
       disabled={props.disabled || busy}
       className={`button button-${variant} ${props.className ?? ""}`}
     >
-      {busy && <LoaderCircle size={16} className="spin" />}
+      {busy && <IconLoader2 size={16} className="spin" />}
       {children}
     </button>
   );
@@ -116,16 +116,16 @@ export function Empty({
   title,
   body,
   action,
-  icon: Icon = Inbox,
+  icon: Icon = IconInbox,
 }: {
   title: string;
   body: string;
   action?: ReactNode;
-  icon?: LucideIcon;
+  icon?: TablerIcon;
 }) {
   return (
     <div className="empty">
-      <Icon size={32} strokeWidth={1.4} />
+      <Icon size={32} stroke={1.4} />
       <h3>{title}</h3>
       <p>{body}</p>
       {action}
@@ -135,7 +135,7 @@ export function Empty({
 export function ErrorMessage({ message }: { message: string }) {
   return (
     <div role="alert" className="notice notice-error">
-      <AlertCircle size={18} />
+      <IconAlertCircle size={18} />
       <span>{message}</span>
     </div>
   );
@@ -149,7 +149,11 @@ export function Notice({
 }) {
   return (
     <div className={`notice notice-${tone}`}>
-      {tone === "success" ? <Check size={18} /> : <AlertCircle size={18} />}
+      {tone === "success" ? (
+        <IconCheck size={18} />
+      ) : (
+        <IconAlertCircle size={18} />
+      )}
       <div>{children}</div>
     </div>
   );
@@ -165,7 +169,7 @@ export function SearchInput({
 }) {
   return (
     <label className="search-input">
-      <Search size={18} />
+      <IconSearch size={18} />
       <input
         aria-label={placeholder}
         value={value}
@@ -273,7 +277,7 @@ export function Modal({
               disabled={submitting}
               onClick={requestClose}
             >
-              <X size={20} />
+              <IconX size={20} />
             </button>
           </header>
           {children}
@@ -351,7 +355,7 @@ export function Form({
         </Button>
         <Button type="submit" busy={busy}>
           {submitLabel}
-          <ArrowRight size={16} />
+          <IconArrowRight size={16} />
         </Button>
       </footer>
     </form>

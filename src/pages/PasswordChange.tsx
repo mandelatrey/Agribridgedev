@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { LockKeyhole } from "lucide-react";
+import { IconLock } from "@tabler/icons-react";
 import { Button, ErrorMessage, Field } from "../components/ui";
 import { useApp } from "../context/AppContext";
 export default function PasswordChange() {
@@ -28,7 +28,7 @@ export default function PasswordChange() {
   return (
     <div className="password-page">
       <div className="panel">
-        <LockKeyhole size={35} />
+        <IconLock size={35} />
         <h1>Make this account yours.</h1>
         <p>
           Replace your initial password before opening your workspace. Use at

@@ -1,12 +1,12 @@
 import { useCallback, useState } from "react";
 import {
-  Plus,
-  Droplets,
-  Leaf,
-  Users,
-  ShieldCheck,
-  ChevronRight,
-} from "lucide-react";
+  IconChevronRight,
+  IconDroplets,
+  IconLeaf,
+  IconPlus,
+  IconShieldCheck,
+  IconUsers,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -43,14 +43,14 @@ export default function Community() {
         description="Notice something? Help your local team understand what needs attention."
         action={
           <Button onClick={() => setCreating(true)}>
-            <Plus size={18} />
+            <IconPlus size={18} />
             Report a concern
           </Button>
         }
       />
       <div className="community-intro">
         <div>
-          <Users size={29} />
+          <IconUsers size={29} />
           <h2>Small observations can make a difference.</h2>
           <p>
             Report crop changes or standing water. Your local team can review
@@ -58,7 +58,7 @@ export default function Community() {
           </p>
         </div>
         <div className="privacy-note">
-          <ShieldCheck size={24} />
+          <IconShieldCheck size={24} />
           <strong>Your community’s privacy comes first.</strong>
           <p>
             Describe the environment. Leave out patient names, medical records,
@@ -92,9 +92,9 @@ export default function Community() {
               className={`round-icon ${report.kind === "standing_water" ? "water-icon" : ""}`}
             >
               {report.kind === "standing_water" ? (
-                <Droplets size={24} />
+                <IconDroplets size={24} />
               ) : (
-                <Leaf size={24} />
+                <IconLeaf size={24} />
               )}
             </span>
             <span className="report-copy">
@@ -115,12 +115,12 @@ export default function Community() {
             >
               {label(report.status)}
             </Badge>
-            <ChevronRight size={18} />
+            <IconChevronRight size={18} />
           </button>
         ))}
         {!reports.length && (
           <Empty
-            icon={Users}
+            icon={IconUsers}
             title="No reports to show."
             body="When you notice a concern, describe it here so your local team can review it."
           />

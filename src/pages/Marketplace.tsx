@@ -7,23 +7,23 @@ import {
 } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight,
-  Bell,
-  Building2,
-  CalendarDays,
-  ChevronDown,
-  CloudSun,
-  Handshake,
-  Leaf,
-  MapPin,
-  PackageCheck,
-  Plus,
-  RefreshCw,
-  SlidersHorizontal,
-  Sprout,
-  Truck,
-  UserRound,
-} from "lucide-react";
+  IconAdjustmentsHorizontal,
+  IconArrowRight,
+  IconBell,
+  IconBuilding,
+  IconCalendarMonth,
+  IconChevronDown,
+  IconCloud,
+  IconHeartHandshake,
+  IconLeaf,
+  IconMapPin,
+  IconPackages,
+  IconPlus,
+  IconRefresh,
+  IconSeedling,
+  IconTruck,
+  IconUser,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -73,13 +73,14 @@ import "../styles/market-buyers.css";
 
 type Tab = "buyers" | "produce" | "services" | "business" | "connections";
 type Editor = "business" | "supply" | "interest" | "demand" | "service" | null;
-const sections: { id: Tab; label: string; icon: typeof Handshake }[] = [
-  { id: "buyers", label: "Find buyers", icon: Handshake },
-  { id: "produce", label: "My produce", icon: PackageCheck },
-  { id: "services", label: "Inputs & logistics", icon: Truck },
-  { id: "business", label: "My business", icon: Building2 },
-  { id: "connections", label: "Orders & updates", icon: Bell },
-];
+const sections: { id: Tab; label: string; icon: typeof IconHeartHandshake }[] =
+  [
+    { id: "buyers", label: "Find buyers", icon: IconHeartHandshake },
+    { id: "produce", label: "My produce", icon: IconPackages },
+    { id: "services", label: "Inputs & logistics", icon: IconTruck },
+    { id: "business", label: "My business", icon: IconBuilding },
+    { id: "connections", label: "Orders & updates", icon: IconBell },
+  ];
 const PAGE_SIZE = 50;
 
 export default function Marketplace() {
@@ -332,7 +333,7 @@ function MarketWorkspace() {
         description="Bring your harvest closer to its next buyer."
         action={
           <Button disabled={!online} onClick={() => startListing()}>
-            <Plus size={17} />
+            <IconPlus size={17} />
             List my produce
           </Button>
         }
@@ -345,7 +346,7 @@ function MarketWorkspace() {
       ) : null}
       {overview?.sample ? (
         <div className="market-sample-notice">
-          <Leaf size={15} />
+          <IconLeaf size={15} />
           <span>
             Demo workspace · all sample buyers, produce and service quotes are
             illustrative.
@@ -357,7 +358,7 @@ function MarketWorkspace() {
         <Skeleton />
       ) : !overview ? (
         <Empty
-          icon={Handshake}
+          icon={IconHeartHandshake}
           title={
             online
               ? "Your market workspace could not open."
@@ -366,7 +367,7 @@ function MarketWorkspace() {
           body="Check your connection, then refresh to see available buyers and services."
           action={
             <Button disabled={!online} onClick={() => void read()}>
-              <RefreshCw size={16} />
+              <IconRefresh size={16} />
               Try again
             </Button>
           }
@@ -393,11 +394,11 @@ function MarketWorkspace() {
               <div className="market-intro-actions">
                 <Button onClick={() => startListing()} disabled={!online}>
                   {profile ? "Add available produce" : "Register my business"}
-                  <ArrowRight size={16} />
+                  <IconArrowRight size={16} />
                 </Button>
                 <Link to="/markets">
                   Check market prices
-                  <ArrowRight size={15} />
+                  <IconArrowRight size={15} />
                 </Link>
               </div>
             </div>
@@ -418,21 +419,21 @@ function MarketWorkspace() {
             aria-label="Current market workspace"
           >
             <span>
-              <Handshake size={18} />
+              <IconHeartHandshake size={18} />
               <strong>{openDemand.length}</strong> buyer{" "}
               {openDemand.length === 1 ? "request" : "requests"}
             </span>
             <span>
-              <PackageCheck size={18} />
+              <IconPackages size={18} />
               <strong>{availableSupply.length}</strong> available{" "}
               {availableSupply.length === 1 ? "listing" : "listings"}
             </span>
             <span>
-              <MapPin size={18} />
+              <IconMapPin size={18} />
               <strong>{profile?.district || "Your community"}</strong>
               <button onClick={() => setEditor("business")} disabled={!online}>
                 {profile ? "Edit business" : "Set up business"}
-                <ArrowRight size={13} />
+                <IconArrowRight size={13} />
               </button>
             </span>
           </div>
@@ -496,7 +497,7 @@ function MarketWorkspace() {
                 }
               />
               <label className="market-district-filter">
-                <MapPin size={15} />
+                <IconMapPin size={15} />
                 <span className="sr-only">Filter by district</span>
                 <select
                   value={district}
@@ -508,7 +509,7 @@ function MarketWorkspace() {
                     <option key={item.name}>{item.name}</option>
                   ))}
                 </select>
-                <ChevronDown size={14} />
+                <IconChevronDown size={14} />
               </label>
               <Button
                 variant="ghost"
@@ -517,7 +518,7 @@ function MarketWorkspace() {
                 disabled={!online}
                 aria-label="Refresh marketplace"
               >
-                <RefreshCw size={16} />
+                <IconRefresh size={16} />
               </Button>
             </div>
           ) : null}
@@ -551,7 +552,7 @@ function MarketWorkspace() {
                             setOnlyMatching(event.target.checked)
                           }
                         />
-                        <SlidersHorizontal size={15} />
+                        <IconAdjustmentsHorizontal size={15} />
                         Fits my produce
                       </label>
                     ) : null}
@@ -561,7 +562,7 @@ function MarketWorkspace() {
                         disabled={!online}
                         onClick={() => setEditor("demand")}
                       >
-                        <Plus size={16} />
+                        <IconPlus size={16} />
                         Add buyer request
                       </Button>
                     ) : null}
@@ -589,7 +590,7 @@ function MarketWorkspace() {
                   </div>
                 ) : (
                   <Empty
-                    icon={Handshake}
+                    icon={IconHeartHandshake}
                     title={
                       query || district || onlyMatching
                         ? "No requests match these filters."
@@ -606,7 +607,7 @@ function MarketWorkspace() {
                         disabled={!online}
                         onClick={() => startListing()}
                       >
-                        <Plus size={16} />
+                        <IconPlus size={16} />
                         List produce
                       </Button>
                     }
@@ -633,7 +634,7 @@ function MarketWorkspace() {
                     disabled={!online}
                     onClick={() => startListing()}
                   >
-                    <Plus size={16} />
+                    <IconPlus size={16} />
                     Add produce
                   </Button>
                 </div>
@@ -666,12 +667,12 @@ function MarketWorkspace() {
                   </div>
                 ) : (
                   <Empty
-                    icon={Sprout}
+                    icon={IconSeedling}
                     title="Tell the market what you're growing."
                     body="Add the variety, quantity and harvest window. You can discuss price and quality before a sale."
                     action={
                       <Button disabled={!online} onClick={() => startListing()}>
-                        <Plus size={16} />
+                        <IconPlus size={16} />
                         List my produce
                       </Button>
                     }
@@ -690,7 +691,7 @@ function MarketWorkspace() {
                       );
                       return (
                         <div key={interest.id}>
-                          <Handshake size={18} />
+                          <IconHeartHandshake size={18} />
                           <span>
                             <strong>
                               {demand?.organization || "Buyer request"}
@@ -732,7 +733,7 @@ function MarketWorkspace() {
                       disabled={!online}
                       onClick={() => setEditor("service")}
                     >
-                      <Plus size={16} />
+                      <IconPlus size={16} />
                       Record a quote
                     </Button>
                   ) : null}
@@ -761,7 +762,7 @@ function MarketWorkspace() {
                   </div>
                 ) : (
                   <Empty
-                    icon={Truck}
+                    icon={IconTruck}
                     title="No sourced quotes for this search."
                     body="Try another district or service. The market desk can explain what is recorded; unavailable prices are never estimated."
                   />
@@ -792,7 +793,7 @@ function MarketWorkspace() {
                 onClick={() => void read(nextOffset)}
               >
                 Load more records
-                <ChevronDown size={16} />
+                <IconChevronDown size={16} />
               </Button>
             </div>
           ) : null}
@@ -803,20 +804,20 @@ function MarketWorkspace() {
           />
           <div className="market-support-links">
             <Link to="/weather">
-              <CloudSun size={19} />
+              <IconCloud size={19} />
               <span>
                 <strong>Plan around the forecast</strong>
                 <small>Dated forecasts and official warning status</small>
               </span>
-              <ArrowRight size={17} />
+              <IconArrowRight size={17} />
             </Link>
             <Link to="/settings">
-              <Bell size={19} />
+              <IconBell size={19} />
               <span>
                 <strong>Connection & support</strong>
                 <small>WhatsApp readiness and your channel preferences</small>
               </span>
-              <ArrowRight size={17} />
+              <IconArrowRight size={17} />
             </Link>
           </div>
         </>
@@ -869,7 +870,7 @@ function BusinessOverview({
     return (
       <section className="market-business-empty">
         <span>
-          <Building2 size={34} strokeWidth={1.3} />
+          <IconBuilding size={34} stroke={1.3} />
         </span>
         <h2>Give your farm a place in the market.</h2>
         <p>
@@ -878,7 +879,7 @@ function BusinessOverview({
         </p>
         <Button onClick={onEdit} disabled={!online}>
           Register my business
-          <ArrowRight size={16} />
+          <IconArrowRight size={16} />
         </Button>
         <small>
           No email address is needed. Your account and payment verification
@@ -890,7 +891,7 @@ function BusinessOverview({
     <section className="market-business">
       <header>
         <span className="market-business-avatar">
-          <Building2 size={30} strokeWidth={1.3} />
+          <IconBuilding size={30} stroke={1.3} />
         </span>
         <div>
           <span className="market-record-label">
@@ -898,7 +899,7 @@ function BusinessOverview({
           </span>
           <h2>{profile.businessName}</h2>
           <p>
-            <MapPin size={15} />
+            <IconMapPin size={15} />
             {profile.community}, {profile.district}
           </p>
         </div>
@@ -909,7 +910,7 @@ function BusinessOverview({
       <dl>
         <div>
           <dt>
-            <UserRound size={16} />
+            <IconUser size={16} />
             Farmer / representative
           </dt>
           <dd>{profile.name}</dd>
@@ -932,7 +933,7 @@ function BusinessOverview({
         </div>
         <div className="market-business-crops">
           <dt>
-            <Sprout size={16} />
+            <IconSeedling size={16} />
             What you grow
           </dt>
           <dd>
@@ -943,7 +944,7 @@ function BusinessOverview({
         </div>
         <div>
           <dt>
-            <CalendarDays size={16} />
+            <IconCalendarMonth size={16} />
             Last updated
           </dt>
           <dd>{date(profile.updatedAt)}</dd>

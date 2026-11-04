@@ -1,14 +1,14 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  ArrowUp,
-  Bot,
-  BookOpen,
-  ExternalLink,
-  RefreshCw,
-  ShieldCheck,
-  Sprout,
-} from "lucide-react";
+  IconArrowUp,
+  IconBook,
+  IconExternalLink,
+  IconRefresh,
+  IconRobot,
+  IconSeedling,
+  IconShieldCheck,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { request } from "../lib/api";
 import {
@@ -95,7 +95,7 @@ export default function Assistant() {
         <section className="assistant-main">
           {suggestedQuestion && !busy && !reply && !error && (
             <div className="assistant-question-context">
-              <Bot size={21} aria-hidden="true" />
+              <IconRobot size={21} aria-hidden="true" />
               <span>
                 Your guide prepared a question below. Edit it as needed, then
                 choose whether to send it. Nothing has been sent yet.
@@ -105,7 +105,7 @@ export default function Assistant() {
           {!suggestedQuestion && (
             <div className="assistant-welcome">
               <span className="assistant-mark">
-                <Sprout size={35} />
+                <IconSeedling size={35} />
               </span>
               <h2>Let’s work it out together.</h2>
               <p>
@@ -127,7 +127,7 @@ export default function Assistant() {
                     }}
                   >
                     {q}
-                    <ArrowUp size={16} />
+                    <IconArrowUp size={16} />
                   </button>
                 ))}
               </div>
@@ -150,7 +150,7 @@ export default function Assistant() {
             <section className="assistant-answer" aria-live="polite">
               <p className="asked-question">{asked}</p>
               <div className="answer-heading">
-                <Bot size={23} />
+                <IconRobot size={23} />
                 <strong>Agribridge assistant</strong>
                 <Badge>
                   {reply.model === "safety-guidance"
@@ -162,9 +162,9 @@ export default function Assistant() {
               <div className="answer-sources">
                 {reply.sources.map((s, i) => (
                   <a key={i} href={s.url} target="_blank" rel="noreferrer">
-                    <BookOpen size={14} />
+                    <IconBook size={14} />
                     {s.title}
-                    <ExternalLink size={13} />
+                    <IconExternalLink size={13} />
                   </a>
                 ))}
               </div>
@@ -229,7 +229,7 @@ export default function Assistant() {
                 }
               >
                 Ask assistant
-                <ArrowUp size={17} />
+                <IconArrowUp size={17} />
               </Button>
             </div>
           </form>
@@ -238,7 +238,7 @@ export default function Assistant() {
           <section className="panel">
             <div className="panel-header">
               <h2>Useful, with clear limits.</h2>
-              <ShieldCheck size={20} />
+              <IconShieldCheck size={20} />
             </div>
             <div className="panel-body">
               <p>
@@ -254,7 +254,7 @@ export default function Assistant() {
               </ul>
               <Link className="text-link" to="/community">
                 Request a local review
-                <ArrowUp size={15} />
+                <IconArrowUp size={15} />
               </Link>
             </div>
           </section>
@@ -266,7 +266,7 @@ export default function Assistant() {
                 aria-label="Refresh assistant status"
                 onClick={() => void loadStatus()}
               >
-                <RefreshCw size={17} />
+                <IconRefresh size={17} />
               </button>
             </div>
             <div className="panel-body">
@@ -290,7 +290,7 @@ export default function Assistant() {
                 {status?.dailyLimit ?? "—"} requests per day.
               </small>
               <Link className="text-link" to="/learn?view=guides">
-                Browse field guides <BookOpen size={16} />
+                Browse field guides <IconBook size={16} />
               </Link>
             </div>
           </section>

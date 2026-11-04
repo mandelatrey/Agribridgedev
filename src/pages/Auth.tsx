@@ -1,6 +1,12 @@
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { Sprout, ArrowRight, WifiOff, BookOpen, Users } from "lucide-react";
+import {
+  IconArrowRight,
+  IconBook,
+  IconSeedling,
+  IconUsers,
+  IconWifiOff,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { Button, ErrorMessage, Field } from "../components/ui";
 export default function Auth() {
@@ -37,7 +43,7 @@ export default function Auth() {
     <div className="auth-page">
       <section className="auth-story">
         <div className="brand">
-          <Sprout size={34} />
+          <IconSeedling size={34} />
           Agribridge
         </div>
         <div>
@@ -52,15 +58,15 @@ export default function Auth() {
           </p>
           <ul>
             <li>
-              <WifiOff />
+              <IconWifiOff />
               Built for days with little connection
             </li>
             <li>
-              <BookOpen />
+              <IconBook />
               Short lessons. Useful next steps.
             </li>
             <li>
-              <Users />
+              <IconUsers />
               Your cooperative, working together
             </li>
           </ul>
@@ -68,7 +74,7 @@ export default function Auth() {
         <small>Rooted in Uganda. Growing together.</small>
       </section>
       <section className="auth-form">
-        <Sprout size={35} className="auth-sprout" />
+        <IconSeedling size={35} className="auth-sprout" />
         <h2>Welcome to Agribridge.</h2>
         <p>Everything for your next growing season.</p>
         {(error || connectionError) && (
@@ -86,7 +92,7 @@ export default function Auth() {
               onClick={() => void tryDemo("farmer")}
             >
               Try farmer demo
-              <ArrowRight size={18} />
+              <IconArrowRight size={18} />
             </Button>
             <Button
               variant="secondary"
@@ -95,7 +101,7 @@ export default function Auth() {
               onClick={() => void tryDemo("operator")}
             >
               Try cooperative demo
-              <Users size={18} />
+              <IconUsers size={18} />
             </Button>
             <div className="auth-divider">or sign in to your account</div>
           </div>
@@ -126,7 +132,7 @@ export default function Auth() {
             disabled={!!busy}
           >
             Sign in
-            <ArrowRight size={17} />
+            <IconArrowRight size={17} />
           </Button>
         </form>
         <p className="auth-note">

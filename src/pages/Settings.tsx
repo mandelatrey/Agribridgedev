@@ -1,18 +1,18 @@
 import { useState } from "react";
 import {
-  Download,
-  Wifi,
-  WifiOff,
-  RefreshCw,
-  Trash2,
-  Smartphone,
-  MessageSquare,
-  Phone,
-  Grid3X3,
-  LogOut,
-  ShieldCheck,
-  LockKeyhole,
-} from "lucide-react";
+  IconDeviceMobile,
+  IconDownload,
+  IconGrid3x3,
+  IconLock,
+  IconLogout,
+  IconMessage,
+  IconPhone,
+  IconRefresh,
+  IconShieldCheck,
+  IconTrash,
+  IconWifi,
+  IconWifiOff,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { Badge, Button, Field, Notice, PageHeader } from "../components/ui";
 import { dateTime, label } from "../lib/format";
@@ -68,25 +68,25 @@ export default function Settings() {
     {
       id: "sms",
       name: "SMS",
-      icon: MessageSquare,
+      icon: IconMessage,
       body: "Short updates on a basic phone. Mobile signal required.",
     },
     {
       id: "ussd",
       name: "USSD",
-      icon: Grid3X3,
+      icon: IconGrid3x3,
       body: "Short menus without mobile data. Network service required.",
     },
     {
       id: "whatsapp",
       name: "WhatsApp",
-      icon: Smartphone,
+      icon: IconDeviceMobile,
       body: "Messages and richer support when you have mobile data.",
     },
     {
       id: "voice",
       name: "Voice / callback",
-      icon: Phone,
+      icon: IconPhone,
       body: "A conversation with your support team.",
     },
   ] as const;
@@ -108,7 +108,7 @@ export default function Settings() {
         <section className="panel">
           <div className="panel-header">
             <h2>Your connection</h2>
-            {online ? <Wifi size={20} /> : <WifiOff size={20} />}
+            {online ? <IconWifi size={20} /> : <IconWifiOff size={20} />}
           </div>
           <div className="panel-body">
             <div className="settings-status">
@@ -175,7 +175,7 @@ export default function Settings() {
               />
             </div>
             <p className="muted icon-text">
-              <Download size={16} />
+              <IconDownload size={16} />
               {import.meta.env.PROD
                 ? "Install this app from your browser menu for quick access."
                 : "Offline reopening is enabled in the built app. This development view supports saved records while open."}
@@ -238,13 +238,13 @@ export default function Settings() {
                         void run("discard", () => discard(q.idempotencyKey));
                     }}
                   >
-                    <Trash2 size={17} />
+                    <IconTrash size={17} />
                   </button>
                 </div>
               ))
             ) : (
               <div className="sync-clear">
-                <ShieldCheck size={34} />
+                <IconShieldCheck size={34} />
                 <h3>No pending changes.</h3>
                 <p>Your saved changes have no outstanding sync work.</p>
               </div>
@@ -265,7 +265,7 @@ export default function Settings() {
                 })
               }
             >
-              <RefreshCw size={16} />
+              <IconRefresh size={16} />
               {online ? "Sync now" : "Try reconnecting"}
             </Button>
             {queue.some((q) => q.status === "conflict") && (
@@ -282,7 +282,7 @@ export default function Settings() {
       <section className="panel preferences-panel">
         <div className="panel-header">
           <h2>Meet me where I am.</h2>
-          <Smartphone size={20} />
+          <IconDeviceMobile size={20} />
         </div>
         <div className="panel-body">
           <p className="muted">
@@ -358,7 +358,7 @@ export default function Settings() {
       <section className="panel">
         <div className="panel-header">
           <h2>Your account</h2>
-          <LockKeyhole size={20} />
+          <IconLock size={20} />
         </div>
         <div className="panel-body account-panel">
           <div>
@@ -387,7 +387,7 @@ export default function Settings() {
             disabled={!!busy}
             onClick={() => void run("lock", lockWorkspace)}
           >
-            <LockKeyhole size={17} />
+            <IconLock size={17} />
             Lock workspace
           </Button>
           <p className="muted">
@@ -400,7 +400,7 @@ export default function Settings() {
             busy={busy === "logout"}
             onClick={() => void run("logout", logout)}
           >
-            <LogOut size={17} />
+            <IconLogout size={17} />
             Sign out
           </Button>
         </div>

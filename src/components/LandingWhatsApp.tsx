@@ -1,21 +1,21 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight,
-  ArrowUpRight,
-  Check,
-  CheckCheck,
-  CloudSun,
-  Headphones,
-  Leaf,
-  MapPin,
-  Mic,
-  MoreVertical,
-  Phone,
-  ShoppingBasket,
-  Smile,
-  Sprout,
-} from "lucide-react";
+  IconArrowRight,
+  IconArrowUpRight,
+  IconBasket,
+  IconCheck,
+  IconChecks,
+  IconCloud,
+  IconDotsVertical,
+  IconHeadphones,
+  IconLeaf,
+  IconMapPin,
+  IconMicrophone,
+  IconMoodSmile,
+  IconPhone,
+  IconSeedling,
+} from "@tabler/icons-react";
 import WhatsAppMark from "./WhatsAppMark";
 import "../styles/landing-whatsapp.css";
 
@@ -134,7 +134,7 @@ function SampleCard({ audience, step }: { audience: Audience; step: number }) {
         <ol className="lwh-payment-events">
           <li>
             <span>
-              <Check size={12} aria-hidden="true" />
+              <IconCheck size={12} aria-hidden="true" />
             </span>
             <div>
               <strong>Payment approved</strong>
@@ -194,7 +194,7 @@ function SampleCard({ audience, step }: { audience: Audience; step: number }) {
       <div className="lwh-sample-card">
         <span className="lwh-card-label">{cards.label}</span>
         <div className="lwh-card-title">
-          <ShoppingBasket size={19} aria-hidden="true" />
+          <IconBasket size={19} aria-hidden="true" />
           <strong>{cards.title}</strong>
         </div>
         <dl className="lwh-briefing">
@@ -214,11 +214,11 @@ function SampleCard({ audience, step }: { audience: Audience; step: number }) {
       <div className="lwh-sample-card">
         <span className="lwh-card-label">Sample business profile</span>
         <div className="lwh-card-title">
-          <Sprout size={20} aria-hidden="true" />
+          <IconSeedling size={20} aria-hidden="true" />
           <strong>Demo Farm</strong>
         </div>
         <p className="lwh-location">
-          <MapPin size={13} aria-hidden="true" /> Kiwoko, Nakaseke
+          <IconMapPin size={13} aria-hidden="true" /> Kiwoko, Nakaseke
         </p>
         <dl className="lwh-profile-fields">
           <div>
@@ -241,11 +241,12 @@ function SampleCard({ audience, step }: { audience: Audience; step: number }) {
       <div className="lwh-sample-card">
         <span className="lwh-card-label">Sample buyer request</span>
         <div className="lwh-card-title">
-          <Leaf size={20} aria-hidden="true" />
+          <IconLeaf size={20} aria-hidden="true" />
           <strong>White maize wanted</strong>
         </div>
         <p className="lwh-location">
-          <MapPin size={13} aria-hidden="true" /> Example food buyer · Kampala
+          <IconMapPin size={13} aria-hidden="true" /> Example food buyer ·
+          Kampala
         </p>
         <div className="lwh-volume">
           <strong>
@@ -263,7 +264,7 @@ function SampleCard({ audience, step }: { audience: Audience; step: number }) {
     <div className="lwh-sample-card">
       <span className="lwh-card-label">Sample market briefing</span>
       <div className="lwh-card-title">
-        <CloudSun size={20} aria-hidden="true" />
+        <IconCloud size={20} aria-hidden="true" />
         <strong>Before the farm gate</strong>
       </div>
       <dl className="lwh-briefing">
@@ -366,9 +367,9 @@ export function LandingWhatsApp({
               }}
             >
               {item === "farmer" ? (
-                <Sprout size={19} aria-hidden="true" />
+                <IconSeedling size={19} aria-hidden="true" />
               ) : (
-                <ShoppingBasket size={19} aria-hidden="true" />
+                <IconBasket size={19} aria-hidden="true" />
               )}
               {item === "farmer" ? "I’m a farmer" : "I’m a buyer"}
               <span>
@@ -409,7 +410,7 @@ export function LandingWhatsApp({
                     </strong>
                     <span>{item.description}</span>
                   </span>
-                  <ArrowRight size={18} aria-hidden="true" />
+                  <IconArrowRight size={18} aria-hidden="true" />
                 </button>
               ))}
             </div>
@@ -417,7 +418,7 @@ export function LandingWhatsApp({
               {current.description}
             </p>
             <div className="lwh-inclusion">
-              <Headphones size={18} aria-hidden="true" />
+              <IconHeadphones size={18} aria-hidden="true" />
               <p>
                 English, Luganda and voice conversations are planned.
                 <br />
@@ -435,11 +436,11 @@ export function LandingWhatsApp({
               >
                 <WhatsAppMark size={19} />
                 Try the {audience} conversation{" "}
-                <ArrowUpRight size={18} aria-hidden="true" />
+                <IconArrowUpRight size={18} aria-hidden="true" />
               </Link>
               {audience === "buyer" && (
                 <Link className="lwh-web-option" to="/buy">
-                  Prefer the web? Browse produce <ArrowRight size={14} />
+                  Prefer the web? Browse produce <IconArrowRight size={14} />
                 </Link>
               )}
             </div>
@@ -458,7 +459,7 @@ export function LandingWhatsApp({
               </div>
               <div className="lwh-chat-header">
                 <span className="lwh-avatar">
-                  <Sprout size={24} strokeWidth={1.5} aria-hidden="true" />
+                  <IconSeedling size={24} stroke={1.5} aria-hidden="true" />
                 </span>
                 <div className="lwh-contact">
                   <strong>Agribridge</strong>
@@ -469,8 +470,8 @@ export function LandingWhatsApp({
                   </span>
                 </div>
                 <div className="lwh-chat-tools" aria-hidden="true">
-                  <Phone size={17} />
-                  <MoreVertical size={19} />
+                  <IconPhone size={17} />
+                  <IconDotsVertical size={19} />
                 </div>
               </div>
               <div
@@ -487,7 +488,7 @@ export function LandingWhatsApp({
                   <p>{current.sender}</p>
                   <span className="lwh-message-meta">
                     <span>09:41</span>
-                    <CheckCheck size={14} aria-hidden="true" />
+                    <IconChecks size={14} aria-hidden="true" />
                   </span>
                 </div>
                 <div className="lwh-bubble lwh-team">
@@ -502,7 +503,7 @@ export function LandingWhatsApp({
                   <p>{current.followUp}</p>
                   <span className="lwh-message-meta">
                     <span>09:43</span>
-                    <CheckCheck size={14} aria-hidden="true" />
+                    <IconChecks size={14} aria-hidden="true" />
                   </span>
                 </div>
                 <div className="lwh-result">
@@ -511,10 +512,10 @@ export function LandingWhatsApp({
               </div>
               <div className="lwh-compose-preview" aria-hidden="true">
                 <span>
-                  <Smile size={19} />
+                  <IconMoodSmile size={19} />
                   <span>Message</span>
                 </span>
-                <Mic size={20} />
+                <IconMicrophone size={20} />
               </div>
               <p className="lwh-mock-note">Mock preview · no messages sent</p>
             </div>

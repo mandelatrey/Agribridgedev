@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Search } from "lucide-react";
+import { IconArrowUpRight, IconSearch } from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { Modal, SearchInput } from "./ui";
 import { searchWorkspace } from "../lib/workspace";
@@ -44,7 +44,7 @@ export function WorkspaceSearch() {
         aria-label="Search workspace"
         aria-haspopup="dialog"
       >
-        <Search size={17} />
+        <IconSearch size={17} />
         <span>Find a farm, task or tool</span>
         <kbd>Ctrl K</kbd>
       </button>
@@ -77,7 +77,7 @@ export function WorkspaceSearch() {
                     <strong>{result.title}</strong>
                     <span>{result.detail}</span>
                   </span>
-                  <ArrowUpRight size={18} />
+                  <IconArrowUpRight size={18} />
                 </Link>
               ))}
               {!results.length && (

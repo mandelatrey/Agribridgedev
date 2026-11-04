@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import {
-  ArrowUpRight,
-  Check,
-  Circle,
-  MessageSquare,
-  RefreshCw,
-} from "lucide-react";
+  IconArrowUpRight,
+  IconCheck,
+  IconCircle,
+  IconMessage,
+  IconRefresh,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { request } from "../lib/api";
 import { Badge, Button, ErrorMessage, Notice } from "./ui";
@@ -83,7 +83,7 @@ export default function WhatsAppConnection() {
     >
       <div className="panel-header">
         <h2 id="whatsapp-heading">
-          <MessageSquare size={20} /> Support on WhatsApp
+          <IconMessage size={20} /> Support on WhatsApp
         </h2>
         <Badge tone={chatUrl ? "green" : "amber"}>
           {!online
@@ -118,7 +118,7 @@ export default function WhatsAppConnection() {
                 rel="noopener noreferrer"
                 referrerPolicy="no-referrer"
               >
-                Open WhatsApp <ArrowUpRight size={17} />
+                Open WhatsApp <IconArrowUpRight size={17} />
               </a>
               <span>{connection?.businessNumber}</span>
             </div>
@@ -147,7 +147,7 @@ export default function WhatsAppConnection() {
             disabled={!online || checking}
             onClick={() => setAttempt((value) => value + 1)}
           >
-            <RefreshCw size={15} /> Check connection
+            <IconRefresh size={15} /> Check connection
           </Button>
         </div>
         <div className="wa-privacy-note">
@@ -177,9 +177,9 @@ export default function WhatsAppConnection() {
             {connection.checklist.map((item) => (
               <li key={item.id}>
                 {item.ready ? (
-                  <Check size={16} aria-hidden="true" />
+                  <IconCheck size={16} aria-hidden="true" />
                 ) : (
-                  <Circle size={16} aria-hidden="true" />
+                  <IconCircle size={16} aria-hidden="true" />
                 )}
                 <span>{item.label}</span>
                 <span className="muted">

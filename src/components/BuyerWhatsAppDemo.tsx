@@ -7,24 +7,24 @@ import {
   type ReactNode,
 } from "react";
 import {
-  ArrowLeft,
-  ArrowRight,
-  Building2,
-  Check,
-  CheckCheck,
-  ChevronRight,
-  CreditCard,
-  Handshake,
-  Headphones,
-  MapPin,
-  MessageCircle,
-  RotateCcw,
-  Send,
-  ShieldCheck,
-  ShoppingBasket,
-  Sprout,
-  Truck,
-} from "lucide-react";
+  IconArrowLeft,
+  IconArrowRight,
+  IconBasket,
+  IconBuilding,
+  IconCheck,
+  IconChecks,
+  IconChevronRight,
+  IconCreditCard,
+  IconHeadphones,
+  IconHeartHandshake,
+  IconMapPin,
+  IconMessageCircle,
+  IconRotate,
+  IconSeedling,
+  IconSend,
+  IconShieldCheck,
+  IconTruck,
+} from "@tabler/icons-react";
 import {
   buyerAmount,
   buyerDemoChoices,
@@ -70,22 +70,22 @@ export default function BuyerWhatsAppDemo({
   }
   const journey = [
     {
-      icon: Building2,
+      icon: IconBuilding,
       title: "Introduce your business",
       text: "Who you buy for, where you need it, and when.",
     },
     {
-      icon: ShoppingBasket,
+      icon: IconBasket,
       title: "Find the right produce",
       text: "Variety, quantity and quality before a conversation.",
     },
     {
-      icon: Handshake,
+      icon: IconHeartHandshake,
       title: "Agree with the seller",
       text: "A real confirmation before any commitment.",
     },
     {
-      icon: CreditCard,
+      icon: IconCreditCard,
       title: "Pay the seller directly",
       text: "Provider-confirmed updates, with Agribridge coordinating.",
     },
@@ -101,7 +101,7 @@ export default function BuyerWhatsAppDemo({
           href={platformHref || "#"}
           aria-label="Agribridge"
         >
-          <Sprout size={29} strokeWidth={1.7} />
+          <IconSeedling size={29} stroke={1.7} />
           Agribridge
         </a>
         {audienceControl}
@@ -112,7 +112,7 @@ export default function BuyerWhatsAppDemo({
           </span>
           {platformHref ? (
             <a className="wd-back" href={platformHref}>
-              <ArrowLeft size={14} />
+              <IconArrowLeft size={14} />
               Back to the platform
             </a>
           ) : null}
@@ -122,7 +122,7 @@ export default function BuyerWhatsAppDemo({
         <div className="wd-guide">
           <section className="wd-intro">
             <span className="wd-eyebrow">
-              <MessageCircle size={15} />
+              <IconMessageCircle size={15} />
               Good sourcing starts with a conversation.
             </span>
             <h1>
@@ -135,7 +135,7 @@ export default function BuyerWhatsAppDemo({
               you could source produce and coordinate an order through WhatsApp.
             </p>
             <div className="wd-demo-disclosure">
-              <ShieldCheck size={17} />
+              <IconShieldCheck size={17} />
               <span>
                 <strong>A scripted buyer demonstration.</strong> Every seller,
                 offer, order and payment is fictional. No account, message,
@@ -148,7 +148,7 @@ export default function BuyerWhatsAppDemo({
             {journey.map(({ icon: Icon, title, text }, index) => (
               <div key={title}>
                 <span className="wbd-journey-icon">
-                  <Icon size={19} strokeWidth={1.7} />
+                  <Icon size={19} stroke={1.7} />
                 </span>
                 <div>
                   <strong>{title}</strong>
@@ -167,15 +167,15 @@ export default function BuyerWhatsAppDemo({
             </p>
             <div>
               <span>
-                <Check size={14} />
+                <IconCheck size={14} />
                 Seller confirmation, not an assumed order
               </span>
               <span>
-                <Check size={14} />
+                <IconCheck size={14} />
                 Grade, delivery and charges need agreement
               </span>
               <span>
-                <Check size={14} />
+                <IconCheck size={14} />
                 Clients pay verified sellers directly
               </span>
             </div>
@@ -216,14 +216,14 @@ export default function BuyerWhatsAppDemo({
               type="button"
               onClick={() => act({ type: "reset" })}
             >
-              <RotateCcw size={14} />
+              <IconRotate size={14} />
               Reset buyer demo
             </button>
           </div>
           <div className="wd-phone">
             <div className="wd-chat-header">
               <span className="wd-chat-avatar">
-                <ShoppingBasket size={26} strokeWidth={1.5} />
+                <IconBasket size={26} stroke={1.5} />
               </span>
               <div>
                 <strong>
@@ -231,7 +231,7 @@ export default function BuyerWhatsAppDemo({
                 </strong>
                 <small>Buyer & sourcing support · scripted preview</small>
               </div>
-              <MessageCircle size={21} strokeWidth={1.6} />
+              <IconMessageCircle size={21} stroke={1.6} />
             </div>
             <div className="wd-chat-notice">
               Sample buyer conversation · no real WhatsApp connection
@@ -260,32 +260,32 @@ export default function BuyerWhatsAppDemo({
                 >
                   {message.kind === "voice" ? (
                     <span className="wd-voice-label">
-                      <Headphones size={16} />
+                      <IconHeadphones size={16} />
                       Scripted voice-note transcript
                     </span>
                   ) : null}
                   {message.kind === "review" ? (
                     <span className="wd-message-label">
-                      <ShoppingBasket size={15} />
+                      <IconBasket size={15} />
                       Sample details · check before continuing
                     </span>
                   ) : null}
                   {message.kind === "order" ? (
                     <span className="wd-message-label">
-                      <Handshake size={15} />
+                      <IconHeartHandshake size={15} />
                       Sample order · no actual commitment
                     </span>
                   ) : null}
                   {message.kind === "payment" ? (
                     <span className="wd-message-label">
-                      <CreditCard size={15} />
+                      <IconCreditCard size={15} />
                       Fictional payment event
                     </span>
                   ) : null}
                   <p>{message.text}</p>
                   <span className="wd-message-foot">
                     {message.sender === "buyer" ? (
-                      <CheckCheck size={13} aria-label="Shown in this demo" />
+                      <IconChecks size={13} aria-label="Shown in this demo" />
                     ) : (
                       <span>Agribridge · demo</span>
                     )}
@@ -305,7 +305,7 @@ export default function BuyerWhatsAppDemo({
                     onClick={() => act(choice.action)}
                   >
                     {choice.label}
-                    <ArrowRight size={13} />
+                    <IconArrowRight size={13} />
                   </button>
                 ))}
               </div>
@@ -331,7 +331,7 @@ export default function BuyerWhatsAppDemo({
                   disabled={state.stopped || !input.trim()}
                   aria-label="Send buyer demo reply"
                 >
-                  <Send size={19} />
+                  <IconSend size={19} />
                 </button>
               </form>
               <button
@@ -346,7 +346,7 @@ export default function BuyerWhatsAppDemo({
                   })
                 }
               >
-                <Headphones size={15} />
+                <IconHeadphones size={15} />
                 Try a scripted buyer voice-note example
               </button>
               <p className="wd-voice-note">
@@ -370,7 +370,7 @@ export default function BuyerWhatsAppDemo({
                   <article key={offer.id}>
                     <div>
                       <span>
-                        <Sprout size={21} />
+                        <IconSeedling size={21} />
                       </span>
                       <div>
                         <h3>{offer.variety}</h3>
@@ -381,7 +381,7 @@ export default function BuyerWhatsAppDemo({
                       <div>
                         <dt>Location</dt>
                         <dd>
-                          <MapPin size={12} />
+                          <IconMapPin size={12} />
                           {offer.district}
                         </dd>
                       </div>
@@ -406,7 +406,7 @@ export default function BuyerWhatsAppDemo({
                       {selected?.id === offer.id
                         ? "Sample offer selected"
                         : "Review sample offer"}
-                      <ChevronRight size={14} />
+                      <IconChevronRight size={14} />
                     </button>
                   </article>
                 ))
@@ -421,7 +421,7 @@ export default function BuyerWhatsAppDemo({
           <section className="wd-profile-preview" aria-live="polite">
             <div>
               <span className="wd-profile-icon">
-                <Building2 size={20} />
+                <IconBuilding size={20} />
               </span>
               <div>
                 <h2>
@@ -441,7 +441,7 @@ export default function BuyerWhatsAppDemo({
                   {state.profile.business ||
                     state.profile.name ||
                     "View sample request"}
-                  <ChevronRight size={14} />
+                  <IconChevronRight size={14} />
                 </summary>
                 <p>{buyerProfileSummary(state.profile, state.language)}</p>
               </details>
@@ -453,7 +453,7 @@ export default function BuyerWhatsAppDemo({
               "paymentConfirmed",
             ].includes(state.step) ? (
               <p className="wd-offer-note">
-                <Truck size={14} />
+                <IconTruck size={14} />
                 DEMO-BUY-001 ·{" "}
                 {state.step === "requested"
                   ? "Request illustrated"
@@ -470,7 +470,7 @@ export default function BuyerWhatsAppDemo({
       </main>
       <footer className="wd-footer">
         <span>
-          <Sprout size={15} />
+          <IconSeedling size={15} />
           Rooted in Uganda. Connected to opportunity.
         </span>
         <span>

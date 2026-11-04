@@ -1,20 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowUpRight,
-  ChartNoAxesCombined,
-  MapPin,
-  Plus,
-  ShoppingBag,
-  Scale,
-  ArrowLeft,
-  ArrowRight,
-  ExternalLink,
-  RefreshCw,
-  Database,
-  SlidersHorizontal,
-  X,
-} from "lucide-react";
+  IconAdjustmentsHorizontal,
+  IconArrowLeft,
+  IconArrowRight,
+  IconArrowUpRight,
+  IconChartHistogram,
+  IconDatabase,
+  IconExternalLink,
+  IconMapPin,
+  IconPlus,
+  IconRefresh,
+  IconScale,
+  IconShoppingBag,
+  IconX,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -96,7 +96,7 @@ export default function Markets() {
                 setEditor(tab === "offers" ? "offer" : "price");
               }}
             >
-              <Plus size={18} />
+              <IconPlus size={18} />
               {tab === "offers" ? "List produce" : "Record a local price"}
             </Button>
           )
@@ -222,7 +222,7 @@ export default function Markets() {
                           }}
                         >
                           Review
-                          <ArrowUpRight size={15} />
+                          <IconArrowUpRight size={15} />
                         </button>
                       </td>
                     )}
@@ -232,14 +232,14 @@ export default function Markets() {
             </table>
             {!prices.length && (
               <Empty
-                icon={ChartNoAxesCombined}
+                icon={IconChartHistogram}
                 title="No prices match this search."
                 body="Try another crop or district."
               />
             )}
           </section>
           <div className="market-advice">
-            <Scale size={24} />
+            <IconScale size={24} />
             <div>
               <h3>A better price is only part of the story.</h3>
               <p>
@@ -254,7 +254,7 @@ export default function Markets() {
           {offers.map((o) => (
             <article className="panel offer-card" key={o.id}>
               <div className="offer-top">
-                <ShoppingBag size={26} />
+                <IconShoppingBag size={26} />
                 <Badge tone={o.status === "available" ? "green" : "neutral"}>
                   {label(o.status)}
                 </Badge>
@@ -268,14 +268,14 @@ export default function Markets() {
                 <small> / kg</small>
               </strong>
               <p className="icon-text">
-                <MapPin size={14} />
+                <IconMapPin size={14} />
                 {o.district}
               </p>
               <div className="offer-footer">
                 <span>{o.sellerName}</span>
                 <Button variant="ghost" onClick={() => setOffer(o)}>
                   Details
-                  <ArrowUpRight size={16} />
+                  <IconArrowUpRight size={16} />
                 </Button>
               </div>
             </article>
@@ -498,7 +498,7 @@ export default function Markets() {
   );
 }
 function SproutMarket() {
-  return <ShoppingBag size={18} />;
+  return <IconShoppingBag size={18} />;
 }
 
 function PublishedMarketPanel({
@@ -744,7 +744,7 @@ function PublishedMarketPanel({
             disabled={!online}
           >
             Show prices
-            {!loading && <ArrowRight size={17} />}
+            {!loading && <IconArrowRight size={17} />}
           </Button>
         </div>
         <div className="market-search-options">
@@ -756,7 +756,7 @@ function PublishedMarketPanel({
             aria-controls="market-extra-filters"
             onClick={() => setMoreFiltersOpen((open) => !open)}
           >
-            <SlidersHorizontal size={16} />
+            <IconAdjustmentsHorizontal size={16} />
             More filters
             {moreFilterCount > 0 && (
               <span className="market-filter-count">{moreFilterCount}</span>
@@ -809,7 +809,7 @@ function PublishedMarketPanel({
                   }
                 >
                   <span>{draftFilters[dropdown.key]}</span>
-                  <X size={13} />
+                  <IconX size={13} />
                 </button>
               ))}
           </div>
@@ -875,7 +875,7 @@ function PublishedMarketPanel({
 
       {loading && !data ? (
         <div className="market-loading" role="status">
-          <RefreshCw size={18} className="spin" />
+          <IconRefresh size={18} className="spin" />
           <div>
             <strong>Loading published prices</strong>
             <p>This may take a moment on a slow connection.</p>
@@ -946,7 +946,7 @@ function PublishedMarketPanel({
                           title={source?.publisher}
                         >
                           Source: WFP / HDX
-                          <ExternalLink size={12} />
+                          <IconExternalLink size={12} />
                         </a>
                       )}
                       <details className="published-price-details">
@@ -976,7 +976,7 @@ function PublishedMarketPanel({
               </div>
             ) : (
               <Empty
-                icon={ChartNoAxesCombined}
+                icon={IconChartHistogram}
                 title="No published prices for this search"
                 body="Coverage is limited. Change the crop or market, then choose Show prices. Your cooperative may have a dated local quote."
                 action={
@@ -1001,7 +1001,7 @@ function PublishedMarketPanel({
                   setHistory((current) => current.slice(0, -1));
                 }}
               >
-                <ArrowLeft size={15} />
+                <IconArrowLeft size={15} />
                 Previous
               </Button>
               <Button
@@ -1015,7 +1015,7 @@ function PublishedMarketPanel({
                 }}
               >
                 Next
-                <ArrowRight size={15} />
+                <IconArrowRight size={15} />
               </Button>
             </div>
           </div>
@@ -1023,7 +1023,7 @@ function PublishedMarketPanel({
       ) : !loading ? (
         <section className="panel">
           <Empty
-            icon={Database}
+            icon={IconDatabase}
             title={
               data?.refreshState === "running"
                 ? "Published prices are being retrieved"
@@ -1037,13 +1037,13 @@ function PublishedMarketPanel({
                   disabled={!online}
                   onClick={onManual}
                 >
-                  <Plus size={16} />
+                  <IconPlus size={16} />
                   Record a local price
                 </Button>
               ) : (
                 <Link className="text-link" to="/settings">
                   Contact your cooperative
-                  <ArrowUpRight size={15} />
+                  <IconArrowUpRight size={15} />
                 </Link>
               )
             }
@@ -1093,13 +1093,13 @@ function PublishedMarketPanel({
           {datasetLink && (
             <a href={datasetLink} target="_blank" rel="noopener noreferrer">
               Publisher dataset
-              <ExternalLink size={13} />
+              <IconExternalLink size={13} />
             </a>
           )}
           {downloadLink && (
             <a href={downloadLink} target="_blank" rel="noopener noreferrer">
               Original data file
-              <ExternalLink size={13} />
+              <IconExternalLink size={13} />
             </a>
           )}
           {licenseLink && (
@@ -1111,7 +1111,7 @@ function PublishedMarketPanel({
               title={source?.license.name}
             >
               CC BY-IGO 3.0
-              <ExternalLink size={13} />
+              <IconExternalLink size={13} />
             </a>
           )}
           {admin && (

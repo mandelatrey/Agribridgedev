@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowUpRight,
-  ChevronDown,
-  RefreshCw,
-  ShoppingBag,
-} from "lucide-react";
+  IconArrowUpRight,
+  IconChevronDown,
+  IconRefresh,
+  IconShoppingBag,
+} from "@tabler/icons-react";
 import {
   Badge,
   Button,
@@ -134,7 +134,7 @@ export function SellerBuyerOrders({
           busy={refreshing}
           onClick={() => void load()}
         >
-          <RefreshCw size={17} />
+          <IconRefresh size={17} />
         </Button>
       </header>
       {error ? <ErrorMessage message={error} /> : null}
@@ -240,12 +240,12 @@ export function SellerBuyerOrders({
         ))
       ) : (
         <Empty
-          icon={ShoppingBag}
+          icon={IconShoppingBag}
           title="Your next buyer can find you here."
           body="Publish an available produce listing in My produce. Purchasing clients can find it on the web and send an order request for you to review."
           action={
             <Link className="button button-secondary" to="/buy">
-              See the buyer marketplace <ArrowUpRight size={15} />
+              See the buyer marketplace <IconArrowUpRight size={15} />
             </Link>
           }
         />
@@ -259,7 +259,7 @@ export function SellerBuyerOrders({
             void load(result.pagination.offset + result.pagination.limit)
           }
         >
-          Load more buyer orders <ChevronDown size={16} />
+          Load more buyer orders <IconChevronDown size={16} />
         </Button>
       ) : null}
       {result?.orders.length ? (

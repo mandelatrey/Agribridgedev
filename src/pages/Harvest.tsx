@@ -1,14 +1,14 @@
 import { useCallback, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  ArrowRight,
-  ArrowLeft,
-  ClipboardCheck,
-  PackageCheck,
-  Pencil,
-  Plus,
-  Truck,
-} from "lucide-react";
+  IconArrowLeft,
+  IconArrowRight,
+  IconClipboardCheck,
+  IconPackages,
+  IconPencil,
+  IconPlus,
+  IconTruck,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -860,7 +860,7 @@ export default function Harvest() {
             }
             disabled={!online || (tab === "lots" && !data.farms.length)}
           >
-            <Plus size={17} />
+            <IconPlus size={17} />
             {tab === "lots" ? "Record harvest" : "Plan collection"}
           </Button>
         }
@@ -1016,7 +1016,7 @@ export default function Harvest() {
               <h2 ref={listRef} tabIndex={-1} className="op-focus-target">
                 {staff ? "Harvest register" : "Your harvest lots"}
               </h2>
-              <PackageCheck size={20} />
+              <IconPackages size={20} />
             </div>
             {!visibleLots.length ? (
               <Empty
@@ -1043,7 +1043,7 @@ export default function Harvest() {
                     </Button>
                   ) : !data.farms.length ? (
                     <Link className="text-link" to="/farms">
-                      Add a farm first <ArrowRight size={15} />
+                      Add a farm first <IconArrowRight size={15} />
                     </Link>
                   ) : (
                     <Button
@@ -1140,11 +1140,11 @@ export default function Harvest() {
                 className="op-mobile-back text-link"
                 onClick={backToList}
               >
-                <ArrowLeft size={16} /> Back to harvest lots
+                <IconArrowLeft size={16} /> Back to harvest lots
               </button>
               <div className="op-detail-body">
                 <div className="harvest-detail-heading">
-                  <PackageCheck size={25} />
+                  <IconPackages size={25} />
                   <Badge tone={qualityTone(selectedLot.qualityStatus)}>
                     {label(selectedLot.qualityStatus)}
                   </Badge>
@@ -1232,7 +1232,7 @@ export default function Harvest() {
                       disabled={!online}
                       onClick={() => setLotEditor(selectedLot)}
                     >
-                      <Pencil size={15} />
+                      <IconPencil size={15} />
                       Edit lot
                     </Button>
                     {staff && (
@@ -1240,7 +1240,7 @@ export default function Harvest() {
                         disabled={!online}
                         onClick={() => setQualityEditor(selectedLot)}
                       >
-                        <ClipboardCheck size={15} />
+                        <IconClipboardCheck size={15} />
                         Review quality
                       </Button>
                     )}
@@ -1257,7 +1257,7 @@ export default function Harvest() {
               <h2 ref={listRef} tabIndex={-1} className="op-focus-target">
                 Buyer collections
               </h2>
-              <Truck size={20} />
+              <IconTruck size={20} />
             </div>
             {!visibleCollections.length ? (
               <Empty
@@ -1365,11 +1365,11 @@ export default function Harvest() {
                 className="op-mobile-back text-link"
                 onClick={backToList}
               >
-                <ArrowLeft size={16} /> Back to collections
+                <IconArrowLeft size={16} /> Back to collections
               </button>
               <div className="op-detail-body">
                 <div className="harvest-detail-heading">
-                  <Truck size={25} />
+                  <IconTruck size={25} />
                   <Badge tone={collectionTone(selectedCollection.status)}>
                     {label(selectedCollection.status)}
                   </Badge>
@@ -1475,7 +1475,7 @@ export default function Harvest() {
                         disabled={!online}
                         onClick={() => setCollectionEditor(selectedCollection)}
                       >
-                        <Pencil size={15} />
+                        <IconPencil size={15} />
                         Edit collection
                       </Button>
                       <Button
@@ -1497,7 +1497,7 @@ export default function Harvest() {
                         {selectedCollection.status === "planning"
                           ? "Confirm"
                           : "Record dispatch"}
-                        <ArrowRight size={15} />
+                        <IconArrowRight size={15} />
                       </Button>
                     </div>
                     {selectedCollection.summary.allocatedKg <

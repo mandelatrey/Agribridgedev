@@ -1,5 +1,9 @@
 import { useRef, useState, type FormEvent } from "react";
-import { ArrowRight, MessageCircle, ExternalLink } from "lucide-react";
+import {
+  IconArrowRight,
+  IconExternalLink,
+  IconMessageCircle,
+} from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 import { request } from "../../lib/api";
 import {
@@ -57,7 +61,7 @@ export function MarketDesk({
   return (
     <section className="market-desk" aria-labelledby="market-desk-title">
       <div className="market-desk-title">
-        <MessageCircle size={20} strokeWidth={1.6} />
+        <IconMessageCircle size={20} stroke={1.6} />
         <div>
           <h2 id="market-desk-title">Ask the market desk</h2>
           <p>
@@ -66,7 +70,7 @@ export function MarketDesk({
         </div>
         <Link to="/assistant">
           Farm guidance
-          <ArrowRight size={15} />
+          <IconArrowRight size={15} />
         </Link>
       </div>
       <form onSubmit={submit} aria-busy={busy}>
@@ -88,7 +92,7 @@ export function MarketDesk({
           disabled={!online || !question.trim()}
         >
           Ask
-          <ArrowRight size={16} />
+          <IconArrowRight size={16} />
         </Button>
       </form>
       <div className="market-desk-suggestions">
@@ -113,7 +117,7 @@ export function MarketDesk({
             onClick={() => void ask(item.question)}
           >
             {item.label}
-            <ArrowRight size={12} />
+            <IconArrowRight size={12} />
           </button>
         ))}
       </div>
@@ -135,7 +139,7 @@ export function MarketDesk({
                     {href ? (
                       <a href={href} target="_blank" rel="noopener noreferrer">
                         {source.title}
-                        <ExternalLink size={12} />
+                        <IconExternalLink size={12} />
                       </a>
                     ) : (
                       <span>{source.title}</span>

@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import {
-  CloudSun,
-  Droplets,
-  Navigation,
-  RefreshCw,
-  MapPin,
-  ExternalLink,
-  ShieldCheck,
-} from "lucide-react";
+  IconCloud,
+  IconDroplets,
+  IconExternalLink,
+  IconMapPin,
+  IconNavigation,
+  IconRefresh,
+  IconShieldCheck,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { request } from "../lib/api";
 import { date, dateTime, districts, today } from "../lib/format";
@@ -95,7 +95,7 @@ export default function Weather() {
           </select>
         </Field>
         <Button variant="secondary" onClick={locate} disabled={!online || busy}>
-          <Navigation size={17} />
+          <IconNavigation size={17} />
           Use my location
         </Button>
         <Button
@@ -107,7 +107,7 @@ export default function Weather() {
           }}
           disabled={!online}
         >
-          <RefreshCw size={17} />
+          <IconRefresh size={17} />
           Refresh
         </Button>
       </div>
@@ -125,11 +125,11 @@ export default function Weather() {
           <section className="forecast-hero">
             <div>
               <p className="icon-text">
-                <MapPin size={17} />
+                <IconMapPin size={17} />
                 {precise ? "Your chosen location" : district}
               </p>
               <div className="forecast-temperature">
-                <CloudSun size={70} strokeWidth={1.2} />
+                <IconCloud size={70} stroke={1.2} />
                 <strong>
                   {Math.round(forecast.current.temperature)}°<span>C</span>
                 </strong>
@@ -172,15 +172,15 @@ export default function Weather() {
                   </strong>
                   <small>{date(day.date)}</small>
                   {(day.rainChance ?? (day.rainMm > 1 ? 100 : 0)) > 50 ? (
-                    <Droplets size={28} />
+                    <IconDroplets size={28} />
                   ) : (
-                    <CloudSun size={28} />
+                    <IconCloud size={28} />
                   )}
                   <span className="day-temp">
                     {Math.round(day.max)}° <span>{Math.round(day.min)}°</span>
                   </span>
                   <span className="rain-chance">
-                    <Droplets size={13} />
+                    <IconDroplets size={13} />
                     {day.rainChance === null ? "—" : `${day.rainChance}%`}
                   </span>
                   <small>{day.rainMm.toFixed(1)} mm</small>
@@ -214,7 +214,7 @@ export default function Weather() {
         !busy &&
         !error && (
           <Empty
-            icon={CloudSun}
+            icon={IconCloud}
             title="Your forecast, when you need it."
             body="Choose a district and connect for the latest forecast."
           />
@@ -247,7 +247,7 @@ export default function Weather() {
   );
 }
 function SproutIcon() {
-  return <CloudSun size={19} />;
+  return <IconCloud size={19} />;
 }
 
 function OfficialWarnings() {
@@ -295,7 +295,7 @@ function OfficialWarnings() {
     <section className="panel official-warnings">
       <div className="panel-header">
         <h2>Official weather warnings</h2>
-        <ShieldCheck size={19} />
+        <IconShieldCheck size={19} />
       </div>
       <div className="panel-body">
         <p>Uganda Department of Meteorological Services</p>
@@ -323,7 +323,7 @@ function OfficialWarnings() {
                 rel="noreferrer"
               >
                 Read official warning
-                <ExternalLink size={14} />
+                <IconExternalLink size={14} />
               </a>
             )}
           </div>
@@ -345,7 +345,7 @@ function OfficialWarnings() {
           rel="noreferrer"
         >
           Open Uganda weather service
-          <ExternalLink size={14} />
+          <IconExternalLink size={14} />
         </a>
       </div>
     </section>

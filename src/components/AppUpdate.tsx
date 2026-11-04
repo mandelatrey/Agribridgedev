@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { RefreshCw } from "lucide-react";
+import { IconRefresh } from "@tabler/icons-react";
 
 /** New offline shells activate only after an explicit reload, not mid-form. */
 export function AppUpdate() {
@@ -58,7 +58,7 @@ export function AppUpdate() {
           waiting.postMessage({ type: "SKIP_WAITING" });
         }}
       >
-        <RefreshCw size={15} />
+        <IconRefresh size={15} />
         Update & reload
       </button>
     </div>

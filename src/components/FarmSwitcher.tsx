@@ -1,6 +1,11 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Check, ChevronDown, Plus, Sprout } from "lucide-react";
+import {
+  IconCheck,
+  IconChevronDown,
+  IconPlus,
+  IconSeedling,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { setActiveFarmId, useActiveFarm } from "../lib/active-farm";
 import "../styles/farm-switcher.css";
@@ -36,7 +41,7 @@ export function FarmSwitcher({ onNavigate }: { onNavigate: () => void }) {
     return (
       <Link to="/farms" className="workspace-name" onClick={onNavigate}>
         <span>Add your first farm</span>
-        <Plus size={16} aria-hidden="true" />
+        <IconPlus size={16} aria-hidden="true" />
       </Link>
     );
 
@@ -63,7 +68,7 @@ export function FarmSwitcher({ onNavigate }: { onNavigate: () => void }) {
           <small>Your farm</small>
           <span>{active.name}</span>
         </span>
-        <ChevronDown size={16} aria-hidden="true" />
+        <IconChevronDown size={16} aria-hidden="true" />
       </button>
       {open && (
         <div className="farm-switcher-menu" id={listId}>
@@ -78,14 +83,14 @@ export function FarmSwitcher({ onNavigate }: { onNavigate: () => void }) {
                     aria-current={current || undefined}
                     onClick={() => choose(farm.id)}
                   >
-                    <Sprout size={16} aria-hidden="true" />
+                    <IconSeedling size={16} aria-hidden="true" />
                     <span>
                       <strong>{farm.name}</strong>
                       <small>
                         {[farm.district, farm.crop].filter(Boolean).join(" · ")}
                       </small>
                     </span>
-                    {current && <Check size={16} aria-hidden="true" />}
+                    {current && <IconCheck size={16} aria-hidden="true" />}
                   </button>
                 </li>
               );
@@ -99,7 +104,7 @@ export function FarmSwitcher({ onNavigate }: { onNavigate: () => void }) {
               onNavigate();
             }}
           >
-            <Plus size={16} aria-hidden="true" />
+            <IconPlus size={16} aria-hidden="true" />
             Manage or add farms
           </Link>
         </div>

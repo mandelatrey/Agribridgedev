@@ -1,13 +1,13 @@
 import { useCallback, useMemo, useState } from "react";
 import {
-  ArrowLeft,
-  ArrowRight,
-  Check,
-  Globe2,
-  Pencil,
-  Plus,
-  Truck,
-} from "lucide-react";
+  IconArrowLeft,
+  IconArrowRight,
+  IconCheck,
+  IconPencil,
+  IconPlus,
+  IconTruck,
+  IconWorld,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -251,7 +251,7 @@ export default function Trade() {
   if (user?.role === "farmer")
     return (
       <Empty
-        icon={Globe2}
+        icon={IconWorld}
         title="Trade is managed by your cooperative"
         body="Your authorized trade team coordinates buyers, agreements and cross-border readiness."
       />
@@ -264,7 +264,7 @@ export default function Trade() {
         description="From a buyer's interest to a well-prepared delivery."
         action={
           <Button onClick={() => setEditor("new")} disabled={!online}>
-            <Plus size={17} />
+            <IconPlus size={17} />
             New opportunity
           </Button>
         }
@@ -410,7 +410,7 @@ export default function Trade() {
                           <span className="op-card-action-label">
                             View details
                           </span>
-                          <ArrowRight size={17} />
+                          <IconArrowRight size={17} />
                         </button>
                       </td>
                     </tr>
@@ -420,7 +420,7 @@ export default function Trade() {
             </div>
           ) : (
             <Empty
-              icon={Truck}
+              icon={IconTruck}
               title={
                 query || filter !== "all"
                   ? "No matching opportunities"
@@ -464,7 +464,7 @@ export default function Trade() {
               className="op-mobile-back text-link"
               onClick={backToList}
             >
-              <ArrowLeft size={16} /> Back to opportunities
+              <IconArrowLeft size={16} /> Back to opportunities
             </button>
             <div className="panel-header">
               <span className="op-eyebrow">Trade detail</span>
@@ -474,13 +474,13 @@ export default function Trade() {
                 onClick={() => setEditor(selected)}
                 aria-label="Edit selected trade"
               >
-                <Pencil size={17} />
+                <IconPencil size={17} />
               </button>
             </div>
             <div className="op-detail-body">
               <h2 id="trade-record-name">{selected.buyer}</h2>
               <p className="muted">
-                <Globe2 size={16} className="op-inline-icon" />
+                <IconWorld size={16} className="op-inline-icon" />
                 {selected.destination}
               </p>
               <dl className="op-facts">
@@ -516,7 +516,7 @@ export default function Trade() {
                   >
                     <span>
                       {index < stages.indexOf(selected.stage) ? (
-                        <Check size={12} />
+                        <IconCheck size={12} />
                       ) : (
                         index + 1
                       )}
@@ -533,7 +533,7 @@ export default function Trade() {
                   disabled={!online}
                 >
                   Move to {label(nextStage).toLowerCase()}
-                  <ArrowRight size={16} />
+                  <IconArrowRight size={16} />
                 </Button>
               )}
               <div className="op-checklist">

@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import {
-  ArrowLeft,
-  ArrowRight,
-  BookOpen,
-  CheckCircle2,
-  Clock3,
-  ExternalLink,
-  GraduationCap,
-  Download,
-  ChevronDown,
-} from "lucide-react";
+  IconArrowLeft,
+  IconArrowRight,
+  IconBook,
+  IconChevronDown,
+  IconCircleCheck,
+  IconClockHour3,
+  IconDownload,
+  IconExternalLink,
+  IconSchool,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -137,7 +137,8 @@ export default function Learn() {
               {resources.more.length > 0 && (
                 <details className="learning-more">
                   <summary>
-                    More learning <ChevronDown size={18} aria-hidden="true" />
+                    More learning{" "}
+                    <IconChevronDown size={18} aria-hidden="true" />
                   </summary>
                   <div className="learning-more-list">
                     {resources.more.map((resource) => (
@@ -154,7 +155,7 @@ export default function Learn() {
             <details className="learning-about">
               <summary>
                 About these resources{" "}
-                <ChevronDown size={18} aria-hidden="true" />
+                <IconChevronDown size={18} aria-hidden="true" />
               </summary>
               <p>
                 These are independent links to the Food and Agriculture
@@ -218,7 +219,7 @@ function ExternalLearningLink({
       className={className}
     >
       {label}
-      <ExternalLink size={17} aria-hidden="true" />
+      <IconExternalLink size={17} aria-hidden="true" />
       <span className="sr-only"> (opens another website in a new tab)</span>
     </a>
   ) : (
@@ -229,7 +230,7 @@ function ExternalLearningLink({
       title="Reconnect to open this FAO resource"
     >
       {label}
-      <ExternalLink size={17} aria-hidden="true" />
+      <IconExternalLink size={17} aria-hidden="true" />
     </button>
   );
 }
@@ -271,7 +272,8 @@ function ResourceCard({
       />
       <details className="learning-access-details">
         <summary>
-          Access & download details <ChevronDown size={18} aria-hidden="true" />
+          Access & download details{" "}
+          <IconChevronDown size={18} aria-hidden="true" />
         </summary>
         {resource.format === "course" ? (
           <>
@@ -339,12 +341,12 @@ function ShortFieldGuides() {
       <div className="local-guide-heading">
         <h2 id="short-guides-title">Short field guides</h2>
         <span className="learning-progress">
-          <GraduationCap size={22} />
+          <IconSchool size={22} />
           {completed} of {data.lessons.length} guides completed
         </span>
       </div>
       <div className="learning-intro">
-        <BookOpen size={34} strokeWidth={1.4} />
+        <IconBook size={34} stroke={1.4} />
         <div>
           <h3>Read in the field</h3>
           <p>
@@ -353,9 +355,9 @@ function ShortFieldGuides() {
           </p>
         </div>
         <Link className="text-link" to="/settings">
-          <Download size={16} />
+          <IconDownload size={16} />
           {offlineEnabled ? "Manage offline access" : "Set up offline access"}
-          <ArrowRight size={16} />
+          <IconArrowRight size={16} />
         </Link>
       </div>
       <div className="toolbar">
@@ -394,18 +396,18 @@ function ShortFieldGuides() {
             >
               <div className={`lesson-cover cover-${i % 4}`}>
                 <span className="lesson-cover-label">{lesson.crop}</span>
-                <BookOpen size={45} strokeWidth={1.2} />
+                <IconBook size={45} stroke={1.2} />
                 <span className="lesson-cover-number">0{i + 1}</span>
               </div>
               <div className="lesson-card-body">
                 <div className="lesson-meta">
                   <span>
-                    <Clock3 size={14} />
+                    <IconClockHour3 size={14} />
                     {lesson.durationMinutes} min read
                   </span>
                   {done && (
                     <Badge tone="green">
-                      <CheckCircle2 size={12} />
+                      <IconCircleCheck size={12} />
                       Completed
                     </Badge>
                   )}
@@ -423,7 +425,7 @@ function ShortFieldGuides() {
                 <p>{lesson.summary}</p>
                 <span className="text-link">
                   {done ? "Read again" : "Open field guide"}
-                  <ArrowRight size={16} />
+                  <IconArrowRight size={16} />
                 </span>
               </div>
             </Link>
@@ -432,7 +434,7 @@ function ShortFieldGuides() {
       </div>
       {!lessons.length && (
         <Empty
-          icon={BookOpen}
+          icon={IconBook}
           title={
             query || crop !== "All crops"
               ? "No matching guides"
@@ -535,13 +537,13 @@ function LessonContent({ id }: { id: string | undefined }) {
   return (
     <div className="reader">
       <Link className="text-link back-link" to="/learn?view=guides">
-        <ArrowLeft size={16} />
+        <IconArrowLeft size={16} />
         Back to learning
       </Link>
       <div className="reader-meta">
         <Badge tone="green">{lesson.crop}</Badge>
         <span>
-          <Clock3 size={15} />
+          <IconClockHour3 size={15} />
           {lesson.durationMinutes} min read
         </span>
         <span>{lesson.level}</span>
@@ -569,12 +571,12 @@ function LessonContent({ id }: { id: string | undefined }) {
         <span className="small-label">SOURCE & FURTHER READING</span>
         <a href={lesson.sourceUrl} target="_blank" rel="noreferrer">
           {lesson.sourceTitle}
-          <ExternalLink size={16} />
+          <IconExternalLink size={16} />
         </a>
       </div>
       <section className="quiz">
         <span className="round-icon">
-          <GraduationCap size={26} />
+          <IconSchool size={26} />
         </span>
         <h2>A quick check before you go.</h2>
         <p>{lesson.quiz.question}</p>
@@ -614,7 +616,7 @@ function LessonContent({ id }: { id: string | undefined }) {
           onClick={() => void submit()}
         >
           Check my answer
-          <ArrowRight size={16} />
+          <IconArrowRight size={16} />
         </Button>
         {!online && (
           <p className="muted">

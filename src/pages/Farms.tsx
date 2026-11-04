@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import {
-  Plus,
-  Sprout,
-  MapPin,
-  ArrowUpRight,
-  Check,
-  CalendarDays,
-  Pencil,
-  ClipboardList,
-} from "lucide-react";
+  IconArrowUpRight,
+  IconCalendarMonth,
+  IconCheck,
+  IconClipboardList,
+  IconMapPin,
+  IconPencil,
+  IconPlus,
+  IconSeedling,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -394,14 +394,14 @@ export default function Farms() {
           focusFarm && tab === "farms" ? (
             <>
               <Button variant="secondary" onClick={() => setEditor(true)}>
-                <Plus size={18} />
+                <IconPlus size={18} />
                 Add a farm
               </Button>
               <Button
                 disabled={waiting(`/api/farms/${focusFarm.id}`)}
                 onClick={() => setEditor(focusFarm)}
               >
-                <Pencil size={18} />
+                <IconPencil size={18} />
                 Edit farm
               </Button>
             </>
@@ -411,7 +411,7 @@ export default function Farms() {
                 tab === "tasks" ? setAddTask(true) : setEditor(true)
               }
             >
-              <Plus size={18} />
+              <IconPlus size={18} />
               {tab === "tasks" ? "Add a task" : "Add a farm"}
             </Button>
           )
@@ -476,7 +476,7 @@ export default function Farms() {
               >
                 <div className={`farm-card-top crop-${f.crop.toLowerCase()}`}>
                   <div className="crop-emblem">
-                    <Sprout size={42} strokeWidth={1.2} />
+                    <IconSeedling size={42} stroke={1.2} />
                   </div>
                   <Badge tone="green">{label(f.stage)}</Badge>
                   <span>{f.crop}</span>
@@ -490,14 +490,14 @@ export default function Farms() {
                       disabled={waiting(`/api/farms/${f.id}`)}
                       onClick={() => setEditor(f)}
                     >
-                      <Pencil size={17} />
+                      <IconPencil size={17} />
                     </button>
                   </div>
                   {waiting(`/api/farms/${f.id}`) && (
                     <Badge tone="amber">Saved on device · awaiting sync</Badge>
                   )}
                   <p className="icon-text">
-                    <MapPin size={14} />
+                    <IconMapPin size={14} />
                     {f.district} · {f.ownerName}
                   </p>
                   <div className="farm-meta">
@@ -515,11 +515,11 @@ export default function Farms() {
                       to={`/weather?district=${encodeURIComponent(f.district)}`}
                     >
                       Local forecast
-                      <ArrowUpRight size={15} />
+                      <IconArrowUpRight size={15} />
                     </Link>
                     <Link to={`/learn?crop=${encodeURIComponent(f.crop)}`}>
                       Crop guide
-                      <ArrowUpRight size={15} />
+                      <IconArrowUpRight size={15} />
                     </Link>
                   </div>
                 </div>
@@ -528,7 +528,7 @@ export default function Farms() {
           </div>
           {!farms.length && (
             <Empty
-              icon={Sprout}
+              icon={IconSeedling}
               title={
                 query
                   ? "No matching farms"
@@ -546,7 +546,7 @@ export default function Farms() {
                   </Button>
                 ) : (
                   <Button onClick={() => setEditor(true)}>
-                    <Plus size={16} />
+                    <IconPlus size={16} />
                     Add a farm
                   </Button>
                 )
@@ -569,7 +569,7 @@ export default function Farms() {
                 Show all tasks
               </Link>
             ) : (
-              <CalendarDays size={20} />
+              <IconCalendarMonth size={20} />
             )}
           </div>
           {!loading && requestedTaskId !== null && !selectedTaskId && (
@@ -606,7 +606,7 @@ export default function Farms() {
                 disabled={busy === task.id || waiting(`/api/tasks/${task.id}`)}
                 onClick={() => void toggle(task)}
               >
-                {task.status === "completed" && <Check size={16} />}
+                {task.status === "completed" && <IconCheck size={16} />}
               </button>
               <div className="task-copy">
                 <strong>{task.title}</strong>
@@ -627,7 +627,7 @@ export default function Farms() {
           ))}
           {!visibleTasks.length && (
             <Empty
-              icon={ClipboardList}
+              icon={IconClipboardList}
               title="A clear plan for the days ahead."
               body="Add a task to start your season’s checklist."
             />
@@ -667,7 +667,7 @@ function FarmDetails({
       <article className="farm-card farm-detail-card">
         <div className={`farm-card-top crop-${farm.crop.toLowerCase()}`}>
           <div className="crop-emblem">
-            <Sprout size={42} strokeWidth={1.2} />
+            <IconSeedling size={42} stroke={1.2} />
           </div>
           <Badge tone="green">{label(farm.stage)}</Badge>
           <span>{farm.crop}</span>
@@ -696,7 +696,7 @@ function FarmDetails({
             <div>
               <dt>District</dt>
               <dd className="icon-text">
-                <MapPin size={14} />
+                <IconMapPin size={14} />
                 {farm.district}
               </dd>
             </div>
@@ -714,17 +714,17 @@ function FarmDetails({
           <div className="farm-links">
             <Link to={`/weather?district=${encodeURIComponent(farm.district)}`}>
               Local forecast
-              <ArrowUpRight size={15} />
+              <IconArrowUpRight size={15} />
             </Link>
             <Link to={`/learn?crop=${encodeURIComponent(farm.crop)}`}>
               Crop guide
-              <ArrowUpRight size={15} />
+              <IconArrowUpRight size={15} />
             </Link>
             <Link to={`/seasons?farm=${encodeURIComponent(farm.id)}`}>
               {seasons.length
                 ? `Season plan (${seasons.length} active)`
                 : "Plan a season"}
-              <ArrowUpRight size={15} />
+              <IconArrowUpRight size={15} />
             </Link>
           </div>
         </div>

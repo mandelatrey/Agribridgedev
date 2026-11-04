@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Globe2, LockKeyhole } from "lucide-react";
+import { IconArrowUpRight, IconLock, IconWorld } from "@tabler/icons-react";
 import { Button, Form, Modal, Notice } from "../ui";
 import type { SupplyListing } from "../../../server/marketplace-types";
 
@@ -20,7 +20,7 @@ export function SupplyPublication({
   return (
     <div className="market-publication">
       <div>
-        {supply.published ? <Globe2 size={17} /> : <LockKeyhole size={17} />}
+        {supply.published ? <IconWorld size={17} /> : <IconLock size={17} />}
         <span>
           <strong>
             {supply.published ? "Published to buyers" : "Workspace only"}
@@ -36,7 +36,7 @@ export function SupplyPublication({
         {supply.published ? (
           <>
             <Link to="/buy">
-              Buyer marketplace <ArrowUpRight size={14} />
+              Buyer marketplace <IconArrowUpRight size={14} />
             </Link>
             <Button
               variant="ghost"

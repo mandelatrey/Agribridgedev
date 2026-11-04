@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
 import {
-  Activity,
-  ArrowRight,
-  CheckCircle2,
-  CircleDot,
-  Plus,
-  RotateCcw,
-  ShieldCheck,
-  Users,
-} from "lucide-react";
+  IconActivity,
+  IconArrowRight,
+  IconCircleCheck,
+  IconCircleDot,
+  IconPlus,
+  IconRotate,
+  IconShieldCheck,
+  IconUsers,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -135,7 +135,7 @@ export default function Admin() {
   if (user?.role === "farmer")
     return (
       <Empty
-        icon={ShieldCheck}
+        icon={IconShieldCheck}
         title="Administration is restricted"
         body="Your cooperative's authorized staff manage team access and service connections."
       />
@@ -152,7 +152,7 @@ export default function Admin() {
             busy={loading}
             onClick={() => setRevision((value) => value + 1)}
           >
-            <RotateCcw size={16} />
+            <IconRotate size={16} />
             Refresh
           </Button>
         }
@@ -205,9 +205,9 @@ export default function Admin() {
                   >
                     {integration.status === "configured" ||
                     integration.status === "available" ? (
-                      <CheckCircle2 size={21} />
+                      <IconCircleCheck size={21} />
                     ) : (
-                      <CircleDot size={21} />
+                      <IconCircleDot size={21} />
                     )}
                   </span>
                   <div>
@@ -232,7 +232,7 @@ export default function Admin() {
               ))}
             </div>
             <div className="op-panel-note">
-              <ShieldCheck size={16} />
+              <IconShieldCheck size={16} />
               <span>
                 Configuration is not proof of successful delivery. Confirm live
                 provider tests before inviting users.
@@ -260,7 +260,7 @@ export default function Admin() {
               onClick={() => setAdding(true)}
               disabled={!online}
             >
-              <Plus size={16} />
+              <IconPlus size={16} />
               Add member
             </Button>
           </div>
@@ -346,7 +346,7 @@ export default function Admin() {
             </div>
           ) : !teamError ? (
             <Empty
-              icon={Users}
+              icon={IconUsers}
               title="No team accounts loaded"
               body="Refresh your connection or add a member to this organization."
             />
@@ -358,7 +358,7 @@ export default function Admin() {
         <section className="panel op-audit">
           <div className="panel-header">
             <h2>Recent activity</h2>
-            <Activity size={19} />
+            <IconActivity size={19} />
           </div>
           {overview.audit.length ? (
             <div className="table-wrap">
@@ -385,7 +385,7 @@ export default function Admin() {
             </div>
           ) : (
             <Empty
-              icon={Activity}
+              icon={IconActivity}
               title="No activity recorded yet"
               body="Workspace changes appear here as your team starts working."
             />

@@ -1,29 +1,29 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import {
-  Sprout,
-  House,
-  CloudSun,
-  ChartNoAxesCombined,
-  BookOpen,
-  Users,
-  Package,
-  MessageSquare,
-  Settings,
-  Wifi,
-  WifiOff,
-  ChevronRight,
-  ChevronDown,
-  MoreHorizontal,
-  Menu,
-  X,
-  ArrowUpRight,
-  Bot,
-  Check,
-  CalendarDays,
-  PackageCheck,
-  ArrowLeftRight,
-} from "lucide-react";
+  IconArrowUpRight,
+  IconArrowsLeftRight,
+  IconBook,
+  IconCalendarMonth,
+  IconChartHistogram,
+  IconCheck,
+  IconChevronDown,
+  IconChevronRight,
+  IconCloud,
+  IconDots,
+  IconHome,
+  IconMenu2,
+  IconMessage,
+  IconPackage,
+  IconPackages,
+  IconRobot,
+  IconSeedling,
+  IconSettings,
+  IconUsers,
+  IconWifi,
+  IconWifiOff,
+  IconX,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { initials } from "../lib/format";
 import { AppUpdate } from "./AppUpdate";
@@ -42,22 +42,22 @@ import {
 import type { Role } from "../types";
 import "../styles/navigation.css";
 const MOBILE_QUERY = "(max-width: 960px)";
-const icons: Record<NavigationIcon, typeof House> = {
-  home: House,
-  farm: Sprout,
-  weather: CloudSun,
-  prices: ChartNoAxesCombined,
-  marketplace: Package,
-  learn: BookOpen,
-  season: CalendarDays,
-  transactions: ArrowLeftRight,
-  harvest: PackageCheck,
-  community: Users,
-  assistant: Bot,
-  farmers: Users,
-  trade: Package,
-  messages: MessageSquare,
-  admin: Settings,
+const icons: Record<NavigationIcon, typeof IconHome> = {
+  home: IconHome,
+  farm: IconSeedling,
+  weather: IconCloud,
+  prices: IconChartHistogram,
+  marketplace: IconPackage,
+  learn: IconBook,
+  season: IconCalendarMonth,
+  transactions: IconArrowsLeftRight,
+  harvest: IconPackages,
+  community: IconUsers,
+  assistant: IconRobot,
+  farmers: IconUsers,
+  trade: IconPackage,
+  messages: IconMessage,
+  admin: IconSettings,
 };
 
 function NavigationLinks({
@@ -109,9 +109,9 @@ function SidebarNavigation({
             setExpanded((current) => (current === "more" ? null : "more"))
           }
         >
-          <MoreHorizontal size={22} aria-hidden="true" />
+          <IconDots size={22} aria-hidden="true" />
           <span>More tools</span>
-          <ChevronDown size={17} aria-hidden="true" />
+          <IconChevronDown size={17} aria-hidden="true" />
         </button>
         <div
           id="navigation-more-tools"
@@ -133,9 +133,9 @@ function SidebarNavigation({
                 )
               }
             >
-              <Users size={22} aria-hidden="true" />
+              <IconUsers size={22} aria-hidden="true" />
               <span>Cooperative tools</span>
-              <ChevronDown size={17} aria-hidden="true" />
+              <IconChevronDown size={17} aria-hidden="true" />
             </button>
             <div
               id="navigation-cooperative-tools"
@@ -251,7 +251,7 @@ export function Shell() {
       >
         <div className="sidebar-top">
           <Link className="brand" to="/" onClick={() => setMenu(false)}>
-            <Sprout size={32} strokeWidth={1.7} />
+            <IconSeedling size={32} stroke={1.7} />
             <span>Agribridge</span>
           </Link>
           <button
@@ -261,7 +261,7 @@ export function Shell() {
             onClick={() => setMenu(false)}
             aria-label="Close navigation"
           >
-            <X size={20} />
+            <IconX size={20} />
           </button>
           {user?.role === "farmer" ? (
             <FarmSwitcher onNavigate={() => setMenu(false)} />
@@ -274,7 +274,7 @@ export function Shell() {
               <span>
                 {user?.organizationName.replace(" · Sample cooperative", "")}
               </span>
-              <ChevronRight size={16} />
+              <IconChevronRight size={16} />
             </Link>
           )}
         </div>
@@ -290,11 +290,11 @@ export function Shell() {
             to="/welcome"
             onClick={() => setMenu(false)}
           >
-            <BookOpen size={18} aria-hidden="true" />
+            <IconBook size={18} aria-hidden="true" />
             About Agribridge
           </Link>
           <NavLink to="/settings" onClick={() => setMenu(false)}>
-            <Wifi size={20} />
+            <IconWifi size={20} />
             Settings & connection
           </NavLink>
           <Link
@@ -311,7 +311,7 @@ export function Shell() {
                   : "Cooperative workspace"}
               </small>
             </span>
-            <ArrowUpRight size={15} />
+            <IconArrowUpRight size={15} />
           </Link>
         </div>
       </aside>
@@ -322,7 +322,7 @@ export function Shell() {
             <strong>{currentLabel}</strong>
           </div>
           <Link to="/" className="mobile-brand">
-            <Sprout size={27} />
+            <IconSeedling size={27} />
             Agribridge
           </Link>
           <WorkspaceSearch />
@@ -335,7 +335,7 @@ export function Shell() {
                   aria-label={connectionLabel}
                   title={connectionLabel}
                 >
-                  <WifiOff size={14} />
+                  <IconWifiOff size={14} />
                   {`Offline${queue.length ? ` · ${queue.length} pending` : ""}`}
                 </Link>
               ) : queue.length ? (
@@ -370,7 +370,7 @@ export function Shell() {
             aria-controls="workspace-navigation"
             aria-haspopup="dialog"
           >
-            <Menu size={22} aria-hidden="true" />
+            <IconMenu2 size={22} aria-hidden="true" />
             <span>Menu</span>
           </button>
         </header>
@@ -380,9 +380,9 @@ export function Shell() {
             {(!online || queue.length > 0) && (
               <Link to="/settings" aria-label={connectionLabel}>
                 {!online ? (
-                  <WifiOff size={14} aria-hidden="true" />
+                  <IconWifiOff size={14} aria-hidden="true" />
                 ) : (
-                  <Wifi size={14} aria-hidden="true" />
+                  <IconWifi size={14} aria-hidden="true" />
                 )}
                 {!online ? "Offline" : `${queue.length} waiting to sync`}
               </Link>
@@ -391,7 +391,7 @@ export function Shell() {
         )}
         {!online && (
           <div className="offline-banner">
-            <WifiOff size={16} />
+            <IconWifiOff size={16} />
             You’re offline. Saved lessons and farm records are available. Fresh
             weather needs a connection.
           </div>
@@ -404,7 +404,7 @@ export function Shell() {
           </Suspense>
         </main>
         <div className="page-footer">
-          <Sprout size={15} />
+          <IconSeedling size={15} />
           <span>Growing together, one season at a time.</span>
           <span>Uganda</span>
         </div>
@@ -426,7 +426,7 @@ export function Shell() {
       </nav>
       {toast && (
         <div className="toast" role="status">
-          <Check size={18} />
+          <IconCheck size={18} />
           {toast}
         </div>
       )}

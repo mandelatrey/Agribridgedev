@@ -8,34 +8,34 @@ import {
 } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  Bean,
-  Building2,
-  CalendarDays,
-  Check,
-  CheckCheck,
-  ChevronDown,
-  Coffee,
-  CreditCard,
-  Handshake,
-  Leaf,
-  LoaderCircle,
-  MapPin,
-  MessageCircle,
-  PackageCheck,
-  RefreshCw,
-  Search,
-  ShoppingBag,
-  SlidersHorizontal,
-  Sprout,
-  Truck,
-  UserRound,
-  Wheat,
-  WifiOff,
-  X,
-} from "lucide-react";
+  IconAdjustmentsHorizontal,
+  IconArrowDown,
+  IconArrowRight,
+  IconArrowUpRight,
+  IconBuilding,
+  IconCalendarMonth,
+  IconCheck,
+  IconChecks,
+  IconChevronDown,
+  IconCoffee,
+  IconCreditCard,
+  IconHeartHandshake,
+  IconLeaf,
+  IconLoader2,
+  IconMapPin,
+  IconMessageCircle,
+  IconPackages,
+  IconPlant,
+  IconRefresh,
+  IconSearch,
+  IconSeedling,
+  IconShoppingBag,
+  IconTruck,
+  IconUser,
+  IconWheat,
+  IconWifiOff,
+  IconX,
+} from "@tabler/icons-react";
 import { Button, ErrorMessage } from "../components/ui";
 import {
   BuyerAccountDialog,
@@ -117,12 +117,12 @@ function ProduceCard({
   disabled: boolean;
 }) {
   const Icon = /coffee/i.test(listing.crop)
-    ? Coffee
+    ? IconCoffee
     : /bean/i.test(listing.crop)
-      ? Bean
+      ? IconPlant
       : /maize|rice|wheat/i.test(listing.crop)
-        ? Wheat
-        : Leaf;
+        ? IconWheat
+        : IconLeaf;
   const tone = /bean/i.test(listing.crop)
     ? "bean"
     : /coffee/i.test(listing.crop)
@@ -132,15 +132,15 @@ function ProduceCard({
     <article className={`buyer-produce-card buyer-produce-${tone}`}>
       <div className="buyer-produce-cover">
         <span>
-          <MapPin size={13} />
+          <IconMapPin size={13} />
           {listing.district}
         </span>
-        <Icon size={58} strokeWidth={1.15} aria-hidden="true" />
+        <Icon size={58} stroke={1.15} aria-hidden="true" />
         <span>{listing.sample ? "SAMPLE" : "FARM & CO-OP PRODUCE"}</span>
       </div>
       <div className="buyer-produce-body">
         <p className="buyer-seller">
-          <Building2 size={12} />
+          <IconBuilding size={12} />
           {listing.sellerName}
         </p>
         <h3>{listing.variety || listing.crop}</h3>
@@ -166,7 +166,7 @@ function ProduceCard({
           </div>
         </dl>
         <p className="buyer-harvest">
-          <CalendarDays size={13} />
+          <IconCalendarMonth size={13} />
           <span>
             Harvest {buyerDate(listing.harvestFrom)} –{" "}
             {buyerDate(listing.harvestUntil)}
@@ -184,7 +184,7 @@ function ProduceCard({
             onClick={onSelect}
           >
             {listing.priceUgxPerKg === null ? "Price needed" : "Review request"}
-            {listing.priceUgxPerKg !== null && <ArrowUpRight size={16} />}
+            {listing.priceUgxPerKg !== null && <IconArrowUpRight size={16} />}
           </button>
         </div>
       </div>
@@ -225,7 +225,7 @@ function OrderCard({
       </div>
       <div className="buyer-order-main">
         <span className="buyer-order-crop">
-          <Wheat size={30} strokeWidth={1.3} />
+          <IconWheat size={30} stroke={1.3} />
         </span>
         <div>
           <p>{order.sellerName}</p>
@@ -246,7 +246,9 @@ function OrderCard({
         >
           {["Requested", "Accepted", "Completed"].map((label, index) => (
             <li key={label} className={index <= active ? "is-reached" : ""}>
-              <span>{index <= active ? <Check size={12} /> : index + 1}</span>
+              <span>
+                {index <= active ? <IconCheck size={12} /> : index + 1}
+              </span>
               {label}
             </li>
           ))}
@@ -254,12 +256,12 @@ function OrderCard({
       )}
       <div className="buyer-order-details">
         <span>
-          <MapPin size={14} />
+          <IconMapPin size={14} />
           {order.deliveryLocation}
         </span>
         {order.requestedDeliveryDate && (
           <span>
-            <CalendarDays size={14} />
+            <IconCalendarMonth size={14} />
             Preferred {buyerDate(order.requestedDeliveryDate)}
           </span>
         )}
@@ -269,7 +271,7 @@ function OrderCard({
       )}
       <div className="buyer-order-bottom">
         <span>
-          <CreditCard size={14} />
+          <IconCreditCard size={14} />
           No online payment collected
         </span>
         <div>
@@ -283,7 +285,7 @@ function OrderCard({
                 {order.status === "requested"
                   ? "Preview seller acceptance"
                   : "Preview completion"}
-                <ArrowRight size={14} />
+                <IconArrowRight size={14} />
               </button>
             )}
           {order.status === "requested" && !confirmCancel && (
@@ -653,26 +655,26 @@ export default function BuyerMarketplace() {
       </a>
       <header className="buyer-header buyer-width">
         <Link className="buyer-brand" to="/welcome">
-          <Sprout size={30} strokeWidth={1.5} />
+          <IconSeedling size={30} stroke={1.5} />
           <span>
             Agribridge<small>THE PRODUCE MARKETPLACE</small>
           </span>
         </Link>
         <nav aria-label="Buyer navigation">
           <Link to="/welcome">
-            I’m a farmer or co-op <ArrowUpRight size={14} />
+            I’m a farmer or co-op <IconArrowUpRight size={14} />
           </Link>
           <Link
             to="/whatsapp-demo?audience=buyer"
             className="buyer-whatsapp-link"
           >
-            <MessageCircle size={17} />
+            <IconMessageCircle size={17} />
             WhatsApp preview
           </Link>
         </nav>
         {simulation ? (
           <button className="buyer-account-button" onClick={resetSample}>
-            <RefreshCw size={15} />
+            <IconRefresh size={15} />
             Reset sample
           </button>
         ) : (
@@ -686,9 +688,9 @@ export default function BuyerMarketplace() {
             }
           >
             {sessionLoading ? (
-              <LoaderCircle size={16} className="spin" />
+              <IconLoader2 size={16} className="spin" />
             ) : (
-              <UserRound size={16} />
+              <IconUser size={16} />
             )}
             <span>
               {sessionLoading
@@ -720,7 +722,7 @@ export default function BuyerMarketplace() {
             </p>
             <div>
               <button className="buyer-primary" onClick={scrollToCatalog}>
-                Explore available produce <ArrowDown size={17} />
+                Explore available produce <IconArrowDown size={17} />
               </button>
               <button
                 className="buyer-text-button"
@@ -729,11 +731,11 @@ export default function BuyerMarketplace() {
                 {simulation
                   ? "Return to live marketplace"
                   : "Explore sample marketplace"}
-                <ArrowUpRight size={16} />
+                <IconArrowUpRight size={16} />
               </button>
             </div>
             <span className="buyer-hero-footnote">
-              <Handshake size={16} />
+              <IconHeartHandshake size={16} />
               Agribridge connects buyers and sellers. Direct-to-seller payments
               are planned; checkout is not yet available.
             </span>
@@ -785,7 +787,7 @@ export default function BuyerMarketplace() {
           {simulation && (
             <div className="buyer-simulation-banner">
               <span>
-                <Sprout size={21} />
+                <IconSeedling size={21} />
                 <span>
                   <strong>Sample marketplace · browser-only preview</strong>
                   <small>
@@ -795,7 +797,7 @@ export default function BuyerMarketplace() {
                 </span>
               </span>
               <button onClick={() => switchSimulation(false)}>
-                Exit sample <X size={15} />
+                Exit sample <IconX size={15} />
               </button>
             </div>
           )}
@@ -807,7 +809,7 @@ export default function BuyerMarketplace() {
           )}
           {!online && (
             <div className="buyer-inline-notice">
-              <WifiOff size={18} />
+              <IconWifiOff size={18} />
               {simulation
                 ? "You’re offline. The sample walkthrough still works in this page."
                 : "You’re offline. Reconnect to refresh stock, sign in or send a request."}
@@ -820,13 +822,13 @@ export default function BuyerMarketplace() {
           )}
           {feedback && (
             <div className="buyer-feedback" role="status">
-              <CheckCheck size={18} />
+              <IconChecks size={18} />
               {feedback}
               <button
                 aria-label="Dismiss update"
                 onClick={() => setFeedback("")}
               >
-                <X size={15} />
+                <IconX size={15} />
               </button>
             </div>
           )}
@@ -852,14 +854,14 @@ export default function BuyerMarketplace() {
                 aria-pressed={area === "catalog"}
                 onClick={() => setArea("catalog")}
               >
-                <Leaf size={16} />
+                <IconLeaf size={16} />
                 Browse produce
               </button>
               <button
                 aria-pressed={area === "orders"}
                 onClick={() => setArea("orders")}
               >
-                <ShoppingBag size={16} />
+                <IconShoppingBag size={16} />
                 {simulation ? "Sample requests" : "My requests"}
                 {simulation && sampleOrders.length > 0 && (
                   <span>{sampleOrders.length}</span>
@@ -872,7 +874,7 @@ export default function BuyerMarketplace() {
             <>
               <form className="buyer-filters" onSubmit={applyFilters}>
                 <label className="buyer-search">
-                  <Search size={18} />
+                  <IconSearch size={18} />
                   <span className="buyer-visually-hidden">
                     Search produce and sellers
                   </span>
@@ -942,7 +944,7 @@ export default function BuyerMarketplace() {
                   />
                 </label>
                 <button type="submit" className="buyer-filter-submit">
-                  <SlidersHorizontal size={16} />
+                  <IconAdjustmentsHorizontal size={16} />
                   Find produce
                 </button>
               </form>
@@ -961,7 +963,7 @@ export default function BuyerMarketplace() {
                         setFilters(emptyBuyerFilters);
                       }}
                     >
-                      Clear filters <X size={13} />
+                      Clear filters <IconX size={13} />
                     </button>
                   )}
                   {!simulation && (
@@ -970,7 +972,7 @@ export default function BuyerMarketplace() {
                       disabled={!online || catalogLoading}
                       onClick={() => void loadCatalog()}
                     >
-                      <RefreshCw
+                      <IconRefresh
                         size={13}
                         className={catalogLoading ? "spin" : ""}
                       />
@@ -991,7 +993,7 @@ export default function BuyerMarketplace() {
                     className="buyer-text-button"
                     onClick={() => switchSimulation(true)}
                   >
-                    Explore sample marketplace <ArrowRight size={15} />
+                    Explore sample marketplace <IconArrowRight size={15} />
                   </button>
                 </div>
               )}
@@ -1033,7 +1035,7 @@ export default function BuyerMarketplace() {
               ) : (
                 <div className="buyer-empty">
                   <span>
-                    <Sprout size={38} strokeWidth={1.2} />
+                    <IconSeedling size={38} stroke={1.2} />
                   </span>
                   <p className="buyer-eyebrow">
                     {hasFilters
@@ -1059,7 +1061,7 @@ export default function BuyerMarketplace() {
                           setDraftFilters(emptyBuyerFilters);
                         }}
                       >
-                        Browse all produce <ArrowRight size={16} />
+                        Browse all produce <IconArrowRight size={16} />
                       </button>
                     ) : (
                       !simulation && (
@@ -1067,13 +1069,14 @@ export default function BuyerMarketplace() {
                           className="buyer-primary"
                           onClick={() => switchSimulation(true)}
                         >
-                          Explore sample marketplace <ArrowUpRight size={16} />
+                          Explore sample marketplace{" "}
+                          <IconArrowUpRight size={16} />
                         </button>
                       )
                     )}
                     <Link to="/whatsapp-demo?audience=buyer">
                       See the WhatsApp buying preview{" "}
-                      <MessageCircle size={16} />
+                      <IconMessageCircle size={16} />
                     </Link>
                   </div>
                 </div>
@@ -1090,7 +1093,7 @@ export default function BuyerMarketplace() {
                       )
                     }
                   >
-                    Load more produce <ChevronDown size={16} />
+                    Load more produce <IconChevronDown size={16} />
                   </Button>
                 </div>
               )}
@@ -1105,7 +1108,7 @@ export default function BuyerMarketplace() {
               {!activeBuyer ? (
                 <div className="buyer-empty">
                   <span>
-                    <UserRound size={35} strokeWidth={1.3} />
+                    <IconUser size={35} stroke={1.3} />
                   </span>
                   <h3>Your requests belong here.</h3>
                   <p>
@@ -1117,7 +1120,7 @@ export default function BuyerMarketplace() {
                     disabled={!online || sessionLoading}
                     onClick={() => dispatch({ type: "auth", mode: "login" })}
                   >
-                    Sign in as buyer <ArrowRight size={16} />
+                    Sign in as buyer <IconArrowRight size={16} />
                   </button>
                 </div>
               ) : (
@@ -1135,7 +1138,7 @@ export default function BuyerMarketplace() {
                         simulation ? resetSample() : void loadOrders()
                       }
                     >
-                      <RefreshCw size={13} />
+                      <IconRefresh size={13} />
                       {simulation
                         ? "Reset sample requests"
                         : "Refresh requests"}
@@ -1144,7 +1147,7 @@ export default function BuyerMarketplace() {
                   {orderError && <ErrorMessage message={orderError} />}
                   {ordersLoading && !orders && !simulation ? (
                     <div className="buyer-loading" role="status">
-                      <LoaderCircle className="spin" size={22} />
+                      <IconLoader2 className="spin" size={22} />
                       Loading your order requests…
                     </div>
                   ) : visibleOrders.length ? (
@@ -1180,7 +1183,7 @@ export default function BuyerMarketplace() {
                     !orderError && (
                       <div className="buyer-empty">
                         <span>
-                          <ShoppingBag size={35} strokeWidth={1.3} />
+                          <IconShoppingBag size={35} stroke={1.3} />
                         </span>
                         <h3>A good supplier is the next step.</h3>
                         <p>
@@ -1193,7 +1196,7 @@ export default function BuyerMarketplace() {
                           onClick={() => setArea("catalog")}
                         >
                           Browse {simulation ? "sample " : ""}produce{" "}
-                          <ArrowRight size={16} />
+                          <IconArrowRight size={16} />
                         </button>
                       </div>
                     )
@@ -1210,12 +1213,12 @@ export default function BuyerMarketplace() {
                           )
                         }
                       >
-                        Load earlier requests <ChevronDown size={16} />
+                        Load earlier requests <IconChevronDown size={16} />
                       </Button>
                     </div>
                   )}
                   <div className="buyer-payment-note">
-                    <CreditCard size={22} />
+                    <IconCreditCard size={22} />
                     <div>
                       <strong>Payment checkout is not available yet.</strong>
                       <p>
@@ -1238,7 +1241,7 @@ export default function BuyerMarketplace() {
         <section className="buyer-support buyer-width">
           <div>
             <span>
-              <MessageCircle size={24} />
+              <IconMessageCircle size={24} />
             </span>
             <div>
               <p className="buyer-eyebrow">ANOTHER WAY TO CONNECT</p>
@@ -1250,19 +1253,19 @@ export default function BuyerMarketplace() {
             </div>
           </div>
           <Link to="/whatsapp-demo?audience=buyer">
-            Try the buyer conversation <ArrowUpRight size={18} />
+            Try the buyer conversation <IconArrowUpRight size={18} />
           </Link>
           <small>Scripted preview · WhatsApp connection coming soon</small>
         </section>
       </main>
       <footer className="buyer-footer buyer-width">
         <Link className="buyer-brand" to="/welcome">
-          <Sprout size={24} />
+          <IconSeedling size={24} />
           <span>Agribridge</span>
         </Link>
         <span>Better connections. From farm to market.</span>
         <Link to="/welcome">
-          Explore the farmer platform <ArrowUpRight size={14} />
+          Explore the farmer platform <IconArrowUpRight size={14} />
         </Link>
       </footer>
 

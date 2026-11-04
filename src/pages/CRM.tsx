@@ -1,17 +1,17 @@
 import { useCallback, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight,
-  ArrowLeft,
-  CalendarPlus,
-  Check,
-  Mail,
-  MapPin,
-  Pencil,
-  Phone,
-  Plus,
-  Users,
-} from "lucide-react";
+  IconArrowLeft,
+  IconArrowRight,
+  IconCalendarPlus,
+  IconCheck,
+  IconMail,
+  IconMapPin,
+  IconPencil,
+  IconPhone,
+  IconPlus,
+  IconUsers,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   Badge,
@@ -266,7 +266,7 @@ export default function CRM() {
         body="The relationship workspace is available to your cooperative's authorized team."
         action={
           <Link className="text-link" to="/">
-            Go to Today <ArrowRight size={16} />
+            Go to Today <IconArrowRight size={16} />
           </Link>
         }
       />
@@ -279,7 +279,7 @@ export default function CRM() {
         description="Know the people behind every harvest. Make the next conversation count."
         action={
           <Button onClick={() => setEditor("new")} disabled={!online}>
-            <Plus size={17} />
+            <IconPlus size={17} />
             Add contact
           </Button>
         }
@@ -424,7 +424,7 @@ export default function CRM() {
                           <span className="op-card-action-label">
                             View details
                           </span>
-                          <ArrowRight size={17} />
+                          <IconArrowRight size={17} />
                         </button>
                       </td>
                     </tr>
@@ -434,7 +434,7 @@ export default function CRM() {
             </div>
           ) : (
             <Empty
-              icon={Users}
+              icon={IconUsers}
               title={
                 query || filter !== "all"
                   ? "No matching contacts"
@@ -478,7 +478,7 @@ export default function CRM() {
               className="op-mobile-back text-link"
               onClick={backToList}
             >
-              <ArrowLeft size={16} /> Back to contacts
+              <IconArrowLeft size={16} /> Back to contacts
             </button>
             <div className="panel-header">
               <span className="op-eyebrow">Relationship profile</span>
@@ -488,7 +488,7 @@ export default function CRM() {
                 disabled={!online}
                 aria-label={`Edit ${selected.name}`}
               >
-                <Pencil size={17} />
+                <IconPencil size={17} />
               </button>
             </div>
             <div className="op-detail-body">
@@ -501,11 +501,11 @@ export default function CRM() {
               </p>
               <div className="op-contact-lines">
                 <span>
-                  <MapPin size={16} />
+                  <IconMapPin size={16} />
                   {selected.district}
                 </span>
                 <span>
-                  <Phone size={16} />
+                  <IconPhone size={16} />
                   {selected.phone}
                 </span>
               </div>
@@ -527,14 +527,14 @@ export default function CRM() {
                   onClick={() => setFollowUp(selected)}
                   disabled={!online}
                 >
-                  <CalendarPlus size={16} />
+                  <IconCalendarPlus size={16} />
                   Follow up
                 </Button>
                 <Link
                   className="text-link"
                   to={`/messages?contact=${encodeURIComponent(selected.id)}`}
                 >
-                  <Mail size={16} />
+                  <IconMail size={16} />
                   Message
                 </Link>
               </div>
@@ -563,7 +563,7 @@ export default function CRM() {
                           onClick={() => void complete(task)}
                           aria-label={`Complete ${task.title}`}
                         >
-                          <Check size={17} />
+                          <IconCheck size={17} />
                         </button>
                       )}
                     </div>

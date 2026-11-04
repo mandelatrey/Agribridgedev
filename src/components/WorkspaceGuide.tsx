@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
-  ArrowRight,
-  Bot,
-  Check,
-  Compass,
-  Sprout,
-  Users,
-  X,
-} from "lucide-react";
+  IconArrowRight,
+  IconCheck,
+  IconCompass,
+  IconRobot,
+  IconSeedling,
+  IconUsers,
+  IconX,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import {
   assistantGuideLink,
@@ -58,7 +58,7 @@ function SectionGuide({
     <>
       <aside className="workspace-guide-bar" aria-label="Help for this page">
         <span className="guide-icon">
-          <Compass size={20} aria-hidden="true" />
+          <IconCompass size={20} aria-hidden="true" />
         </span>
         <div>
           <strong>A little guidance, whenever you need it.</strong>
@@ -69,7 +69,7 @@ function SectionGuide({
           onClick={() => setOpen(true)}
           aria-haspopup="dialog"
         >
-          Guide me <ArrowRight size={16} aria-hidden="true" />
+          Guide me <IconArrowRight size={16} aria-hidden="true" />
         </Button>
         <button
           className="icon-button guide-dismiss"
@@ -77,7 +77,7 @@ function SectionGuide({
           aria-label="Close guidance"
           onClick={onDismiss}
         >
-          <X size={18} aria-hidden="true" />
+          <IconX size={18} aria-hidden="true" />
         </button>
       </aside>
       {open && (
@@ -100,7 +100,7 @@ function SectionGuide({
             </ol>
             {guide.route !== "/assistant" && (
               <div className="guide-ai">
-                <Bot size={23} aria-hidden="true" />
+                <IconRobot size={23} aria-hidden="true" />
                 <div>
                   <strong>Want this explained another way?</strong>
                   <p>
@@ -114,7 +114,7 @@ function SectionGuide({
                       onClick={() => setOpen(false)}
                       className="text-link"
                     >
-                      Ask AI about this <ArrowRight size={16} />
+                      Ask AI about this <IconArrowRight size={16} />
                     </Link>
                   )}
                 </div>
@@ -171,7 +171,7 @@ export function WorkspaceJourney() {
                 setExpanded(true);
               }}
             >
-              <Sprout size={16} />
+              <IconSeedling size={16} />
               Farm journey
             </button>
             <button
@@ -182,7 +182,7 @@ export function WorkspaceJourney() {
                 setExpanded(true);
               }}
             >
-              <Users size={16} />
+              <IconUsers size={16} />
               Cooperative journey
             </button>
           </div>
@@ -209,7 +209,7 @@ export function WorkspaceJourney() {
           >
             <Link to={step.to}>
               <span className="journey-station-number" aria-hidden="true">
-                {step.recorded ? <Check size={18} /> : `0${index + 1}`}
+                {step.recorded ? <IconCheck size={18} /> : `0${index + 1}`}
               </span>
               <div>
                 <small>
@@ -222,7 +222,7 @@ export function WorkspaceJourney() {
                 <h3>{step.title}</h3>
                 <p>{step.detail}</p>
               </div>
-              <ArrowRight
+              <IconArrowRight
                 size={17}
                 className="journey-station-arrow"
                 aria-hidden="true"
@@ -244,7 +244,7 @@ export function WorkspaceJourney() {
         </span>
         <Link className="button" to={next.to}>
           {nextIndex < 0 ? "Review records" : "Take the next step"}
-          <ArrowRight size={17} />
+          <IconArrowRight size={17} />
         </Link>
       </div>
       <p className="journey-evidence">
