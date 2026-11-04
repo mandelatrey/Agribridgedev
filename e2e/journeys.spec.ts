@@ -210,7 +210,7 @@ test("weather shows a dated model forecast for the farm", async ({
   consoleErrors,
 }) => {
   await signInAsDemo(page, "farmer");
-  await openSection(page, "Weather");
+  await openSection(page, "Weather", "More tools");
   await expect(page.getByText(/Open-Meteo/).first()).toBeVisible();
   await expect(
     page

@@ -13,14 +13,14 @@ describe("simple navigation", () => {
       "Home",
       "Marketplace",
       "Farms",
-      "Weather",
+      "Transactions",
       "Prices",
     ]);
     expect(CORE_NAVIGATION.map((item) => item.to)).toEqual([
       "/",
       "/marketplace",
       "/farms",
-      "/weather",
+      "/transactions",
       "/markets",
     ]);
     for (const role of ["farmer", "operator", "admin"] as const) {
@@ -30,8 +30,8 @@ describe("simple navigation", () => {
   it("keeps advanced farm routes separate from the primary choices", () => {
     expect(navigationFor("farmer").more.map((item) => item.to)).toEqual([
       "/learn",
+      "/weather",
       "/seasons",
-      "/transactions",
       "/harvest",
       "/community",
       "/assistant",

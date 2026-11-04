@@ -27,13 +27,13 @@ export const CORE_NAVIGATION: readonly NavigationItem[] = [
   { to: "/", label: "Home", icon: "home" },
   { to: "/marketplace", label: "Marketplace", icon: "marketplace" },
   { to: "/farms", label: "Farms", icon: "farm" },
-  { to: "/weather", label: "Weather", icon: "weather" },
+  { to: "/transactions", label: "Transactions", icon: "transactions" },
   { to: "/markets", label: "Prices", icon: "prices" },
 ];
 const MORE_NAVIGATION: readonly NavigationItem[] = [
   { to: "/learn", label: "Learn", icon: "learn" },
+  { to: "/weather", label: "Weather", icon: "weather" },
   { to: "/seasons", label: "Season planner", icon: "season" },
-  { to: "/transactions", label: "Transactions", icon: "transactions" },
   { to: "/harvest", label: "Harvest & collection", icon: "harvest" },
   { to: "/community", label: "Community reports", icon: "community" },
   { to: "/assistant", label: "Farm assistant", icon: "assistant" },
