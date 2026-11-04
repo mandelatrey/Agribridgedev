@@ -3,12 +3,8 @@ import { Link } from "react-router-dom";
 import {
   IconArrowRight,
   IconArrowUpRight,
-  IconBook,
-  IconCalendar,
   IconCheck,
   IconChecks,
-  IconClock,
-  IconPlant2,
   IconPlus,
   IconSeedling,
   IconUsers,
@@ -19,10 +15,19 @@ import { date, dueLabel, label, number, today } from "../lib/format";
 import { agendaTasks, type AgendaFilter } from "../lib/workspace";
 import { FarmEditor, TaskEditor } from "./Farms";
 import { HomeWeather } from "../components/HomeData";
+import {
+  FarmSpotlight,
+  LandStat,
+  RecentTransactions,
+  SalesChart,
+  SalesStat,
+  SeasonOverview,
+} from "../components/HomeDashboard";
 import { WorkspaceJourney } from "../components/WorkspaceGuide";
 import { useActiveFarm } from "../lib/active-farm";
 import type { Task } from "../types";
 import "../styles/home-journey.css";
+import "../styles/home-dashboard.css";
 
 const filters: { id: AgendaFilter; label: string }[] = [
   { id: "pending", label: "All pending" },
@@ -63,14 +68,8 @@ function WorkspaceHome() {
   const farmId = staff ? staffFarmId : (activeFarm?.id ?? "");
   const selectedFarm = data.farms.find((farm) => farm.id === farmId);
   const weatherFarm = selectedFarm || data.farms[0];
-  const pending = agendaTasks(data.tasks, "pending", day, farmId);
-  const dueToday = agendaTasks(data.tasks, "today", day, farmId);
   const tasks = agendaTasks(data.tasks, filter, day, farmId);
   const farms = selectedFarm ? [selectedFarm] : data.farms;
-  const seasons = data.seasons.filter(
-    (season) =>
-      season.status === "active" && (!farmId || season.farmId === farmId),
-  );
   const collections = data.collections
     .filter((collection) =>
       ["planning", "confirmed"].includes(collection.status),
@@ -162,12 +161,12 @@ function WorkspaceHome() {
           <Link to="/settings">Review saved changes</Link>
         </Notice>
       )}
-      <div className="workspace-scope">
-        <span>
-          <span className="live-dot" />
-          {staff ? "Your cooperative at a glance" : "Your season at a glance"}
-        </span>
-        {staff ? (
+      {staff && (
+        <div className="workspace-scope">
+          <span>
+            <span className="live-dot" />
+            Your cooperative at a glance
+          </span>
           <label>
             <span>Farm</span>
             <select
@@ -183,68 +182,15 @@ function WorkspaceHome() {
               ))}
             </select>
           </label>
-        ) : (
-          selectedFarm && (
-            <Link className="text-link" to="/farms">
-              {selectedFarm.name} <IconArrowUpRight size={16} />
-            </Link>
-          )
-        )}
-      </div>
-      <div className="workspace-metrics" aria-label="Workspace summary">
-        <Link to="/farms">
-          <span className="metric-icon">
-            <IconSeedling size={21} />
-          </span>
-          <span>
-            {staff || !selectedFarm ? (
-              <>
-                <strong>{number(farms.length)}</strong>
-                <small>{staff ? "Farms in view" : "Your farms"}</small>
-              </>
-            ) : (
-              <>
-                <strong>{number(selectedFarm.areaAcres)} ac</strong>
-                <small>Farm details</small>
-              </>
-            )}
-          </span>
-          <IconArrowUpRight size={16} />
-        </Link>
-        <button onClick={() => setFilter("pending")}>
-          <span className="metric-icon">
-            <IconChecks size={21} />
-          </span>
-          <span>
-            <strong>{pending.length}</strong>
-            <small>Open tasks</small>
-          </span>
-          <IconArrowUpRight size={16} />
-        </button>
-        <button onClick={() => setFilter("today")}>
-          <span className="metric-icon">
-            <IconClock size={21} />
-          </span>
-          <span>
-            <strong>{dueToday.length}</strong>
-            <small>Due today</small>
-          </span>
-          <IconArrowUpRight size={16} />
-        </button>
-        <Link
-          to={
-            farmId ? `/seasons?farm=${encodeURIComponent(farmId)}` : "/seasons"
-          }
-        >
-          <span className="metric-icon">
-            <IconPlant2 size={21} />
-          </span>
-          <span>
-            <strong>{seasons.length}</strong>
-            <small>Active seasons</small>
-          </span>
-          <IconArrowUpRight size={16} />
-        </Link>
+        </div>
+      )}
+      <div className="home-dash-top">
+        <HomeWeather district={weatherFarm?.district} />
+        <SeasonOverview seasons={data.seasons} farmId={farmId} today={day} />
+        <div className="home-dash-stats">
+          <LandStat farms={farms} />
+          <SalesStat transactions={data.transactions} today={day} />
+        </div>
       </div>
       {staff && (
         <section
@@ -299,210 +245,175 @@ function WorkspaceHome() {
           </div>
         </section>
       )}
-      <div className="workspace-columns">
-        <div className="workspace-primary">
-          <section
-            className="workspace-panel agenda-panel"
-            aria-labelledby="agenda-title"
-          >
-            <div className="panel-heading">
-              <div>
-                <span className="workspace-eyebrow">ONE STEP AT A TIME</span>
-                <h2 id="agenda-title">Today & upcoming</h2>
-              </div>
-              <Link className="text-link" to="/farms?tasks=1">
-                All tasks <IconArrowUpRight size={16} />
-              </Link>
-            </div>
-            <div className="agenda-filters" aria-label="Filter tasks">
-              {filters.map((item) => (
-                <button
-                  key={item.id}
-                  aria-pressed={filter === item.id}
-                  onClick={() => setFilter(item.id)}
-                >
-                  {item.label}
-                  <span>
-                    {agendaTasks(data.tasks, item.id, day, farmId).length}
-                  </span>
-                </button>
-              ))}
-            </div>
-            {error && (
-              <p className="notice notice-error" role="alert">
-                {error}
-              </p>
-            )}
-            <div className="agenda-list">
-              {tasks.slice(0, 6).map((task) => {
-                const waiting = queue.some(
-                  (change) => change.path === `/api/tasks/${task.id}`,
-                );
-                const overdue =
-                  task.status === "pending" && task.dueDate.slice(0, 10) < day;
-                return (
-                  <div className="agenda-row" key={task.id}>
-                    <button
-                      className={`task-check ${task.status === "completed" ? "is-complete" : ""}`}
-                      aria-label={`${task.status === "completed" ? "Reopen" : "Complete"} ${task.title}`}
-                      disabled={!!busy || waiting}
-                      onClick={() => void toggleTask(task)}
-                    >
-                      {task.status === "completed" ? (
-                        <IconCheck size={16} />
-                      ) : busy === task.id ? (
-                        <span className="task-pulse" />
-                      ) : null}
-                    </button>
-                    <Link
-                      className="agenda-task"
-                      to={`/farms?tasks=1&task=${encodeURIComponent(task.id)}`}
-                    >
-                      <strong>{task.title}</strong>
-                      <small>
-                        {data.farms.find((farm) => farm.id === task.farmId)
-                          ?.name || "General task"}{" "}
-                        <span>· {label(task.category)}</span>
-                      </small>
-                    </Link>
-                    <span
-                      className={`agenda-due ${overdue ? "is-overdue" : ""}`}
-                    >
-                      {waiting
-                        ? "Awaiting sync"
-                        : task.status === "completed"
-                          ? "Completed"
-                          : `${overdue ? "Overdue · " : ""}${dueLabel(task.dueDate)}`}
-                    </span>
-                  </div>
-                );
-              })}
-              {!tasks.length && (
-                <div className="agenda-empty">
-                  <IconChecks size={28} />
-                  <h3>
-                    {filter === "today"
-                      ? "A clear day ahead."
-                      : filter === "overdue"
-                        ? "Nothing overdue."
-                        : filter === "completed"
-                          ? "Your progress starts here."
-                          : "Ready for your next step."}
-                  </h3>
-                  <p>
-                    {filter === "completed"
-                      ? "Completed tasks will appear here."
-                      : "Add a task to plan ahead, or check another view."}
-                  </p>
-                  <button
-                    className="text-link"
-                    onClick={() => setEditor("task")}
-                  >
-                    <IconPlus size={16} /> Plan a task
-                  </button>
-                </div>
-              )}
-            </div>
-            {tasks.length > 6 && (
-              <Link className="agenda-more" to="/farms?tasks=1">
-                {tasks.length} tasks in this view · Open all tasks{" "}
-                <IconArrowRight size={16} />
-              </Link>
-            )}
-          </section>
-          <section className="workspace-panel" aria-labelledby="farms-title">
-            <div className="panel-heading">
-              <div>
-                <span className="workspace-eyebrow">
-                  ROOTED IN YOUR RECORDS
-                </span>
-                <h2 id="farms-title">
-                  {staff ? "Farms in focus" : "Your farm"}
-                </h2>
-              </div>
-              <button className="text-link" onClick={() => setEditor("farm")}>
-                <IconPlus size={16} /> Add farm
-              </button>
-            </div>
-            <div className="workspace-farms">
-              {farms.slice(0, 4).map((farm) => (
-                <Link
-                  className="workspace-farm-row"
-                  to={`/farms?farm=${encodeURIComponent(farm.id)}`}
-                  key={farm.id}
-                >
-                  <span className="farm-symbol">
-                    <IconSeedling size={24} />
-                  </span>
-                  <span>
-                    <strong>{farm.name}</strong>
-                    <small>
-                      {farm.district} · {number(farm.areaAcres)} acres
-                    </small>
-                  </span>
-                  <span className="farm-crop">
-                    <strong>{farm.crop}</strong>
-                    <small>{label(farm.stage)}</small>
-                  </span>
-                  <IconArrowUpRight size={17} />
-                </Link>
-              ))}
-            </div>
-            {!farms.length && (
-              <div className="agenda-empty">
-                <IconSeedling size={28} />
-                <h3>Start with your first farm.</h3>
-                <p>
-                  Keep crop records, plan field work and track each season in
-                  one place.
-                </p>
-                <Button onClick={() => setEditor("farm")}>
-                  <IconPlus size={16} /> Add a farm
-                </Button>
-              </div>
-            )}
-            {farms.length > 4 && (
-              <Link className="agenda-more" to="/farms">
-                Explore all {farms.length} farms <IconArrowRight size={16} />
-              </Link>
-            )}
-          </section>
-        </div>
-        <aside className="workspace-rail" aria-label="Planning and conditions">
-          <HomeWeather district={weatherFarm?.district} />
-          <section className="season-callout">
-            <span className="workspace-eyebrow">
-              <IconCalendar size={17} /> SEASON PLANNER
-            </span>
-            <h2>Good harvests start with a plan.</h2>
-            <p>Bring your crop calendar, costs and harvest goals together.</p>
-            <Link
-              className="button button-secondary"
-              to={
-                farmId
-                  ? `/seasons?farm=${encodeURIComponent(farmId)}`
-                  : "/seasons"
-              }
-            >
-              Plan your season <IconArrowRight size={16} />
-            </Link>
-            <div className="season-mini-path">
-              <span>Prepare</span>
-              <span>Grow</span>
-              <span>Harvest</span>
-              <span>Sell</span>
-            </div>
-          </section>
-          <Link className="workspace-learning" to="/learn">
-            <IconBook size={23} />
-            <span>
-              <strong>Grow your knowledge</strong>
-              <small>Practical guides for your next step</small>
-            </span>
-            <IconArrowUpRight size={17} />
-          </Link>
-        </aside>
+      <div className="home-dash-row">
+        <SalesChart transactions={data.transactions} today={day} />
+        <FarmSpotlight
+          farm={selectedFarm ?? farms[0]}
+          onAddFarm={() => setEditor("farm")}
+        />
       </div>
+      <div className="home-dash-row">
+        <section
+          className="workspace-panel agenda-panel"
+          aria-labelledby="agenda-title"
+        >
+          <div className="panel-heading">
+            <div>
+              <span className="workspace-eyebrow">ONE STEP AT A TIME</span>
+              <h2 id="agenda-title">Today & upcoming</h2>
+            </div>
+            <Link className="text-link" to="/farms?tasks=1">
+              All tasks <IconArrowUpRight size={16} />
+            </Link>
+          </div>
+          <div className="agenda-filters" aria-label="Filter tasks">
+            {filters.map((item) => (
+              <button
+                key={item.id}
+                aria-pressed={filter === item.id}
+                onClick={() => setFilter(item.id)}
+              >
+                {item.label}
+                <span>
+                  {agendaTasks(data.tasks, item.id, day, farmId).length}
+                </span>
+              </button>
+            ))}
+          </div>
+          {error && (
+            <p className="notice notice-error" role="alert">
+              {error}
+            </p>
+          )}
+          <div className="agenda-list">
+            {tasks.slice(0, 6).map((task) => {
+              const waiting = queue.some(
+                (change) => change.path === `/api/tasks/${task.id}`,
+              );
+              const overdue =
+                task.status === "pending" && task.dueDate.slice(0, 10) < day;
+              return (
+                <div className="agenda-row" key={task.id}>
+                  <button
+                    className={`task-check ${task.status === "completed" ? "is-complete" : ""}`}
+                    aria-label={`${task.status === "completed" ? "Reopen" : "Complete"} ${task.title}`}
+                    disabled={!!busy || waiting}
+                    onClick={() => void toggleTask(task)}
+                  >
+                    {task.status === "completed" ? (
+                      <IconCheck size={16} />
+                    ) : busy === task.id ? (
+                      <span className="task-pulse" />
+                    ) : null}
+                  </button>
+                  <Link
+                    className="agenda-task"
+                    to={`/farms?tasks=1&task=${encodeURIComponent(task.id)}`}
+                  >
+                    <strong>{task.title}</strong>
+                    <small>
+                      {data.farms.find((farm) => farm.id === task.farmId)
+                        ?.name || "General task"}{" "}
+                      <span>· {label(task.category)}</span>
+                    </small>
+                  </Link>
+                  <span className={`agenda-due ${overdue ? "is-overdue" : ""}`}>
+                    {waiting
+                      ? "Awaiting sync"
+                      : task.status === "completed"
+                        ? "Completed"
+                        : `${overdue ? "Overdue · " : ""}${dueLabel(task.dueDate)}`}
+                  </span>
+                </div>
+              );
+            })}
+            {!tasks.length && (
+              <div className="agenda-empty">
+                <IconChecks size={28} />
+                <h3>
+                  {filter === "today"
+                    ? "A clear day ahead."
+                    : filter === "overdue"
+                      ? "Nothing overdue."
+                      : filter === "completed"
+                        ? "Your progress starts here."
+                        : "Ready for your next step."}
+                </h3>
+                <p>
+                  {filter === "completed"
+                    ? "Completed tasks will appear here."
+                    : "Add a task to plan ahead, or check another view."}
+                </p>
+                <button className="text-link" onClick={() => setEditor("task")}>
+                  <IconPlus size={16} /> Plan a task
+                </button>
+              </div>
+            )}
+          </div>
+          {tasks.length > 6 && (
+            <Link className="agenda-more" to="/farms?tasks=1">
+              {tasks.length} tasks in this view · Open all tasks{" "}
+              <IconArrowRight size={16} />
+            </Link>
+          )}
+        </section>
+        <RecentTransactions transactions={data.transactions} />
+      </div>
+      {staff && (
+        <section className="workspace-panel" aria-labelledby="farms-title">
+          <div className="panel-heading">
+            <div>
+              <span className="workspace-eyebrow">ROOTED IN YOUR RECORDS</span>
+              <h2 id="farms-title">{staff ? "Farms in focus" : "Your farm"}</h2>
+            </div>
+            <button className="text-link" onClick={() => setEditor("farm")}>
+              <IconPlus size={16} /> Add farm
+            </button>
+          </div>
+          <div className="workspace-farms">
+            {farms.slice(0, 4).map((farm) => (
+              <Link
+                className="workspace-farm-row"
+                to={`/farms?farm=${encodeURIComponent(farm.id)}`}
+                key={farm.id}
+              >
+                <span className="farm-symbol">
+                  <IconSeedling size={24} />
+                </span>
+                <span>
+                  <strong>{farm.name}</strong>
+                  <small>
+                    {farm.district} · {number(farm.areaAcres)} acres
+                  </small>
+                </span>
+                <span className="farm-crop">
+                  <strong>{farm.crop}</strong>
+                  <small>{label(farm.stage)}</small>
+                </span>
+                <IconArrowUpRight size={17} />
+              </Link>
+            ))}
+          </div>
+          {!farms.length && (
+            <div className="agenda-empty">
+              <IconSeedling size={28} />
+              <h3>Start with your first farm.</h3>
+              <p>
+                Keep crop records, plan field work and track each season in one
+                place.
+              </p>
+              <Button onClick={() => setEditor("farm")}>
+                <IconPlus size={16} /> Add a farm
+              </Button>
+            </div>
+          )}
+          {farms.length > 4 && (
+            <Link className="agenda-more" to="/farms">
+              Explore all {farms.length} farms <IconArrowRight size={16} />
+            </Link>
+          )}
+        </section>
+      )}
       <WorkspaceJourney />
       {editor === "farm" && <FarmEditor onClose={() => setEditor(null)} />}
       {editor === "task" && (

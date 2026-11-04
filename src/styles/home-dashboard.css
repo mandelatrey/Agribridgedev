@@ -1,0 +1,481 @@
+/* Dashboard grid for Home. Cards reuse the workspace panel look: white,
+   1px border, 9px radius, the app's greens and muted ink. */
+.workspace-home .home-dash-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(220px, 0.8fr);
+  gap: 22px;
+  margin: 26px 0 22px;
+  align-items: stretch;
+}
+.workspace-home .home-dash-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 22px;
+  margin-bottom: 22px;
+  align-items: stretch;
+}
+.workspace-home .home-dash-stats {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 22px;
+}
+.workspace-home .cooperative-priorities {
+  margin-bottom: 22px;
+}
+.home-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  padding: 21px 23px;
+  min-width: 0;
+  color: var(--ink);
+}
+.home-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.home-card-head h2 {
+  font-size: 17px;
+  font-weight: 620;
+  letter-spacing: -0.02em;
+}
+.home-card-head small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Weather */
+.workspace-home .home-weather-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 21px 23px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+.hw-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hw-place {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--green);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.hw-day {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+.hw-day strong {
+  font-size: 20px;
+  font-weight: 620;
+  letter-spacing: -0.02em;
+}
+.hw-day small,
+.hw-reading small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.hw-reading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+.hw-reading > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+.hw-temp {
+  font-size: 40px;
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: #123b2f;
+}
+.hw-condition {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+.hw-condition svg {
+  color: #b58a2c;
+  margin-bottom: 4px;
+}
+.hw-condition strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+.home-weather-card .home-forecast-empty {
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+/* Season gauge */
+.home-season {
+  display: flex;
+  flex-direction: column;
+}
+.home-gauge {
+  position: relative;
+  width: min(100%, 250px);
+  margin: 0 auto;
+}
+.home-gauge svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.home-gauge path {
+  fill: none;
+  stroke-width: 16;
+  stroke-linecap: round;
+}
+.home-gauge-track {
+  stroke: #e3edda;
+}
+.home-gauge-value {
+  stroke: #2f7a52;
+}
+.home-gauge-reading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.home-gauge-reading strong {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.home-gauge-reading small {
+  font-size: 11px;
+  color: var(--muted);
+}
+.home-season-name {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #527144;
+}
+.home-season-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+.home-season-facts dt,
+.home-spotlight dt {
+  font-size: 11px;
+  color: var(--muted);
+}
+.home-season-facts dd,
+.home-spotlight dd {
+  margin: 2px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+.home-season-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin: auto 0;
+}
+.home-season-empty svg {
+  color: #527144;
+}
+.home-season-empty p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+/* Stat cards */
+.workspace-home .home-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.workspace-home .home-stat:hover {
+  border-color: #b9cdbf;
+}
+.home-stat-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 550;
+}
+.home-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #e3edda;
+  color: var(--green);
+}
+.home-stat strong {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.home-stat small {
+  font-size: 12px;
+  color: var(--muted);
+}
+.home-stat-change {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.home-stat-change svg {
+  color: #2f7a52;
+}
+
+/* Sales chart */
+.home-chart-plot {
+  position: relative;
+  min-height: 210px;
+}
+.home-chart-plot svg {
+  display: block;
+  touch-action: pan-y;
+}
+.home-chart-grid {
+  stroke: #edf1ee;
+  stroke-width: 1;
+}
+.home-chart-axis {
+  fill: var(--muted);
+  font-size: 11px;
+}
+.home-chart-line {
+  fill: none;
+  stroke: #2f7a52;
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+.home-chart-point {
+  fill: #2f7a52;
+  stroke: #fff;
+  stroke-width: 2;
+}
+.home-chart-crosshair {
+  stroke: #2f7a52;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+.home-chart-tooltip {
+  position: absolute;
+  transform: translateX(-50%);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--green);
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px #0f2a1d33;
+}
+.home-chart-tooltip small {
+  font-size: 10px;
+  opacity: 0.85;
+}
+.home-chart-tooltip strong {
+  font-size: 13px;
+}
+.home-chart-empty {
+  position: absolute;
+  inset: 0 0 28px 44px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+.home-chart-empty a {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* Farm spotlight */
+.home-spotlight {
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #214f3c;
+}
+.home-spotlight img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-spotlight-panel {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  padding: 14px 16px;
+  border-radius: 9px;
+  background: #fff;
+  box-shadow: 0 10px 30px #0f2a1d33;
+}
+.home-spotlight-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.home-spotlight-head strong {
+  font-size: 15px;
+}
+.home-spotlight dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 8px 0 0;
+}
+.home-spotlight dl > div {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  min-width: 0;
+}
+.home-spotlight dd {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Recent transactions */
+.home-recent ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.home-recent li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-top: 1px solid var(--border);
+}
+.home-recent-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.home-recent-icon.is-sale {
+  background: #e3edda;
+  color: #2f7a52;
+}
+.home-recent-icon.is-purchase {
+  background: #e7eef6;
+  color: #2c5a85;
+}
+.home-recent-copy,
+.home-recent-amount {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.home-recent-copy {
+  flex: 1;
+}
+.home-recent-copy strong,
+.home-recent-amount strong {
+  font-size: 13px;
+}
+.home-recent-copy small,
+.home-recent-amount small {
+  font-size: 11px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.home-recent-amount {
+  align-items: flex-end;
+  font-variant-numeric: tabular-nums;
+}
+.home-recent-empty {
+  font-size: 13px;
+  color: var(--muted);
+}
+.home-recent-empty a {
+  color: var(--green);
+  font-weight: 600;
+}
+.workspace-home .home-dash-row > .agenda-panel {
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .workspace-home .home-dash-top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .workspace-home .home-dash-stats {
+    grid-column: 1 / -1;
+    grid-template-rows: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 960px) {
+  .workspace-home .home-dash-top,
+  .workspace-home .home-dash-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .workspace-home .home-dash-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .home-card,
+  .workspace-home .home-weather-card {
+    padding: 18px;
+  }
+  .hw-temp {
+    font-size: 34px;
+  }
+}
