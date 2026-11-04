@@ -35,6 +35,8 @@ import {
 } from "../lib/format";
 import type { Farm, Task } from "../types";
 import { revealRecordTarget } from "../lib/useRecordDetails";
+import { setActiveFarmId, useActiveFarm } from "../lib/active-farm";
+import "../styles/farm-detail.css";
 
 /** Cached notes are intentionally absent; an offline edit must never erase them. */
 export function onlineNotes(
@@ -303,9 +305,31 @@ export default function Farms() {
     queue.some((change) => change.path === path);
   const [params, setParams] = useSearchParams();
   const tab = params.has("tasks") ? "tasks" : "farms";
-  const farmTitle = user?.role === "farmer" ? "My farms" : "Farms";
+  const farmer = user?.role === "farmer";
+  const activeFarm = useActiveFarm(user?.id, data.farms);
+  // Farmers see one farm at a time: the one chosen in the sidebar.
+  const focusFarm = farmer ? activeFarm : undefined;
+  const farmTitle = focusFarm ? focusFarm.name : farmer ? "My farms" : "Farms";
   const requestedTaskId = tab === "tasks" ? params.get("task") : null;
-  const selectedTaskId = findLinkedTask(data.tasks, requestedTaskId)?.id;
+  const linkedTask = findLinkedTask(data.tasks, requestedTaskId);
+  const selectedTaskId = linkedTask?.id;
+  // A link to another farm's record switches the farmer to that farm.
+  const linkedFarmId = params.get("farm") || linkedTask?.farmId;
+  useEffect(() => {
+    if (
+      farmer &&
+      linkedFarmId &&
+      linkedFarmId !== activeFarm?.id &&
+      data.farms.some((farm) => farm.id === linkedFarmId)
+    )
+      setActiveFarmId(user?.id, linkedFarmId);
+  }, [farmer, linkedFarmId, activeFarm?.id, data.farms, user?.id]);
+  const farmIds = new Set(data.farms.map((farm) => farm.id));
+  const visibleTasks = focusFarm
+    ? data.tasks.filter(
+        (task) => task.farmId === focusFarm.id || !farmIds.has(task.farmId),
+      )
+    : data.tasks;
   const selectedTaskRef = useRef<HTMLDivElement>(null);
   const selectedFarmRef = useRef<HTMLElement>(null);
   const selectedFarmId = tab === "farms" ? params.get("farm") : null;
@@ -361,16 +385,36 @@ export default function Farms() {
     <>
       <PageHeader
         title={farmTitle}
-        description="Your land, your crops, and a plan for the season."
+        description={
+          focusFarm
+            ? `${focusFarm.district} · ${focusFarm.crop} · ${label(focusFarm.stage)}`
+            : "Your land, your crops, and a plan for the season."
+        }
         action={
-          <Button
-            onClick={() =>
-              tab === "tasks" ? setAddTask(true) : setEditor(true)
-            }
-          >
-            <Plus size={18} />
-            {tab === "tasks" ? "Add a task" : "Add a farm"}
-          </Button>
+          focusFarm && tab === "farms" ? (
+            <>
+              <Button variant="secondary" onClick={() => setEditor(true)}>
+                <Plus size={18} />
+                Add a farm
+              </Button>
+              <Button
+                disabled={waiting(`/api/farms/${focusFarm.id}`)}
+                onClick={() => setEditor(focusFarm)}
+              >
+                <Pencil size={18} />
+                Edit farm
+              </Button>
+            </>
+          ) : (
+            <Button
+              onClick={() =>
+                tab === "tasks" ? setAddTask(true) : setEditor(true)
+              }
+            >
+              <Plus size={18} />
+              {tab === "tasks" ? "Add a task" : "Add a farm"}
+            </Button>
+          )
         }
       />
       {queue.length > 0 && (
@@ -385,17 +429,31 @@ export default function Farms() {
           className={tab === "farms" ? "active" : ""}
           onClick={() => setParams({})}
         >
-          {farmTitle} <span>{data.farms.length}</span>
+          {focusFarm ? (
+            "Farm details"
+          ) : (
+            <>
+              {farmTitle} <span>{data.farms.length}</span>
+            </>
+          )}
         </button>
         <button
           className={tab === "tasks" ? "active" : ""}
           onClick={() => setParams({ tasks: "1" })}
         >
           Tasks{" "}
-          <span>{data.tasks.filter((t) => t.status === "pending").length}</span>
+          <span>
+            {visibleTasks.filter((t) => t.status === "pending").length}
+          </span>
         </button>
       </div>
-      {tab === "farms" ? (
+      {tab === "farms" && focusFarm ? (
+        <FarmDetails
+          farm={focusFarm}
+          tasks={visibleTasks}
+          pendingSync={waiting(`/api/farms/${focusFarm.id}`)}
+        />
+      ) : tab === "farms" ? (
         <>
           <div className="toolbar">
             <SearchInput
@@ -520,7 +578,7 @@ export default function Farms() {
               shown below.
             </Notice>
           )}
-          {[...data.tasks].sort(compareTasks).map((task) => (
+          {[...visibleTasks].sort(compareTasks).map((task) => (
             <div
               key={task.id}
               ref={task.id === selectedTaskId ? selectedTaskRef : undefined}
@@ -567,7 +625,7 @@ export default function Farms() {
               </Badge>
             </div>
           ))}
-          {!data.tasks.length && (
+          {!visibleTasks.length && (
             <Empty
               icon={ClipboardList}
               title="A clear plan for the days ahead."
@@ -582,7 +640,121 @@ export default function Farms() {
           onClose={closeFarm}
         />
       )}{" "}
-      {addTask && <TaskEditor onClose={closeTask} />}
+      {addTask && <TaskEditor farmId={focusFarm?.id} onClose={closeTask} />}
     </>
+  );
+}
+
+function FarmDetails({
+  farm,
+  tasks,
+  pendingSync,
+}: {
+  farm: Farm;
+  tasks: Task[];
+  pendingSync: boolean;
+}) {
+  const { data } = useApp();
+  const upcoming = tasks
+    .filter((task) => task.status === "pending")
+    .sort(compareTasks)
+    .slice(0, 4);
+  const seasons = data.seasons.filter(
+    (season) => season.farmId === farm.id && season.status === "active",
+  );
+  return (
+    <div className="farm-detail">
+      <article className="farm-card farm-detail-card">
+        <div className={`farm-card-top crop-${farm.crop.toLowerCase()}`}>
+          <div className="crop-emblem">
+            <Sprout size={42} strokeWidth={1.2} />
+          </div>
+          <Badge tone="green">{label(farm.stage)}</Badge>
+          <span>{farm.crop}</span>
+        </div>
+        <div className="farm-card-body">
+          {pendingSync && (
+            <Badge tone="amber">Saved on device · awaiting sync</Badge>
+          )}
+          <dl className="farm-detail-facts">
+            <div>
+              <dt>Crop</dt>
+              <dd>{farm.crop}</dd>
+            </div>
+            <div>
+              <dt>Growth stage</dt>
+              <dd>{label(farm.stage)}</dd>
+            </div>
+            <div>
+              <dt>Land area</dt>
+              <dd>{number(farm.areaAcres)} acres</dd>
+            </div>
+            <div>
+              <dt>Planted</dt>
+              <dd>{date(farm.plantedAt)}</dd>
+            </div>
+            <div>
+              <dt>District</dt>
+              <dd className="icon-text">
+                <MapPin size={14} />
+                {farm.district}
+              </dd>
+            </div>
+            <div>
+              <dt>Farmer</dt>
+              <dd>{farm.ownerName}</dd>
+            </div>
+          </dl>
+          {farm.notes && (
+            <div className="farm-detail-notes">
+              <h3>Notes</h3>
+              <p>{farm.notes}</p>
+            </div>
+          )}
+          <div className="farm-links">
+            <Link to={`/weather?district=${encodeURIComponent(farm.district)}`}>
+              Local forecast
+              <ArrowUpRight size={15} />
+            </Link>
+            <Link to={`/learn?crop=${encodeURIComponent(farm.crop)}`}>
+              Crop guide
+              <ArrowUpRight size={15} />
+            </Link>
+            <Link to={`/seasons?farm=${encodeURIComponent(farm.id)}`}>
+              {seasons.length
+                ? `Season plan (${seasons.length} active)`
+                : "Plan a season"}
+              <ArrowUpRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </article>
+      <section className="panel farm-detail-next">
+        <div className="panel-header">
+          <h2>Next on this farm</h2>
+          <Link className="text-link" to="/farms?tasks=1">
+            All tasks
+          </Link>
+        </div>
+        {upcoming.map((task) => (
+          <Link
+            key={task.id}
+            className="farm-detail-task"
+            to={`/farms?tasks=1&task=${encodeURIComponent(task.id)}`}
+          >
+            <span>
+              <strong>{task.title}</strong>
+              <small>{label(task.category)}</small>
+            </span>
+            <Badge>{dueLabel(task.dueDate)}</Badge>
+          </Link>
+        ))}
+        {!upcoming.length && (
+          <p className="muted">
+            No open tasks on this farm. Add one from Tasks.
+          </p>
+        )}
+      </section>
+    </div>
   );
 }

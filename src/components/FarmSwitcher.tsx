@@ -44,7 +44,7 @@ export function FarmSwitcher({ onNavigate }: { onNavigate: () => void }) {
     setActiveFarmId(user?.id, farmId);
     setOpen(false);
     onNavigate();
-    navigate(`/farms?farm=${encodeURIComponent(farmId)}`);
+    navigate("/");
   };
 
   return (

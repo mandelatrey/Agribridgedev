@@ -20,7 +20,7 @@ import { agendaTasks, type AgendaFilter } from "../lib/workspace";
 import { FarmEditor, TaskEditor } from "./Farms";
 import { HomeWeather } from "../components/HomeData";
 import { WorkspaceJourney } from "../components/WorkspaceGuide";
-import { setActiveFarmId } from "../lib/active-farm";
+import { useActiveFarm } from "../lib/active-farm";
 import type { Task } from "../types";
 import "../styles/home-journey.css";
 
@@ -47,7 +47,7 @@ function WorkspaceHome() {
     refresh,
   } = useApp();
   const [editor, setEditor] = useState<"farm" | "task" | null>(null);
-  const [farmId, setFarmId] = useState("");
+  const [staffFarmId, setFarmId] = useState("");
   const [filter, setFilter] = useState<AgendaFilter>("pending");
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
@@ -58,6 +58,9 @@ function WorkspaceHome() {
     return () => clearInterval(timer);
   }, []);
   const staff = user?.role === "admin" || user?.role === "operator";
+  const activeFarm = useActiveFarm(user?.id, data.farms);
+  // Farmers work on the farm chosen in the sidebar; staff filter here.
+  const farmId = staff ? staffFarmId : (activeFarm?.id ?? "");
   const selectedFarm = data.farms.find((farm) => farm.id === farmId);
   const weatherFarm = selectedFarm || data.farms[0];
   const pending = agendaTasks(data.tasks, "pending", day, farmId);
@@ -165,25 +168,29 @@ function WorkspaceHome() {
           <span className="live-dot" />
           {staff ? "Your cooperative at a glance" : "Your season at a glance"}
         </span>
-        <label>
-          <span>Farm</span>
-          <select
-            aria-label="Filter workspace by farm"
-            value={farmId}
-            onChange={(event) => {
-              setFarmId(event.target.value);
-              if (event.target.value)
-                setActiveFarmId(user?.id, event.target.value);
-            }}
-          >
-            <option value="">All farms</option>
-            {data.farms.map((farm) => (
-              <option key={farm.id} value={farm.id}>
-                {farm.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        {staff ? (
+          <label>
+            <span>Farm</span>
+            <select
+              aria-label="Filter workspace by farm"
+              value={farmId}
+              onChange={(event) => setFarmId(event.target.value)}
+            >
+              <option value="">All farms</option>
+              {data.farms.map((farm) => (
+                <option key={farm.id} value={farm.id}>
+                  {farm.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : (
+          selectedFarm && (
+            <Link className="text-link" to="/farms">
+              {selectedFarm.name} <ArrowUpRight size={16} />
+            </Link>
+          )
+        )}
       </div>
       <div className="workspace-metrics" aria-label="Workspace summary">
         <Link to="/farms">
@@ -191,8 +198,17 @@ function WorkspaceHome() {
             <Sprout size={21} />
           </span>
           <span>
-            <strong>{number(farms.length)}</strong>
-            <small>{staff ? "Farms in view" : "Your farms"}</small>
+            {staff || !selectedFarm ? (
+              <>
+                <strong>{number(farms.length)}</strong>
+                <small>{staff ? "Farms in view" : "Your farms"}</small>
+              </>
+            ) : (
+              <>
+                <strong>{number(selectedFarm.areaAcres)} ac</strong>
+                <small>Farm details</small>
+              </>
+            )}
           </span>
           <ArrowUpRight size={16} />
         </Link>
@@ -402,7 +418,7 @@ function WorkspaceHome() {
                   ROOTED IN YOUR RECORDS
                 </span>
                 <h2 id="farms-title">
-                  {staff ? "Farms in focus" : "Your farms"}
+                  {staff ? "Farms in focus" : "Your farm"}
                 </h2>
               </div>
               <button className="text-link" onClick={() => setEditor("farm")}>
