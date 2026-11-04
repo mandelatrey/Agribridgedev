@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.3.14",
+    "@tabler/icons-react": "^3.50.0",
     "express": "^5.1.0",
     "express-rate-limit": "^8.1.0",
     "helmet": "^8.1.0",

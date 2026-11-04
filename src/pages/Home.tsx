@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowRight,
-  ArrowUpRight,
-  BookOpen,
-  CalendarDays,
-  Check,
-  CheckCheck,
-  Clock3,
-  Leaf,
-  Plus,
-  Sprout,
-  Users,
-} from "lucide-react";
+  IconArrowRight,
+  IconArrowUpRight,
+  IconBook,
+  IconCalendar,
+  IconCheck,
+  IconChecks,
+  IconClock,
+  IconPlant2,
+  IconPlus,
+  IconSeedling,
+  IconUsers,
+} from "@tabler/icons-react";
 import { useApp } from "../context/AppContext";
 import { Button, Notice, Skeleton } from "../components/ui";
 import { date, dueLabel, label, number, today } from "../lib/format";
@@ -103,7 +103,7 @@ function WorkspaceHome() {
   if (!lastSync || (staff && !online))
     return (
       <div className="workspace-panel agenda-empty">
-        <Sprout size={30} />
+        <IconSeedling size={30} />
         <h1>Let’s reconnect to your workspace.</h1>
         <p>
           {staff
@@ -122,7 +122,7 @@ function WorkspaceHome() {
           Try again
         </Button>
         <Link className="text-link" to="/settings">
-          Connection settings <ArrowRight size={16} />
+          Connection settings <IconArrowRight size={16} />
         </Link>
       </div>
     );
@@ -144,13 +144,13 @@ function WorkspaceHome() {
         </div>
         <div className="page-heading-actions">
           <Link className="button button-primary" to="/marketplace">
-            Find buyers <ArrowUpRight size={18} />
+            Find buyers <IconArrowUpRight size={18} />
           </Link>
           <Button
             variant="secondary"
             onClick={() => setEditor(data.farms.length ? "task" : "farm")}
           >
-            <Plus size={18} />{" "}
+            <IconPlus size={18} />{" "}
             {data.farms.length ? "Add task" : "Add your first farm"}
           </Button>
         </div>
@@ -187,7 +187,7 @@ function WorkspaceHome() {
         ) : (
           selectedFarm && (
             <Link className="text-link" to="/farms">
-              {selectedFarm.name} <ArrowUpRight size={16} />
+              {selectedFarm.name} <IconArrowUpRight size={16} />
             </Link>
           )
         )}
@@ -195,7 +195,7 @@ function WorkspaceHome() {
       <div className="workspace-metrics" aria-label="Workspace summary">
         <Link to="/farms">
           <span className="metric-icon">
-            <Sprout size={21} />
+            <IconSeedling size={21} />
           </span>
           <span>
             {staff || !selectedFarm ? (
@@ -210,27 +210,27 @@ function WorkspaceHome() {
               </>
             )}
           </span>
-          <ArrowUpRight size={16} />
+          <IconArrowUpRight size={16} />
         </Link>
         <button onClick={() => setFilter("pending")}>
           <span className="metric-icon">
-            <CheckCheck size={21} />
+            <IconChecks size={21} />
           </span>
           <span>
             <strong>{pending.length}</strong>
             <small>Open tasks</small>
           </span>
-          <ArrowUpRight size={16} />
+          <IconArrowUpRight size={16} />
         </button>
         <button onClick={() => setFilter("today")}>
           <span className="metric-icon">
-            <Clock3 size={21} />
+            <IconClock size={21} />
           </span>
           <span>
             <strong>{dueToday.length}</strong>
             <small>Due today</small>
           </span>
-          <ArrowUpRight size={16} />
+          <IconArrowUpRight size={16} />
         </button>
         <Link
           to={
@@ -238,13 +238,13 @@ function WorkspaceHome() {
           }
         >
           <span className="metric-icon">
-            <Leaf size={21} />
+            <IconPlant2 size={21} />
           </span>
           <span>
             <strong>{seasons.length}</strong>
             <small>Active seasons</small>
           </span>
-          <ArrowUpRight size={16} />
+          <IconArrowUpRight size={16} />
         </Link>
       </div>
       {staff && (
@@ -258,11 +258,11 @@ function WorkspaceHome() {
                 ACROSS THE COOPERATIVE · ALL FARMS
               </span>
               <h2 id="team-title">
-                <Users size={22} /> Team priorities
+                <IconUsers size={22} /> Team priorities
               </h2>
             </div>
             <Link className="text-link" to="/crm">
-              Farmer relationships <ArrowUpRight size={16} />
+              Farmer relationships <IconArrowUpRight size={16} />
             </Link>
           </div>
           <div className="priority-grid">
@@ -275,7 +275,7 @@ function WorkspaceHome() {
                   : "Plan a collection and bring harvests together."}
               </p>
               <span className="text-link">
-                Open harvest & collection <ArrowRight size={16} />
+                Open harvest & collection <IconArrowRight size={16} />
               </span>
             </Link>
             <Link to="/crm">
@@ -286,7 +286,7 @@ function WorkspaceHome() {
                 attention.
               </p>
               <span className="text-link">
-                Review contacts <ArrowRight size={16} />
+                Review contacts <IconArrowRight size={16} />
               </span>
             </Link>
             <Link to="/community">
@@ -294,7 +294,7 @@ function WorkspaceHome() {
               <strong>Open community reports</strong>
               <p>Review crop concerns and help coordinate the next response.</p>
               <span className="text-link">
-                Review reports <ArrowRight size={16} />
+                Review reports <IconArrowRight size={16} />
               </span>
             </Link>
           </div>
@@ -312,7 +312,7 @@ function WorkspaceHome() {
                 <h2 id="agenda-title">Today & upcoming</h2>
               </div>
               <Link className="text-link" to="/farms?tasks=1">
-                All tasks <ArrowUpRight size={16} />
+                All tasks <IconArrowUpRight size={16} />
               </Link>
             </div>
             <div className="agenda-filters" aria-label="Filter tasks">
@@ -350,7 +350,7 @@ function WorkspaceHome() {
                       onClick={() => void toggleTask(task)}
                     >
                       {task.status === "completed" ? (
-                        <Check size={16} />
+                        <IconCheck size={16} />
                       ) : busy === task.id ? (
                         <span className="task-pulse" />
                       ) : null}
@@ -380,7 +380,7 @@ function WorkspaceHome() {
               })}
               {!tasks.length && (
                 <div className="agenda-empty">
-                  <CheckCheck size={28} />
+                  <IconChecks size={28} />
                   <h3>
                     {filter === "today"
                       ? "A clear day ahead."
@@ -399,7 +399,7 @@ function WorkspaceHome() {
                     className="text-link"
                     onClick={() => setEditor("task")}
                   >
-                    <Plus size={16} /> Plan a task
+                    <IconPlus size={16} /> Plan a task
                   </button>
                 </div>
               )}
@@ -407,7 +407,7 @@ function WorkspaceHome() {
             {tasks.length > 6 && (
               <Link className="agenda-more" to="/farms?tasks=1">
                 {tasks.length} tasks in this view · Open all tasks{" "}
-                <ArrowRight size={16} />
+                <IconArrowRight size={16} />
               </Link>
             )}
           </section>
@@ -422,7 +422,7 @@ function WorkspaceHome() {
                 </h2>
               </div>
               <button className="text-link" onClick={() => setEditor("farm")}>
-                <Plus size={16} /> Add farm
+                <IconPlus size={16} /> Add farm
               </button>
             </div>
             <div className="workspace-farms">
@@ -433,7 +433,7 @@ function WorkspaceHome() {
                   key={farm.id}
                 >
                   <span className="farm-symbol">
-                    <Sprout size={24} />
+                    <IconSeedling size={24} />
                   </span>
                   <span>
                     <strong>{farm.name}</strong>
@@ -445,26 +445,26 @@ function WorkspaceHome() {
                     <strong>{farm.crop}</strong>
                     <small>{label(farm.stage)}</small>
                   </span>
-                  <ArrowUpRight size={17} />
+                  <IconArrowUpRight size={17} />
                 </Link>
               ))}
             </div>
             {!farms.length && (
               <div className="agenda-empty">
-                <Sprout size={28} />
+                <IconSeedling size={28} />
                 <h3>Start with your first farm.</h3>
                 <p>
                   Keep crop records, plan field work and track each season in
                   one place.
                 </p>
                 <Button onClick={() => setEditor("farm")}>
-                  <Plus size={16} /> Add a farm
+                  <IconPlus size={16} /> Add a farm
                 </Button>
               </div>
             )}
             {farms.length > 4 && (
               <Link className="agenda-more" to="/farms">
-                Explore all {farms.length} farms <ArrowRight size={16} />
+                Explore all {farms.length} farms <IconArrowRight size={16} />
               </Link>
             )}
           </section>
@@ -473,7 +473,7 @@ function WorkspaceHome() {
           <HomeWeather district={weatherFarm?.district} />
           <section className="season-callout">
             <span className="workspace-eyebrow">
-              <CalendarDays size={17} /> SEASON PLANNER
+              <IconCalendar size={17} /> SEASON PLANNER
             </span>
             <h2>Good harvests start with a plan.</h2>
             <p>Bring your crop calendar, costs and harvest goals together.</p>
@@ -485,7 +485,7 @@ function WorkspaceHome() {
                   : "/seasons"
               }
             >
-              Plan your season <ArrowRight size={16} />
+              Plan your season <IconArrowRight size={16} />
             </Link>
             <div className="season-mini-path">
               <span>Prepare</span>
@@ -495,12 +495,12 @@ function WorkspaceHome() {
             </div>
           </section>
           <Link className="workspace-learning" to="/learn">
-            <BookOpen size={23} />
+            <IconBook size={23} />
             <span>
               <strong>Grow your knowledge</strong>
               <small>Practical guides for your next step</small>
             </span>
-            <ArrowUpRight size={17} />
+            <IconArrowUpRight size={17} />
           </Link>
         </aside>
       </div>
