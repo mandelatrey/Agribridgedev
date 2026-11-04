@@ -1,17 +1,17 @@
 .wbd-journey {
-  margin-top: 32px;
+  margin-top: var(--space-400);
 }
 .wbd-journey h2 {
   color: #3e5a46;
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 11px;
+  margin-bottom: var(--space-150);
 }
 .wbd-journey > div {
   display: flex;
-  gap: 13px;
+  gap: var(--space-150);
   align-items: flex-start;
-  padding: 17px 0;
+  padding: var(--space-200) 0;
   border-bottom: 1px solid #e1e8dc;
 }
 .wbd-journey-icon {
@@ -31,7 +31,7 @@
   font-weight: 600;
 }
 .wbd-journey p {
-  margin-top: 4px;
+  margin-top: var(--space-050);
   color: #71806d;
   font-size: 11px;
   line-height: 1.35;
@@ -43,7 +43,7 @@
   line-height: 1.35;
 }
 .wbd-offers {
-  margin-top: 20px;
+  margin-top: var(--space-250);
 }
 .wbd-offers > h2 {
   font-size: 15px;
@@ -51,14 +51,14 @@
   font-weight: 600;
 }
 .wbd-offers > p {
-  margin-top: 5px;
+  margin-top: var(--space-050);
   color: #72816c;
   font-size: 11px;
   line-height: 1.35;
 }
 .wbd-offers article {
-  padding: 18px;
-  margin-top: 12px;
+  padding: var(--space-250);
+  margin-top: var(--space-150);
   border: 1px solid #d8e2d0;
   border-radius: var(--radius-xlarge);
   background: #fff;
@@ -66,7 +66,7 @@
 .wbd-offers article > div {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: var(--space-150);
 }
 .wbd-offers article > div > span {
   background: #edf3e6;
@@ -88,39 +88,39 @@
   color: #6f7f69;
   font-size: 11px;
   line-height: 1.35;
-  margin-top: 5px;
+  margin-top: var(--space-050);
 }
 .wbd-offers dl {
-  margin: 14px 0;
+  margin: var(--space-150) 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 22px;
+  gap: var(--space-150) var(--space-300);
 }
 .wbd-offers dt {
   font-size: 9px;
   color: #849079;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-050);
 }
 .wbd-offers dd {
   margin: 0;
   display: flex;
-  gap: 4px;
+  gap: var(--space-050);
   align-items: center;
   color: #3e5f3f;
   font-size: 11px;
   font-weight: 500;
 }
 .wbd-offers article button {
-  margin-top: 14px;
+  margin-top: var(--space-150);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-100);
   border: 1px solid #bcccac;
   background: #f8faf4;
   color: #3b653c;
   border-radius: var(--radius-large);
-  padding: 10px 12px;
+  padding: var(--space-100) var(--space-150);
   width: 100%;
   font-size: 11px;
   min-height: 40px;
@@ -132,7 +132,7 @@
 .wbd-no-offers {
   border: 1px dashed #cad7bd;
   border-radius: var(--radius-large);
-  padding: 15px;
+  padding: var(--space-200);
 }
 .wd-buyer-demo button:disabled {
   cursor: not-allowed;
@@ -149,12 +149,12 @@
 }
 @media (max-width: 650px) {
   .wbd-journey {
-    margin-top: 22px;
+    margin-top: var(--space-300);
   }
   .wbd-journey > div {
-    padding: 12px 0;
+    padding: var(--space-150) 0;
   }
   .wbd-offers article {
-    padding: 15px;
+    padding: var(--space-200);
   }
 }

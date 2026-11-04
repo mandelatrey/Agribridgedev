@@ -1,6 +1,6 @@
 .app-shell .sidebar .farm-switcher {
   position: relative;
-  margin: 22px 0 8px;
+  margin: var(--space-300) 0 var(--space-100);
 }
 .app-shell .sidebar .farm-switcher .workspace-name {
   width: 100%;
@@ -39,7 +39,7 @@
   left: 0;
   right: 0;
   z-index: 30;
-  padding: 6px;
+  padding: var(--space-075);
   border: 1px solid #dce5da;
   border-radius: var(--radius-large);
   background: #fff;
@@ -47,7 +47,7 @@
   box-shadow: 0 12px 30px #0f2a1d40;
 }
 .farm-switcher-heading {
-  padding: 8px 10px 6px;
+  padding: var(--space-100) var(--space-100) var(--space-075);
   font-size: 11px;
   color: #52654f;
 }
@@ -61,10 +61,10 @@
 .farm-switcher-menu li button {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-100);
   width: 100%;
   min-height: 44px;
-  padding: 8px 10px;
+  padding: var(--space-100) var(--space-100);
   border: 0;
   border-radius: var(--radius-large);
   background: transparent;
@@ -97,10 +97,10 @@
 .app-shell .sidebar .farm-switcher-menu .farm-switcher-manage {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   min-height: 44px;
-  margin-top: 4px;
-  padding: 8px 10px;
+  margin-top: var(--space-050);
+  padding: var(--space-100) var(--space-100);
   border-top: 1px solid #e6ece3;
   font-size: 12px;
   font-weight: 600;

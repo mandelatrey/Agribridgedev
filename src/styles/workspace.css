@@ -23,8 +23,8 @@
   color: #d3e2d7;
   border: 1px solid #ffffff20;
   border-radius: var(--radius-large);
-  padding: 12px;
-  margin: 22px 0 8px;
+  padding: var(--space-150);
+  margin: var(--space-300) 0 var(--space-100);
   font-size: 12px;
 }
 .app-shell .sidebar .sidebar-navigation a,
@@ -72,7 +72,7 @@
 .app-shell .topbar {
   background: #fafbf7;
   border-bottom: 1px solid var(--border);
-  gap: 18px;
+  gap: var(--space-250);
 }
 .app-shell .breadcrumbs {
   white-space: nowrap;
@@ -80,7 +80,7 @@
 }
 .app-shell .breadcrumbs > span {
   color: var(--muted);
-  margin-right: 8px;
+  margin-right: var(--space-100);
 }
 .app-shell main {
   max-width: 1600px;
@@ -114,8 +114,8 @@
 .workspace-search-trigger {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
+  gap: var(--space-100);
+  padding: var(--space-100) var(--space-150);
   min-height: 40px;
   border: 1px solid #dce3d8;
   border-radius: var(--radius-large);
@@ -127,18 +127,18 @@
 .workspace-search-trigger kbd {
   background: #f0f2ed;
   border-radius: var(--radius-small);
-  padding: 2px 5px;
+  padding: var(--space-025) var(--space-050);
   font: 10px inherit;
   color: #69756c;
 }
 .workspace-search {
-  padding: 16px 20px 20px;
+  padding: var(--space-200) var(--space-250) var(--space-250);
 }
 .workspace-search .search-input {
   width: 100%;
 }
 .search-result-count {
-  padding: 16px 0 10px;
+  padding: var(--space-200) 0 var(--space-100);
   font-size: 12px;
   color: #69756c;
 }
@@ -150,8 +150,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 13px 10px;
+  gap: var(--space-200);
+  padding: var(--space-150) var(--space-100);
   border-bottom: 1px solid #e0e6dc;
   border-radius: var(--radius-medium);
 }
@@ -160,7 +160,7 @@
 }
 .workspace-search-results > a > span {
   display: grid;
-  gap: 2px;
+  gap: var(--space-025);
 }
 .workspace-search-results small {
   font-size: 10px;
@@ -176,19 +176,19 @@
   color: #69756c;
 }
 .search-empty {
-  padding: 30px 8px;
+  padding: var(--space-400) var(--space-100);
 }
 .workspace-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 24px;
+  gap: var(--space-300);
+  margin-bottom: var(--space-300);
 }
 .workspace-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.25px;
@@ -204,7 +204,7 @@
   font-size: clamp(27px, 2.7vw, 39px);
   line-height: 1.15;
   letter-spacing: -1.5px;
-  margin: 9px 0 10px;
+  margin: var(--space-100) 0 var(--space-100);
   color: #193b2c;
 }
 .workspace-heading p {
@@ -219,15 +219,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin: 0 0 14px;
+  gap: var(--space-200);
+  margin: 0 0 var(--space-150);
   font-size: 12px;
   color: var(--muted);
 }
 .workspace-scope > span {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
 }
 .live-dot {
   width: 6px;
@@ -238,10 +238,10 @@
 .workspace-scope label {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-100);
 }
 .workspace-scope select {
-  padding: 8px 30px 8px 10px;
+  padding: var(--space-100) var(--space-400) var(--space-100) var(--space-100);
   max-width: 240px;
   min-height: 40px;
   font-size: 12px;
@@ -255,19 +255,19 @@
   background: white;
   border: 1px solid var(--border);
   border-radius: var(--radius-large);
-  padding: 17px 0;
-  margin-bottom: 24px;
+  padding: var(--space-200) 0;
+  margin-bottom: var(--space-300);
 }
 .workspace-metrics > a,
 .workspace-metrics > button {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-150);
   border: 0;
   border-right: 1px solid var(--border);
   background: none;
   text-align: left;
-  padding: 0 22px;
+  padding: 0 var(--space-300);
   min-height: 53px;
 }
 .workspace-metrics > :last-child {
@@ -299,7 +299,7 @@
   font-size: 11px;
   font-weight: 400;
   color: var(--muted);
-  margin-top: 4px;
+  margin-top: var(--space-050);
 }
 .workspace-metrics > * > svg {
   margin-left: auto;
@@ -308,13 +308,13 @@
 .workspace-columns {
   display: grid;
   grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
-  gap: 22px;
+  gap: var(--space-300);
   align-items: start;
 }
 .workspace-primary,
 .workspace-rail {
   display: grid;
-  gap: 22px;
+  gap: var(--space-300);
   min-width: 0;
 }
 .workspace-panel {
@@ -327,21 +327,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  padding: 21px 23px 16px;
+  gap: var(--space-200);
+  padding: var(--space-250) var(--space-300) var(--space-200);
 }
 .panel-heading h2 {
   font-size: 19px;
   letter-spacing: -0.5px;
-  margin-top: 4px;
+  margin-top: var(--space-050);
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--space-100);
 }
 .workspace-home .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   font-size: 12px;
   font-weight: 600;
   border: 0;
@@ -352,15 +352,15 @@
 .agenda-filters {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  padding: 0 23px 17px;
+  gap: var(--space-075);
+  padding: 0 var(--space-300) var(--space-200);
 }
 .agenda-filters button {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   min-height: 36px;
-  padding: 7px 10px;
+  padding: var(--space-075) var(--space-100);
   border: 1px solid #e2e6df;
   border-radius: var(--radius-medium);
   background: #fafbf8;
@@ -377,15 +377,15 @@
   font-size: 10px;
 }
 .agenda-list {
-  padding: 0 23px 10px;
+  padding: 0 var(--space-300) var(--space-100);
 }
 .agenda-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-150);
   min-height: 83px;
   border-top: 1px solid #edf0e9;
-  padding: 15px 0;
+  padding: var(--space-200) 0;
 }
 .task-check {
   border: 1.5px solid #aebcac;
@@ -427,13 +427,13 @@
   display: block;
   color: var(--muted);
   font-size: 11px;
-  margin-top: 5px;
+  margin-top: var(--space-050);
 }
 .agenda-due {
   font-size: 10px;
   color: #647b4f;
   background: #f3f6ec;
-  padding: 5px 7px;
+  padding: var(--space-050) var(--space-075);
   border-radius: var(--radius-small);
   text-align: center;
   max-width: 112px;
@@ -443,7 +443,7 @@
   background: #fff1e9;
 }
 .agenda-empty {
-  padding: 30px 15px;
+  padding: var(--space-400) var(--space-200);
   text-align: center;
   color: #68776f;
 }
@@ -451,32 +451,32 @@
   color: #6d8f54;
 }
 .agenda-empty h3 {
-  margin: 12px 0 7px;
+  margin: var(--space-150) 0 var(--space-075);
   color: #294c38;
 }
 .agenda-empty p {
   font-size: 13px;
   max-width: 340px;
-  margin: 0 auto 12px;
+  margin: 0 auto var(--space-150);
 }
 .agenda-more {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-100);
   min-height: 48px;
   font-size: 12px;
   color: #456b39;
   border-top: 1px solid var(--border);
 }
 .workspace-farms {
-  padding: 0 23px 8px;
+  padding: 0 var(--space-300) var(--space-100);
 }
 .workspace-farm-row {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 0;
+  gap: var(--space-150);
+  padding: var(--space-200) 0;
   border-top: 1px solid #edf0e9;
 }
 .farm-symbol {
@@ -500,7 +500,7 @@
 }
 .workspace-farm-row small {
   display: block;
-  margin-top: 4px;
+  margin-top: var(--space-050);
   font-size: 11px;
   color: var(--muted);
 }
@@ -518,7 +518,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-large);
   margin: 0;
-  padding: 23px;
+  padding: var(--space-300);
 }
 .workspace-rail .home-forecast-main {
   display: block;
@@ -526,7 +526,7 @@
 .workspace-rail .home-forecast h2 {
   font-size: 17px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-250);
 }
 .workspace-rail .home-forecast-reading strong {
   font-size: 34px;
@@ -536,15 +536,15 @@
   font-size: 12px;
 }
 .workspace-rail .home-forecast .text-link {
-  margin-top: 13px;
+  margin-top: var(--space-150);
 }
 .workspace-rail .home-forecast-source {
   border-top: 1px solid var(--border);
-  padding-top: 13px;
+  padding-top: var(--space-150);
   font-size: 10px;
 }
 .season-callout {
-  padding: 24px;
+  padding: var(--space-300);
   background: #edf3df;
   border: 1px solid #dbe6c6;
   border-radius: var(--radius-large);
@@ -553,12 +553,12 @@
   font-size: 23px;
   line-height: 1.3;
   letter-spacing: -0.7px;
-  margin: 20px 0 10px;
+  margin: var(--space-250) 0 var(--space-100);
 }
 .season-callout p {
   color: #637154;
   font-size: 12px;
-  margin: 0 0 22px;
+  margin: 0 0 var(--space-300);
 }
 .season-callout .button {
   font-size: 12px;
@@ -567,18 +567,18 @@
 .season-mini-path {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--space-100);
   border-top: 1px solid #d6e1c3;
-  padding-top: 17px;
-  margin-top: 25px;
+  padding-top: var(--space-200);
+  margin-top: var(--space-300);
   font-size: 10px;
   color: #6c8058;
 }
 .workspace-learning {
   display: flex;
   align-items: center;
-  gap: 13px;
-  padding: 8px 3px;
+  gap: var(--space-150);
+  padding: var(--space-100) var(--space-025);
 }
 .workspace-learning > span {
   flex: 1;
@@ -591,18 +591,18 @@
   display: block;
   color: var(--muted);
   font-size: 11px;
-  margin-top: 5px;
+  margin-top: var(--space-050);
 }
 .cooperative-priorities {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-300);
 }
 .priority-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding: 4px 23px 24px;
+  padding: var(--space-050) var(--space-300) var(--space-300);
 }
 .priority-grid > a {
-  padding: 4px 22px;
+  padding: var(--space-050) var(--space-300);
   border-right: 1px solid var(--border);
   display: flex;
   flex-direction: column;
@@ -620,7 +620,7 @@
   font-weight: 600;
   color: #345b32;
   letter-spacing: -1px;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-100);
 }
 .priority-grid strong {
   font-size: 13px;
@@ -629,7 +629,7 @@
   font-size: 12px;
   line-height: 1.35;
   color: var(--muted);
-  margin: 8px 0 13px;
+  margin: var(--space-100) 0 var(--space-150);
 }
 .priority-grid .text-link {
   margin-top: auto;
@@ -637,12 +637,12 @@
 @media (min-width: 961px) and (max-width: 1200px) {
   .workspace-columns {
     grid-template-columns: minmax(0, 1.4fr) minmax(235px, 1fr);
-    gap: 16px;
+    gap: var(--space-200);
   }
   .workspace-metrics > a,
   .workspace-metrics > button {
-    padding: 0 13px;
-    gap: 9px;
+    padding: 0 var(--space-150);
+    gap: var(--space-100);
   }
   .workspace-metrics > * > svg {
     display: none;
@@ -656,17 +656,17 @@
   }
   .panel-heading,
   .agenda-list {
-    padding-left: 17px;
-    padding-right: 17px;
+    padding-left: var(--space-200);
+    padding-right: var(--space-200);
   }
   .agenda-filters {
-    padding-left: 17px;
-    padding-right: 17px;
+    padding-left: var(--space-200);
+    padding-right: var(--space-200);
   }
 }
 @media (max-width: 960px) {
   .workspace-search-trigger {
-    padding: 8px;
+    padding: var(--space-100);
     background: none;
     border: 0;
     color: #28513b;
@@ -683,24 +683,24 @@
   }
   .workspace-columns {
     grid-template-columns: minmax(0, 1.6fr) minmax(235px, 1fr);
-    gap: 16px;
+    gap: var(--space-200);
   }
   .workspace-metrics > a,
   .workspace-metrics > button {
-    padding: 0 15px;
+    padding: 0 var(--space-200);
   }
   .workspace-metrics > * > svg {
     display: none;
   }
   .app-shell .topbar {
-    gap: 10px;
+    gap: var(--space-100);
   }
 }
 @media (max-width: 720px) {
   .workspace-heading {
     align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 22px;
+    gap: var(--space-150);
+    margin-bottom: var(--space-300);
     flex-wrap: wrap;
   }
   .workspace-heading h1 {
@@ -717,7 +717,7 @@
   .workspace-scope {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: var(--space-100);
   }
   .workspace-scope label {
     width: 100%;
@@ -730,11 +730,11 @@
   .workspace-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 0;
-    margin-bottom: 20px;
+    margin-bottom: var(--space-250);
   }
   .workspace-metrics > a,
   .workspace-metrics > button {
-    padding: 17px 14px;
+    padding: var(--space-200) var(--space-150);
     border-bottom: 1px solid var(--border);
   }
   .workspace-metrics > :nth-child(2) {
@@ -752,18 +752,18 @@
   }
   .workspace-columns {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--space-250);
   }
   .workspace-primary,
   .workspace-rail {
-    gap: 20px;
+    gap: var(--space-250);
   }
   .workspace-eyebrow {
     font-size: 9px;
     letter-spacing: 1px;
   }
   .panel-heading {
-    padding: 19px 17px 16px;
+    padding: var(--space-250) var(--space-200) var(--space-200);
   }
   .panel-heading h2 {
     font-size: 18px;
@@ -772,20 +772,20 @@
     font-size: 11px;
   }
   .agenda-filters {
-    padding: 0 17px 16px;
-    gap: 5px;
+    padding: 0 var(--space-200) var(--space-200);
+    gap: var(--space-050);
   }
   .agenda-filters button {
-    padding: 8px;
+    padding: var(--space-100);
     min-height: 40px;
   }
   .agenda-list {
-    padding: 0 17px 8px;
+    padding: 0 var(--space-200) var(--space-100);
   }
   .agenda-row {
     flex-wrap: wrap;
-    gap: 8px 11px;
-    padding: 16px 0;
+    gap: var(--space-100) var(--space-150);
+    padding: var(--space-200) 0;
   }
   .task-check {
     width: 32px;
@@ -793,18 +793,18 @@
     min-width: 32px;
   }
   .agenda-task {
-    flex-basis: calc(100% - 43px);
+    flex-basis: calc(100% - 32px - var(--space-150));
   }
   .agenda-due {
-    margin-left: 43px;
+    margin-left: calc(32px + var(--space-150));
     max-width: none;
   }
   .workspace-farms {
-    padding: 0 17px 8px;
+    padding: 0 var(--space-200) var(--space-100);
   }
   .workspace-farm-row {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--space-100);
   }
   .workspace-farm-row .farm-crop {
     min-width: 0;
@@ -818,19 +818,19 @@
   }
   .priority-grid {
     grid-template-columns: 1fr;
-    padding: 0 17px;
+    padding: 0 var(--space-200);
   }
   .priority-grid > a,
   .priority-grid > a:first-child,
   .priority-grid > a:last-child {
     border: 0;
     border-top: 1px solid var(--border);
-    padding: 20px 0;
+    padding: var(--space-250) 0;
   }
   .cooperative-priorities > .panel-heading {
     align-items: flex-start;
     flex-direction: column;
-    gap: 4px;
+    gap: var(--space-050);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -847,8 +847,8 @@
   .priority-grid > a:last-child {
     display: grid;
     grid-template-columns: 34px minmax(0, 1fr);
-    gap: 4px 10px;
-    padding: 16px 0;
+    gap: var(--space-050) var(--space-100);
+    padding: var(--space-200) 0;
   }
   .priority-number {
     grid-row: 1 / 4;
@@ -872,9 +872,9 @@
     min-width: 44px;
   }
   .agenda-task {
-    flex-basis: calc(100% - 55px);
+    flex-basis: calc(100% - 44px - var(--space-150));
   }
   .agenda-due {
-    margin-left: 55px;
+    margin-left: calc(44px + var(--space-150));
   }
 }

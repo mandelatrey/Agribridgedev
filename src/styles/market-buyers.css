@@ -1,18 +1,18 @@
 .market-publication {
   display: grid;
-  gap: 12px;
-  margin-top: 12px;
-  padding-top: 16px;
+  gap: var(--space-150);
+  margin-top: var(--space-150);
+  padding-top: var(--space-200);
   border-top: 1px solid var(--border);
 }
 .market-publication > div:first-child {
   display: flex;
-  gap: 10px;
+  gap: var(--space-100);
   align-items: flex-start;
 }
 .market-publication > div:first-child > svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-025);
   color: var(--green);
 }
 .market-publication strong,
@@ -23,38 +23,38 @@
   font-size: 13px;
 }
 .market-publication small {
-  margin-top: 4px;
+  margin-top: var(--space-050);
   font-size: 12px;
   line-height: 1.35;
   color: var(--muted);
 }
 .market-publication-actions {
   display: flex;
-  gap: 12px;
+  gap: var(--space-150);
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 .market-publication-actions a {
   display: inline-flex;
-  gap: 5px;
+  gap: var(--space-050);
   align-items: center;
   color: var(--green);
   font-size: 12px;
 }
 .market-client-orders {
   display: grid;
-  gap: 18px;
-  margin-bottom: 36px;
+  gap: var(--space-250);
+  margin-bottom: var(--space-500);
 }
 .market-client-orders-heading {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-150);
 }
 .market-client-orders-heading h2 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--space-100);
 }
 .market-client-orders-heading p {
   margin: 0;
@@ -67,16 +67,16 @@
   background: var(--surface, #fff);
   border: 1px solid var(--border);
   border-radius: var(--radius-xlarge);
-  padding: 22px;
+  padding: var(--space-300);
 }
 .market-client-order > header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-150);
 }
 .market-client-order h3 {
-  margin: 0 0 6px;
+  margin: 0 0 var(--space-075);
   font-size: 17px;
 }
 .market-client-order header p {
@@ -88,13 +88,13 @@
 .market-client-order dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin: 22px 0;
+  gap: var(--space-200);
+  margin: var(--space-300) 0;
 }
 .market-client-order dt {
   color: var(--muted);
   font-size: 12px;
-  margin-bottom: 5px;
+  margin-bottom: var(--space-050);
 }
 .market-client-order dd {
   margin: 0;
@@ -111,9 +111,9 @@
 .market-client-order footer {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--space-100);
   align-items: center;
-  margin-top: 18px;
+  margin-top: var(--space-250);
 }
 .market-client-order footer small {
   margin-right: auto;
@@ -121,7 +121,7 @@
 }
 @media (max-width: 600px) {
   .market-client-order {
-    padding: 17px;
+    padding: var(--space-200);
   }
   .market-client-order dl {
     grid-template-columns: repeat(2, minmax(0, 1fr));

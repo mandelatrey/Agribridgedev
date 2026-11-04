@@ -4,19 +4,19 @@
   color: var(--ink);
 }
 .marketplace-page .page-heading {
-  margin-bottom: 20px;
+  margin-bottom: var(--space-250);
 }
 .marketplace-page > .notice,
 .marketplace-page > [role="alert"] {
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-200);
 }
 .market-sample-notice {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   color: #646f52;
   font-size: 12px;
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-200);
 }
 .market-sample-notice svg {
   flex-shrink: 0;
@@ -31,12 +31,12 @@
   min-height: 310px;
 }
 .marketplace-intro-copy {
-  padding: 30px 36px 32px;
+  padding: var(--space-400) var(--space-500) var(--space-400);
 }
 .market-intro-kicker {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   color: #53674c;
   font-size: 11px;
   font-weight: 650;
@@ -52,7 +52,7 @@
   font-size: clamp(30px, 3.4vw, 44px);
   line-height: 1.08;
   letter-spacing: -0.045em;
-  margin: 15px 0 15px;
+  margin: var(--space-200) 0 var(--space-200);
   font-weight: 600;
   color: #193f2e;
 }
@@ -66,13 +66,13 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
-  margin-top: 22px;
+  gap: var(--space-200);
+  margin-top: var(--space-300);
 }
 .market-intro-actions > a {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   min-height: 44px;
   font-size: 12px;
   font-weight: 600;
@@ -105,8 +105,8 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 14px 30px;
-  padding: 17px 4px 21px;
+  gap: var(--space-150) var(--space-400);
+  padding: var(--space-200) var(--space-050) var(--space-250);
   color: #64715b;
   font-size: 12px;
   border-bottom: 1px solid var(--border);
@@ -114,7 +114,7 @@
 .market-overview-strip > span {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
 }
 .market-overview-strip svg {
   color: #70866a;
@@ -133,7 +133,7 @@
   color: #45643b;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   font-size: 11px;
   min-height: 40px;
   text-decoration: underline;
@@ -142,9 +142,9 @@
 .market-tabs {
   display: flex;
   align-items: stretch;
-  gap: 25px;
+  gap: var(--space-300);
   overflow-x: auto;
-  margin: 8px 0 20px;
+  margin: var(--space-100) 0 var(--space-250);
   border-bottom: 1px solid var(--border);
   scrollbar-width: thin;
 }
@@ -153,10 +153,10 @@
   position: relative;
   white-space: nowrap;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   background: transparent;
   border: 0;
-  padding: 16px 0;
+  padding: var(--space-200) 0;
   min-height: 52px;
   font-size: 13px;
   color: #64715b;
@@ -177,7 +177,7 @@
 }
 .market-tabs button > span {
   font-size: 11px;
-  padding: 1px 6px;
+  padding: 1px var(--space-075);
   border-radius: var(--radius-medium);
   background: #e7eddf;
   color: #4e6542;
@@ -185,8 +185,8 @@
 .market-toolbar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: var(--space-100);
+  margin-bottom: var(--space-300);
 }
 .market-toolbar .search-input {
   flex: 1;
@@ -201,11 +201,11 @@
   display: flex;
   align-items: center;
   position: relative;
-  gap: 7px;
+  gap: var(--space-075);
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-large);
-  padding: 0 12px;
+  padding: 0 var(--space-150);
   color: #6b7666;
 }
 .market-district-filter select {
@@ -213,7 +213,7 @@
   border: 0;
   background: transparent;
   font-size: 12px;
-  padding: 11px 16px 11px 0;
+  padding: var(--space-150) var(--space-200) var(--space-150) 0;
   width: auto;
   min-height: 43px;
   color: #4d5e47;
@@ -224,7 +224,7 @@
   pointer-events: none;
 }
 .market-toolbar > .button {
-  padding-inline: 12px;
+  padding-inline: var(--space-150);
   border: 1px solid var(--border);
   background: #fff;
 }
@@ -235,8 +235,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
+  gap: var(--space-250);
+  margin-bottom: var(--space-250);
 }
 .market-section-heading h2 {
   font-size: 20px;
@@ -245,7 +245,7 @@
 .market-section-heading p {
   font-size: 12px;
   color: #64715b;
-  margin-top: 6px;
+  margin-top: var(--space-075);
   line-height: 1.35;
   max-width: 620px;
 }
@@ -253,12 +253,12 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 14px;
+  gap: var(--space-150);
 }
 .market-match-toggle {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   font-size: 11px;
   color: #5d6b54;
   cursor: pointer;
@@ -270,19 +270,19 @@
   height: 15px;
   accent-color: #3e6a3b;
   padding: 0;
-  margin: 0 2px 0 0;
+  margin: 0 var(--space-025) 0 0;
 }
 .market-buyer-grid,
 .market-service-grid,
 .market-supply-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: var(--space-200);
 }
 .market-buyer-card {
   border: 1px solid #dfe5da;
   border-radius: var(--radius-large);
-  padding: 22px;
+  padding: var(--space-300);
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -297,12 +297,12 @@
 }
 .market-buyer-card.has-match {
   border-top: 3px solid #789959;
-  padding-top: 20px;
+  padding-top: var(--space-250);
 }
 .market-buyer-card > header {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: var(--space-150);
 }
 .market-crop-mark {
   flex-shrink: 0;
@@ -325,13 +325,13 @@
   font-size: 17px;
   font-weight: 620;
   line-height: 1.35;
-  margin-top: 3px;
+  margin-top: var(--space-025);
   overflow-wrap: anywhere;
 }
 .market-buyer-card > header p {
   font-size: 12px;
   color: #64705d;
-  margin-top: 4px;
+  margin-top: var(--space-050);
 }
 .market-buyer-card > header > .badge {
   margin-left: auto;
@@ -341,14 +341,14 @@
 .market-buyer-facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  padding: 19px 0 15px;
+  gap: var(--space-150);
+  padding: var(--space-250) 0 var(--space-200);
   margin: 0;
 }
 .market-buyer-facts dt {
   font-size: 11px;
   color: #64715b;
-  margin-bottom: 5px;
+  margin-bottom: var(--space-050);
 }
 .market-buyer-facts dd {
   margin: 0;
@@ -372,22 +372,22 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 7px 17px;
+  gap: var(--space-075) var(--space-200);
   color: #64715b;
   font-size: 11px;
 }
 .market-record-meta > span {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
 }
 .market-record-meta svg {
   flex-shrink: 0;
 }
 .market-buyer-requirements {
   border-top: 1px solid #eef0e9;
-  padding-top: 13px;
-  margin-top: 16px;
+  padding-top: var(--space-150);
+  margin-top: var(--space-200);
 }
 .market-buyer-requirements > span {
   font-size: 11px;
@@ -398,15 +398,15 @@
   font-size: 11px;
   line-height: 1.35;
   color: #64705b;
-  margin-top: 4px;
+  margin-top: var(--space-050);
 }
 .market-buyer-card > footer {
   margin-top: auto;
-  padding-top: 17px;
+  padding-top: var(--space-200);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--space-100);
 }
 .market-buyer-card > footer > span {
   font-size: 11px;
@@ -417,19 +417,19 @@
 .market-buyer-card > footer .button {
   font-size: 11px;
   min-height: 40px;
-  gap: 7px;
-  padding: 10px 12px;
+  gap: var(--space-075);
+  padding: var(--space-100) var(--space-150);
 }
 .market-match {
-  padding: 12px 13px;
+  padding: var(--space-150) var(--space-150);
   background: #f4f7ee;
   border-radius: var(--radius-medium);
-  margin-top: 14px;
+  margin-top: var(--space-150);
 }
 .market-match > span {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   color: #476139;
   font-size: 11px;
   font-weight: 600;
@@ -438,10 +438,10 @@
   font-size: 11px;
   color: #5e6f50;
   line-height: 1.35;
-  margin-top: 5px;
+  margin-top: var(--space-050);
 }
 .market-match details {
-  margin-top: 5px;
+  margin-top: var(--space-050);
   font-size: 11px;
   color: #5e6f50;
   line-height: 1.35;
@@ -452,8 +452,8 @@
   cursor: pointer;
 }
 .market-match ul {
-  padding-left: 15px;
-  margin: 5px 0;
+  padding-left: var(--space-200);
+  margin: var(--space-050) 0;
 }
 .market-match details p {
   font-size: 11px;
@@ -463,16 +463,16 @@
 }
 .market-category-tabs {
   display: flex;
-  gap: 8px;
+  gap: var(--space-100);
   flex-wrap: wrap;
-  margin-bottom: 18px;
+  margin-bottom: var(--space-250);
 }
 .market-category-tabs button {
   background: transparent;
   border: 1px solid #dce3d6;
   border-radius: var(--radius-large);
   color: #738168;
-  padding: 9px 14px;
+  padding: var(--space-100) var(--space-150);
   font-size: 12px;
   min-height: 40px;
 }
@@ -484,7 +484,7 @@
 }
 .market-service-card {
   min-width: 0;
-  padding: 20px;
+  padding: var(--space-250);
   border: 1px solid #e1e6da;
   border-radius: var(--radius-large);
   background: #fff;
@@ -494,8 +494,8 @@
 .market-service-heading {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 15px;
+  gap: var(--space-100);
+  margin-bottom: var(--space-200);
 }
 .market-service-icon {
   color: #6a8155;
@@ -504,7 +504,7 @@
 .market-service-heading > .badge {
   margin-left: auto;
   font-size: 10px;
-  padding-inline: 5px;
+  padding-inline: var(--space-050);
 }
 .market-service-card h3 {
   font-size: 16px;
@@ -514,14 +514,14 @@
 .market-service-provider {
   font-size: 11px;
   color: #64705b;
-  margin-top: 6px;
+  margin-top: var(--space-075);
 }
 .market-service-price {
   color: #36522c;
   font-size: 22px;
   letter-spacing: -0.04em;
   font-weight: 600;
-  margin: 15px 0 12px;
+  margin: var(--space-200) 0 var(--space-150);
 }
 .market-service-price > span {
   font-size: 11px;
@@ -532,15 +532,15 @@
 .market-service-notes {
   font-size: 11px;
   color: #64715b;
-  margin-top: 13px;
+  margin-top: var(--space-150);
   line-height: 1.35;
 }
 .market-service-card > footer {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: var(--space-050);
   margin-top: auto;
-  padding-top: 17px;
+  padding-top: var(--space-200);
   font-size: 11px;
   color: #64715b;
   line-height: 1.35;
@@ -548,14 +548,14 @@
 .market-service-card footer a {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   color: #5e7c46;
   text-decoration: underline;
   text-underline-offset: 3px;
   overflow-wrap: anywhere;
 }
 .market-supply-card {
-  padding: 22px;
+  padding: var(--space-300);
   border: 1px solid var(--border);
   border-radius: var(--radius-large);
   background: #fff;
@@ -564,7 +564,7 @@
 .market-supply-top {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-150);
 }
 .market-supply-top h3 {
   font-size: 16px;
@@ -573,7 +573,7 @@
   display: block;
   font-size: 11px;
   color: #64715b;
-  margin-top: 5px;
+  margin-top: var(--space-050);
 }
 .market-supply-top > .badge {
   margin-left: auto;
@@ -582,8 +582,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 14px;
-  margin: 22px 0 15px;
+  gap: var(--space-150);
+  margin: var(--space-300) 0 var(--space-200);
 }
 .market-supply-values > strong {
   font-size: 21px;
@@ -600,16 +600,16 @@
   font-size: 11px;
   line-height: 1.35;
   color: #64715b;
-  margin-top: 15px;
+  margin-top: var(--space-200);
 }
 .market-supply-card > footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: var(--space-200);
   border-top: 1px solid #edf0e7;
-  padding-top: 12px;
-  margin-top: 17px;
+  padding-top: var(--space-150);
+  margin-top: var(--space-200);
 }
 .market-supply-card > footer > span {
   color: #64715b;
@@ -617,23 +617,23 @@
 }
 .market-supply-card > footer > div {
   display: flex;
-  gap: 4px;
+  gap: var(--space-050);
 }
 .market-supply-card footer .button {
   font-size: 11px;
   min-height: 38px;
-  padding: 8px 10px;
+  padding: var(--space-100) var(--space-100);
 }
 .market-status-final {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   color: #4e7240;
   font-size: 12px;
 }
 .market-followups {
-  margin: 28px 0 10px;
-  padding: 22px;
+  margin: var(--space-400) 0 var(--space-100);
+  padding: var(--space-300);
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-large);
@@ -641,14 +641,14 @@
 .market-followups > p {
   color: #849077;
   font-size: 12px;
-  margin-top: 6px;
-  margin-bottom: 15px;
+  margin-top: var(--space-075);
+  margin-bottom: var(--space-200);
 }
 .market-followups > div {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 0;
+  gap: var(--space-150);
+  padding: var(--space-150) 0;
   border-top: 1px solid #eef0e9;
 }
 .market-followups > div > svg {
@@ -657,7 +657,7 @@
 .market-followups > div > span {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-050);
 }
 .market-followups strong {
   font-size: 12px;
@@ -676,7 +676,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
-  padding: 40px 24px 44px;
+  padding: var(--space-500) var(--space-300) var(--space-600);
   max-width: 570px;
   margin: auto;
 }
@@ -688,7 +688,7 @@
   background: #edf2e2;
   border-radius: var(--radius-full);
   color: #6c8853;
-  margin-bottom: 22px;
+  margin-bottom: var(--space-300);
 }
 .market-business-empty h2 {
   font-size: 25px;
@@ -698,22 +698,22 @@
   color: #64715b;
   font-size: 14px;
   line-height: 1.35;
-  margin: 13px 0 23px;
+  margin: var(--space-150) 0 var(--space-300);
 }
 .market-business-empty > small {
-  margin-top: 19px;
+  margin-top: var(--space-250);
   font-size: 11px;
   color: #64715b;
 }
 .market-business {
-  padding: 28px;
+  padding: var(--space-400);
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius-large);
 }
 .market-business > header {
   display: flex;
-  gap: 17px;
+  gap: var(--space-200);
   align-items: center;
 }
 .market-business-avatar {
@@ -727,16 +727,16 @@
   flex-shrink: 0;
 }
 .market-business h2 {
-  margin-top: 5px;
+  margin-top: var(--space-050);
   font-size: 24px;
 }
 .market-business > header p {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   font-size: 12px;
   color: #859177;
-  margin-top: 8px;
+  margin-top: var(--space-100);
 }
 .market-business > header .button {
   margin-left: auto;
@@ -744,20 +744,20 @@
 .market-business > dl {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px 30px;
+  gap: var(--space-300) var(--space-400);
   border-top: 1px solid var(--border);
-  padding-top: 26px;
-  margin: 26px 0;
+  padding-top: var(--space-300);
+  margin: var(--space-300) 0;
 }
 .market-business dt {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   color: #64715b;
   font-size: 11px;
 }
 .market-business dd {
-  margin: 8px 0 0;
+  margin: var(--space-100) 0 0;
   color: #3f5634;
   font-size: 14px;
   overflow-wrap: anywhere;
@@ -765,10 +765,10 @@
 .market-business-crops dd {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: var(--space-050);
 }
 .market-business-crops dd > span {
-  padding: 4px 10px;
+  padding: var(--space-050) var(--space-100);
   border-radius: var(--radius-small);
   background: #eff4e7;
   color: #68834e;
@@ -781,14 +781,14 @@
   background: #fff;
   border: 1px solid #dce4d4;
   border-radius: var(--radius-large);
-  padding: 24px;
-  margin-top: 30px;
+  padding: var(--space-300);
+  margin-top: var(--space-400);
 }
 .market-desk-title {
   display: flex;
-  gap: 12px;
+  gap: var(--space-150);
   align-items: center;
-  margin-bottom: 19px;
+  margin-bottom: var(--space-250);
 }
 .market-desk-title > svg {
   color: #698254;
@@ -801,12 +801,12 @@
 .market-desk-title p {
   font-size: 11px;
   color: #64715b;
-  margin-top: 4px;
+  margin-top: var(--space-050);
 }
 .market-desk-title > a {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   font-size: 11px;
   color: #5f7e48;
   margin-left: auto;
@@ -815,7 +815,7 @@
 }
 .market-desk > form {
   display: flex;
-  gap: 10px;
+  gap: var(--space-100);
 }
 .market-desk > form > input {
   background: #f9fbf5;
@@ -829,15 +829,15 @@
 }
 .market-desk-suggestions {
   display: flex;
-  gap: 8px 18px;
+  gap: var(--space-100) var(--space-250);
   flex-wrap: wrap;
-  margin: 10px 0 0;
+  margin: var(--space-100) 0 0;
 }
 .market-desk-suggestions button {
   background: transparent;
   border: 0;
   display: flex;
-  gap: 5px;
+  gap: var(--space-050);
   align-items: center;
   min-height: 40px;
   font-size: 11px;
@@ -845,12 +845,12 @@
   padding: 0;
 }
 .market-desk > .notice {
-  margin-top: 14px;
+  margin-top: var(--space-150);
 }
 .market-desk-answer {
   border-top: 1px solid var(--border);
-  margin-top: 18px;
-  padding-top: 18px;
+  margin-top: var(--space-250);
+  padding-top: var(--space-250);
 }
 .market-desk-answer > p {
   color: #5e7350;
@@ -863,10 +863,10 @@
 }
 .market-desk-answer ul {
   padding: 0;
-  margin-top: 12px;
+  margin-top: var(--space-150);
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 18px;
+  gap: var(--space-075) var(--space-250);
   list-style: none;
 }
 .market-desk-answer li {
@@ -876,7 +876,7 @@
 .market-desk-answer a {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   color: #698650;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -884,21 +884,21 @@
 .market-support-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  margin-top: 17px;
+  gap: var(--space-250);
+  margin-top: var(--space-200);
 }
 .market-support-links > a {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 4px;
+  gap: var(--space-150);
+  padding: var(--space-200) var(--space-050);
   border-bottom: 1px solid var(--border);
   color: #718361;
 }
 .market-support-links > a > span {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-050);
 }
 .market-support-links strong {
   color: #536a43;
@@ -918,8 +918,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 12px;
-  padding: 25px 0 0;
+  gap: var(--space-150);
+  padding: var(--space-300) 0 0;
 }
 .market-load-more > p {
   color: #64715b;
@@ -933,21 +933,21 @@
 }
 .market-target-request {
   background: #f5f8ee;
-  padding: 14px;
+  padding: var(--space-150);
   border-radius: var(--radius-large);
 }
 .market-target-request p {
   font-size: 12px;
-  margin-top: 7px;
+  margin-top: var(--space-075);
   color: #718362;
 }
 .market-interest-summary {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: var(--space-075);
   background: #f4f8ee;
   border-radius: var(--radius-large);
-  padding: 16px;
+  padding: var(--space-200);
   color: #5c754a;
 }
 .market-interest-summary > strong {
@@ -959,7 +959,7 @@
 .market-connections {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: var(--space-400);
 }
 .market-connections > .market-section-heading,
 .market-connections > .notice,
@@ -984,7 +984,7 @@
   white-space: nowrap;
 }
 .market-order-create {
-  padding: 24px;
+  padding: var(--space-300);
   border: 1px solid #dde5d5;
   border-radius: var(--radius-large);
   background: #fff;
@@ -992,8 +992,8 @@
 .market-order-form {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(100px, 0.5fr) minmax(0, 1.2fr);
-  gap: 18px 14px;
-  margin-top: 20px;
+  gap: var(--space-250) var(--space-150);
+  margin-top: var(--space-250);
   align-items: start;
 }
 .market-order-form .field > span {
@@ -1011,7 +1011,7 @@
   line-height: 1.35;
   color: #5b7250;
   background: #f4f7ee;
-  padding: 12px 15px;
+  padding: var(--space-150) var(--space-200);
   border-radius: var(--radius-medium);
 }
 .market-order-form > .button {
@@ -1023,7 +1023,7 @@
   font-size: 12px;
   line-height: 1.35;
   color: #64715b;
-  margin-top: 12px;
+  margin-top: var(--space-150);
   max-width: 780px;
 }
 .market-order-list {
@@ -1033,8 +1033,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
-  padding: 20px 0;
+  gap: var(--space-250);
+  padding: var(--space-250) 0;
   border-bottom: 1px solid #e2e8db;
 }
 .market-order-row > div:first-child {
@@ -1044,20 +1044,20 @@
   font-size: 12px;
   color: #627457;
   line-height: 1.35;
-  margin-top: 5px;
+  margin-top: var(--space-050);
 }
 .market-order-row small {
   display: block;
   color: #64715b;
   font-size: 11px;
   line-height: 1.35;
-  margin-top: 5px;
+  margin-top: var(--space-050);
 }
 .market-inline {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-100);
 }
 .market-inline .badge {
   font-size: 10px;
@@ -1067,36 +1067,36 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
-  gap: 6px;
+  gap: var(--space-075);
   flex-shrink: 0;
   max-width: 300px;
 }
 .market-order-actions .button {
   font-size: 11px;
-  padding: 9px 12px;
+  padding: var(--space-100) var(--space-150);
   min-height: 40px;
 }
 .market-confirm-action {
-  padding: 21px;
+  padding: var(--space-250);
   border: 1px solid #cbdabb;
   border-left: 4px solid #6d8f4d;
   border-radius: var(--radius-large);
   background: #f0f5e8;
-  margin-top: 18px;
+  margin-top: var(--space-250);
 }
 .market-confirm-action > p {
   font-size: 12px;
   line-height: 1.35;
   color: #5c714f;
-  margin: 8px 0 16px;
+  margin: var(--space-100) 0 var(--space-200);
 }
 .market-confirm-action > .button {
-  margin: 0 8px 5px 0;
+  margin: 0 var(--space-100) var(--space-050) 0;
   font-size: 12px;
 }
 .market-payment-updates {
   border-top: 1px solid #dce5d3;
-  padding-top: 24px;
+  padding-top: var(--space-300);
 }
 .market-payment-updates .market-section-heading > svg {
   color: #82966d;
@@ -1109,17 +1109,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: var(--space-200);
   border-bottom: 1px solid #e0e7d8;
-  padding: 15px 0;
+  padding: var(--space-200) 0;
   font-size: 12px;
   color: #536b45;
 }
 .market-channel-link {
   display: flex;
-  gap: 17px;
+  gap: var(--space-200);
   align-items: flex-start;
-  padding: 24px;
+  padding: var(--space-300);
   border-radius: var(--radius-large);
   background: #edf3e5;
   border: 1px solid #d7e2cc;
@@ -1136,18 +1136,18 @@
   font-size: 12px;
   line-height: 1.35;
   max-width: 720px;
-  margin-top: 7px;
+  margin-top: var(--space-075);
 }
 .market-channel-link .button {
-  margin-top: 14px;
+  margin-top: var(--space-150);
   font-size: 12px;
 }
 .market-consent {
   display: flex;
   align-items: flex-start;
-  gap: 9px;
+  gap: var(--space-100);
   min-height: 44px;
-  padding-top: 16px;
+  padding-top: var(--space-200);
   color: #536c43;
   font-size: 12px;
   cursor: pointer;
@@ -1156,23 +1156,23 @@
   accent-color: #547c3e;
   width: 17px;
   height: 17px;
-  margin-top: 2px;
+  margin-top: var(--space-025);
   flex-shrink: 0;
 }
 .market-link-command {
-  margin-top: 16px;
-  padding-top: 15px;
+  margin-top: var(--space-200);
+  padding-top: var(--space-200);
   border-top: 1px solid #cfddc2;
 }
 .market-link-command > code {
   display: inline-block;
   max-width: 100%;
   overflow-wrap: anywhere;
-  margin: 12px 0 5px;
+  margin: var(--space-150) 0 var(--space-050);
   background: #fff;
   border: 1px solid #cfddc2;
   border-radius: var(--radius-medium);
-  padding: 12px 15px;
+  padding: var(--space-150) var(--space-200);
   font-size: 13px;
   letter-spacing: 0.025em;
   color: #36562a;
@@ -1188,14 +1188,14 @@
 }
 @media (max-width: 1100px) {
   .market-tabs {
-    gap: 18px;
+    gap: var(--space-250);
   }
   .market-tabs > button {
     font-size: 12px;
-    gap: 6px;
+    gap: var(--space-075);
   }
   .marketplace-intro-copy {
-    padding: 28px;
+    padding: var(--space-400);
   }
   .marketplace-intro-image {
     min-width: 220px;
@@ -1207,7 +1207,7 @@
     flex-wrap: wrap;
   }
   .market-buyer-card > header > .badge {
-    margin-left: 56px;
+    margin-left: var(--space-800);
     margin-top: -2px;
   }
   .market-section-heading {
@@ -1216,7 +1216,7 @@
   .market-heading-actions {
     flex-direction: column;
     align-items: flex-end;
-    gap: 5px;
+    gap: var(--space-050);
   }
 }
 @media (max-width: 700px) {
@@ -1228,7 +1228,7 @@
   }
   .market-order-row {
     flex-direction: column;
-    gap: 12px;
+    gap: var(--space-150);
   }
   .market-order-actions {
     justify-content: flex-start;
@@ -1238,7 +1238,7 @@
     min-height: 285px;
   }
   .marketplace-intro-copy {
-    padding: 24px;
+    padding: var(--space-300);
   }
   .marketplace-intro h2 {
     font-size: 33px;
@@ -1250,18 +1250,18 @@
     min-width: 0;
   }
   .market-intro-actions {
-    gap: 7px;
-    margin-top: 17px;
+    gap: var(--space-075);
+    margin-top: var(--space-200);
   }
   .market-intro-actions .button {
     font-size: 11px;
-    padding: 10px 12px;
+    padding: var(--space-100) var(--space-150);
   }
   .market-intro-actions > a {
     font-size: 11px;
   }
   .market-overview-strip {
-    gap: 10px 20px;
+    gap: var(--space-100) var(--space-250);
   }
   .market-overview-strip > span:last-child {
     margin-left: 0;
@@ -1278,18 +1278,18 @@
     margin-top: 0;
   }
   .market-section-heading {
-    gap: 14px;
+    gap: var(--space-150);
   }
   .market-section-heading h2 {
     font-size: 18px;
   }
   .market-heading-actions .button {
     font-size: 11px;
-    padding: 10px;
+    padding: var(--space-100);
   }
   .market-toolbar {
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--space-100);
   }
   .market-toolbar .search-input {
     flex-basis: calc(100% - 52px);
@@ -1312,7 +1312,7 @@
     flex-wrap: wrap;
   }
   .market-business > header .button {
-    margin-left: 80px;
+    margin-left: var(--space-1000);
   }
   .market-desk-title {
     align-items: flex-start;
@@ -1328,29 +1328,29 @@
 @media (max-width: 460px) {
   .market-order-create,
   .market-channel-link {
-    padding: 18px;
+    padding: var(--space-250);
   }
   .market-order-form {
     grid-template-columns: 1fr;
   }
   .market-channel-link {
-    gap: 12px;
+    gap: var(--space-150);
   }
   .market-channel-link > svg {
     width: 20px;
   }
   .market-confirm-action {
-    padding: 16px;
+    padding: var(--space-200);
   }
   .market-confirm-action > .button {
     width: 100%;
   }
   .marketplace-page .page-heading {
-    gap: 15px;
+    gap: var(--space-200);
   }
   .marketplace-page .page-heading-actions > .button {
     font-size: 11px;
-    padding: 10px 12px;
+    padding: var(--space-100) var(--space-150);
   }
   .market-sample-notice {
     font-size: 11px;
@@ -1365,7 +1365,7 @@
   }
   .market-toolbar {
     flex-wrap: nowrap;
-    gap: 6px;
+    gap: var(--space-075);
   }
   .market-toolbar .search-input {
     flex: 1;
@@ -1373,13 +1373,13 @@
   }
   .market-toolbar > .button {
     order: 2;
-    padding-inline: 10px;
+    padding-inline: var(--space-100);
   }
   .market-district-filter {
     flex: 0 0 100px;
     width: 100px;
     order: 1;
-    padding-inline: 8px;
+    padding-inline: var(--space-100);
   }
   .market-district-filter > svg:first-child {
     display: none;
@@ -1391,7 +1391,7 @@
     display: none;
   }
   .marketplace-intro-copy {
-    padding: 25px;
+    padding: var(--space-300);
   }
   .marketplace-intro h2 br {
     display: none;
@@ -1404,14 +1404,14 @@
     max-width: 280px;
   }
   .market-intro-actions {
-    gap: 10px;
+    gap: var(--space-100);
   }
   .market-intro-kicker {
     font-size: 11px;
   }
   .market-overview-strip {
-    padding-block: 16px;
-    gap: 10px 16px;
+    padding-block: var(--space-200);
+    gap: var(--space-100) var(--space-200);
   }
   .market-overview-strip > span {
     font-size: 11px;
@@ -1423,11 +1423,11 @@
     margin-left: auto;
   }
   .market-tabs {
-    gap: 22px;
+    gap: var(--space-300);
   }
   .market-tabs > button {
     font-size: 12px;
-    padding: 13px 0;
+    padding: var(--space-150) 0;
   }
   .market-tabs > button > svg {
     display: none;
@@ -1442,17 +1442,17 @@
     width: 100%;
   }
   .market-buyer-card {
-    padding: 18px;
+    padding: var(--space-250);
   }
   .market-buyer-card.has-match {
-    padding-top: 16px;
+    padding-top: var(--space-200);
   }
   .market-buyer-card > header {
     flex-wrap: wrap;
-    gap: 9px;
+    gap: var(--space-100);
   }
   .market-buyer-card > header > .badge {
-    margin-left: 53px;
+    margin-left: var(--space-600);
     margin-top: -2px;
   }
   .market-buyer-card h3 {
@@ -1472,21 +1472,21 @@
     grid-template-columns: 1fr;
   }
   .market-category-tabs {
-    gap: 6px;
+    gap: var(--space-075);
   }
   .market-category-tabs button {
-    padding: 9px 11px;
+    padding: var(--space-100) var(--space-150);
     font-size: 11px;
   }
   .market-supply-card {
-    padding: 17px;
+    padding: var(--space-200);
   }
   .market-supply-values {
     flex-direction: column;
-    gap: 8px;
+    gap: var(--space-100);
   }
   .market-business {
-    padding: 21px;
+    padding: var(--space-250);
   }
   .market-business h2 {
     font-size: 21px;
@@ -1497,29 +1497,29 @@
   }
   .market-business > dl {
     grid-template-columns: 1fr;
-    gap: 21px;
+    gap: var(--space-250);
   }
   .market-desk {
-    padding: 19px;
+    padding: var(--space-250);
   }
   .market-desk > form {
-    gap: 7px;
+    gap: var(--space-075);
   }
   .market-desk > form > input {
     font-size: 12px;
-    padding-inline: 10px;
+    padding-inline: var(--space-100);
   }
   .market-desk > form .button {
-    padding-inline: 11px;
+    padding-inline: var(--space-150);
   }
   .market-desk > form .button > svg {
     display: none;
   }
   .market-desk-suggestions {
-    gap: 4px 12px;
+    gap: var(--space-050) var(--space-150);
   }
   .market-followups {
-    padding: 18px;
+    padding: var(--space-250);
   }
   .market-followups .badge {
     max-width: 96px;

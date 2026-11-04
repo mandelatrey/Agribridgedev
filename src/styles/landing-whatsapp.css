@@ -20,7 +20,7 @@
 .lwh-heading > p {
   max-width: 355px;
   color: var(--lp-muted, #5e6b62);
-  padding-bottom: 4px;
+  padding-bottom: var(--space-050);
 }
 .lwh-layout {
   display: grid;
@@ -36,8 +36,8 @@
   min-height: 99px;
   display: flex;
   align-items: flex-start;
-  gap: 18px;
-  padding: 21px 14px 21px 0;
+  gap: var(--space-250);
+  padding: var(--space-250) var(--space-150) var(--space-250) 0;
   border: 0;
   border-bottom: 1px solid #cbd5c5;
   color: var(--lp-ink, #16372b);
@@ -69,7 +69,7 @@
 }
 .lwh-step-copy {
   display: grid;
-  gap: 5px;
+  gap: var(--space-050);
   flex: 1;
 }
 .lwh-step-copy strong {
@@ -92,7 +92,7 @@
 }
 .lwh-steps button > svg {
   flex-shrink: 0;
-  margin-top: 6px;
+  margin-top: var(--space-075);
   opacity: 0;
 }
 .lwh-steps button[aria-pressed="true"] > svg {
@@ -100,12 +100,12 @@
 }
 .lwh-inclusion {
   display: flex;
-  gap: 12px;
-  margin-top: 25px;
+  gap: var(--space-150);
+  margin-top: var(--space-300);
 }
 .lwh-inclusion > svg {
   flex-shrink: 0;
-  margin-top: 4px;
+  margin-top: var(--space-050);
   color: #557146;
 }
 .lwh-inclusion p {
@@ -116,7 +116,7 @@
 .lwh-inclusion a {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-050);
   min-height: 30px;
   text-underline-offset: 3px;
 }
@@ -126,13 +126,13 @@
   color: #657062;
 }
 .lwh-action {
-  margin-top: 26px;
+  margin-top: var(--space-300);
 }
 .lwh-action > p {
   color: #596b51;
   font-size: 11px;
   line-height: 1.35;
-  margin-bottom: 12px !important;
+  margin-bottom: var(--space-150) !important;
 }
 .lwh-action .lp-button {
   background: var(--lp-forest, #102e23);
@@ -160,9 +160,9 @@
 .lwh-whatsapp-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   min-height: 54px;
-  padding: 12px 18px;
+  padding: var(--space-150) var(--space-250);
   background: #fcfffb;
   color: #0c6c3b;
 }
@@ -186,8 +186,8 @@
 .lwh-chat-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 13px 17px;
+  gap: var(--space-100);
+  padding: var(--space-150) var(--space-200);
   background: #075e54;
   color: #fffef6;
 }
@@ -204,7 +204,7 @@
 .lwh-chat-header > div {
   display: grid;
   flex: 1;
-  gap: 2px;
+  gap: var(--space-025);
 }
 .lwh-chat-header strong {
   font-size: 15px;
@@ -218,7 +218,7 @@
 .lwh-chat-header > .lwh-chat-tools {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: var(--space-200);
   flex: 0 0 auto;
   color: #e6f1ee;
 }
@@ -229,7 +229,7 @@
 .lwh-sample-tag {
   border: 1px solid #78a99d;
   border-radius: var(--radius-small);
-  padding: 3px 6px;
+  padding: var(--space-025) var(--space-075);
   font-size: 8px;
   line-height: 1.35;
   letter-spacing: 1px;
@@ -238,9 +238,9 @@
 .lwh-conversation {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-150);
   min-height: 510px;
-  padding: 17px 19px 22px;
+  padding: var(--space-200) var(--space-250) var(--space-300);
   background-color: #efeae2;
   background-image:
     radial-gradient(
@@ -271,7 +271,7 @@
 }
 .lwh-chat-context {
   align-self: center;
-  padding: 4px 10px;
+  padding: var(--space-050) var(--space-100);
   border-radius: var(--radius-medium);
   background: #fffcf4e6;
   color: #707570;
@@ -281,7 +281,7 @@
 .lwh-bubble {
   position: relative;
   max-width: 90%;
-  padding: 9px 12px 6px;
+  padding: var(--space-100) var(--space-150) var(--space-075);
   border: 0;
   box-shadow: 0 1px 1px #4b493e26;
   color: #23352d;
@@ -302,7 +302,7 @@
 }
 .lwh-sender {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: var(--space-050);
   color: #3b7655;
   font-size: 9px;
   font-weight: 600;
@@ -322,7 +322,7 @@
 .lwh-farmer > svg {
   display: block;
   margin-left: auto;
-  margin-top: 2px;
+  margin-top: var(--space-025);
   color: #53bdeb;
 }
 .lwh-team {
@@ -334,8 +334,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 4px;
-  margin-top: 3px;
+  gap: var(--space-050);
+  margin-top: var(--space-025);
   color: #738177;
   font-size: 9px;
   line-height: 1.35;
@@ -358,15 +358,15 @@
   background: #fff;
 }
 .lwh-sample-card {
-  margin-top: 13px;
-  padding: 14px;
+  margin-top: var(--space-150);
+  padding: var(--space-150);
   border: 1px solid #dce3d1;
   border-radius: var(--radius-large);
   background: #f5f7ee;
 }
 .lwh-card-label {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-150);
   font-size: 10px;
   line-height: 1.35;
   letter-spacing: 0.9px;
@@ -376,8 +376,8 @@
 .lwh-card-title {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 5px;
+  gap: var(--space-100);
+  margin-bottom: var(--space-050);
   color: #244b32;
 }
 .lwh-card-title strong {
@@ -388,14 +388,14 @@
 .lwh-location {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-050);
   color: #66745f;
   font-size: 12px !important;
 }
 .lwh-profile-fields {
   display: flex;
-  gap: 30px;
-  margin: 16px 0 0;
+  gap: var(--space-400);
+  margin: var(--space-200) 0 0;
 }
 .lwh-profile-fields dt,
 .lwh-briefing dt {
@@ -403,14 +403,14 @@
   font-size: 11px;
 }
 .lwh-profile-fields dd {
-  margin: 2px 0 0;
+  margin: var(--space-025) 0 0;
   font-size: 13px;
   font-weight: 600;
 }
 .lwh-card-footnote {
   border-top: 1px solid #dce3d1;
-  margin-top: 13px !important;
-  padding-top: 10px;
+  margin-top: var(--space-150) !important;
+  padding-top: var(--space-100);
   color: #65725f;
   font-size: 11px !important;
   line-height: 1.35 !important;
@@ -418,8 +418,8 @@
 .lwh-volume {
   display: flex;
   align-items: baseline;
-  gap: 9px;
-  margin-top: 12px;
+  gap: var(--space-100);
+  margin-top: var(--space-150);
 }
 .lwh-volume > strong {
   font-size: 27px;
@@ -435,13 +435,13 @@
 }
 .lwh-briefing {
   display: grid;
-  gap: 10px;
-  margin: 15px 0 0;
+  gap: var(--space-100);
+  margin: var(--space-200) 0 0;
 }
 .lwh-briefing > div {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--space-100);
   align-items: baseline;
 }
 .lwh-briefing dd {
@@ -452,14 +452,14 @@
 }
 .lwh-payment-events {
   display: grid;
-  gap: 16px;
-  margin: 17px 0 0;
+  gap: var(--space-200);
+  margin: var(--space-200) 0 0;
   padding: 0;
   list-style: none;
 }
 .lwh-payment-events li {
   display: flex;
-  gap: 9px;
+  gap: var(--space-100);
   align-items: flex-start;
 }
 .lwh-payment-events li > span {
@@ -483,14 +483,14 @@
   line-height: 1.35;
 }
 .lwh-payment-events small {
-  margin-top: 2px;
+  margin-top: var(--space-025);
   color: #66745f;
   font-size: 11px;
 }
 .lwh-chat-footer {
   display: grid;
-  gap: 5px;
-  padding: 9px 10px 8px;
+  gap: var(--space-050);
+  padding: var(--space-100) var(--space-100) var(--space-100);
   background: #f0f2ed;
   border-top: 1px solid #d9ddd3;
   color: #68796b;
@@ -500,9 +500,9 @@
 .lwh-compose-preview {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   min-height: 57px;
-  padding: 8px 10px 5px;
+  padding: var(--space-100) var(--space-100) var(--space-050);
   background: #f0f2ed;
   color: #8b958d;
   text-align: left;
@@ -510,10 +510,10 @@
 .lwh-compose-preview > span {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: var(--space-150);
   flex: 1;
   min-height: 40px;
-  padding: 8px 13px;
+  padding: var(--space-100) var(--space-150);
   border-radius: var(--radius-full);
   background: #fff;
   font-size: 13px;
@@ -527,13 +527,13 @@
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  padding: 10px;
+  padding: var(--space-100);
   border-radius: var(--radius-full);
   background: #128c7e;
   color: #fff;
 }
 .lwh-mock-note {
-  padding: 0 12px 9px;
+  padding: 0 var(--space-150) var(--space-100);
   background: #f0f2ed;
   color: #68796b;
   font-size: 9px;
@@ -545,7 +545,7 @@
 }
 .lwh-preview-caption {
   max-width: 460px;
-  margin: 17px auto 0 !important;
+  margin: var(--space-200) auto 0 !important;
   color: #6d7966;
   font-size: 12px;
   line-height: 1.35;
@@ -553,19 +553,19 @@
 }
 @media (max-width: 1000px) {
   .lwh-layout {
-    gap: 35px;
+    gap: var(--space-400);
   }
   .lwh-heading {
     grid-template-columns: 1.3fr 1fr;
   }
   .lwh-chat-header {
-    padding-inline: 14px;
+    padding-inline: var(--space-150);
   }
   .lwh-conversation {
-    padding-inline: 17px;
+    padding-inline: var(--space-200);
   }
   .lwh-steps button {
-    gap: 12px;
+    gap: var(--space-150);
   }
   .lwh-step-copy strong {
     font-size: 15px;
@@ -573,12 +573,12 @@
 }
 @media (max-width: 760px) {
   .lwh-section {
-    padding-block: 56px;
+    padding-block: var(--space-800);
   }
   .lwh-heading {
     grid-template-columns: 1fr;
-    gap: 22px;
-    margin-bottom: 24px;
+    gap: var(--space-300);
+    margin-bottom: var(--space-300);
   }
   .lwh-heading > p {
     max-width: 440px;
@@ -586,7 +586,7 @@
   }
   .lwh-layout {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: var(--space-250);
   }
   .lwh-guide {
     display: contents;
@@ -595,7 +595,7 @@
     order: 0;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 6px;
+    gap: var(--space-075);
     border-top: 0;
   }
   .lwh-step-copy .lwh-step-title,
@@ -631,8 +631,8 @@
     min-height: 108px;
     flex-direction: column;
     align-items: center;
-    padding: 12px 5px;
-    gap: 8px;
+    padding: var(--space-150) var(--space-050);
+    gap: var(--space-100);
     border: 1px solid #cbd5c5;
     border-radius: var(--radius-medium);
     text-align: center;
@@ -662,7 +662,7 @@
     font-size: 37px;
   }
   .lwh-steps button {
-    padding-inline: 4px;
+    padding-inline: var(--space-050);
   }
   .lwh-step-number {
     flex-basis: 26px;
@@ -675,8 +675,8 @@
     width: 15px;
   }
   .lwh-chat-header {
-    gap: 8px;
-    padding: 12px 10px;
+    gap: var(--space-100);
+    padding: var(--space-150) var(--space-100);
   }
   .lwh-avatar {
     width: 36px;
@@ -689,8 +689,8 @@
     font-size: 9px;
   }
   .lwh-whatsapp-brand {
-    padding: 11px 12px;
-    gap: 7px;
+    padding: var(--space-150) var(--space-150);
+    gap: var(--space-075);
   }
   .lwh-whatsapp-brand strong {
     font-size: 16px;
@@ -699,24 +699,24 @@
     font-size: 9px;
   }
   .lwh-chat-tools {
-    gap: 9px;
+    gap: var(--space-100);
   }
   .lwh-chat-tools svg {
     width: 15px;
     height: 15px;
   }
   .lwh-chat-header .lwh-sample-tag {
-    padding-inline: 4px;
+    padding-inline: var(--space-050);
     font-size: 7px;
   }
   .lwh-conversation {
-    padding: 15px 13px 19px;
-    gap: 11px;
+    padding: var(--space-200) var(--space-150) var(--space-250);
+    gap: var(--space-150);
     min-height: 0;
   }
   .lwh-bubble {
     max-width: 93%;
-    padding: 9px 10px 6px;
+    padding: var(--space-100) var(--space-100) var(--space-075);
   }
   .lwh-bubble p {
     font-size: 13px;
@@ -725,16 +725,16 @@
     width: 93%;
   }
   .lwh-sample-card {
-    padding: 12px;
+    padding: var(--space-150);
   }
   .lwh-briefing dd {
     font-size: 11px;
   }
   .lwh-action .lp-button {
     width: 100%;
-    padding-inline: 17px;
+    padding-inline: var(--space-200);
     font-size: 12px;
-    gap: 10px;
+    gap: var(--space-100);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -745,21 +745,21 @@
 .lwh-audiences {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  padding: 7px;
+  gap: var(--space-150);
+  padding: var(--space-075);
   border: 1px solid #cbd7c2;
   border-radius: var(--radius-xlarge);
   background: #e7eddf;
-  margin-bottom: 35px;
+  margin-bottom: var(--space-400);
 }
 .lwh-audiences button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 6px 10px;
+  gap: var(--space-075) var(--space-100);
   min-height: 64px;
-  padding: 14px 18px;
+  padding: var(--space-150) var(--space-250);
   border: 1px solid transparent;
   border-radius: var(--radius-large);
   background: transparent;
@@ -777,14 +777,14 @@
 .lwh-audiences button > span {
   font-size: 11px;
   font-weight: 400;
-  margin-left: 5px;
+  margin-left: var(--space-050);
 }
 .lwh-audiences button > svg {
   flex-shrink: 0;
 }
 .lwh-eyebrow {
   display: inline-flex;
-  gap: 9px;
+  gap: var(--space-100);
   align-items: center;
   color: #426e44;
 }
@@ -800,23 +800,23 @@
 .lwh-web-option {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   min-height: 44px;
   font-size: 12px;
-  margin-top: 6px;
+  margin-top: var(--space-075);
   text-underline-offset: 4px;
 }
 @media (max-width: 760px) {
   .lwh-audiences {
-    gap: 5px;
-    padding: 5px;
-    margin-bottom: 23px;
+    gap: var(--space-050);
+    padding: var(--space-050);
+    margin-bottom: var(--space-300);
   }
   .lwh-audiences button {
     min-height: 72px;
     font-size: 14px;
-    gap: 4px 7px;
-    padding: 10px 7px;
+    gap: var(--space-050) var(--space-075);
+    padding: var(--space-100) var(--space-075);
   }
   .lwh-audiences button > span {
     flex: 0 0 100%;

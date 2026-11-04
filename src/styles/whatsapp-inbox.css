@@ -5,11 +5,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  margin: 26px 0 14px;
+  gap: var(--space-250);
+  margin: var(--space-300) 0 var(--space-150);
 }
 .wa-inbox-heading h2 {
-  margin: 0 0 6px;
+  margin: 0 0 var(--space-075);
   font-size: 23px;
   letter-spacing: -0.65px;
 }
@@ -21,20 +21,20 @@
 .wa-privacy {
   display: flex;
   align-items: flex-start;
-  gap: 9px;
+  gap: var(--space-100);
   color: var(--muted);
   font-size: 12px;
   line-height: 1.35;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-250);
 }
 .wa-privacy svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-025);
 }
 .wa-workspace {
   display: grid;
   grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.7fr);
-  gap: 22px;
+  gap: var(--space-300);
   align-items: start;
 }
 .wa-question-list {
@@ -48,9 +48,9 @@
 .wa-question {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: var(--space-100);
   width: 100%;
-  padding: 18px 20px;
+  padding: var(--space-250) var(--space-250);
   border: 0;
   border-top: 1px solid var(--border);
   background: var(--surface, #fff);
@@ -75,7 +75,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-100);
 }
 .wa-question-top strong {
   font-size: 13px;
@@ -98,37 +98,37 @@
 .wa-pagination {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: var(--space-100);
   border-top: 1px solid var(--border);
 }
 .wa-pagination .button {
-  padding: 9px;
+  padding: var(--space-100);
   font-size: 12px;
 }
 .wa-conversation-heading {
-  gap: 14px;
+  gap: var(--space-150);
   flex-wrap: wrap;
 }
 .wa-conversation-heading span:not(.badge) {
   display: block;
   color: var(--muted);
-  margin-top: 6px;
+  margin-top: var(--space-075);
   font-size: 12px;
 }
 .wa-conversation-body {
-  padding: 24px;
+  padding: var(--space-300);
   min-width: 0;
 }
 .wa-bubble {
-  padding: 16px 18px;
+  padding: var(--space-200) var(--space-250);
   border-radius: var(--radius-xlarge);
   background: #f4f5f0;
   border: 1px solid #e8ece2;
-  margin: 0 24px 18px 0;
+  margin: 0 var(--space-300) var(--space-250) 0;
 }
 .wa-outgoing {
   background: #f0f6e8;
-  margin: 0 0 18px 24px;
+  margin: 0 0 var(--space-250) var(--space-300);
 }
 .wa-bubble-label {
   font-size: 10px;
@@ -138,7 +138,7 @@
   font-weight: 700;
 }
 .wa-bubble p {
-  margin: 10px 0 12px;
+  margin: var(--space-100) 0 var(--space-150);
   font-size: 14px;
   line-height: 1.35;
   white-space: pre-wrap;
@@ -156,32 +156,32 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 9px;
+  gap: var(--space-100);
+  margin-bottom: var(--space-100);
 }
 .wa-window {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: var(--space-100);
   font-size: 12px;
   color: var(--muted);
   line-height: 1.35;
-  margin: 24px 0 12px;
+  margin: var(--space-300) 0 var(--space-150);
 }
 .wa-window svg {
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: var(--space-025);
 }
 .wa-reply-form {
   display: grid;
-  gap: 14px;
-  margin-top: 24px;
+  gap: var(--space-150);
+  margin-top: var(--space-300);
 }
 .wa-reply-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-150);
   flex-wrap: wrap;
 }
 .wa-reply-actions small,
@@ -194,10 +194,10 @@
   margin: 0;
 }
 .message-tabs {
-  margin-bottom: 22px;
+  margin-bottom: var(--space-300);
   display: flex;
-  gap: 6px;
-  padding: 5px;
+  gap: var(--space-075);
+  padding: var(--space-050);
   border: 1px solid var(--border);
   border-radius: var(--radius-xlarge);
   background: #f1f3ed;
@@ -207,7 +207,7 @@
 .message-tabs button {
   border: 0;
   border-radius: var(--radius-large);
-  padding: 11px 17px;
+  padding: var(--space-150) var(--space-200);
   background: transparent;
   color: var(--muted);
   cursor: pointer;
@@ -224,10 +224,10 @@
 @media (max-width: 1000px) {
   .wa-workspace {
     grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.3fr);
-    gap: 14px;
+    gap: var(--space-150);
   }
   .wa-conversation-body {
-    padding: 18px;
+    padding: var(--space-250);
   }
 }
 @media (max-width: 720px) {
@@ -243,14 +243,14 @@
     overflow-y: auto;
   }
   .wa-conversation-body {
-    padding: 16px;
+    padding: var(--space-200);
   }
   .wa-bubble {
-    margin-right: 12px;
+    margin-right: var(--space-150);
   }
   .wa-outgoing {
     margin-right: 0;
-    margin-left: 12px;
+    margin-left: var(--space-150);
   }
   .message-tabs {
     width: 100%;
@@ -258,7 +258,7 @@
   }
   .message-tabs button {
     flex: 1;
-    padding: 11px 12px;
+    padding: var(--space-150) var(--space-150);
     font-size: 12px;
   }
 }

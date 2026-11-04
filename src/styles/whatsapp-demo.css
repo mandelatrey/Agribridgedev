@@ -28,14 +28,14 @@
 }
 .wd-header > .wd-audience-switch {
   display: inline-flex;
-  gap: 3px;
-  padding: 4px;
+  gap: var(--space-025);
+  padding: var(--space-050);
   background: #edf1e6;
   border: 1px solid #dfe5d6;
   border-radius: var(--radius-large);
 }
 .wd-audience-switch button {
-  padding: 9px 12px;
+  padding: var(--space-100) var(--space-150);
   border: 0;
   border-radius: var(--radius-medium);
   background: transparent;
@@ -59,7 +59,7 @@
     grid-template-columns: 1fr 1fr;
   }
   .wd-audience-switch button {
-    padding-inline: 6px;
+    padding-inline: var(--space-075);
     font-size: 11px;
   }
 }
@@ -82,7 +82,7 @@
   top: 8px;
   left: 50%;
   transform: translate(-50%, -160%);
-  padding: 12px 18px;
+  padding: var(--space-150) var(--space-250);
   background: white;
   box-shadow: 0 3px 20px #17382b20;
   font-size: 13px;
@@ -96,13 +96,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 25px;
-  padding: 27px 48px;
+  gap: var(--space-300);
+  padding: var(--space-300) var(--space-600);
 }
 .wd-brand {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--space-100);
   font-size: 25px;
   font-weight: 700;
   letter-spacing: -1px;
@@ -113,12 +113,12 @@
 .wd-header > div {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: var(--space-300);
 }
 .wd-header-label {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   font-size: 12px;
   color: #6b7b65;
 }
@@ -130,27 +130,27 @@
 }
 .wd-back {
   display: inline-flex;
-  gap: 7px;
+  gap: var(--space-075);
   align-items: center;
   font-size: 12px;
   min-height: 40px;
 }
 .wd-layout {
   max-width: 1184px;
-  margin: 24px auto 0;
-  padding: 0 48px 45px;
+  margin: var(--space-300) auto 0;
+  padding: 0 var(--space-600) var(--space-600);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.98fr);
-  gap: 70px;
+  gap: var(--space-800);
   align-items: start;
 }
 .wd-guide {
-  padding-top: 18px;
+  padding-top: var(--space-250);
 }
 .wd-eyebrow {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   color: #648048;
   font-weight: 600;
   font-size: 12px;
@@ -161,7 +161,7 @@
   letter-spacing: -2.1px;
   font-weight: 600;
   color: #183f30;
-  margin: 20px 0;
+  margin: var(--space-250) 0;
   text-wrap: balance;
 }
 .wd-intro > p {
@@ -172,10 +172,10 @@
 }
 .wd-demo-disclosure {
   display: flex;
-  gap: 10px;
+  gap: var(--space-100);
   align-items: flex-start;
-  margin-top: 24px;
-  padding: 15px 17px;
+  margin-top: var(--space-300);
+  padding: var(--space-200) var(--space-200);
   background: #edf2e6;
   border-left: 3px solid #8ba766;
   border-radius: 0 var(--radius-large) var(--radius-large) 0;
@@ -185,7 +185,7 @@
 }
 .wd-demo-disclosure > svg {
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: var(--space-025);
   color: #748e58;
 }
 .wd-demo-disclosure strong {
@@ -195,26 +195,26 @@
   font-weight: 600;
 }
 .wd-scenarios {
-  margin-top: 32px;
+  margin-top: var(--space-400);
 }
 .wd-scenarios h2 {
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 13px;
+  margin-bottom: var(--space-150);
 }
 .wd-scenarios > div {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: var(--space-100);
 }
 .wd-scenarios button {
   display: flex;
-  gap: 10px;
+  gap: var(--space-100);
   align-items: flex-start;
   text-align: left;
   background: #fff;
   border: 1px solid #e0e6da;
-  padding: 13px;
+  padding: var(--space-150);
   border-radius: var(--radius-large);
   min-height: 82px;
   color: #526a46;
@@ -240,7 +240,7 @@
   color: #77945a;
   flex-shrink: 0;
   display: flex;
-  padding-top: 2px;
+  padding-top: var(--space-025);
 }
 .wd-scenarios button > span:nth-child(2) {
   min-width: 0;
@@ -255,7 +255,7 @@
   display: block;
   font-size: 10px;
   color: #73826a;
-  margin-top: 4px;
+  margin-top: var(--space-050);
   line-height: 1.35;
 }
 .wd-scenarios button > svg {
@@ -266,8 +266,8 @@
   width: 12px;
 }
 .wd-explainer {
-  margin-top: 28px;
-  padding-top: 23px;
+  margin-top: var(--space-400);
+  padding-top: var(--space-300);
   border-top: 1px solid var(--wd-line);
 }
 .wd-explainer h2 {
@@ -279,24 +279,24 @@
   font-size: 12px;
   line-height: 1.35;
   color: #70816a;
-  margin-top: 10px;
+  margin-top: var(--space-100);
 }
 .wd-explainer > div {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 15px;
+  gap: var(--space-100);
+  margin-top: var(--space-200);
 }
 .wd-explainer > div > span {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   font-size: 11px;
   color: #607b4e;
 }
 .wd-explainer .wd-language-note {
   font-size: 10px;
-  margin-top: 19px;
+  margin-top: var(--space-250);
   color: #75846c;
 }
 .wd-showcase {
@@ -304,14 +304,14 @@
 }
 .wd-preview-tools {
   display: flex;
-  gap: 12px;
+  gap: var(--space-150);
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: var(--space-150);
 }
 .wd-language-switch {
   display: flex;
-  padding: 3px;
+  padding: var(--space-025);
   background: #e9eee2;
   border: 1px solid #dce4d3;
   border-radius: var(--radius-large);
@@ -322,7 +322,7 @@
   background: transparent;
   font-size: 11px;
   color: #718366;
-  padding: 8px 11px;
+  padding: var(--space-100) var(--space-150);
   min-height: 34px;
 }
 .wd-language-switch button[aria-pressed="true"] {
@@ -333,18 +333,18 @@
 }
 .wd-language-switch small {
   font-size: 9px;
-  margin-left: 3px;
+  margin-left: var(--space-025);
 }
 .wd-reset {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   background: transparent;
   border: 0;
   color: #718464;
   font-size: 11px;
   min-height: 40px;
-  padding: 6px 0;
+  padding: var(--space-075) 0;
 }
 .wd-phone {
   border: 1px solid #d4ddd1;
@@ -361,8 +361,8 @@
 .wd-chat-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 18px 20px;
+  gap: var(--space-150);
+  padding: var(--space-250) var(--space-250);
   background: #1d513c;
   color: #fff;
   min-height: 79px;
@@ -384,13 +384,13 @@
 .wd-chat-header strong {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   font-size: 15px;
   font-weight: 600;
 }
 .wd-chat-header strong > span {
   display: inline-flex;
-  gap: 4px;
+  gap: var(--space-050);
   align-items: center;
   color: #d8e9bb;
   font-size: 9px;
@@ -400,7 +400,7 @@
   display: block;
   font-size: 10px;
   color: #c0d1c2;
-  margin-top: 5px;
+  margin-top: var(--space-050);
   line-height: 1.35;
 }
 .wd-chat-header > svg {
@@ -411,7 +411,7 @@
 .wd-chat-notice {
   background: #e2eada;
   color: #5c7752;
-  padding: 8px 12px;
+  padding: var(--space-100) var(--space-150);
   text-align: center;
   font-size: 10px;
   line-height: 1.35;
@@ -420,10 +420,10 @@
 .wd-messages {
   flex: 1;
   overflow-y: auto;
-  padding: 18px 17px 14px;
+  padding: var(--space-250) var(--space-200) var(--space-150);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--space-150);
   scroll-behavior: auto;
   min-height: 150px;
   scrollbar-width: thin;
@@ -437,14 +437,14 @@
   color: #71866a;
   background: #e2e8da;
   border: 1px solid #d8e2d0;
-  padding: 4px 10px;
+  padding: var(--space-050) var(--space-100);
   font-size: 9px;
   border-radius: var(--radius-small);
-  margin: 0 0 2px;
+  margin: 0 0 var(--space-025);
 }
 .wd-message {
   position: relative;
-  padding: 11px 13px 7px;
+  padding: var(--space-150) var(--space-150) var(--space-075);
   border-radius: 0 var(--radius-large) var(--radius-large) var(--radius-large);
   background: #fff;
   max-width: 90%;
@@ -470,7 +470,7 @@
   display: flex;
   justify-content: flex-end;
   min-height: 16px;
-  margin-top: 4px;
+  margin-top: var(--space-050);
   color: #849578;
   font-size: 8px;
 }
@@ -480,11 +480,11 @@
 .wd-message-label,
 .wd-voice-label {
   display: flex;
-  gap: 6px;
+  gap: var(--space-075);
   align-items: center;
   font-weight: 600;
   font-size: 10px;
-  margin-bottom: 8px;
+  margin-bottom: var(--space-100);
   color: #4b7540;
 }
 .wd-voice-label {
@@ -493,15 +493,15 @@
 .wd-payment-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   font-size: 10px;
   font-weight: 600;
   background: #faf2db;
   border: 1px solid #ebdfb6;
   color: #8a6b27;
-  padding: 5px 9px;
+  padding: var(--space-050) var(--space-100);
   border-radius: var(--radius-medium);
-  margin-bottom: 10px;
+  margin-bottom: var(--space-100);
 }
 .wd-payment-badge.confirmed {
   background: #e7f1df;
@@ -511,25 +511,25 @@
 .wd-chat-controls {
   background: #f8faf5;
   border-top: 1px solid #d9e2d2;
-  padding: 12px;
+  padding: var(--space-150);
 }
 .wd-quick-replies {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 10px;
+  gap: var(--space-075);
+  margin-bottom: var(--space-100);
 }
 .wd-quick-replies button {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   border: 1px solid #cbdcb9;
   background: #fff;
   color: #547941;
   font-size: 10px;
   line-height: 1.35;
   border-radius: var(--radius-medium);
-  padding: 7px 10px;
+  padding: var(--space-075) var(--space-100);
   min-height: 34px;
   text-align: left;
 }
@@ -540,13 +540,13 @@
 .wd-compose {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
 }
 .wd-compose input {
   border: 1px solid #d5dfcb;
   color: #385930;
   border-radius: var(--radius-large);
-  padding: 11px 13px;
+  padding: var(--space-150) var(--space-150);
   font-size: 12px;
   min-width: 0;
   flex: 1;
@@ -575,13 +575,13 @@
 .wd-voice-example {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   min-height: 32px;
   font-size: 10px;
   color: #668753;
   background: transparent;
   border: 0;
-  padding: 6px 0 0;
+  padding: var(--space-075) 0 0;
   text-align: left;
 }
 .wd-voice-example svg {
@@ -591,18 +591,18 @@
   color: #829276;
   font-size: 9px;
   line-height: 1.35;
-  margin-top: 3px !important;
+  margin-top: var(--space-025) !important;
 }
 .wd-profile-preview {
-  margin-top: 16px;
-  padding: 18px 19px;
+  margin-top: var(--space-200);
+  padding: var(--space-250) var(--space-250);
   border: 1px solid #dce5d3;
   background: #f0f4e9;
   border-radius: var(--radius-large);
 }
 .wd-profile-preview > div:first-child {
   display: flex;
-  gap: 10px;
+  gap: var(--space-100);
   align-items: flex-start;
 }
 .wd-profile-icon {
@@ -622,7 +622,7 @@
   color: #53723f;
 }
 .wd-profile-preview > div p {
-  margin-top: 4px;
+  margin-top: var(--space-050);
   font-size: 10px;
   line-height: 1.35;
   color: #7a8c6c;
@@ -630,16 +630,16 @@
 .wd-profile-status {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-050);
   font-size: 9px;
   margin-left: auto;
   color: #668e4f;
-  padding-top: 5px;
+  padding-top: var(--space-050);
 }
 .wd-profile-preview details {
   border-top: 1px solid #d9e3cd;
-  padding-top: 10px;
-  margin-top: 12px;
+  padding-top: var(--space-100);
+  margin-top: var(--space-150);
 }
 .wd-profile-preview summary {
   font-size: 11px;
@@ -647,7 +647,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   min-height: 30px;
 }
 .wd-profile-preview details[open] summary svg {
@@ -658,13 +658,13 @@
   color: #657b54;
   font-size: 11px;
   line-height: 1.35;
-  margin-top: 8px;
+  margin-top: var(--space-100);
 }
 .wd-progress {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-top: 13px;
+  gap: var(--space-200);
+  margin-top: var(--space-150);
 }
 .wd-progress label {
   font-size: 9px;
@@ -689,32 +689,32 @@
 }
 .wd-offer-note {
   display: flex;
-  gap: 6px;
+  gap: var(--space-075);
   align-items: flex-start;
   font-size: 10px;
   color: #668a4c;
   line-height: 1.35;
-  margin-top: 12px !important;
+  margin-top: var(--space-150) !important;
 }
 .wd-offer-note svg {
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: var(--space-025);
 }
 .wd-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--space-250);
   max-width: 1184px;
   margin: auto;
-  padding: 20px 48px 28px;
+  padding: var(--space-250) var(--space-600) var(--space-400);
   color: #839578;
   font-size: 10px;
   border-top: 1px solid #e0e7d9;
 }
 .wd-footer > span:first-child {
   display: flex;
-  gap: 7px;
+  gap: var(--space-075);
   align-items: center;
 }
 .wd-sr-only {
@@ -735,18 +735,18 @@
 }
 @media (max-width: 1050px) {
   .wd-layout {
-    padding-inline: 32px;
-    gap: 35px;
+    padding-inline: var(--space-400);
+    gap: var(--space-400);
     grid-template-columns: minmax(0, 1fr) minmax(330px, 1fr);
   }
   .wd-header {
-    padding-inline: 32px;
+    padding-inline: var(--space-400);
   }
   .wd-intro h1 {
     font-size: 40px;
   }
   .wd-scenarios button {
-    padding: 11px;
+    padding: var(--space-150);
   }
   .wd-scenario-icon {
     width: 20px;
@@ -754,7 +754,7 @@
 }
 @media (max-width: 760px) {
   .wd-header {
-    padding: 20px 23px;
+    padding: var(--space-250) var(--space-300);
   }
   .wd-brand {
     font-size: 23px;
@@ -765,9 +765,9 @@
   .wd-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    padding: 0 23px 30px;
-    margin-top: 16px;
-    gap: 22px;
+    padding: 0 var(--space-300) var(--space-400);
+    margin-top: var(--space-200);
+    gap: var(--space-300);
     max-width: 600px;
   }
   .wd-guide {
@@ -778,7 +778,7 @@
   }
   .wd-intro h1 {
     font-size: 37px;
-    margin-block: 13px;
+    margin-block: var(--space-150);
     max-width: 380px;
   }
   .wd-intro > p {
@@ -786,8 +786,8 @@
     max-width: none;
   }
   .wd-demo-disclosure {
-    margin-top: 17px;
-    padding: 12px 13px;
+    margin-top: var(--space-200);
+    padding: var(--space-150) var(--space-150);
     font-size: 10px;
   }
   .wd-demo-disclosure strong {
@@ -800,22 +800,22 @@
   }
   .wd-scenarios h2 {
     font-size: 11px;
-    margin-bottom: 10px;
+    margin-bottom: var(--space-100);
   }
   .wd-scenarios > div {
     display: flex;
-    gap: 7px;
+    gap: var(--space-075);
     overflow: auto;
-    padding-bottom: 7px;
+    padding-bottom: var(--space-075);
     scrollbar-width: thin;
   }
   .wd-scenarios button {
     flex: 0 0 auto;
     min-width: 145px;
     min-height: 48px;
-    padding: 10px 12px;
+    padding: var(--space-100) var(--space-150);
     align-items: center;
-    gap: 8px;
+    gap: var(--space-100);
   }
   .wd-scenarios button:last-child {
     min-height: 48px;
@@ -843,29 +843,29 @@
     height: 640px;
   }
   .wd-profile-preview {
-    margin-top: 13px;
+    margin-top: var(--space-150);
   }
   .wd-footer {
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 23px;
+    padding: var(--space-250) var(--space-300);
     max-width: 600px;
-    gap: 9px;
+    gap: var(--space-100);
     line-height: 1.35;
   }
 }
 @media (max-width: 400px) {
   .wd-header {
-    padding: 17px;
+    padding: var(--space-200);
   }
   .wd-back {
     font-size: 10px;
-    gap: 5px;
+    gap: var(--space-050);
   }
   .wd-layout {
-    padding-inline: 15px;
-    margin-top: 12px;
-    gap: 18px;
+    padding-inline: var(--space-200);
+    margin-top: var(--space-150);
+    gap: var(--space-250);
   }
   .wd-intro h1 {
     font-size: 35px;
@@ -878,10 +878,10 @@
     font-size: 10px;
   }
   .wd-preview-tools {
-    gap: 8px;
+    gap: var(--space-100);
   }
   .wd-language-switch button {
-    padding: 7px 9px;
+    padding: var(--space-075) var(--space-100);
     font-size: 10px;
   }
   .wd-language-switch small {
@@ -891,8 +891,8 @@
     font-size: 10px;
   }
   .wd-chat-header {
-    padding: 15px;
-    gap: 10px;
+    padding: var(--space-200);
+    gap: var(--space-100);
   }
   .wd-chat-header > svg {
     display: none;
@@ -906,13 +906,13 @@
   }
   .wd-message {
     max-width: 94%;
-    padding-inline: 11px;
+    padding-inline: var(--space-150);
   }
   .wd-message p {
     font-size: 11px;
   }
   .wd-messages {
-    padding: 14px 11px;
+    padding: var(--space-150) var(--space-150);
   }
   .wd-chat-notice {
     font-size: 9px;
@@ -921,10 +921,10 @@
     font-size: 10px;
   }
   .wd-profile-preview {
-    padding: 15px;
+    padding: var(--space-200);
   }
   .wd-progress {
-    gap: 10px;
+    gap: var(--space-100);
   }
 }
 @media (prefers-reduced-motion: reduce) {

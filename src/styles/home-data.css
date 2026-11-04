@@ -3,21 +3,21 @@
   border-color: #eee7c8;
 }
 .home-weather-body {
-  padding: 0 18px 18px;
+  padding: 0 var(--space-250) var(--space-250);
 }
 .home-data-location {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   font-size: 12px;
   color: #62644e;
-  margin: 0 0 12px;
+  margin: 0 0 var(--space-150);
 }
 .home-weather-reading {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 12px 0;
+  gap: var(--space-150);
+  margin: var(--space-150) 0;
 }
 .home-weather-reading > strong {
   font-size: 39px;
@@ -35,7 +35,7 @@
 .home-data-rain {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   font-size: 12px;
   line-height: 1.35;
 }
@@ -46,7 +46,7 @@
   font-size: 11px;
   line-height: 1.35;
   color: #626653;
-  margin: 10px 0 13px;
+  margin: var(--space-100) 0 var(--space-150);
 }
 .home-data-warning {
   font-size: 12px;
@@ -56,19 +56,19 @@
 .home-data-empty {
   font-size: 13px;
   line-height: 1.35;
-  padding: 10px 0;
+  padding: var(--space-100) 0;
   min-height: 60px;
 }
 .home-market-source {
   display: flex;
   align-items: center;
-  gap: 18px;
-  padding: 22px;
-  margin-top: 18px;
+  gap: var(--space-250);
+  padding: var(--space-300);
+  margin-top: var(--space-250);
 }
 .home-market-icon {
   flex-shrink: 0;
-  padding: 13px;
+  padding: var(--space-150);
   border-radius: var(--radius-xlarge);
   background: #edf3ec;
   color: var(--green);
@@ -79,7 +79,7 @@
 }
 .home-market-copy h2 {
   font-size: 17px;
-  margin: 0 0 7px;
+  margin: 0 0 var(--space-075);
   letter-spacing: -0.025em;
 }
 .home-market-copy > p:not(.home-data-source) {
@@ -100,18 +100,18 @@
     order: 1;
   }
   .home-weather .panel-header {
-    padding: 16px 18px 12px;
+    padding: var(--space-200) var(--space-250) var(--space-150);
   }
   .home-weather-reading {
-    margin: 8px 0;
+    margin: var(--space-100) 0;
   }
   .home-weather-reading > strong {
     font-size: 34px;
   }
   .home-market-source {
     flex-wrap: wrap;
-    gap: 13px;
-    padding: 18px;
+    gap: var(--space-150);
+    padding: var(--space-250);
   }
   .home-market-icon {
     display: none;

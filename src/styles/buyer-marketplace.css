@@ -59,21 +59,21 @@
   z-index: 100;
   top: 12px;
   left: 12px;
-  padding: 12px 20px;
+  padding: var(--space-150) var(--space-250);
   background: #fff;
   color: #153e2d;
 }
 .buyer-header {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: var(--space-400);
   min-height: 105px;
   border-bottom: 1px solid var(--buyer-line);
 }
 .buyer-brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-100);
   font:
     27px/1 Georgia,
     serif;
@@ -82,7 +82,7 @@
 }
 .buyer-brand small {
   display: block;
-  margin-top: 7px;
+  margin-top: var(--space-075);
   font:
     8px/1.2 Arial,
     sans-serif;
@@ -95,13 +95,13 @@
 .buyer-header nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: var(--space-300);
   margin-left: auto;
 }
 .buyer-header nav a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   min-height: 44px;
   font-size: 12px;
 }
@@ -116,13 +116,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-100);
   min-height: 42px;
   max-width: 230px;
   border: 1px solid #c9d3be;
   border-radius: var(--radius-full);
   background: transparent;
-  padding: 10px 15px;
+  padding: var(--space-100) var(--space-200);
   font-size: 12px !important;
 }
 .buyer-account-button span {
@@ -136,8 +136,8 @@
 .buyer-hero {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 65px;
-  padding-block: 58px 54px;
+  gap: var(--space-800);
+  padding-block: var(--space-800) var(--space-600);
   align-items: center;
 }
 .buyer-eyebrow {
@@ -149,7 +149,7 @@
 .buyer-hero h1 {
   font-size: clamp(48px, 5.25vw, 77px);
   line-height: 1.06;
-  margin-top: 20px;
+  margin-top: var(--space-250);
 }
 .buyer-hero h1 em {
   color: #65715b;
@@ -158,7 +158,7 @@
 .buyer-hero-copy > p:not(.buyer-eyebrow) {
   color: var(--buyer-muted);
   max-width: 450px;
-  margin-top: 24px;
+  margin-top: var(--space-300);
   font-size: 14px;
   line-height: 1.35;
 }
@@ -166,18 +166,18 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 24px;
-  margin-top: 28px;
+  gap: var(--space-200) var(--space-300);
+  margin-top: var(--space-400);
 }
 .buyer-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 13px;
+  gap: var(--space-150);
   min-height: 47px;
   border: 1px solid var(--buyer-forest);
   border-radius: var(--radius-full);
-  padding: 12px 21px;
+  padding: var(--space-150) var(--space-250);
   color: #fff !important;
   background: var(--buyer-forest);
   font-size: 12px !important;
@@ -191,11 +191,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--space-075);
   min-height: 35px;
   background: transparent;
   border: 0;
-  padding: 5px 0;
+  padding: var(--space-050) 0;
   color: #4f6846;
   font-size: 11px !important;
   line-height: 1.35;
@@ -207,16 +207,16 @@
 .buyer-hero-footnote {
   display: flex;
   align-items: flex-start;
-  gap: 7px;
+  gap: var(--space-075);
   max-width: 400px;
-  margin-top: 24px;
+  margin-top: var(--space-300);
   color: #65715b;
   font-size: 10px;
   line-height: 1.35;
 }
 .buyer-hero-footnote svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-025);
 }
 .buyer-hero-image {
   position: relative;
@@ -259,7 +259,7 @@
 }
 .buyer-hero-image strong {
   display: block;
-  margin-top: 10px;
+  margin-top: var(--space-100);
   font:
     33px/1.14 Georgia,
     serif;
@@ -269,19 +269,19 @@
 .buyer-process {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding-block: 23px;
+  gap: var(--space-250);
+  padding-block: var(--space-300);
   border-top: 1px solid var(--buyer-line);
   border-bottom: 1px solid var(--buyer-line);
 }
 .buyer-process > span {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: var(--space-200);
   font-size: 12px;
 }
 .buyer-process > span + span {
-  padding-left: 20px;
+  padding-left: var(--space-250);
   border-left: 1px solid var(--buyer-line);
 }
 .buyer-process small {
@@ -290,15 +290,15 @@
   letter-spacing: 1px;
 }
 .buyer-browse {
-  padding-block: 60px 66px;
+  padding-block: var(--space-800) var(--space-800);
   scroll-margin-top: 20px;
 }
 .buyer-section-heading {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 28px;
+  gap: var(--space-300);
+  margin-bottom: var(--space-400);
 }
 .buyer-section-heading .buyer-eyebrow {
   color: #65715b;
@@ -306,12 +306,12 @@
 .buyer-section-heading h2 {
   font-size: clamp(32px, 3.1vw, 45px);
   line-height: 1.15;
-  margin-top: 8px;
+  margin-top: var(--space-100);
 }
 .buyer-area-switch {
   display: flex;
-  gap: 4px;
-  padding: 4px;
+  gap: var(--space-050);
+  padding: var(--space-050);
   border: 1px solid #d7dfcd;
   border-radius: var(--radius-full);
 }
@@ -319,9 +319,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: var(--space-075);
   min-height: 39px;
-  padding: 9px 17px;
+  padding: var(--space-100) var(--space-200);
   border: 0;
   border-radius: var(--radius-full);
   background: transparent;
@@ -355,9 +355,9 @@
 .buyer-filters > label {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: var(--space-025);
   min-width: 0;
-  padding: 12px 18px;
+  padding: var(--space-150) var(--space-250);
   border-right: 1px solid #dce3d4;
 }
 .buyer-filters label > span {
@@ -385,7 +385,7 @@
 .buyer-filters .buyer-search {
   flex-direction: row;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-150);
 }
 .buyer-search > svg {
   color: #65715b;
@@ -395,9 +395,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin: 8px;
-  padding: 8px 17px;
+  gap: var(--space-100);
+  margin: var(--space-100);
+  padding: var(--space-100) var(--space-200);
   border: 0;
   border-radius: var(--radius-small);
   background: #e5edd9;
@@ -412,19 +412,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: var(--space-200);
   min-height: 58px;
   color: #65715b;
   font-size: 11px;
 }
 .buyer-catalog-meta > div {
   display: flex;
-  gap: 18px;
+  gap: var(--space-250);
 }
 .buyer-produce-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  gap: var(--space-300);
 }
 .buyer-produce-card {
   min-width: 0;
@@ -463,8 +463,8 @@
   top: 14px;
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 7px;
+  gap: var(--space-050);
+  padding: var(--space-050) var(--space-075);
   background: #fffdf2b3;
   border-radius: var(--radius-small);
   color: #65715b;
@@ -479,12 +479,12 @@
   letter-spacing: 1.5px;
 }
 .buyer-produce-body {
-  padding: 22px 22px 0;
+  padding: var(--space-300) var(--space-300) 0;
 }
 .buyer-seller {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   color: #65715b;
   font-size: 10px;
   overflow-wrap: anywhere;
@@ -495,19 +495,19 @@
 .buyer-produce-card h3 {
   font-size: 28px;
   line-height: 1.2;
-  margin-top: 8px;
+  margin-top: var(--space-100);
 }
 .buyer-crop-type {
-  margin-top: 4px;
+  margin-top: var(--space-050);
   color: #65715b;
   font-size: 11px;
 }
 .buyer-produce-price {
   display: flex;
   align-items: baseline;
-  gap: 5px;
+  gap: var(--space-050);
   min-height: 30px;
-  margin-top: 16px;
+  margin-top: var(--space-200);
 }
 .buyer-produce-price strong {
   font-size: 18px;
@@ -521,13 +521,13 @@
 .buyer-produce-facts {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 20px;
-  margin: 17px 0;
+  gap: var(--space-250);
+  margin: var(--space-200) 0;
 }
 .buyer-produce-facts dt {
   color: #65715b;
   font-size: 9px;
-  margin-bottom: 3px;
+  margin-bottom: var(--space-025);
 }
 .buyer-produce-facts dd {
   margin: 0;
@@ -538,7 +538,7 @@
 .buyer-harvest {
   display: flex;
   align-items: flex-start;
-  gap: 6px;
+  gap: var(--space-075);
   min-height: 35px;
   color: #65715b;
   font-size: 10px;
@@ -546,15 +546,15 @@
 }
 .buyer-harvest svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-025);
 }
 .buyer-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--space-100);
   min-height: 58px;
-  margin-top: 12px;
+  margin-top: var(--space-150);
   border-top: 1px solid #e1e7d9;
 }
 .buyer-card-footer > span {
@@ -565,9 +565,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: var(--space-075);
   min-height: 42px;
-  padding: 7px 0 7px 10px;
+  padding: var(--space-075) 0 var(--space-075) var(--space-100);
   color: #3c6430;
   background: transparent;
   border: 0;
@@ -575,7 +575,7 @@
   text-align: right;
 }
 .buyer-catalog-note {
-  margin-top: 26px;
+  margin-top: var(--space-300);
   color: #65715b;
   font-size: 10px;
   text-align: center;
@@ -586,7 +586,7 @@
   align-items: center;
   justify-content: center;
   min-height: 340px;
-  padding: 45px 25px;
+  padding: var(--space-600) var(--space-300);
   text-align: center;
   background: #edf1e6;
   border: 1px dashed #cbd8bf;
@@ -596,7 +596,7 @@
   display: grid;
   place-items: center;
   color: #65715b;
-  margin-bottom: 14px;
+  margin-bottom: var(--space-150);
 }
 .buyer-empty .buyer-eyebrow {
   color: #65715b;
@@ -604,12 +604,12 @@
 .buyer-empty h3 {
   font-size: clamp(28px, 3vw, 39px);
   line-height: 1.2;
-  margin-top: 12px;
+  margin-top: var(--space-150);
 }
 .buyer-empty > p:not(.buyer-eyebrow) {
   max-width: 465px;
   color: #65715b;
-  margin-top: 15px;
+  margin-top: var(--space-200);
   font-size: 12px;
   line-height: 1.35;
 }
@@ -618,16 +618,16 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-top: 22px;
+  gap: var(--space-250);
+  margin-top: var(--space-300);
 }
 .buyer-empty > button {
-  margin-top: 23px;
+  margin-top: var(--space-300);
 }
 .buyer-empty a {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   color: #5c7947;
   min-height: 44px;
   font-size: 11px;
@@ -636,9 +636,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding: 17px 20px;
-  margin-bottom: 30px;
+  gap: var(--space-250);
+  padding: var(--space-200) var(--space-250);
+  margin-bottom: var(--space-400);
   border: 1px solid #c6d4b5;
   border-radius: var(--radius-medium);
   background: #e9f1da;
@@ -647,7 +647,7 @@
 .buyer-simulation-banner > span {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-150);
 }
 .buyer-simulation-banner svg {
   flex-shrink: 0;
@@ -660,7 +660,7 @@
 .buyer-simulation-banner small {
   display: block;
   max-width: 680px;
-  margin-top: 3px;
+  margin-top: var(--space-025);
   color: #65715b;
   font-size: 11px;
   line-height: 1.35;
@@ -668,17 +668,17 @@
 .buyer-simulation-banner > button {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: var(--space-075);
   min-height: 40px;
   border: 0;
-  padding: 5px;
+  padding: var(--space-050);
   background: transparent;
   font-size: 11px;
   white-space: nowrap;
 }
 .buyer-sample-note {
-  margin-block: 15px;
-  padding: 12px 16px;
+  margin-block: var(--space-200);
+  padding: var(--space-150) var(--space-200);
   border: 1px solid #e4d8ac;
   border-radius: var(--radius-small);
   background: #faf4dd;
@@ -690,9 +690,9 @@
 .buyer-inline-notice {
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 12px 16px;
-  margin-bottom: 20px;
+  gap: var(--space-100);
+  padding: var(--space-150) var(--space-200);
+  margin-bottom: var(--space-250);
   border: 1px solid #d3dfc5;
   border-radius: var(--radius-small);
   color: #5b724a;
@@ -718,10 +718,10 @@
   flex-shrink: 0;
 }
 .buyer-load-error {
-  margin-block: 15px 25px;
+  margin-block: var(--space-200) var(--space-300);
 }
 .buyer-load-error > p {
-  margin-top: 10px;
+  margin-top: var(--space-100);
   font-size: 12px;
   color: #65715b;
 }
@@ -729,41 +729,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: var(--space-150);
   min-height: 200px;
   color: #65715b;
 }
 .buyer-load-more {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: var(--space-300);
 }
 .buyer-product-skeleton {
   min-height: 420px;
   border: 1px solid #e1e6d8;
   border-radius: var(--radius-medium);
-  padding-bottom: 25px;
+  padding-bottom: var(--space-300);
   background: #fffefa;
 }
 .buyer-product-skeleton > div {
   height: 160px;
-  margin-bottom: 25px;
+  margin-bottom: var(--space-300);
   background: #e5e8d8;
 }
 .buyer-product-skeleton > span {
   display: block;
   height: 16px;
-  margin: 17px 25px;
+  margin: var(--space-200) var(--space-300);
   width: 60%;
   background: #e9ecdf;
   border-radius: var(--radius-small);
 }
 .buyer-order-list {
   display: grid;
-  gap: 20px;
+  gap: var(--space-250);
 }
 .buyer-order-card {
-  padding: 24px 28px;
+  padding: var(--space-300) var(--space-400);
   border: 1px solid #d8e0cf;
   border-radius: var(--radius-medium);
   background: #fffef9;
@@ -772,15 +772,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  margin-bottom: 22px;
+  gap: var(--space-200);
+  margin-bottom: var(--space-300);
 }
 .buyer-order-top > small {
   color: #65715b;
   font-size: 10px;
 }
 .buyer-order-status {
-  padding: 4px 8px;
+  padding: var(--space-050) var(--space-100);
   border-radius: var(--radius-small);
   background: #edf2e4;
   color: #65715b;
@@ -801,7 +801,7 @@
 .buyer-order-main {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--space-200);
 }
 .buyer-order-crop {
   display: grid;
@@ -823,7 +823,7 @@
 .buyer-order-main h3 {
   font-size: 27px;
   line-height: 1.3;
-  margin-top: 3px;
+  margin-top: var(--space-025);
 }
 .buyer-order-main > div > span {
   font-size: 10px;
@@ -844,16 +844,16 @@
 .buyer-order-progress {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: var(--space-200);
   padding: 0;
-  margin: 28px 0 23px;
+  margin: var(--space-400) 0 var(--space-300);
   list-style: none;
 }
 .buyer-order-progress li {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding-bottom: 13px;
+  gap: var(--space-075);
+  padding-bottom: var(--space-150);
   border-bottom: 2px solid #e3e9d9;
   color: #65715b;
   font-size: 10px;
@@ -880,23 +880,23 @@
 .buyer-order-details {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 25px;
-  margin-top: 20px;
+  gap: var(--space-100) var(--space-300);
+  margin-top: var(--space-250);
   color: #65715b;
   font-size: 11px;
 }
 .buyer-order-details > span {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   overflow-wrap: anywhere;
 }
 .buyer-order-details svg {
   flex-shrink: 0;
 }
 .buyer-order-message {
-  margin-top: 13px;
-  padding: 10px 13px;
+  margin-top: var(--space-150);
+  padding: var(--space-100) var(--space-150);
   border-left: 2px solid #d6e1c6;
   color: #65715b;
   background: #f6f8ef;
@@ -908,29 +908,29 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 19px;
+  gap: var(--space-100);
+  margin-top: var(--space-250);
 }
 .buyer-order-bottom > span {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-075);
   color: #65715b;
   font-size: 10px;
 }
 .buyer-order-bottom > div {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: var(--space-250);
 }
 .buyer-cancel-confirm {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 17px;
-  padding: 12px 15px;
+  gap: var(--space-200);
+  margin-top: var(--space-200);
+  padding: var(--space-150) var(--space-200);
   background: #f5f0dc;
   border-radius: var(--radius-small);
   font-size: 11px;
@@ -941,7 +941,7 @@
 }
 .buyer-cancel-confirm button {
   min-height: 38px;
-  padding: 6px 12px;
+  padding: var(--space-075) var(--space-150);
   border: 1px solid #d8cda5;
   border-radius: var(--radius-small);
   background: transparent;
@@ -955,9 +955,9 @@
 .buyer-payment-note {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-top: 27px;
-  padding: 22px;
+  gap: var(--space-200);
+  margin-top: var(--space-300);
+  padding: var(--space-300);
   border: 1px solid #d9e1d0;
   border-radius: var(--radius-medium);
   background: #eff2e8;
@@ -975,12 +975,12 @@
 }
 .buyer-payment-note p {
   max-width: 600px;
-  margin-top: 4px;
+  margin-top: var(--space-050);
   font-size: 11px;
   color: #65715b;
 }
 .buyer-payment-note button {
-  padding: 9px 14px;
+  padding: var(--space-100) var(--space-150);
   min-height: 37px;
   border: 1px solid #d9e2ce;
   border-radius: var(--radius-small);
@@ -991,16 +991,16 @@
 .buyer-support {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 5px 45px;
+  gap: var(--space-050) var(--space-600);
   align-items: center;
-  padding: 34px 38px;
+  padding: var(--space-400) var(--space-500);
   background: #e8efdd;
   border: 1px solid #d7e2c8;
   border-radius: var(--radius-medium);
 }
 .buyer-support > div {
   display: flex;
-  gap: 24px;
+  gap: var(--space-300);
   grid-row: span 2;
   align-items: flex-start;
 }
@@ -1010,7 +1010,7 @@
   width: 47px;
   height: 47px;
   flex-shrink: 0;
-  margin-top: 8px;
+  margin-top: var(--space-100);
   background: #dbe7cc;
   border-radius: var(--radius-full);
   color: #65715b;
@@ -1022,11 +1022,11 @@
 .buyer-support h2 {
   font-size: 33px;
   line-height: 1.3;
-  margin-top: 4px;
+  margin-top: var(--space-050);
 }
 .buyer-support p:not(.buyer-eyebrow) {
   max-width: 490px;
-  margin-top: 8px;
+  margin-top: var(--space-100);
   font-size: 11px;
   color: #65715b;
 }
@@ -1034,9 +1034,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: var(--space-150);
   min-height: 44px;
-  padding: 10px 18px;
+  padding: var(--space-100) var(--space-250);
   border: 1px solid #b8cba4;
   border-radius: var(--radius-full);
   color: #65715b;
@@ -1051,8 +1051,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  padding-block: 47px;
+  gap: var(--space-250);
+  padding-block: var(--space-600);
 }
 .buyer-footer .buyer-brand {
   font-size: 23px;
@@ -1064,7 +1064,7 @@
 .buyer-footer > a:last-child {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   color: #65715b;
   font-size: 10px;
   min-height: 44px;
@@ -1073,10 +1073,10 @@
   color: #355334;
 }
 .buyer-dialog .workspace-form {
-  margin-top: 18px;
+  margin-top: var(--space-250);
 }
 .buyer-dialog .form-grid {
-  gap: 18px;
+  gap: var(--space-250);
 }
 .buyer-dialog .field {
   width: 100%;
@@ -1091,15 +1091,15 @@
 }
 .buyer-auth-modes {
   display: flex;
-  gap: 7px;
-  padding: 4px;
+  gap: var(--space-075);
+  padding: var(--space-050);
   background: #eef3e8;
   border-radius: var(--radius-medium);
 }
 .buyer-auth-modes button {
   flex: 1;
   min-height: 42px;
-  padding: 8px 12px;
+  padding: var(--space-100) var(--space-150);
   border: 0;
   border-radius: var(--radius-small);
   background: transparent;
@@ -1113,9 +1113,9 @@
 }
 .buyer-review-item {
   display: flex;
-  gap: 13px;
+  gap: var(--space-150);
   align-items: center;
-  padding: 17px;
+  padding: var(--space-200);
   background: #f1f5e9;
   border: 1px solid #e0e8d4;
   border-radius: var(--radius-medium);
@@ -1132,7 +1132,7 @@
 }
 .buyer-review-item > div {
   display: grid;
-  gap: 3px;
+  gap: var(--space-025);
   flex: 1;
 }
 .buyer-review-item strong {
@@ -1156,7 +1156,7 @@
   color: #65715b;
 }
 .buyer-order-total {
-  padding: 17px;
+  padding: var(--space-200);
   border-top: 1px solid #dfe7d4;
   border-bottom: 1px solid #dfe7d4;
   background: #f8faf3;
@@ -1165,7 +1165,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: var(--space-150);
   font-size: 12px;
   color: #65715b;
 }
@@ -1178,17 +1178,17 @@
   font-size: 10px;
   line-height: 1.35;
   color: #65715b;
-  margin-top: 8px;
+  margin-top: var(--space-100);
 }
 .buyer-order-explainer {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--space-100);
   color: #65715b;
 }
 .buyer-order-explainer svg {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-025);
 }
 .buyer-order-explainer p,
 .buyer-help {
@@ -1205,7 +1205,7 @@
   width: 68px;
   height: 68px;
   border-radius: var(--radius-full);
-  margin: 10px auto 19px;
+  margin: var(--space-100) auto var(--space-250);
   background: #e6f0d9;
   color: #65715b;
 }
@@ -1219,26 +1219,26 @@
     31px/1.2 Georgia,
     serif;
   color: #567b41;
-  margin-top: 12px;
+  margin-top: var(--space-150);
 }
 .buyer-confirmation > p:not(.buyer-confirmation-status):not(.buyer-help) {
-  margin-top: 8px;
+  margin-top: var(--space-100);
   color: #65715b;
   font-size: 13px;
 }
 .buyer-confirmation dl {
   display: grid;
-  gap: 10px;
-  margin: 25px 0 20px;
+  gap: var(--space-100);
+  margin: var(--space-300) 0 var(--space-250);
   text-align: left;
   border-block: 1px solid #e4ebdc;
-  padding-block: 18px;
+  padding-block: var(--space-250);
 }
 .buyer-confirmation dl > div {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 15px;
+  gap: var(--space-200);
 }
 .buyer-confirmation dt {
   color: #65715b;
@@ -1251,20 +1251,20 @@
   text-align: right;
 }
 .buyer-confirmation > .button {
-  margin-top: 22px;
+  margin-top: var(--space-300);
 }
 .buyer-account-card {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 20px;
+  gap: var(--space-200);
+  padding: var(--space-250);
   border-radius: var(--radius-medium);
   background: #f2f6eb;
   color: #65715b;
 }
 .buyer-account-card > div {
   display: grid;
-  gap: 5px;
+  gap: var(--space-050);
 }
 .buyer-account-card strong {
   font-size: 17px;
@@ -1277,12 +1277,12 @@
 }
 .buyer-account-details {
   display: grid;
-  gap: 15px;
-  margin-top: 22px;
+  gap: var(--space-200);
+  margin-top: var(--space-300);
 }
 .buyer-account-details > div {
   display: grid;
-  gap: 5px;
+  gap: var(--space-050);
 }
 .buyer-account-details dt {
   font-size: 10px;
@@ -1292,15 +1292,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-050);
   margin: 0;
   color: #65715b;
   font-size: 13px;
   overflow-wrap: anywhere;
 }
 .buyer-account-details small {
-  padding: 2px 5px;
-  margin-left: 4px;
+  padding: var(--space-025) var(--space-050);
+  margin-left: var(--space-050);
   border-radius: var(--radius-small);
   background: #f6f0dc;
   color: #65715b;
@@ -1311,14 +1311,14 @@
     width: calc(100% - 64px);
   }
   .buyer-header {
-    gap: 20px;
+    gap: var(--space-250);
   }
   .buyer-header nav {
-    gap: 18px;
+    gap: var(--space-250);
   }
   .buyer-hero {
-    gap: 35px;
-    padding-top: 45px;
+    gap: var(--space-400);
+    padding-top: var(--space-600);
   }
   .buyer-hero h1 {
     font-size: 57px;
@@ -1339,14 +1339,14 @@
     border-right: 0;
   }
   .buyer-produce-grid {
-    gap: 18px;
+    gap: var(--space-250);
   }
   .buyer-produce-body {
-    padding-inline: 18px;
+    padding-inline: var(--space-250);
   }
   .buyer-support {
-    gap: 8px 25px;
-    padding-inline: 28px;
+    gap: var(--space-100) var(--space-300);
+    padding-inline: var(--space-400);
   }
 }
 @media (max-width: 850px) {
@@ -1357,7 +1357,7 @@
     font-size: 50px;
   }
   .buyer-hero {
-    gap: 30px;
+    gap: var(--space-400);
   }
   .buyer-hero-image {
     min-height: 340px;
@@ -1368,22 +1368,22 @@
   .buyer-section-heading {
     align-items: start;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-250);
   }
   .buyer-produce-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .buyer-support {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: var(--space-250);
   }
   .buyer-support > a {
     justify-self: start;
-    margin-left: 70px;
+    margin-left: var(--space-800);
   }
   .buyer-support > small {
     text-align: left;
-    margin-left: 70px;
+    margin-left: var(--space-800);
     margin-top: -12px;
   }
   .buyer-footer > span {
@@ -1396,13 +1396,13 @@
   }
   .buyer-header {
     min-height: 83px;
-    gap: 12px;
+    gap: var(--space-150);
     flex-wrap: wrap;
-    padding-block: 18px;
+    padding-block: var(--space-250);
   }
   .buyer-brand {
     font-size: 24px;
-    gap: 5px;
+    gap: var(--space-050);
   }
   .buyer-brand > svg {
     width: 26px;
@@ -1410,7 +1410,7 @@
   .buyer-brand small {
     font-size: 6px;
     letter-spacing: 1.2px;
-    margin-top: 5px;
+    margin-top: var(--space-050);
   }
   .buyer-header nav {
     display: none;
@@ -1418,31 +1418,31 @@
   .buyer-account-button {
     margin-left: auto;
     min-height: 39px;
-    padding: 8px 11px;
+    padding: var(--space-100) var(--space-150);
     max-width: 150px;
     font-size: 10px !important;
   }
   .buyer-hero {
     grid-template-columns: 1fr;
-    padding-block: 35px 26px;
-    gap: 27px;
+    padding-block: var(--space-400) var(--space-300);
+    gap: var(--space-300);
   }
   .buyer-hero h1 {
     font-size: 51px;
-    margin-top: 15px;
+    margin-top: var(--space-200);
   }
   .buyer-eyebrow {
     font-size: 8px;
     letter-spacing: 1.3px;
   }
   .buyer-hero-copy > p:not(.buyer-eyebrow) {
-    margin-top: 20px;
+    margin-top: var(--space-250);
     font-size: 12px;
     line-height: 1.35;
   }
   .buyer-hero-copy > div {
-    margin-top: 22px;
-    gap: 11px;
+    margin-top: var(--space-300);
+    gap: var(--space-150);
     align-items: stretch;
     flex-direction: column;
   }
@@ -1456,7 +1456,7 @@
   }
   .buyer-hero-footnote {
     max-width: 320px;
-    margin-top: 16px;
+    margin-top: var(--space-200);
     font-size: 9px;
   }
   .buyer-hero-image {
@@ -1477,28 +1477,28 @@
     font-size: 7px;
   }
   .buyer-process {
-    gap: 11px;
-    padding-block: 16px;
+    gap: var(--space-150);
+    padding-block: var(--space-200);
   }
   .buyer-process > span {
-    gap: 7px;
+    gap: var(--space-075);
     align-items: flex-start;
     flex-direction: column;
     font-size: 10px;
     line-height: 1.35;
   }
   .buyer-process > span + span {
-    padding-left: 12px;
+    padding-left: var(--space-150);
   }
   .buyer-process small {
     font-size: 8px;
   }
   .buyer-browse {
-    padding-block: 34px 40px;
+    padding-block: var(--space-400) var(--space-500);
   }
   .buyer-section-heading {
-    gap: 22px;
-    margin-bottom: 22px;
+    gap: var(--space-300);
+    margin-bottom: var(--space-300);
   }
   .buyer-section-heading h2 {
     font-size: 34px;
@@ -1508,7 +1508,7 @@
   }
   .buyer-area-switch button {
     flex: 1;
-    padding-inline: 10px;
+    padding-inline: var(--space-100);
     font-size: 10px;
     min-height: 38px;
   }
@@ -1522,7 +1522,7 @@
     min-height: 53px;
   }
   .buyer-filters > label {
-    padding: 10px 13px;
+    padding: var(--space-100) var(--space-150);
     min-height: 59px;
   }
   .buyer-filters > label:nth-child(3) {
@@ -1538,17 +1538,17 @@
   .buyer-catalog-meta {
     min-height: 60px;
     font-size: 10px;
-    gap: 12px;
+    gap: var(--space-150);
   }
   .buyer-catalog-meta > div {
-    gap: 12px;
+    gap: var(--space-150);
   }
   .buyer-catalog-meta .buyer-text-button {
     font-size: 9px !important;
   }
   .buyer-produce-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--space-250);
   }
   .buyer-produce-cover {
     min-height: 148px;
@@ -1557,7 +1557,7 @@
     font-size: 30px;
   }
   .buyer-produce-body {
-    padding: 20px 21px 0;
+    padding: var(--space-250) var(--space-250) 0;
   }
   .buyer-produce-facts {
     grid-template-columns: 1fr 1fr;
@@ -1577,7 +1577,7 @@
   }
   .buyer-empty {
     min-height: 350px;
-    padding: 34px 21px;
+    padding: var(--space-400) var(--space-250);
   }
   .buyer-empty h3 {
     font-size: 30px;
@@ -1586,20 +1586,20 @@
     font-size: 12px;
   }
   .buyer-empty > div {
-    gap: 12px;
+    gap: var(--space-150);
   }
   .buyer-simulation-banner {
     align-items: flex-start;
-    gap: 10px;
-    padding: 14px;
-    margin-bottom: 25px;
+    gap: var(--space-100);
+    padding: var(--space-150);
+    margin-bottom: var(--space-300);
   }
   .buyer-simulation-banner > span {
-    gap: 10px;
+    gap: var(--space-100);
     align-items: flex-start;
   }
   .buyer-simulation-banner > span > svg {
-    margin-top: 3px;
+    margin-top: var(--space-025);
     width: 17px;
   }
   .buyer-simulation-banner strong {
@@ -1618,11 +1618,11 @@
     width: 13px;
   }
   .buyer-order-card {
-    padding: 19px 17px;
+    padding: var(--space-250) var(--space-200);
   }
   .buyer-order-main {
     flex-wrap: wrap;
-    gap: 12px;
+    gap: var(--space-150);
   }
   .buyer-order-crop {
     width: 47px;
@@ -1636,16 +1636,16 @@
   }
   .buyer-order-main > strong {
     text-align: left;
-    margin-left: 59px;
+    margin-left: var(--space-800);
     font-size: 18px;
   }
   .buyer-order-main > strong > small {
     display: inline;
-    margin-left: 6px;
+    margin-left: var(--space-075);
     font-size: 9px;
   }
   .buyer-order-top {
-    margin-bottom: 18px;
+    margin-bottom: var(--space-250);
   }
   .buyer-order-status {
     font-size: 8px;
@@ -1654,28 +1654,28 @@
     font-size: 9px;
   }
   .buyer-order-progress {
-    gap: 9px;
-    margin-top: 23px;
+    gap: var(--space-100);
+    margin-top: var(--space-300);
   }
   .buyer-order-progress li {
     font-size: 9px;
-    gap: 4px;
+    gap: var(--space-050);
   }
   .buyer-order-progress li > span {
     width: 17px;
     height: 17px;
   }
   .buyer-order-bottom {
-    gap: 13px;
+    gap: var(--space-150);
   }
   .buyer-order-bottom > div {
-    gap: 14px;
+    gap: var(--space-150);
   }
   .buyer-order-bottom .buyer-text-button {
     font-size: 10px !important;
   }
   .buyer-cancel-confirm {
-    gap: 8px;
+    gap: var(--space-100);
   }
   .buyer-cancel-confirm p {
     width: 100%;
@@ -1686,26 +1686,26 @@
   }
   .buyer-payment-note {
     flex-wrap: wrap;
-    padding: 17px;
-    gap: 12px;
+    padding: var(--space-200);
+    gap: var(--space-150);
   }
   .buyer-payment-note > div {
     min-width: calc(100% - 40px);
   }
   .buyer-payment-note button {
-    margin-left: 34px;
+    margin-left: var(--space-400);
   }
   .buyer-support {
-    padding: 24px 20px;
-    gap: 18px;
+    padding: var(--space-300) var(--space-250);
+    gap: var(--space-250);
   }
   .buyer-support > div {
-    gap: 12px;
+    gap: var(--space-150);
   }
   .buyer-support > div > span {
     width: 35px;
     height: 35px;
-    margin-top: 5px;
+    margin-top: var(--space-050);
   }
   .buyer-support > div > span svg {
     width: 19px;
@@ -1718,12 +1718,12 @@
   }
   .buyer-support > a,
   .buyer-support > small {
-    margin-left: 47px;
+    margin-left: var(--space-600);
   }
   .buyer-support > a {
     font-size: 10px;
-    padding-inline: 14px;
-    gap: 8px;
+    padding-inline: var(--space-150);
+    gap: var(--space-100);
   }
   .buyer-support > small {
     font-size: 8px;
@@ -1731,25 +1731,25 @@
   .buyer-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
-    padding-block: 30px;
+    gap: var(--space-150);
+    padding-block: var(--space-400);
   }
   .buyer-footer > a:last-child {
     min-height: 35px;
   }
   .buyer-review-item {
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 13px;
+    gap: var(--space-100);
+    padding: var(--space-150);
   }
   .buyer-review-item > span:last-child {
-    margin-left: 52px;
+    margin-left: var(--space-600);
     text-align: left;
     font-size: 13px;
   }
   .buyer-review-item small {
     display: inline;
-    margin-left: 4px;
+    margin-left: var(--space-050);
   }
   .buyer-review-item strong {
     font-size: 14px;
@@ -1758,24 +1758,24 @@
     font-size: 10px;
   }
   .buyer-order-total {
-    padding: 13px;
+    padding: var(--space-150);
   }
   .buyer-order-total > span {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+    gap: var(--space-075);
   }
   .buyer-order-total strong {
     font-size: 22px;
   }
   .buyer-auth-modes button {
-    padding-inline: 8px;
+    padding-inline: var(--space-100);
     font-size: 11px;
   }
   .buyer-dialog .form-actions .button {
     font-size: 11px;
-    padding-inline: 12px;
-    gap: 5px;
+    padding-inline: var(--space-150);
+    gap: var(--space-050);
   }
   .buyer-confirmation dl > div {
     align-items: flex-start;
