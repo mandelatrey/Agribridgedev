@@ -46,7 +46,7 @@
     min-height: 52px;
     padding: 10px 8px;
     border: 0;
-    border-radius: 9px;
+    border-radius: var(--radius-large);
     background: transparent;
     text-align: left;
     font-size: 14px;

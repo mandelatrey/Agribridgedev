@@ -7,7 +7,7 @@
     margin: 0 0 28px;
     padding: 14px 18px;
     border: 1px solid #dce5da;
-    border-radius: 14px;
+    border-radius: var(--radius-xlarge);
     background: #f3f7ef;
     color: #254b37;
   }
@@ -17,7 +17,7 @@
     width: 38px;
     height: 38px;
     flex-shrink: 0;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     background: #e3edda;
   }
   .workspace-guide-bar > div {
@@ -72,7 +72,7 @@
     height: 32px;
     background: #e8f0df;
     color: #254b37;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     font-weight: 700;
     font-size: 13px;
   }
@@ -92,7 +92,7 @@
     gap: 13px;
     background: #f4f6f0;
     border: 1px solid #e2e8da;
-    border-radius: 14px;
+    border-radius: var(--radius-xlarge);
     padding: 19px;
     margin-top: 26px;
   }
@@ -132,7 +132,7 @@
     background: #153d2e;
     color: #fff;
     padding: 28px;
-    border-radius: 21px;
+    border-radius: var(--radius-xlarge);
     margin: 28px 0 0;
   }
   .guided-journey-heading {
@@ -167,7 +167,7 @@
     gap: 4px;
     background: #0f2f23;
     padding: 4px;
-    border-radius: 10px;
+    border-radius: var(--radius-large);
   }
   .journey-track button {
     display: flex;
@@ -176,7 +176,7 @@
     border: 0;
     color: #c7d7cb;
     background: transparent;
-    border-radius: 7px;
+    border-radius: var(--radius-large);
     min-height: 44px;
     padding: 9px 11px;
     font-size: 12px;
@@ -210,7 +210,7 @@
   }
   .journey-stations li {
     border: 1px solid #54725d;
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
   }
   .journey-stations li.journey-next {
     background: #e0efbd;
@@ -228,7 +228,7 @@
   }
   .journey-stations a:hover {
     background: #ffffff0a;
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
   }
   .journey-station-number {
     display: grid;
@@ -236,7 +236,7 @@
     width: 30px;
     height: 30px;
     border: 1px solid #ffffff40;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     font-size: 11px;
   }
   .journey-next .journey-station-number {
@@ -301,7 +301,7 @@
     gap: 10px;
     border: 1px solid #dce5da;
     padding: 14px 16px;
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     margin-bottom: 16px;
     background: #f3f7ef;
     color: #254b37;
@@ -332,7 +332,7 @@
     }
     .guided-journey {
       padding: 21px 17px;
-      border-radius: 17px;
+      border-radius: var(--radius-xlarge);
     }
     .guided-journey-heading {
       margin-bottom: 20px;

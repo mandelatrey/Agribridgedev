@@ -120,7 +120,7 @@
   min-height: 42px;
   max-width: 230px;
   border: 1px solid #c9d3be;
-  border-radius: 24px;
+  border-radius: var(--radius-full);
   background: transparent;
   padding: 10px 15px;
   font-size: 12px !important;
@@ -176,7 +176,7 @@
   gap: 13px;
   min-height: 47px;
   border: 1px solid var(--buyer-forest);
-  border-radius: 25px;
+  border-radius: var(--radius-full);
   padding: 12px 21px;
   color: #fff !important;
   background: var(--buyer-forest);
@@ -225,7 +225,8 @@
   min-height: 360px;
   max-height: 450px;
   overflow: hidden;
-  border-radius: 4px 65px 4px 4px;
+  border-radius: var(--radius-small) 65px var(--radius-small)
+    var(--radius-small);
   background: #244a35;
 }
 .buyer-hero-image picture,
@@ -312,7 +313,7 @@
   gap: 4px;
   padding: 4px;
   border: 1px solid #d7dfcd;
-  border-radius: 28px;
+  border-radius: var(--radius-full);
 }
 .buyer-area-switch button {
   display: inline-flex;
@@ -322,7 +323,7 @@
   min-height: 39px;
   padding: 9px 17px;
   border: 0;
-  border-radius: 23px;
+  border-radius: var(--radius-full);
   background: transparent;
   color: #65715b;
   font-size: 11px;
@@ -337,7 +338,7 @@
   place-items: center;
   width: 16px;
   height: 16px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #466f38;
   color: #fff;
   font-size: 9px;
@@ -348,7 +349,7 @@
   gap: 0;
   align-items: stretch;
   border: 1px solid #d5dfca;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
   background: #fffef9;
 }
 .buyer-filters > label {
@@ -398,7 +399,7 @@
   margin: 8px;
   padding: 8px 17px;
   border: 0;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   background: #e5edd9;
   color: #3a5b2c;
   font-size: 11px !important;
@@ -429,7 +430,7 @@
   min-width: 0;
   background: #fffef9;
   border: 1px solid #dce3d4;
-  border-radius: 7px;
+  border-radius: var(--radius-large);
   overflow: hidden;
   transition:
     box-shadow 0.2s,
@@ -465,7 +466,7 @@
   gap: 4px;
   padding: 4px 7px;
   background: #fffdf2b3;
-  border-radius: 3px;
+  border-radius: var(--radius-small);
   color: #65715b;
   font-size: 9px;
 }
@@ -589,7 +590,7 @@
   text-align: center;
   background: #edf1e6;
   border: 1px dashed #cbd8bf;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
 }
 .buyer-empty > span {
   display: grid;
@@ -639,7 +640,7 @@
   padding: 17px 20px;
   margin-bottom: 30px;
   border: 1px solid #c6d4b5;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
   background: #e9f1da;
   color: #4c6638;
 }
@@ -679,7 +680,7 @@
   margin-block: 15px;
   padding: 12px 16px;
   border: 1px solid #e4d8ac;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   background: #faf4dd;
   color: #65715b;
   font-size: 11px;
@@ -693,7 +694,7 @@
   padding: 12px 16px;
   margin-bottom: 20px;
   border: 1px solid #d3dfc5;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   color: #5b724a;
   background: #eff5e7;
   font-size: 12px;
@@ -740,7 +741,7 @@
 .buyer-product-skeleton {
   min-height: 420px;
   border: 1px solid #e1e6d8;
-  border-radius: 6px;
+  border-radius: var(--radius-medium);
   padding-bottom: 25px;
   background: #fffefa;
 }
@@ -755,7 +756,7 @@
   margin: 17px 25px;
   width: 60%;
   background: #e9ecdf;
-  border-radius: 3px;
+  border-radius: var(--radius-small);
 }
 .buyer-order-list {
   display: grid;
@@ -764,7 +765,7 @@
 .buyer-order-card {
   padding: 24px 28px;
   border: 1px solid #d8e0cf;
-  border-radius: 6px;
+  border-radius: var(--radius-medium);
   background: #fffef9;
 }
 .buyer-order-top {
@@ -780,7 +781,7 @@
 }
 .buyer-order-status {
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   background: #edf2e4;
   color: #65715b;
   font-size: 9px;
@@ -809,7 +810,7 @@
   height: 65px;
   flex-shrink: 0;
   background: #eef0de;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
   color: #65715b;
 }
 .buyer-order-main > div {
@@ -867,7 +868,7 @@
   width: 19px;
   height: 19px;
   border: 1px solid #dce4d0;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   color: #65715b;
   font-size: 9px;
 }
@@ -931,7 +932,7 @@
   margin-top: 17px;
   padding: 12px 15px;
   background: #f5f0dc;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   font-size: 11px;
   color: #65715b;
 }
@@ -942,7 +943,7 @@
   min-height: 38px;
   padding: 6px 12px;
   border: 1px solid #d8cda5;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   background: transparent;
   font-size: 10px;
 }
@@ -958,7 +959,7 @@
   margin-top: 27px;
   padding: 22px;
   border: 1px solid #d9e1d0;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
   background: #eff2e8;
   color: #65715b;
 }
@@ -982,7 +983,7 @@
   padding: 9px 14px;
   min-height: 37px;
   border: 1px solid #d9e2ce;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   color: #65715b;
   background: transparent;
   font-size: 10px;
@@ -995,7 +996,7 @@
   padding: 34px 38px;
   background: #e8efdd;
   border: 1px solid #d7e2c8;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
 }
 .buyer-support > div {
   display: flex;
@@ -1011,7 +1012,7 @@
   flex-shrink: 0;
   margin-top: 8px;
   background: #dbe7cc;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   color: #65715b;
 }
 .buyer-support .buyer-eyebrow {
@@ -1037,7 +1038,7 @@
   min-height: 44px;
   padding: 10px 18px;
   border: 1px solid #b8cba4;
-  border-radius: 23px;
+  border-radius: var(--radius-full);
   color: #65715b;
   font-size: 11px;
 }
@@ -1093,14 +1094,14 @@
   gap: 7px;
   padding: 4px;
   background: #eef3e8;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
 }
 .buyer-auth-modes button {
   flex: 1;
   min-height: 42px;
   padding: 8px 12px;
   border: 0;
-  border-radius: 3px;
+  border-radius: var(--radius-small);
   background: transparent;
   color: #65715b;
   font-size: 12px;
@@ -1117,7 +1118,7 @@
   padding: 17px;
   background: #f1f5e9;
   border: 1px solid #e0e8d4;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
 }
 .buyer-review-icon {
   display: grid;
@@ -1126,7 +1127,7 @@
   height: 42px;
   flex-shrink: 0;
   background: #e4edd7;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   color: #65715b;
 }
 .buyer-review-item > div {
@@ -1203,7 +1204,7 @@
   place-items: center;
   width: 68px;
   height: 68px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   margin: 10px auto 19px;
   background: #e6f0d9;
   color: #65715b;
@@ -1257,7 +1258,7 @@
   align-items: center;
   gap: 15px;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
   background: #f2f6eb;
   color: #65715b;
 }
@@ -1300,7 +1301,7 @@
 .buyer-account-details small {
   padding: 2px 5px;
   margin-left: 4px;
-  border-radius: 3px;
+  border-radius: var(--radius-small);
   background: #f6f0dc;
   color: #65715b;
   font-size: 9px;
@@ -1332,7 +1333,7 @@
     grid-column: 1 / -1;
     min-height: 38px;
     margin: 0;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 var(--radius-small) var(--radius-small);
   }
   .buyer-filters > label:last-of-type {
     border-right: 0;
@@ -1462,7 +1463,8 @@
     aspect-ratio: 1.7;
     min-height: 0;
     max-height: 235px;
-    border-radius: 3px 40px 3px 3px;
+    border-radius: var(--radius-small) 40px var(--radius-small)
+      var(--radius-small);
   }
   .buyer-hero-image > div {
     bottom: 19px;

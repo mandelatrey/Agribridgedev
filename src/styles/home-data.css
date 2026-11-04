@@ -69,7 +69,7 @@
 .home-market-icon {
   flex-shrink: 0;
   padding: 13px;
-  border-radius: 12px;
+  border-radius: var(--radius-xlarge);
   background: #edf3ec;
   color: var(--green);
 }

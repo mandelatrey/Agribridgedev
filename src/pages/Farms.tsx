@@ -595,7 +595,7 @@ export default function Farms() {
                   ? {
                       outline: "2px solid var(--green)",
                       outlineOffset: "4px",
-                      borderRadius: "4px",
+                      borderRadius: "var(--radius-small)",
                     }
                   : undefined
               }

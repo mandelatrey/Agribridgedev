@@ -32,7 +32,7 @@
     gap: 12px;
     background: var(--surface);
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     padding: 14px 18px;
     min-width: 240px;
     text-align: left;
@@ -153,7 +153,7 @@
     gap: 12px;
     padding: 16px;
     background: var(--green-soft);
-    border-radius: 10px;
+    border-radius: var(--radius-large);
     font-size: 13px;
   }
   .season-next a > svg {

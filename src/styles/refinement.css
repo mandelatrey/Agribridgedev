@@ -94,7 +94,7 @@
     font-size: 13px;
     line-height: 1.35;
     gap: 11px;
-    border-radius: 9px;
+    border-radius: var(--radius-large);
     flex: 0 0 auto;
   }
   .sidebar nav a.active {
@@ -121,7 +121,7 @@
   .sidebar-bottom > a:first-child {
     border-top: 0;
     padding-top: 10px;
-    border-radius: 9px;
+    border-radius: var(--radius-large);
   }
   .sidebar-bottom .profile {
     padding: 10px;
@@ -202,7 +202,7 @@
     min-height: 44px;
     white-space: normal;
     text-align: center;
-    border-radius: 9px;
+    border-radius: var(--radius-medium);
     max-width: 100%;
     font-size: 13px;
     line-height: 1.35;
@@ -218,7 +218,7 @@
     min-height: 44px;
   }
   .panel {
-    border-radius: 14px;
+    border-radius: var(--radius-large);
   }
   .panel-header {
     flex-wrap: wrap;
@@ -247,7 +247,7 @@
   .notice {
     font-size: 12px;
     line-height: 1.35;
-    border-radius: 10px;
+    border-radius: var(--radius-large);
   }
   .badge {
     white-space: normal;
@@ -302,7 +302,7 @@
     font-size: 11px;
   }
   .modal {
-    border-radius: 18px;
+    border-radius: var(--radius-xlarge);
     overscroll-behavior: contain;
   }
   .modal > header {
@@ -333,7 +333,7 @@
     left: calc(50% + var(--rail-width) / 2);
   }
   .welcome-band {
-    border-radius: 14px;
+    border-radius: var(--radius-xlarge);
     min-height: 166px;
     padding: 26px;
   }
@@ -519,7 +519,7 @@
     .mobile-nav .active svg {
       background: #e2eee6;
       outline: 5px solid #e2eee6;
-      border-radius: 4px;
+      border-radius: var(--radius-small);
     }
     .toast {
       left: 50%;
@@ -609,7 +609,7 @@
     }
     .modal {
       max-height: calc(100dvh - 24px);
-      border-radius: 16px;
+      border-radius: var(--radius-xlarge);
     }
     .modal > header {
       padding: 20px;

@@ -20,7 +20,7 @@
 .market-search {
   padding: 20px;
   border: 1px solid #e3ebe5;
-  border-radius: 12px;
+  border-radius: var(--radius-xlarge);
   background: #f4f8f5;
   margin-bottom: 16px;
 }
@@ -81,7 +81,7 @@
 .market-filter-count {
   min-width: 20px;
   padding: 1px 5px;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   background: #e0ece3;
   color: var(--green);
   font-size: 12px;
@@ -115,7 +115,7 @@
   min-height: 36px;
   padding: 6px 9px;
   border: 1px solid #d4e2d8;
-  border-radius: 6px;
+  border-radius: var(--radius-medium);
   background: #fff;
   color: #315b43;
   font-size: 12px;
@@ -187,7 +187,7 @@
   overflow-wrap: anywhere;
 }
 .market-observations {
-  border-radius: 12px;
+  border-radius: var(--radius-xlarge);
 }
 .published-price-columns,
 .published-price-row {
@@ -198,7 +198,7 @@
 }
 .published-price-columns {
   padding-block: 12px;
-  border-radius: 12px 12px 0 0;
+  border-radius: var(--radius-xlarge) var(--radius-xlarge) 0 0;
   background: #f7faf8;
   color: #58665f;
   font-size: 13px;
@@ -270,7 +270,7 @@
   color: #80571b;
   background: #fff7e5;
   border: 1px solid #f2e5c5;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
   padding: 2px 6px;
 }
 .market-mobile-label {

@@ -22,7 +22,7 @@
   place-items: center;
   background: #ecf1e5;
   color: #648347;
-  border-radius: 10px;
+  border-radius: var(--radius-large);
 }
 .wbd-journey strong {
   display: block;
@@ -60,7 +60,7 @@
   padding: 18px;
   margin-top: 12px;
   border: 1px solid #d8e2d0;
-  border-radius: 12px;
+  border-radius: var(--radius-xlarge);
   background: #fff;
 }
 .wbd-offers article > div {
@@ -70,7 +70,7 @@
 }
 .wbd-offers article > div > span {
   background: #edf3e6;
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   color: #608047;
   width: 40px;
   height: 40px;
@@ -119,7 +119,7 @@
   border: 1px solid #bcccac;
   background: #f8faf4;
   color: #3b653c;
-  border-radius: 7px;
+  border-radius: var(--radius-large);
   padding: 10px 12px;
   width: 100%;
   font-size: 11px;
@@ -131,7 +131,7 @@
 }
 .wbd-no-offers {
   border: 1px dashed #cad7bd;
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   padding: 15px;
 }
 .wd-buyer-demo button:disabled {

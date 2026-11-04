@@ -6,7 +6,7 @@
   margin: 0 0 28px;
   background: #143b2d;
   color: #fff;
-  border-radius: 22px;
+  border-radius: var(--radius-xlarge);
   overflow: hidden;
   position: relative;
 }
@@ -16,7 +16,7 @@
   width: 380px;
   height: 380px;
   border: 1px solid #d9f79324;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   inset: -220px auto auto -100px;
   box-shadow:
     0 0 0 55px #d9f79308,
@@ -150,7 +150,7 @@
 .home-forecast {
   background: #f2f7f3;
   border: 1px solid #e2eae3;
-  border-radius: 16px;
+  border-radius: var(--radius-xlarge);
   padding: 20px 24px;
   margin-bottom: 34px;
 }
@@ -267,7 +267,7 @@
   z-index: 1;
   border: 1px solid #c7d6cb;
   background: #fff;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   width: 44px;
   height: 44px;
   font-size: 16px;
@@ -291,7 +291,7 @@
 .season-guide {
   padding: 26px 28px 14px;
   border: 1px solid #dce6dd;
-  border-radius: 16px;
+  border-radius: var(--radius-xlarge);
   background: #f9fbf8;
 }
 .season-guide-title {

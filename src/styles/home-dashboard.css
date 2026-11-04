@@ -25,7 +25,7 @@
 .home-card {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   padding: 21px 23px;
   min-width: 0;
   color: var(--ink);
@@ -56,7 +56,7 @@
   padding: 21px 23px;
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: var(--radius-large);
 }
 .hw-top {
   display: flex;
@@ -69,7 +69,7 @@
   align-items: center;
   gap: 6px;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--green);
   color: #fff;
   font-size: 12px;
@@ -243,7 +243,7 @@
   place-items: center;
   width: 34px;
   height: 34px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #e3edda;
   color: var(--green);
 }
@@ -307,7 +307,7 @@
   flex-direction: column;
   align-items: center;
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: var(--radius-large);
   background: var(--green);
   color: #fff;
   white-space: nowrap;
@@ -340,7 +340,7 @@
   position: relative;
   min-height: 300px;
   overflow: hidden;
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   background: #214f3c;
 }
 .home-spotlight img {
@@ -356,7 +356,7 @@
   right: 16px;
   bottom: 16px;
   padding: 14px 16px;
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   background: #fff;
   box-shadow: 0 10px 30px #0f2a1d33;
 }
@@ -378,7 +378,7 @@
 .home-spotlight dl > div {
   padding: 8px 10px;
   border: 1px solid var(--border);
-  border-radius: 7px;
+  border-radius: var(--radius-large);
   min-width: 0;
 }
 .home-spotlight dd {
@@ -406,7 +406,7 @@
   flex-shrink: 0;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
 }
 .home-recent-icon.is-sale {
   background: #e3edda;

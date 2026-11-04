@@ -139,7 +139,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   min-height: 54px;
   padding: 15px 26px;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   color: var(--lp-ink) !important;
   background: var(--lp-lime);
   font-size: 14px;
@@ -186,7 +186,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   background: #102e23f5;
   padding: 16px 24px;
   border: 1px solid #ffffff30;
-  border-radius: 12px;
+  border-radius: var(--radius-xlarge);
   backdrop-filter: blur(24px);
 }
 .lp-mobile-menu a {
@@ -203,7 +203,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   background: #fff9e4;
   color: #493416;
   font-size: 14px;
-  border-radius: 8px;
+  border-radius: var(--radius-large);
 }
 .lp-hero {
   position: relative;
@@ -308,7 +308,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   width: 58px;
   height: 58px;
   border: 1px solid #ffffff80;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   display: grid;
   place-items: center;
   transition: background 0.3s;
@@ -326,7 +326,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   min-height: 44px;
   color: #fff;
   border: 0;
-  border-radius: 24px;
+  border-radius: var(--radius-full);
   background: #102e235c;
   padding: 10px 13px;
   font-size: 11px;
@@ -467,13 +467,13 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   position: relative;
   padding: 38px;
   background: #e5ebdb;
-  border-radius: 3px;
+  border-radius: var(--radius-small);
   perspective: 1000px;
 }
 .lp-product-window {
   position: relative;
   background: #fffefa;
-  border-radius: 10px;
+  border-radius: var(--radius-large);
   padding: 28px;
   border: 1px solid #d3dccb;
   box-shadow: 0 20px 45px -15px #1c382e35;
@@ -538,7 +538,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
 .lp-preview-filters span {
   font-size: 9px;
   background: #ecf1e6;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   padding: 1px 5px;
 }
 .lp-preview-tasks {
@@ -570,7 +570,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   display: grid;
   place-items: center;
   border: 1px solid #a8b99a;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   flex-shrink: 0;
 }
 .lp-sample-task > span:nth-child(2) {
@@ -590,7 +590,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   align-items: center;
   padding: 16px;
   background: #edf2e6;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
   font-size: 12px;
 }
 .lp-preview-guidance {
@@ -943,7 +943,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
     color: white;
     background: transparent;
     border: 1px solid #ffffff60;
-    border-radius: 30px;
+    border-radius: var(--radius-full);
     min-height: 44px;
     padding: 9px 15px;
     font-size: 12px;
@@ -1477,7 +1477,7 @@ html:has(.lp-motion-paused) {
   padding: clamp(22px, 3vw, 40px);
   background: #fffefa;
   border: 1px solid #ccd8c6;
-  border-radius: 12px;
+  border-radius: var(--radius-xlarge);
   box-shadow: 0 18px 55px -35px #193a2a80;
 }
 .lp-market-browser-top {
@@ -1501,7 +1501,7 @@ html:has(.lp-motion-paused) {
   color: #516d43;
   padding: 3px 7px;
   font-size: 9px;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   white-space: nowrap;
 }
 .lp-market-browser h3 {
@@ -1529,7 +1529,7 @@ html:has(.lp-motion-paused) {
 .lp-market-supply img {
   width: 60px;
   height: 60px;
-  border-radius: 8px;
+  border-radius: var(--radius-large);
   object-fit: cover;
   flex-shrink: 0;
 }

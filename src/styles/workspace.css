@@ -22,7 +22,7 @@
 .app-shell .sidebar .workspace-name {
   color: #d3e2d7;
   border: 1px solid #ffffff20;
-  border-radius: 8px;
+  border-radius: var(--radius-large);
   padding: 12px;
   margin: 22px 0 8px;
   font-size: 12px;
@@ -90,7 +90,7 @@
   letter-spacing: -1.3px;
 }
 .app-shell .button {
-  border-radius: 7px;
+  border-radius: var(--radius-medium);
   min-height: 44px;
   box-shadow: none;
   font-weight: 600;
@@ -104,7 +104,7 @@
 .app-shell .farm-card,
 .app-shell .card,
 .app-shell .panel {
-  border-radius: 10px;
+  border-radius: var(--radius-large);
   box-shadow: 0 2px 3px #173c2903;
 }
 .app-shell .workspace-record-target {
@@ -118,7 +118,7 @@
   padding: 8px 12px;
   min-height: 40px;
   border: 1px solid #dce3d8;
-  border-radius: 7px;
+  border-radius: var(--radius-large);
   background: #fff;
   color: #69756c;
   margin-left: auto;
@@ -126,7 +126,7 @@
 }
 .workspace-search-trigger kbd {
   background: #f0f2ed;
-  border-radius: 3px;
+  border-radius: var(--radius-small);
   padding: 2px 5px;
   font: 10px inherit;
   color: #69756c;
@@ -153,7 +153,7 @@
   gap: 16px;
   padding: 13px 10px;
   border-bottom: 1px solid #e0e6dc;
-  border-radius: 5px;
+  border-radius: var(--radius-medium);
 }
 .workspace-search-results > a:hover {
   background: #f2f5ec;
@@ -232,7 +232,7 @@
 .live-dot {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #6c904d;
 }
 .workspace-scope label {
@@ -247,14 +247,14 @@
   font-size: 12px;
   border: 1px solid var(--border);
   background: #fff;
-  border-radius: 6px;
+  border-radius: var(--radius-medium);
 }
 .workspace-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   background: white;
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   padding: 17px 0;
   margin-bottom: 24px;
 }
@@ -281,7 +281,7 @@
   place-items: center;
   width: 43px;
   height: 43px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #f0f5e5;
   color: #43673c;
   flex-shrink: 0;
@@ -320,7 +320,7 @@
 .workspace-panel {
   background: white;
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   min-width: 0;
 }
 .panel-heading {
@@ -362,7 +362,7 @@
   min-height: 36px;
   padding: 7px 10px;
   border: 1px solid #e2e6df;
-  border-radius: 6px;
+  border-radius: var(--radius-medium);
   background: #fafbf8;
   color: #657063;
   font-size: 11px;
@@ -394,7 +394,7 @@
   height: 27px;
   min-width: 27px;
   padding: 0;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   display: grid;
   place-items: center;
 }
@@ -410,7 +410,7 @@
 .task-pulse {
   width: 9px;
   height: 9px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #6c904d;
 }
 .agenda-task {
@@ -434,7 +434,7 @@
   color: #647b4f;
   background: #f3f6ec;
   padding: 5px 7px;
-  border-radius: 4px;
+  border-radius: var(--radius-small);
   text-align: center;
   max-width: 112px;
 }
@@ -486,7 +486,7 @@
   color: #547b3a;
   height: 42px;
   width: 42px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   flex-shrink: 0;
 }
 .workspace-farm-row > span:nth-child(2) {
@@ -516,7 +516,7 @@
 .workspace-rail .home-forecast {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 9px;
+  border-radius: var(--radius-large);
   margin: 0;
   padding: 23px;
 }
@@ -547,7 +547,7 @@
   padding: 24px;
   background: #edf3df;
   border: 1px solid #dbe6c6;
-  border-radius: 9px;
+  border-radius: var(--radius-large);
 }
 .season-callout h2 {
   font-size: 23px;

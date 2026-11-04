@@ -79,6 +79,22 @@
     --text: #192f29;
     --line: #e3e9e5;
     --green-soft: #f4f8f5;
+    /* Corner radius scale, following Atlassian's radius foundation
+       (atlassian.design/foundations/radius). Use the token for the
+       element's role, not a raw pixel value:
+       xsmall: small details · small: badges, tags, tooltips
+       medium: buttons, inputs, selects, navigation items
+       large: cards, in-page containers, menus, floating UI
+       xlarge: modals, large page containers, tables
+       full: avatars, pills, circular elements · tile: icon tiles only */
+    --radius-xsmall: 2px;
+    --radius-small: 4px;
+    --radius-medium: 6px;
+    --radius-large: 8px;
+    --radius-xlarge: 12px;
+    --radius-xxlarge: 16px;
+    --radius-full: 999px;
+    --radius-tile: 25%;
   }
   body {
     min-width: 320px;
@@ -132,7 +148,7 @@
   textarea,
   select {
     border: 1px solid #ccd8cf;
-    border-radius: 8px;
+    border-radius: var(--radius-medium);
     padding: 11px 12px;
     background: white;
     color: var(--ink);
@@ -234,7 +250,7 @@
     margin-bottom: 20px;
     border: 1px solid #cfddce;
     background: #f4f8f5;
-    border-radius: 10px;
+    border-radius: var(--radius-large);
     font-size: 13px;
   }
   .button {
@@ -243,7 +259,7 @@
     justify-content: center;
     gap: 9px;
     border: 1px solid transparent;
-    border-radius: 8px;
+    border-radius: var(--radius-medium);
     min-height: 44px;
     padding: 10px 16px;
     font-size: 13px;
@@ -301,7 +317,7 @@
     justify-content: center;
     border: 0;
     background: transparent;
-    border-radius: 8px;
+    border-radius: var(--radius-medium);
   }
   .icon-button:hover {
     background: #eaf1eb;
@@ -314,7 +330,7 @@
     font-weight: 600;
     padding: 4px 8px;
     line-height: 1.35;
-    border-radius: 5px;
+    border-radius: var(--radius-small);
     background: #f0f3f1;
     color: #64746b;
     white-space: nowrap;
@@ -344,7 +360,7 @@
     height: 39px;
     background: #eaf2ed;
     color: #2e6851;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
   }
   .avatar {
     display: flex;
@@ -355,13 +371,13 @@
     height: 34px;
     background: #e0eee6;
     color: #315647;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     font-weight: 600;
     font-size: 12px;
   }
   .panel {
     border: 1px solid var(--border);
-    border-radius: 11px;
+    border-radius: var(--radius-large);
     background: #fff;
     min-width: 0;
   }
@@ -388,7 +404,7 @@
     background: #f2f7f3;
     border: 1px solid #e1eae1;
     color: #4c6756;
-    border-radius: 8px;
+    border-radius: var(--radius-large);
     padding: 12px 15px;
     font-size: 12px;
     line-height: 1.35;
@@ -438,7 +454,7 @@
     display: flex;
     align-items: center;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: var(--radius-large);
     padding: 0 12px;
     gap: 8px;
     width: min(100%, 365px);
@@ -501,7 +517,7 @@
     font-size: 10px;
     background: var(--sage);
     padding: 2px 6px;
-    border-radius: 4px;
+    border-radius: var(--radius-small);
   }
   .table-wrap {
     overflow: auto;
@@ -664,7 +680,7 @@
     align-items: center;
     gap: 13px;
     padding: 11px 13px;
-    border-radius: 7px;
+    border-radius: var(--radius-large);
     min-height: 44px;
     font-size: 12px;
     color: #42564a;
@@ -756,7 +772,7 @@
     top: 9px;
     width: 5px;
     height: 5px;
-    border-radius: 100%;
+    border-radius: var(--radius-full);
     background: #d6a252;
     border: 1px solid white;
   }
@@ -845,7 +861,7 @@
     max-width: 80vw;
     box-shadow: 0 8px 32px #17352222;
     border: 1px solid #d6e0d8;
-    border-radius: 10px;
+    border-radius: var(--radius-large);
     background: #fff;
     color: var(--green);
     z-index: 150;
@@ -855,7 +871,7 @@
     flex-shrink: 0;
   }
   .welcome-band {
-    border-radius: 10px;
+    border-radius: var(--radius-large);
     background: #214f3c;
     color: white;
     position: relative;
@@ -929,7 +945,7 @@
     background: white;
     width: 18px;
     height: 18px;
-    border-radius: 5px;
+    border-radius: var(--radius-medium);
     padding: 0;
     position: relative;
   }
@@ -1068,7 +1084,7 @@
     align-items: center;
     justify-content: center;
     background: #eaf3ee;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     width: 39px;
     height: 39px;
     font-style: normal;
@@ -1120,7 +1136,7 @@
     max-width: 100%;
     max-height: calc(100dvh - 44px);
     overflow: auto;
-    border-radius: 15px;
+    border-radius: var(--radius-xlarge);
     background: white;
     box-shadow: 0 25px 80px #0b281b33;
     outline: none;
@@ -1191,7 +1207,7 @@
   }
   .skeleton > div {
     height: 130px;
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     background: #f0f4ef;
     animation: pulse 1.3s infinite alternate;
   }
@@ -1368,7 +1384,7 @@
   }
   .farm-card {
     border: 1px solid var(--border);
-    border-radius: 11px;
+    border-radius: var(--radius-large);
     overflow: hidden;
   }
   .farm-card-top {
@@ -1406,7 +1422,7 @@
     width: 79px;
     height: 79px;
     border: 1px solid currentColor;
-    border-radius: 100%;
+    border-radius: var(--radius-full);
     display: grid;
     place-items: center;
     opacity: 0.6;
@@ -1500,7 +1516,7 @@
     gap: 30px;
     background: #fffae4;
     border: 1px solid #efe5be;
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     padding: 32px 38px;
     margin-top: 24px;
   }
@@ -1702,7 +1718,7 @@
     gap: 19px;
     background: #f2f6ed;
     border: 1px solid #e3eadb;
-    border-radius: 10px;
+    border-radius: var(--radius-large);
     padding: 25px;
     color: #5d765a;
   }
@@ -1724,7 +1740,7 @@
   }
   .lesson-card {
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: var(--radius-large);
     overflow: hidden;
     transition:
       border-color 0.15s,
@@ -1867,7 +1883,7 @@
   .quiz {
     background: #f6f8f3;
     border: 1px solid #e2e8dd;
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     padding: 28px;
     margin-top: 17px;
   }
@@ -1891,7 +1907,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    border-radius: 8px;
+    border-radius: var(--radius-large);
     font-size: 13px;
     cursor: pointer;
   }
@@ -1906,7 +1922,7 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     overflow: hidden;
   }
   .community-intro > div {
@@ -2029,7 +2045,7 @@
     min-height: 21px;
     border: 0;
     background: #ccd7cc;
-    border-radius: 20px;
+    border-radius: var(--radius-full);
     position: relative;
     padding: 0;
     transition: background 0.1s;
@@ -2038,7 +2054,7 @@
     content: "";
     width: 15px;
     height: 15px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     background: white;
     position: absolute;
     left: 3px;
@@ -2114,7 +2130,7 @@
     align-items: flex-start;
     gap: 13px;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: var(--radius-large);
     padding: 20px 18px;
     background: white;
     color: #667a69;
@@ -2168,7 +2184,7 @@
   }
   .assistant-welcome {
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     text-align: center;
     padding: 33px 25px;
   }
@@ -2179,7 +2195,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
+    border-radius: var(--radius-tile);
     color: #52774e;
   }
   .assistant-welcome h2 {
@@ -2204,7 +2220,7 @@
     justify-content: space-between;
     gap: 13px;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: var(--radius-large);
     min-height: 48px;
     text-align: left;
     background: white;
@@ -2221,7 +2237,7 @@
   .assistant-composer {
     margin-top: 22px;
     border: 1px solid #cedbd0;
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     padding: 19px;
   }
   .assistant-context {
@@ -2292,14 +2308,14 @@
   .assistant-answer {
     margin-top: 23px;
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: var(--radius-xlarge);
     padding: 22px;
   }
   .asked-question {
     font-size: 13px;
     background: #f2f6ed;
     padding: 14px;
-    border-radius: 8px;
+    border-radius: var(--radius-large);
     margin-bottom: 22px;
   }
   .answer-heading {
@@ -2326,7 +2342,7 @@
     align-items: center;
     color: var(--green);
     border: 1px solid var(--border);
-    border-radius: 6px;
+    border-radius: var(--radius-medium);
     padding: 8px;
   }
   .assistant-main > .notice,
@@ -2655,7 +2671,7 @@
     .welcome-band {
       min-height: 150px;
       padding: 23px;
-      border-radius: 10px;
+      border-radius: var(--radius-large);
     }
     .welcome-band > div {
       width: 100%;
@@ -2672,7 +2688,7 @@
     }
     .welcome-band .button {
       min-height: 38px;
-      border-radius: 30px;
+      border-radius: var(--radius-full);
       font-size: 12px;
     }
     .field-contours {
@@ -2698,7 +2714,7 @@
     }
     .next-steps .task-row {
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: var(--radius-large);
       padding: 15px 12px;
       margin: 0 0 9px;
       min-height: 77px;
@@ -2707,7 +2723,7 @@
     .task-check {
       width: 21px;
       height: 21px;
-      border-radius: 50%;
+      border-radius: var(--radius-full);
       border-color: #537a61;
     }
     .task-copy strong {
@@ -2727,7 +2743,7 @@
       min-height: 93px;
       padding: 18px 18px 18px 74px;
       text-align: left;
-      border-radius: 10px;
+      border-radius: var(--radius-large);
     }
     .weather-preview .panel-header {
       padding: 0;
@@ -2773,7 +2789,7 @@
       margin: 0 0 8px;
       padding: 15px 13px;
       border: 1px solid var(--border);
-      border-radius: 9px;
+      border-radius: var(--radius-large);
       gap: 13px;
     }
     .lesson-row strong {
@@ -2851,7 +2867,7 @@
       bottom: 1px;
       width: 23px;
       height: 2px;
-      border-radius: 2px;
+      border-radius: var(--radius-xsmall);
       background: #749e62;
     }
     .toast {
@@ -2946,7 +2962,7 @@
     }
     .modal {
       max-height: calc(100dvh - 24px);
-      border-radius: 12px;
+      border-radius: var(--radius-xlarge);
     }
     .modal > header {
       padding: 21px 19px 17px;
