@@ -8,6 +8,7 @@ export type NavigationIcon =
   | "marketplace"
   | "learn"
   | "season"
+  | "transactions"
   | "harvest"
   | "community"
   | "assistant"
@@ -32,6 +33,7 @@ export const CORE_NAVIGATION: readonly NavigationItem[] = [
 const MORE_NAVIGATION: readonly NavigationItem[] = [
   { to: "/learn", label: "Learn", icon: "learn" },
   { to: "/seasons", label: "Season planner", icon: "season" },
+  { to: "/transactions", label: "Transactions", icon: "transactions" },
   { to: "/harvest", label: "Harvest & collection", icon: "harvest" },
   { to: "/community", label: "Community reports", icon: "community" },
   { to: "/assistant", label: "Farm assistant", icon: "assistant" },

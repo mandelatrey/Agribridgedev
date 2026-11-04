@@ -33,6 +33,7 @@ const Admin = lazy(() => import("./pages/Admin"));
 const Assistant = lazy(() => import("./pages/Assistant"));
 const Seasons = lazy(() => import("./pages/Seasons"));
 const Harvest = lazy(() => import("./pages/Harvest"));
+const Transactions = lazy(() => import("./pages/Transactions"));
 class ErrorBoundary extends Component<
   { children: ReactNode },
   { error: boolean }
@@ -97,6 +98,7 @@ function Application() {
         <Route path="farms" element={<Farms />} />
         <Route path="seasons" element={<Seasons />} />
         <Route path="harvest" element={<Harvest />} />
+        <Route path="transactions" element={<Transactions />} />
         <Route path="weather" element={<Weather />} />
         <Route path="markets" element={<Markets />} />
         <Route path="marketplace" element={<Marketplace />} />

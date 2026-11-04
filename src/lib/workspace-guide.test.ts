@@ -10,6 +10,7 @@ import type { Bootstrap } from "../types";
 const empty = {
   farms: [],
   seasons: [],
+  transactions: [],
   lots: [],
   contacts: [],
   deals: [],

@@ -341,6 +341,7 @@ export function createApp(
       "seasons",
       "lots",
       "collections",
+      "transactions",
     ];
     const items = await Promise.all(
       types.map(async (type) =>
@@ -368,6 +369,7 @@ export function createApp(
       seasons: data.seasons,
       lots: data.lots,
       collections: data.collections,
+      transactions: data.transactions,
       lessons,
       progress,
       messages: data.messages,
@@ -540,7 +542,7 @@ export function createApp(
         let ownerId = user.id;
         if (input.farmId) {
           const farm = await findEntity(tx, user, "farms", input.farmId);
-          if (["tasks", "seasons", "lots"].includes(type))
+          if (["tasks", "seasons", "lots", "transactions"].includes(type))
             ownerId = farm.owner_id;
         }
         if (type === "offers" && user.role === "farmer")
@@ -612,6 +614,12 @@ export function createApp(
           );
         if (input.farmId) {
           const farm = await findEntity(tx, user, "farms", input.farmId);
+          if (type === "transactions" && farm.owner_id !== old.owner_id)
+            throw new ApiError(
+              409,
+              "TRANSACTION_OWNER_CONFLICT",
+              "Record a new transaction for that farmer's farm instead.",
+            );
           if (type === "tasks" && farm.owner_id !== old.owner_id)
             throw new ApiError(
               409,

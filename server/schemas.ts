@@ -217,6 +217,32 @@ export const schemas = {
       notes: note,
     })
     .strict(),
+  transactions: z
+    .object({
+      kind: z.enum(["buy", "sell"]),
+      crop: short,
+      quantityKg: z.number().positive().max(10_000_000),
+      unitPriceUgx: z.number().int().positive().max(10_000_000),
+      transactionDate: day,
+      buyer: short,
+      seller: short,
+      farmId: z.string().max(80).optional(),
+      status: z
+        .enum(["pending", "confirmed", "in_transit", "delivered", "cancelled"])
+        .default("pending"),
+      paymentMethod: z
+        .enum([
+          "not_recorded",
+          "mobile_money",
+          "bank_transfer",
+          "cash",
+          "cheque",
+        ])
+        .default("not_recorded"),
+      paymentProvider: z.string().trim().max(80).default(""),
+      notes: note,
+    })
+    .strict(),
 };
 export type EntityType = keyof typeof schemas;
 export const settingsSchema = z

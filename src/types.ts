@@ -75,6 +75,27 @@ export type Deal = Entity & {
   checklist: string[];
   notes: string;
 };
+export type TransactionStatus =
+  "pending" | "confirmed" | "in_transit" | "delivered" | "cancelled";
+export type PaymentMethod =
+  "not_recorded" | "mobile_money" | "bank_transfer" | "cash" | "cheque";
+export type Transaction = Entity & {
+  reference: string;
+  kind: "buy" | "sell";
+  crop: string;
+  quantityKg: number;
+  unitPriceUgx: number;
+  totalUgx: number;
+  transactionDate: string;
+  buyer: string;
+  seller: string;
+  farmId?: string;
+  status: TransactionStatus;
+  paymentMethod: PaymentMethod;
+  paymentProvider: string;
+  recordedBy: string;
+  notes: string;
+};
 export type Report = Entity & {
   kind: "crop_pest" | "crop_disease" | "standing_water";
   district: string;
@@ -137,6 +158,7 @@ export type Bootstrap = {
   seasons: Season[];
   lots: HarvestLot[];
   collections: Collection[];
+  transactions: Transaction[];
 };
 export type SeasonCost = {
   id: string;

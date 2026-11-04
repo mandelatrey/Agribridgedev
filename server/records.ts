@@ -197,6 +197,23 @@ export const RECORD_TABLES = {
     ["notes", "notes", "text"],
     ["manifest", "manifest", "jsonb", "omit"],
   ]),
+  transactions: define("transactions", [
+    ["reference", "reference", "text"],
+    ["kind", "kind", "text"],
+    ["crop", "crop", "text"],
+    ["quantityKg", "quantity_kg", "float"],
+    ["unitPriceUgx", "unit_price_ugx", "integer"],
+    ["totalUgx", "total_ugx", "bigint"],
+    ["transactionDate", "transaction_date", "date"],
+    ["buyer", "buyer", "text"],
+    ["seller", "seller", "text"],
+    ["farmId", "farm_id", "text", "omit"],
+    ["status", "status", "text"],
+    ["paymentMethod", "payment_method", "text"],
+    ["paymentProvider", "payment_provider", "text"],
+    ["recordedBy", "recorded_by", "text"],
+    ["notes", "notes", "text"],
+  ]),
 } satisfies Record<string, TableSpec>;
 
 export type RecordType = keyof typeof RECORD_TABLES;

@@ -38,6 +38,7 @@ const empty: Bootstrap = {
   seasons: [],
   lots: [],
   collections: [],
+  transactions: [],
   settings: {
     language: "en",
     lowDataMode: true,
@@ -138,6 +139,8 @@ export function safeData(data: Bootstrap, user: User): Bootstrap {
     seasons: [],
     lots: [],
     collections: [],
+    // Financial records stay online; they are never stored on the device.
+    transactions: [],
     marketPrices: data.marketPrices.map((price) => ({
       id: price.id,
       version: price.version,

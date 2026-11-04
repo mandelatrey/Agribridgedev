@@ -42,6 +42,7 @@ export const ownTypes = new Set([
   "settings",
   "seasons",
   "lots",
+  "transactions",
 ]);
 export const operatorTypes = new Set([
   "contacts",

@@ -78,6 +78,44 @@ export function seasonSummary(data: RecordData) {
   };
 }
 
+async function prepareTransaction(
+  db: Queryable,
+  user: User,
+  input: RecordData,
+  old?: EntityRow,
+): Promise<RecordData> {
+  const schema = schemas.transactions;
+  const merged = { ...old?.data, ...input };
+  const data = schema.parse(
+    Object.fromEntries(
+      Object.keys(schema.shape)
+        .filter((key) => Object.hasOwn(merged, key))
+        .map((key) => [key, merged[key]]),
+    ),
+  ) as RecordData;
+  if (
+    old &&
+    data.transactionDate !== old.data.transactionDate &&
+    user.role !== "admin"
+  )
+    throw new ApiError(
+      403,
+      "FORBIDDEN",
+      "Only an administrator can change a transaction date.",
+    );
+  if (data.transactionDate > ugandaCalendarDay())
+    throw invalid("A transaction date cannot be in the future.");
+  if (data.paymentMethod === "not_recorded") data.paymentProvider = "";
+  const totalUgx = Math.round(data.quantityKg * data.unitPriceUgx);
+  if (totalUgx > 1_000_000_000_000)
+    throw invalid("This transaction total is too large to record.");
+  if (!old) {
+    data.reference = `TXN-${randomUUID().slice(0, 8).toUpperCase()}`;
+    data.recordedBy = user.name;
+  }
+  return { ...data, totalUgx };
+}
+
 export async function prepareWorkflow(
   db: Queryable,
   user: User,
@@ -85,6 +123,7 @@ export async function prepareWorkflow(
   input: RecordData,
   old?: EntityRow,
 ): Promise<RecordData> {
+  if (type === "transactions") return prepareTransaction(db, user, input, old);
   if (!["seasons", "lots", "collections"].includes(type)) return input;
   const schema = schemas[type];
   const merged = { ...old?.data, ...input };

@@ -22,6 +22,7 @@ import {
   Check,
   CalendarDays,
   PackageCheck,
+  ArrowLeftRight,
 } from "lucide-react";
 import { useApp } from "../context/AppContext";
 import { initials } from "../lib/format";
@@ -49,6 +50,7 @@ const icons: Record<NavigationIcon, typeof House> = {
   marketplace: Package,
   learn: BookOpen,
   season: CalendarDays,
+  transactions: ArrowLeftRight,
   harvest: PackageCheck,
   community: Users,
   assistant: Bot,

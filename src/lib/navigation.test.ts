@@ -31,6 +31,7 @@ describe("simple navigation", () => {
     expect(navigationFor("farmer").more.map((item) => item.to)).toEqual([
       "/learn",
       "/seasons",
+      "/transactions",
       "/harvest",
       "/community",
       "/assistant",

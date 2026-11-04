@@ -1,0 +1,115 @@
+.txn-stats {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.txn-kind {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.txn-kind legend {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.txn-kind label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 10px 14px;
+  border: 1px solid var(--border, #dce5da);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.txn-kind label.active {
+  border-color: #1f5d3d;
+  background: #f3f7ef;
+}
+.txn-kind label > span {
+  display: flex;
+  flex-direction: column;
+}
+.txn-kind strong {
+  font-size: 13px;
+}
+.txn-kind small {
+  font-size: 11px;
+  color: var(--muted, #52654f);
+}
+.txn-total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #f3f7ef;
+}
+.txn-total span {
+  font-size: 12px;
+  color: var(--muted, #52654f);
+}
+.txn-total strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.txn-number {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.txn-table .op-record-link strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.txn-details {
+  padding: 8px 24px 20px;
+}
+.txn-details dl {
+  margin: 0;
+}
+.txn-details dl > div {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border, #e6ece3);
+}
+.txn-details dt {
+  font-size: 12px;
+  color: var(--muted, #52654f);
+}
+.txn-details dd {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 550;
+  overflow-wrap: anywhere;
+}
+.txn-details-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+@media (max-width: 960px) {
+  .txn-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .txn-kind {
+    grid-template-columns: 1fr;
+  }
+  .txn-details dl > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .txn-number {
+    text-align: left;
+  }
+}

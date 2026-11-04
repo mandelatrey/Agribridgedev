@@ -87,6 +87,29 @@ export const WORKSPACE_GUIDES: WorkspaceGuide[] = [
       "How do I use Agribridge to plan a season and track costs, harvests and sales?",
   },
   {
+    route: "/transactions",
+    title: "Keep every sale and purchase on record",
+    introduction: "Record what was traded, with whom, and where it stands.",
+    steps: [
+      {
+        title: "Record the transaction",
+        detail:
+          "Choose Record transaction. Pick Sell or Buy, the crop, quantity in kilograms and the agreed price per kilogram. The total is worked out for you.",
+      },
+      {
+        title: "Name both sides",
+        detail:
+          "Your name fills in for your side. Enter the other person or business, link a farm if it applies, and note how payment was or will be made.",
+      },
+      {
+        title: "Keep the status current",
+        detail:
+          "Open a transaction to move it from pending to confirmed, in transit and delivered. Payment details are what you record; Agribridge does not send or verify money.",
+      },
+    ],
+    question: "How do I record sales and purchases in Agribridge transactions?",
+  },
+  {
     route: "/harvest",
     title: "From harvest to collection",
     introduction:
