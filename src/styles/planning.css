@@ -11,6 +11,7 @@
   }
   .season-input-check p {
     font-size: 13px;
+    line-height: 1.35;
     color: var(--muted);
     margin: 14px 0;
     max-width: 85ch;
@@ -63,6 +64,7 @@
   .season-heading p {
     color: var(--muted);
     font-size: 13px;
+    line-height: 1.35;
   }
   .season-metrics {
     display: grid;
@@ -190,6 +192,7 @@
   .season-cost-editor p {
     color: var(--muted);
     font-size: 12px;
+    line-height: 1.35;
     margin-bottom: 18px;
   }
   .season-cost-row {

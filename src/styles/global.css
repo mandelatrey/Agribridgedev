@@ -1214,6 +1214,7 @@
   .initial-loading p {
     color: var(--muted);
     font-size: 13px;
+    line-height: 1.35;
   }
   @keyframes spin {
     to {
@@ -1351,6 +1352,7 @@
   .password-page p {
     color: var(--muted);
     font-size: 13px;
+    line-height: 1.35;
     margin-bottom: 24px;
   }
   .password-page .field {
@@ -1916,6 +1918,7 @@
   }
   .community-intro p {
     font-size: 13px;
+    line-height: 1.35;
     color: var(--muted);
     max-width: 480px;
   }
@@ -2185,6 +2188,7 @@
   }
   .assistant-welcome p {
     font-size: 13px;
+    line-height: 1.35;
     color: var(--muted);
     max-width: 330px;
     margin: 0 auto 25px;

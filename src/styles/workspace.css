@@ -210,6 +210,7 @@
 .workspace-heading p {
   color: var(--muted);
   font-size: 14px;
+  line-height: 1.35;
 }
 .workspace-heading > .button {
   flex-shrink: 0;
@@ -626,6 +627,7 @@
 }
 .priority-grid p {
   font-size: 12px;
+  line-height: 1.35;
   color: var(--muted);
   margin: 8px 0 13px;
 }

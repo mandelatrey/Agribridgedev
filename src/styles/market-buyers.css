@@ -81,6 +81,7 @@
 }
 .market-client-order header p {
   font-size: 13px;
+  line-height: 1.35;
   color: var(--muted);
   margin: 0;
 }
@@ -102,6 +103,7 @@
 }
 .market-client-order-message {
   font-size: 13px;
+  line-height: 1.35;
   color: var(--muted);
   white-space: pre-wrap;
   overflow-wrap: anywhere;

@@ -213,6 +213,7 @@
 }
 .home-season-empty p {
   font-size: 13px;
+  line-height: 1.35;
   color: var(--muted);
   margin-bottom: 6px;
 }
@@ -326,6 +327,7 @@
   place-items: center;
   text-align: center;
   font-size: 13px;
+  line-height: 1.35;
   color: var(--muted);
 }
 .home-chart-empty a {
@@ -441,6 +443,7 @@
 }
 .home-recent-empty {
   font-size: 13px;
+  line-height: 1.35;
   color: var(--muted);
 }
 .home-recent-empty a {

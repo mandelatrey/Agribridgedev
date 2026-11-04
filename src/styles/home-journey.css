@@ -129,6 +129,7 @@
   flex-shrink: 0;
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.35;
 }
 .journey-farm-selector select {
   width: auto;
@@ -225,6 +226,7 @@
 .journey-heading p {
   color: var(--muted);
   font-size: 15px;
+  line-height: 1.35;
   margin-top: 8px;
 }
 .season-stops {
