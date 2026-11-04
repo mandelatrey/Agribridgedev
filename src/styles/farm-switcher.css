@@ -1,0 +1,108 @@
+.app-shell .sidebar .farm-switcher {
+  position: relative;
+  margin: 22px 0 8px;
+}
+.app-shell .sidebar .farm-switcher .workspace-name {
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.app-shell .sidebar .farm-switcher .workspace-name:hover,
+.app-shell .sidebar .farm-switcher .workspace-name[aria-expanded="true"] {
+  background: #ffffff12;
+}
+.farm-switcher-current {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.farm-switcher-current small {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #a9c2b0;
+}
+.farm-switcher-current span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f5f9ed;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.farm-switcher-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 6px;
+  border: 1px solid #dce5da;
+  border-radius: 10px;
+  background: #fff;
+  color: #254b37;
+  box-shadow: 0 12px 30px #0f2a1d40;
+}
+.farm-switcher-heading {
+  padding: 8px 10px 6px;
+  font-size: 11px;
+  color: #52654f;
+}
+.farm-switcher-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+.farm-switcher-menu li button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.farm-switcher-menu li button:hover,
+.farm-switcher-menu li button[aria-current="true"] {
+  background: #f3f7ef;
+}
+.farm-switcher-menu li button > span {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.farm-switcher-menu li strong {
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.farm-switcher-menu li small {
+  font-size: 11px;
+  color: #52654f;
+}
+.app-shell .sidebar .farm-switcher-menu .farm-switcher-manage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-top: 1px solid #e6ece3;
+  font-size: 12px;
+  font-weight: 600;
+  color: #194d36;
+}

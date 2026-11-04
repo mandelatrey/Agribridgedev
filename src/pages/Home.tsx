@@ -20,6 +20,7 @@ import { agendaTasks, type AgendaFilter } from "../lib/workspace";
 import { FarmEditor, TaskEditor } from "./Farms";
 import { HomeWeather } from "../components/HomeData";
 import { WorkspaceJourney } from "../components/WorkspaceGuide";
+import { setActiveFarmId } from "../lib/active-farm";
 import type { Task } from "../types";
 import "../styles/home-journey.css";
 
@@ -142,8 +143,12 @@ function WorkspaceHome() {
           <Link className="button button-primary" to="/marketplace">
             Find buyers <ArrowUpRight size={18} />
           </Link>
-          <Button variant="secondary" onClick={() => setEditor(data.farms.length ? "task" : "farm")}>
-            <Plus size={18} /> {data.farms.length ? "Add task" : "Add your first farm"}
+          <Button
+            variant="secondary"
+            onClick={() => setEditor(data.farms.length ? "task" : "farm")}
+          >
+            <Plus size={18} />{" "}
+            {data.farms.length ? "Add task" : "Add your first farm"}
           </Button>
         </div>
       </header>
@@ -165,7 +170,11 @@ function WorkspaceHome() {
           <select
             aria-label="Filter workspace by farm"
             value={farmId}
-            onChange={(event) => setFarmId(event.target.value)}
+            onChange={(event) => {
+              setFarmId(event.target.value);
+              if (event.target.value)
+                setActiveFarmId(user?.id, event.target.value);
+            }}
           >
             <option value="">All farms</option>
             {data.farms.map((farm) => (

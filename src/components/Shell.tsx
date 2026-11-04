@@ -28,6 +28,7 @@ import { initials } from "../lib/format";
 import { AppUpdate } from "./AppUpdate";
 import { WorkspaceSearch } from "./WorkspaceSearch";
 import { WorkspaceGuide } from "./WorkspaceGuide";
+import { FarmSwitcher } from "./FarmSwitcher";
 import { Skeleton, trapFocus } from "./ui";
 import {
   CORE_NAVIGATION,
@@ -260,16 +261,20 @@ export function Shell() {
           >
             <X size={20} />
           </button>
-          <Link
-            to="/settings"
-            className="workspace-name"
-            onClick={() => setMenu(false)}
-          >
-            <span>
-              {user?.organizationName.replace(" · Sample cooperative", "")}
-            </span>
-            <ChevronRight size={16} />
-          </Link>
+          {user?.role === "farmer" ? (
+            <FarmSwitcher onNavigate={() => setMenu(false)} />
+          ) : (
+            <Link
+              to="/settings"
+              className="workspace-name"
+              onClick={() => setMenu(false)}
+            >
+              <span>
+                {user?.organizationName.replace(" · Sample cooperative", "")}
+              </span>
+              <ChevronRight size={16} />
+            </Link>
+          )}
         </div>
         <SidebarNavigation
           key={`${user?.organizationId}:${user?.id}:${user?.role}`}
