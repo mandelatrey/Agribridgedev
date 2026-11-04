@@ -59,7 +59,7 @@
 .marketplace-intro-copy > p {
   max-width: 385px;
   font-size: 14px;
-  line-height: 1.7;
+  line-height: 1.35;
   color: #5d6b57;
 }
 .market-intro-actions {
@@ -246,7 +246,7 @@
   font-size: 12px;
   color: #64715b;
   margin-top: 6px;
-  line-height: 1.7;
+  line-height: 1.35;
   max-width: 620px;
 }
 .market-heading-actions {
@@ -396,7 +396,7 @@
 }
 .market-buyer-requirements > p {
   font-size: 11px;
-  line-height: 1.7;
+  line-height: 1.35;
   color: #64705b;
   margin-top: 4px;
 }
@@ -410,7 +410,7 @@
 }
 .market-buyer-card > footer > span {
   font-size: 11px;
-  line-height: 1.6;
+  line-height: 1.35;
   color: #66715d;
   max-width: 150px;
 }
@@ -437,14 +437,14 @@
 .market-match > p {
   font-size: 11px;
   color: #5e6f50;
-  line-height: 1.65;
+  line-height: 1.35;
   margin-top: 5px;
 }
 .market-match details {
   margin-top: 5px;
   font-size: 11px;
   color: #5e6f50;
-  line-height: 1.7;
+  line-height: 1.35;
 }
 .market-match summary {
   color: #577246;
@@ -533,7 +533,7 @@
   font-size: 11px;
   color: #64715b;
   margin-top: 13px;
-  line-height: 1.8;
+  line-height: 1.35;
 }
 .market-service-card > footer {
   display: flex;
@@ -543,7 +543,7 @@
   padding-top: 17px;
   font-size: 11px;
   color: #64715b;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .market-service-card footer a {
   display: inline-flex;
@@ -598,7 +598,7 @@
 }
 .market-supply-quality {
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.35;
   color: #64715b;
   margin-top: 15px;
 }
@@ -697,7 +697,7 @@
 .market-business-empty > p {
   color: #64715b;
   font-size: 14px;
-  line-height: 1.8;
+  line-height: 1.35;
   margin: 13px 0 23px;
 }
 .market-business-empty > small {
@@ -856,7 +856,7 @@
   color: #5e7350;
   font-size: 13px;
   white-space: pre-line;
-  line-height: 1.9;
+  line-height: 1.35;
 }
 .market-desk-answer.unavailable > p {
   color: #827650;
@@ -1008,7 +1008,7 @@
 .market-order-summary {
   grid-column: 1 / -1;
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.35;
   color: #5b7250;
   background: #f4f7ee;
   padding: 12px 15px;
@@ -1021,7 +1021,7 @@
 }
 .market-help {
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.35;
   color: #64715b;
   margin-top: 12px;
   max-width: 780px;
@@ -1043,14 +1043,14 @@
 .market-order-row p {
   font-size: 12px;
   color: #627457;
-  line-height: 1.8;
+  line-height: 1.35;
   margin-top: 5px;
 }
 .market-order-row small {
   display: block;
   color: #64715b;
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.35;
   margin-top: 5px;
 }
 .market-inline {
@@ -1086,7 +1086,7 @@
 }
 .market-confirm-action > p {
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.35;
   color: #5c714f;
   margin: 8px 0 16px;
 }
@@ -1134,7 +1134,7 @@
 .market-channel-link p {
   color: #667a56;
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.35;
   max-width: 720px;
   margin-top: 7px;
 }
@@ -1355,7 +1355,7 @@
   .market-sample-notice {
     font-size: 11px;
     align-items: flex-start;
-    line-height: 1.6;
+    line-height: 1.35;
   }
   .marketplace-intro {
     display: none;

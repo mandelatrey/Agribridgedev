@@ -36,7 +36,7 @@
 }
 .workspace-start-intro > p {
   color: #c1d4ca;
-  line-height: 1.7;
+  line-height: 1.35;
   max-width: 44ch;
   margin-bottom: 24px;
 }
@@ -88,7 +88,7 @@
 .workspace-start-steps small {
   font-size: 13px;
   color: #c1d4ca;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 @media (max-width: 760px) {
   .workspace-start {
@@ -194,7 +194,7 @@
   font-size: 12px;
   color: var(--muted);
   margin-top: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .home-forecast-source summary {
   cursor: pointer;
@@ -214,7 +214,7 @@
 .home-forecast-empty {
   color: var(--muted);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.35;
   max-width: 520px;
 }
 .journey-heading h2 {
@@ -312,13 +312,13 @@
 }
 .season-guide-description {
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.35;
   max-width: 620px;
 }
 .season-task-context {
   font-size: 13px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.35;
   margin-top: 10px;
 }
 .season-task-context.is-overdue {
@@ -349,7 +349,7 @@
   color: var(--muted);
   text-align: center;
   padding: 16px 0 4px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .journey-shortcuts {
   margin-top: 24px;
@@ -378,7 +378,7 @@
 .journey-shortcuts small {
   display: block;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.35;
   color: var(--muted);
   margin-top: 5px;
 }

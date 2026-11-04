@@ -8,7 +8,7 @@
   min-height: 100svh;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .buyer-market *,
 .buyer-dialog * {
@@ -144,7 +144,7 @@
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 1.8px;
-  line-height: 1.8;
+  line-height: 1.35;
 }
 .buyer-hero h1 {
   font-size: clamp(48px, 5.25vw, 77px);
@@ -160,7 +160,7 @@
   max-width: 450px;
   margin-top: 24px;
   font-size: 14px;
-  line-height: 1.9;
+  line-height: 1.35;
 }
 .buyer-hero-copy > div {
   display: flex;
@@ -181,7 +181,7 @@
   color: #fff !important;
   background: var(--buyer-forest);
   font-size: 12px !important;
-  line-height: 1.5;
+  line-height: 1.35;
   font-weight: 500;
 }
 .buyer-primary:hover {
@@ -198,7 +198,7 @@
   padding: 5px 0;
   color: #4f6846;
   font-size: 11px !important;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .buyer-text-button:hover {
   text-decoration: underline;
@@ -212,7 +212,7 @@
   margin-top: 24px;
   color: #65715b;
   font-size: 10px;
-  line-height: 1.7;
+  line-height: 1.35;
 }
 .buyer-hero-footnote svg {
   flex-shrink: 0;
@@ -362,7 +362,7 @@
 .buyer-filters label > span {
   color: #65715b;
   font-size: 9px;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 .buyer-filters input,
 .buyer-filters select {
@@ -541,7 +541,7 @@
   min-height: 35px;
   color: #65715b;
   font-size: 10px;
-  line-height: 1.7;
+  line-height: 1.35;
 }
 .buyer-harvest svg {
   flex-shrink: 0;
@@ -610,7 +610,7 @@
   color: #65715b;
   margin-top: 15px;
   font-size: 12px;
-  line-height: 1.9;
+  line-height: 1.35;
 }
 .buyer-empty > div {
   display: flex;
@@ -662,7 +662,7 @@
   margin-top: 3px;
   color: #65715b;
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.35;
 }
 .buyer-simulation-banner > button {
   display: flex;
@@ -683,7 +683,7 @@
   background: #faf4dd;
   color: #65715b;
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.35;
 }
 .buyer-feedback,
 .buyer-inline-notice {
@@ -1175,7 +1175,7 @@
 }
 .buyer-order-total p {
   font-size: 10px;
-  line-height: 1.8;
+  line-height: 1.35;
   color: #65715b;
   margin-top: 8px;
 }
@@ -1192,7 +1192,7 @@
 .buyer-order-explainer p,
 .buyer-help {
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.35;
   color: #65715b;
 }
 .buyer-confirmation {
@@ -1437,7 +1437,7 @@
   .buyer-hero-copy > p:not(.buyer-eyebrow) {
     margin-top: 20px;
     font-size: 12px;
-    line-height: 1.9;
+    line-height: 1.35;
   }
   .buyer-hero-copy > div {
     margin-top: 22px;
@@ -1483,7 +1483,7 @@
     align-items: flex-start;
     flex-direction: column;
     font-size: 10px;
-    line-height: 1.7;
+    line-height: 1.35;
   }
   .buyer-process > span + span {
     padding-left: 12px;

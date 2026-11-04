@@ -30,7 +30,7 @@
   margin-top: 5px;
   color: var(--muted, #64746d);
   font-size: 12px;
-  line-height: 1.45;
+  line-height: 1.35;
 }
 .op-person,
 .op-record-link {
@@ -126,7 +126,7 @@
 .op-permission p {
   font-size: 12px;
   color: #64746d;
-  line-height: 1.55;
+  line-height: 1.35;
   margin: 9px 0 0;
 }
 .op-inline-actions {
@@ -150,7 +150,7 @@
 }
 .op-note p {
   font-size: 13px;
-  line-height: 1.75;
+  line-height: 1.35;
   color: #64746d;
   margin: 0;
   white-space: pre-wrap;
@@ -161,7 +161,7 @@
 }
 .op-follow-ups > p {
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .op-follow-up {
   display: flex;
@@ -177,7 +177,7 @@
 .op-follow-up strong {
   display: block;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
   font-weight: 550;
   overflow-wrap: anywhere;
 }
@@ -193,7 +193,7 @@
   padding-top: 5px;
   align-items: flex-start;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .op-consent input,
 .op-check input {
@@ -211,7 +211,7 @@
 }
 .op-footnote {
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.35;
   color: #64746d;
   margin: 20px 0;
   max-width: 900px;
@@ -298,7 +298,7 @@
 .op-stage-track small {
   font-size: 10px;
   margin-top: 7px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .op-checklist {
   border-top: 1px solid #e3e9e5;
@@ -322,7 +322,7 @@
   min-height: 44px;
   padding: 9px 0;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
   cursor: pointer;
 }
 .op-fieldset {
@@ -371,7 +371,7 @@
   gap: 8px;
   color: #64746d;
   font-size: 12px;
-  line-height: 1.65;
+  line-height: 1.35;
   padding: 12px;
   background: #f4f8f5;
   border-radius: 7px;
@@ -400,7 +400,7 @@
 }
 .op-delivery-guide p {
   font-size: 12px;
-  line-height: 1.7;
+  line-height: 1.35;
   color: #64746d;
   margin: 8px 0 0;
 }
@@ -416,7 +416,7 @@
 }
 .op-message-cell p {
   margin: 0;
-  line-height: 1.65;
+  line-height: 1.35;
   font-size: 13px;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -424,7 +424,7 @@
 .op-message-cell small {
   display: block;
   font-size: 11px;
-  line-height: 1.6;
+  line-height: 1.35;
   color: #64746d;
   margin-top: 7px;
 }
@@ -448,7 +448,7 @@
 }
 .op-ussd-body p {
   font-size: 13px;
-  line-height: 1.8;
+  line-height: 1.35;
   margin: 0 0 15px;
   max-width: 480px;
 }
@@ -459,7 +459,7 @@
   margin-top: 24px;
   color: #43664d;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .op-preview-hint svg {
   flex: none;
@@ -483,7 +483,7 @@
   white-space: pre-wrap;
   font-family: inherit;
   font-size: 14px;
-  line-height: 1.85;
+  line-height: 1.35;
   color: #263f30;
 }
 .op-ussd-input {
@@ -523,7 +523,7 @@
 }
 .op-integration p {
   font-size: 12px;
-  line-height: 1.65;
+  line-height: 1.35;
   color: #64746d;
   margin: 0;
   max-width: 650px;
@@ -554,7 +554,7 @@
   background: #f9faf8;
   font-size: 11px;
   color: #64746d;
-  line-height: 1.7;
+  line-height: 1.35;
   border-radius: 0 0 12px 12px;
 }
 .op-panel-note svg {
@@ -592,7 +592,7 @@
   font-size: 12px;
 }
 .lesson-editorial-reference {
-  line-height: 1.65;
+  line-height: 1.35;
   font-size: 13px;
 }
 .op-panel-error {
@@ -751,7 +751,7 @@
     margin-bottom: 6px;
     color: var(--muted);
     font-size: 12px;
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .op-record-table .op-person,
   .op-record-table .op-record-link {

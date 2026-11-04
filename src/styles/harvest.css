@@ -10,7 +10,7 @@
   background: #f0f6f1;
   border-radius: 8px;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.35;
   margin: 0 0 22px;
 }
 .harvest-season-context > span {
@@ -66,7 +66,7 @@
 }
 .harvest-review p {
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.35;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
@@ -117,7 +117,7 @@
 .harvest-lot-choice small {
   color: var(--muted, #64746d);
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
   overflow-wrap: anywhere;
 }
 .harvest-lot-choice b {
@@ -125,7 +125,7 @@
 }
 .harvest-form-empty {
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.35;
   color: var(--muted, #64746d);
 }
 .harvest-progress {
@@ -166,7 +166,7 @@
 }
 .harvest-disclaimer {
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
   color: var(--muted, #64746d);
 }
 .harvest-allocated-list {
@@ -238,7 +238,7 @@
     color: var(--muted);
     font-size: 12px;
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.35;
     margin-bottom: 5px;
   }
   .harvest-layout .data-table td:first-child {

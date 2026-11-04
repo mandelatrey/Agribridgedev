@@ -30,32 +30,32 @@
 }
 .home-weather-reading > span {
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 .home-data-rain {
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .home-data-rain svg {
   flex-shrink: 0;
 }
 .home-data-source {
   font-size: 11px;
-  line-height: 1.6;
+  line-height: 1.35;
   color: #626653;
   margin: 10px 0 13px;
 }
 .home-data-warning {
   font-size: 12px;
   color: #81521f;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .home-data-empty {
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.35;
   padding: 10px 0;
   min-height: 60px;
 }
@@ -85,7 +85,7 @@
 .home-market-copy > p:not(.home-data-source) {
   font-size: 13px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.35;
   margin: 0;
   max-width: 640px;
 }

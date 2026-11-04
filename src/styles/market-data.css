@@ -99,7 +99,7 @@
   grid-column: 1 / -1;
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .market-active-filters {
   display: flex;
@@ -132,13 +132,13 @@
   margin-top: 10px;
   font-size: 13px;
   color: #315b43;
-  line-height: 1.55;
+  line-height: 1.35;
 }
 .market-source-brief {
   margin: 0 0 20px;
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .market-source-brief strong {
   font-weight: 550;
@@ -180,7 +180,7 @@
 .market-results-heading p,
 .market-result-state {
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.35;
   color: var(--muted);
 }
 .market-applied-filters {
@@ -215,20 +215,20 @@
 .published-price-place h3 {
   font-size: 16px;
   font-weight: 620;
-  line-height: 1.4;
+  line-height: 1.35;
   margin: 0 0 3px;
   letter-spacing: -0.15px;
 }
 .published-price-place strong {
   display: block;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.35;
   font-weight: 400;
 }
 .published-price-place small {
   display: block;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
   color: var(--muted);
   margin-top: 3px;
 }
@@ -236,7 +236,7 @@
   font-size: 19px;
   font-weight: 620;
   letter-spacing: -0.3px;
-  line-height: 1.4;
+  line-height: 1.35;
   color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
@@ -253,7 +253,7 @@
 .published-price-period strong {
   display: block;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.35;
   font-weight: 500;
 }
 .market-age {
@@ -261,7 +261,7 @@
   margin-top: 5px;
   color: #61705e;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .market-age-aging {
   color: #8a611d;
@@ -305,7 +305,7 @@
   cursor: pointer;
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
   padding: 9px 0;
   min-height: 36px;
 }
@@ -344,7 +344,7 @@
 .market-data-pagination > small {
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .market-data-pagination > div {
   display: flex;
@@ -374,7 +374,7 @@
   margin-top: 10px;
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.65;
+  line-height: 1.35;
 }
 .market-source-facts {
   display: grid;
@@ -398,12 +398,12 @@
 .market-source-facts small {
   font-size: 12px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .market-source-facts strong {
   font-size: 14px;
   font-weight: 550;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .market-source-links {
   display: flex;
@@ -421,7 +421,7 @@
   padding: 0 20px 16px;
   font-size: 12px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.35;
 }
 @container published-market (max-width: 800px) {
   .market-secondary-filters {
@@ -473,7 +473,7 @@
     font-size: 12px;
     font-weight: 500;
     color: var(--muted);
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .published-price-amount > span:not(.market-mobile-label) {
     font-size: 18px;

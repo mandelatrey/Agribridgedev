@@ -88,7 +88,7 @@
     font-weight: 600;
   }
   .season-metrics small {
-    line-height: 1.5;
+    line-height: 1.35;
     color: var(--muted);
   }
   .season-detail-grid {
@@ -127,7 +127,7 @@
   }
   .season-analysis p {
     font-size: 12px;
-    line-height: 1.7;
+    line-height: 1.35;
     color: var(--muted);
     margin: 18px 0;
   }
@@ -165,7 +165,7 @@
   .season-next small {
     display: block;
     font-size: 11px;
-    line-height: 1.6;
+    line-height: 1.35;
     color: var(--muted);
     margin-top: 5px;
   }

@@ -92,7 +92,7 @@
     min-height: 44px;
     padding: 10px;
     font-size: 13px;
-    line-height: 1.4;
+    line-height: 1.35;
     gap: 11px;
     border-radius: 9px;
     flex: 0 0 auto;
@@ -130,7 +130,7 @@
   }
   .profile small {
     font-size: 10px;
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .profile span:nth-child(2) {
     overflow-wrap: anywhere;
@@ -186,7 +186,7 @@
   .page-heading p {
     font-size: 14px;
     margin-top: 8px;
-    line-height: 1.6;
+    line-height: 1.35;
   }
   .page-heading-actions {
     display: flex;
@@ -205,7 +205,7 @@
     border-radius: 9px;
     max-width: 100%;
     font-size: 13px;
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .button-primary {
     box-shadow: 0 1px 2px #123b2f12;
@@ -246,7 +246,7 @@
   }
   .notice {
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.35;
     border-radius: 10px;
   }
   .badge {
@@ -278,7 +278,7 @@
   }
   .text-link {
     min-height: 36px;
-    line-height: 1.5;
+    line-height: 1.35;
   }
   .two-columns,
   .form-grid {

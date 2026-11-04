@@ -27,34 +27,34 @@
 .wbd-journey strong {
   display: block;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.35;
   font-weight: 600;
 }
 .wbd-journey p {
   margin-top: 4px;
   color: #71806d;
   font-size: 11px;
-  line-height: 1.75;
+  line-height: 1.35;
 }
 .wbd-journey small {
   margin-left: auto;
   color: #9baa8f;
   font-size: 10px;
-  line-height: 2;
+  line-height: 1.35;
 }
 .wbd-offers {
   margin-top: 20px;
 }
 .wbd-offers > h2 {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.35;
   font-weight: 600;
 }
 .wbd-offers > p {
   margin-top: 5px;
   color: #72816c;
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.35;
 }
 .wbd-offers article {
   padding: 18px;
@@ -80,14 +80,14 @@
 }
 .wbd-offers h3 {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.35;
   margin: 0;
   font-weight: 600;
 }
 .wbd-offers article p {
   color: #6f7f69;
   font-size: 11px;
-  line-height: 1.8;
+  line-height: 1.35;
   margin-top: 5px;
 }
 .wbd-offers dl {

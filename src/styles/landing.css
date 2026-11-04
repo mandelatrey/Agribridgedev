@@ -259,7 +259,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
 .lp-intro {
   max-width: 580px;
   font-size: clamp(15px, 1.4vw, 20px);
-  line-height: 1.65;
+  line-height: 1.35;
   margin-top: 30px !important;
   color: #f2f5ec;
   animation: lp-enter 1s 0.13s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -557,7 +557,7 @@ html:has(.landing-page:not(.lp-motion-paused)) {
   text-align: left;
   color: var(--lp-ink);
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.35;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -595,13 +595,13 @@ html:has(.landing-page:not(.lp-motion-paused)) {
 }
 .lp-preview-guidance {
   font-size: 10px;
-  line-height: 1.65;
+  line-height: 1.35;
   margin-top: 14px !important;
   color: var(--lp-muted);
 }
 .lp-product-scene figcaption {
   font-size: 10px;
-  line-height: 1.6;
+  line-height: 1.35;
   text-align: center;
   color: #5d6b54;
   margin-top: 24px;
@@ -1541,13 +1541,13 @@ html:has(.lp-motion-paused) {
 }
 .lp-market-supply strong {
   font-size: 14px;
-  line-height: 1.4;
+  line-height: 1.35;
   font-weight: 600;
 }
 .lp-market-supply small {
   color: #727c6a;
   font-size: 10px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .lp-market-quantity {
   display: grid;
@@ -1578,7 +1578,7 @@ html:has(.lp-motion-paused) {
   align-items: center;
   gap: 10px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .lp-deal-path small {
   color: #6c865c;

@@ -82,7 +82,7 @@
   }
   body {
     min-width: 320px;
-    line-height: 1.5;
+    line-height: 1.35;
   }
   h1,
   h2,
@@ -104,7 +104,7 @@
     font-weight: 620;
   }
   p {
-    line-height: 1.65;
+    line-height: 1.35;
   }
   button,
   input,
@@ -144,7 +144,7 @@
   }
   textarea {
     resize: vertical;
-    line-height: 1.6;
+    line-height: 1.35;
   }
   input[type="checkbox"],
   input[type="radio"] {
@@ -192,7 +192,7 @@
   .plain-list {
     padding-left: 20px;
     color: var(--muted);
-    line-height: 1.8;
+    line-height: 1.35;
     margin: 14px 0 22px;
   }
   .small-label {
@@ -204,7 +204,7 @@
   .source-note {
     font-size: 12px;
     color: var(--muted);
-    line-height: 1.6;
+    line-height: 1.35;
     margin-top: 24px;
   }
   .source-note a {
@@ -313,7 +313,7 @@
     font-size: 10px;
     font-weight: 600;
     padding: 4px 8px;
-    line-height: 1.4;
+    line-height: 1.35;
     border-radius: 5px;
     background: #f0f3f1;
     color: #64746b;
@@ -391,7 +391,7 @@
     border-radius: 8px;
     padding: 12px 15px;
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.35;
     margin-bottom: 20px;
   }
   .notice > svg {
@@ -953,12 +953,12 @@
     font-size: 13px;
     font-weight: 500;
     letter-spacing: -0.012em;
-    line-height: 1.45;
+    line-height: 1.35;
   }
   .task-copy span {
     font-size: 11px;
     color: var(--muted);
-    line-height: 1.4;
+    line-height: 1.35;
   }
   .task-row > svg {
     color: #60786a;
@@ -1028,7 +1028,7 @@
   .lesson-row strong {
     font-size: 13px;
     font-weight: 500;
-    line-height: 1.45;
+    line-height: 1.35;
   }
   .lesson-row > div > span {
     color: var(--muted);
@@ -1049,7 +1049,7 @@
     padding: 0 18px;
     font-size: 12px;
     color: var(--muted);
-    line-height: 1.6;
+    line-height: 1.35;
   }
   .channel-icons {
     display: flex;
@@ -1170,7 +1170,7 @@
   }
   .field small {
     font-size: 10px;
-    line-height: 1.5;
+    line-height: 1.35;
     color: var(--muted);
   }
   .form-actions {
@@ -1255,7 +1255,7 @@
     color: #d6e5d8;
     max-width: 420px;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.35;
   }
   .auth-story ul {
     list-style: none;
@@ -1332,7 +1332,7 @@
   .auth-form > .auth-note {
     font-size: 11px;
     margin-top: 14px;
-    line-height: 1.7;
+    line-height: 1.35;
   }
   .password-page {
     min-height: 100dvh;
@@ -1792,7 +1792,7 @@
   }
   .lesson-card h2 {
     font-size: 18px;
-    line-height: 1.45;
+    line-height: 1.35;
     margin-bottom: 10px;
   }
   .lesson-card p {
@@ -1848,7 +1848,7 @@
   }
   .reader article p {
     font-size: 15px;
-    line-height: 1.95;
+    line-height: 1.35;
     color: #56655b;
   }
   .lesson-source {
@@ -1982,7 +1982,7 @@
   }
   .report-description {
     font-size: 15px;
-    line-height: 1.9;
+    line-height: 1.35;
     margin: 21px 0;
   }
   .panel + .notice {
@@ -2019,7 +2019,7 @@
   .setting-row p {
     font-size: 12px;
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.35;
   }
   .setting-row input[role="switch"] {
     appearance: none;
@@ -2131,7 +2131,7 @@
   .channel-choices > button > span:not(.badge) {
     font-size: 11px;
     color: var(--muted);
-    line-height: 1.65;
+    line-height: 1.35;
     font-weight: 400;
   }
   .channel-choices .badge {
@@ -2252,7 +2252,7 @@
     gap: 9px;
     font-size: 10px;
     color: var(--muted);
-    line-height: 1.6;
+    line-height: 1.35;
     padding-top: 14px;
     border-top: 1px solid var(--border);
   }
@@ -2276,7 +2276,7 @@
   .assistant-layout aside p {
     font-size: 12px;
     color: var(--muted);
-    line-height: 1.8;
+    line-height: 1.35;
   }
   .assistant-layout aside .panel-header h2 {
     font-size: 15px;
@@ -2287,7 +2287,7 @@
   .assistant-layout aside small {
     font-size: 11px;
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.35;
   }
   .assistant-answer {
     margin-top: 23px;
@@ -2310,7 +2310,7 @@
   }
   .answer-text {
     font-size: 14px;
-    line-height: 1.9;
+    line-height: 1.35;
     white-space: pre-wrap;
     margin: 20px 0;
   }
@@ -2640,7 +2640,7 @@
     }
     .page-heading p {
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.35;
       margin-top: 10px;
     }
     .page-heading > .button {
@@ -2666,7 +2666,7 @@
     }
     .welcome-band p {
       font-size: 12px;
-      line-height: 1.6;
+      line-height: 1.35;
       margin: 10px 0 18px;
       max-width: 270px;
     }
@@ -2713,7 +2713,7 @@
     .task-copy strong {
       font-size: 13px;
       font-weight: 500;
-      line-height: 1.45;
+      line-height: 1.35;
     }
     .task-copy span {
       font-size: 11px;
@@ -2980,7 +2980,7 @@
     }
     .notice {
       font-size: 11px;
-      line-height: 1.7;
+      line-height: 1.35;
     }
     .weather-toolbar {
       align-items: flex-end;
@@ -3076,7 +3076,7 @@
     }
     .reader article p {
       font-size: 14px;
-      line-height: 1.9;
+      line-height: 1.35;
     }
     .quiz {
       padding: 22px 17px;
@@ -3159,7 +3159,7 @@
     }
     .suggestion-list button {
       font-size: 11px;
-      line-height: 1.65;
+      line-height: 1.35;
     }
     .assistant-context {
       flex-wrap: wrap;

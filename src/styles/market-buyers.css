@@ -25,7 +25,7 @@
 .market-publication small {
   margin-top: 4px;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
   color: var(--muted);
 }
 .market-publication-actions {
@@ -60,7 +60,7 @@
   margin: 0;
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.35;
   max-width: 640px;
 }
 .market-client-order {

@@ -22,7 +22,7 @@
     min-height: 52px;
     padding: 12px 10px;
     font-size: 15px;
-    line-height: 1.4;
+    line-height: 1.35;
     gap: 14px;
   }
   .app-shell .sidebar .simple-navigation .navigation-core > a > svg {
@@ -51,7 +51,7 @@
     text-align: left;
     font-size: 14px;
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.35;
     color: var(--ink);
   }
   .simple-navigation .navigation-group-toggle:hover {
@@ -76,7 +76,7 @@
     padding: 10px 7px;
     gap: 9px;
     font-size: 13px;
-    line-height: 1.5;
+    line-height: 1.35;
   }
   .app-shell .sidebar .workspace-name {
     padding-block: 17px 15px;

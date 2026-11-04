@@ -41,7 +41,7 @@
   background: transparent;
   color: #738167;
   font-size: 11px;
-  line-height: 1.5;
+  line-height: 1.35;
   font-weight: 500;
   white-space: nowrap;
   min-height: 38px;
@@ -167,7 +167,7 @@
 .wd-intro > p {
   color: #6e7c69;
   font-size: 15px;
-  line-height: 1.85;
+  line-height: 1.35;
   max-width: 440px;
 }
 .wd-demo-disclosure {
@@ -181,7 +181,7 @@
   border-radius: 0 7px 7px 0;
   font-size: 11px;
   color: #66795a;
-  line-height: 1.85;
+  line-height: 1.35;
 }
 .wd-demo-disclosure > svg {
   flex-shrink: 0;
@@ -249,14 +249,14 @@
   display: block;
   font-weight: 600;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .wd-scenarios small {
   display: block;
   font-size: 10px;
   color: #73826a;
   margin-top: 4px;
-  line-height: 1.7;
+  line-height: 1.35;
 }
 .wd-scenarios button > svg {
   margin-left: auto;
@@ -277,7 +277,7 @@
 }
 .wd-explainer > p {
   font-size: 12px;
-  line-height: 1.9;
+  line-height: 1.35;
   color: #70816a;
   margin-top: 10px;
 }
@@ -401,7 +401,7 @@
   font-size: 10px;
   color: #c0d1c2;
   margin-top: 5px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .wd-chat-header > svg {
   margin-left: auto;
@@ -414,7 +414,7 @@
   padding: 8px 12px;
   text-align: center;
   font-size: 10px;
-  line-height: 1.6;
+  line-height: 1.35;
   border-bottom: 1px solid #d5dfcd;
 }
 .wd-messages {
@@ -455,7 +455,7 @@
 }
 .wd-message p {
   font-size: 12px;
-  line-height: 1.8;
+  line-height: 1.35;
   white-space: pre-line;
   overflow-wrap: anywhere;
 }
@@ -527,7 +527,7 @@
   background: #fff;
   color: #547941;
   font-size: 10px;
-  line-height: 1.6;
+  line-height: 1.35;
   border-radius: 6px;
   padding: 7px 10px;
   min-height: 34px;
@@ -590,7 +590,7 @@
 .wd-voice-note {
   color: #829276;
   font-size: 9px;
-  line-height: 1.7;
+  line-height: 1.35;
   margin-top: 3px !important;
 }
 .wd-profile-preview {
@@ -617,14 +617,14 @@
 }
 .wd-profile-preview h2 {
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.35;
   font-weight: 600;
   color: #53723f;
 }
 .wd-profile-preview > div p {
   margin-top: 4px;
   font-size: 10px;
-  line-height: 1.7;
+  line-height: 1.35;
   color: #7a8c6c;
 }
 .wd-profile-status {
@@ -657,7 +657,7 @@
   white-space: pre-line;
   color: #657b54;
   font-size: 11px;
-  line-height: 1.9;
+  line-height: 1.35;
   margin-top: 8px;
 }
 .wd-progress {
@@ -693,7 +693,7 @@
   align-items: flex-start;
   font-size: 10px;
   color: #668a4c;
-  line-height: 1.8;
+  line-height: 1.35;
   margin-top: 12px !important;
 }
 .wd-offer-note svg {
@@ -851,7 +851,7 @@
     padding: 20px 23px;
     max-width: 600px;
     gap: 9px;
-    line-height: 1.8;
+    line-height: 1.35;
   }
 }
 @media (max-width: 400px) {

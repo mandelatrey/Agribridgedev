@@ -16,7 +16,7 @@
   color: var(--muted);
   font: inherit;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.35;
   text-align: left;
 }
 .learning-view-switch > button[aria-pressed="true"] {
@@ -27,7 +27,7 @@
 .fao-learning {
   max-width: 780px;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .learning-site-note {
   margin: 0 0 24px;
@@ -50,7 +50,7 @@
   color: var(--green);
   font: inherit;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .learning-topic-picker > button[aria-pressed="true"] {
   border-color: var(--green);
@@ -78,7 +78,7 @@
 .learning-resource-access {
   color: var(--muted);
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.35;
 }
 .learning-resource-meta {
   margin: 0 0 18px;
@@ -86,7 +86,7 @@
 .learning-resource-summary {
   margin: 0 0 16px;
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.35;
 }
 .learning-resource-access {
   margin: 0 0 18px;
@@ -107,7 +107,7 @@
   min-height: 48px;
   font: inherit;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.35;
   white-space: normal;
   text-align: left;
 }
@@ -139,7 +139,7 @@
   color: var(--green);
   font-size: 16px;
   font-weight: 550;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 .learning-access-details > summary::-webkit-details-marker,
 .learning-more > summary::-webkit-details-marker,
@@ -154,7 +154,7 @@
 .learning-access-details p,
 .learning-about p {
   font-size: 15px;
-  line-height: 1.65;
+  line-height: 1.35;
   color: var(--muted);
   margin: 14px 0;
 }

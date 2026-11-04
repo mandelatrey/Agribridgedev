@@ -30,7 +30,7 @@
   }
   .workspace-guide-bar p {
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 1.35;
     margin-top: 3px;
     color: #52654f;
   }
@@ -83,7 +83,7 @@
   }
   .workspace-guide-steps p {
     font-size: 14px;
-    line-height: 1.75;
+    line-height: 1.35;
     color: #536259;
   }
   .guide-ai {
@@ -105,7 +105,7 @@
   }
   .guide-ai p {
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.35;
     margin: 7px 0 10px;
     color: #52654f;
   }
@@ -124,7 +124,7 @@
   }
   .guide-footer > span {
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.35;
     color: #61705f;
     max-width: 180px;
   }
@@ -160,7 +160,7 @@
   .guided-journey-heading p {
     font-size: 13px;
     color: #c3d4c9;
-    line-height: 1.6;
+    line-height: 1.35;
   }
   .journey-track {
     display: flex;
@@ -251,13 +251,13 @@
   }
   .journey-stations h3 {
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.35;
     margin: 6px 0;
   }
   .journey-stations p {
     color: #c5d7cb;
     font-size: 12px;
-    line-height: 1.6;
+    line-height: 1.35;
   }
   .journey-next p {
     color: #45623e;
@@ -274,7 +274,7 @@
   }
   .journey-next-action > span {
     font-size: 12px;
-    line-height: 1.7;
+    line-height: 1.35;
     color: #c3d4c9;
   }
   .journey-next-action strong {
@@ -292,7 +292,7 @@
   .journey-evidence {
     font-size: 10px;
     color: #bfd0c4;
-    line-height: 1.6;
+    line-height: 1.35;
     margin-top: 19px;
   }
   .assistant-question-context {
@@ -306,7 +306,7 @@
     background: #f3f7ef;
     color: #254b37;
     font-size: 13px;
-    line-height: 1.6;
+    line-height: 1.35;
   }
   .assistant-question-context svg {
     flex-shrink: 0;
