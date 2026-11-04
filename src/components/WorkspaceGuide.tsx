@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Bot, Check, Compass, Sprout, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Bot,
+  Check,
+  Compass,
+  Sprout,
+  Users,
+  X,
+} from "lucide-react";
 import { useApp } from "../context/AppContext";
 import {
   assistantGuideLink,
@@ -10,18 +18,39 @@ import {
 import { Button, Modal } from "./ui";
 import "../styles/workspace-guide.css";
 
+const GUIDE_DISMISSED_KEY = "agribridge:workspace-guide-dismissed";
+
+function readDismissed() {
+  try {
+    return sessionStorage.getItem(GUIDE_DISMISSED_KEY) === "true";
+  } catch {
+    return false;
+  }
+}
+
 export function WorkspaceGuide() {
   const { user } = useApp();
   const { pathname } = useLocation();
+  const [dismissed, setDismissed] = useState(readDismissed);
   const guide = workspaceGuide(pathname, user?.role);
-  if (!guide) return null;
-  return <SectionGuide key={pathname} guide={guide} />;
+  if (!guide || dismissed) return null;
+  const dismiss = () => {
+    setDismissed(true);
+    try {
+      sessionStorage.setItem(GUIDE_DISMISSED_KEY, "true");
+    } catch {
+      // Storage can be unavailable; the bar still hides for this visit.
+    }
+  };
+  return <SectionGuide key={pathname} guide={guide} onDismiss={dismiss} />;
 }
 
 function SectionGuide({
   guide,
+  onDismiss,
 }: {
   guide: NonNullable<ReturnType<typeof workspaceGuide>>;
+  onDismiss: () => void;
 }) {
   const [open, setOpen] = useState(false);
   const { online } = useApp();
@@ -42,6 +71,14 @@ function SectionGuide({
         >
           Guide me <ArrowRight size={16} aria-hidden="true" />
         </Button>
+        <button
+          className="icon-button guide-dismiss"
+          type="button"
+          aria-label="Close guidance"
+          onClick={onDismiss}
+        >
+          <X size={18} aria-hidden="true" />
+        </button>
       </aside>
       {open && (
         <Modal

@@ -40,6 +40,17 @@
     font-size: 12px;
     background: #fff;
   }
+  .workspace-guide-bar .guide-dismiss {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    margin-right: -6px;
+    color: #52654f;
+  }
+  .workspace-guide-bar .guide-dismiss:hover {
+    background: #e3edda;
+    color: #254b37;
+  }
   .workspace-guide-content {
     padding: 24px;
   }
