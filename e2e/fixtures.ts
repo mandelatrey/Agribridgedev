@@ -136,11 +136,9 @@ export async function signInAsDemo(page: Page, role: "farmer" | "operator") {
     })
     .click();
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "A good day to move forward.",
+    role === "farmer" ? "Hello, Grace." : "Hello, Amina.",
   );
-  await expect(
-    page.getByText(role === "farmer" ? /Hello, Grace\./ : /Hello, Amina\./),
-  ).toBeVisible();
+  await expect(page.getByText(/A good day to move forward\./)).toBeVisible();
 }
 
 /**

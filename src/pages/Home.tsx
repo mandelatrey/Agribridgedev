@@ -134,9 +134,9 @@ function WorkspaceHome() {
             {staff ? "COOPERATIVE OVERVIEW" : "YOUR FARM WORKSPACE"}{" "}
             <span>· {date(day)}</span>
           </span>
-          <h1>A good day to move forward.</h1>
+          <h1>Hello, {user?.name.split(" ")[0]}.</h1>
           <p>
-            Hello, {user?.name.split(" ")[0]}.{" "}
+            A good day to move forward.{" "}
             {staff
               ? "Your farms, your team, your next step."
               : "A little planning. A better growing season."}
