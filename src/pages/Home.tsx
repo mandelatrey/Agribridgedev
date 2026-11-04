@@ -155,7 +155,6 @@ function WorkspaceHome() {
           </Button>
         </div>
       </header>
-      <WorkspaceJourney />
       {queue.length > 0 && (
         <Notice tone="warning">
           {queue.length} change{queue.length === 1 ? "" : "s"} saved on this
@@ -504,6 +503,7 @@ function WorkspaceHome() {
           </Link>
         </aside>
       </div>
+      <WorkspaceJourney />
       {editor === "farm" && <FarmEditor onClose={() => setEditor(null)} />}
       {editor === "task" && (
         <TaskEditor farmId={farmId} onClose={() => setEditor(null)} />
